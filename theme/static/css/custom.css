@@ -1,0 +1,162 @@
+.is-blurple .message-header {
+    background-color: #7289DA !important;
+    color: white !important;
+}
+
+.is-blurple .message {
+    background-color: #7289DA !important;
+}
+
+.link-hover:hover {
+    color: #ddd !important;
+}
+
+.is-fanart {
+    padding: 0 !important;
+}
+
+.is-hidden-fanart {
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+.g-recaptcha {
+    margin-top: 1.5rem !important;
+    margin-bottom: 2rem !important;
+}
+
+.g-recaptcha div{
+    margin: auto;
+}
+
+.tabs ul li a {
+    border-radius: 0 !important;
+}
+
+.icon.is-danger {
+    color: #ff3860;
+}
+
+.icon.is-success {
+    color: #23d160;
+}
+
+.icon.is-info {
+    color: #3273dc;
+}
+
+.icon.is-warning {
+    color: #ffdd57;
+}
+
+.icon.is-dark {
+    color: #363636;
+}
+
+th.is-primary {
+    background-color: #ffa000 !important;
+    color: white !important;
+}
+
+td.is-primary {
+    background-color: #ffa000 !important;
+    color: white !important;
+}
+
+th.is-grey {
+    background-color: #dbdbdb !important;
+}
+
+td.is-grey {
+    background-color: #dbdbdb !important;
+}
+
+#editor {
+    min-height: 20rem;
+}
+
+#editor-columns {
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+}
+
+#editor-columns .column {
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+#publish-button.is-pulled-right {
+    margin-left: 1rem;
+}
+
+.message-body ul {
+    list-style: disc outside;
+    margin-left: 2rem;
+}
+
+.message-body ul ul {
+    list-style: circle;
+    margin-left: 2rem;
+}
+
+.message-body ul ul ul {
+    list-style: square;
+    margin-left: 2rem;
+}
+
+.message-body ol {
+    list-style: decimal outside;
+    margin-left: 1rem;
+}
+
+.feeds-row .button {
+    margin-left: 1rem;
+}
+
+.feeds-row {
+    margin-bottom: 2rem;
+}
+
+.mono {
+    font-family: monospace;
+}
+
+.announcements-front a {
+    text-decoration: none;
+}
+
+.announcements-front a:hover {
+    color: blue;
+}
+
+.content pre {
+    padding: 0;
+}
+
+.latest-downloads {
+}
+
+.latest-downloads-group {
+    display: inline-block;
+    line-height: 1rem;
+}
+
+.latest-downloads-group-sub {
+    font-size: 0.8rem;
+}
+
+.downloads-button {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    margin-right: 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+    #login-button-text { display: none }
+    #login-button { padding-right: 2px }
+}
+
+@media screen and (min-width: 769px), print {
+    #login-button-text { display: inline }
+    #login-button { padding-right: 12px }
+}

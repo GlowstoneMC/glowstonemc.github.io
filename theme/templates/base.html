@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock html_lang %}">
+<head>
+    {% block head %}
+    <title>{% block title %}{% endblock title %} | {{ SITENAME }}</title>
+    <meta charset="utf-8"/>
+    <meta name="generator" content="Pelican"/>
+    {% if FEED_ALL_ATOM %}
+    <link href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}"
+          type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Full Atom Feed"/>
+    {% endif %}
+    {% if FEED_ALL_RSS %}
+    <link href="{{ FEED_DOMAIN }}/{% if FEED_ALL_RSS_URL %}{{ FEED_ALL_RSS_URL }}{% else %}{{ FEED_ALL_RSS }}{% endif %}"
+          type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Full RSS Feed"/>
+    {% endif %}
+    {% if FEED_ATOM %}
+    <link href="{{ FEED_DOMAIN }}/{%if FEED_ATOM_URL %}{{ FEED_ATOM_URL }}{% else %}{{ FEED_ATOM }}{% endif %}"
+          type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed"/>
+    {% endif %}
+    {% if FEED_RSS %}
+    <link href="{{ FEED_DOMAIN }}/{% if FEED_RSS_URL %}{{ FEED_RSS_URL }}{% else %}{{ FEED_RSS }}{% endif %}"
+          type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed"/>
+    {% endif %}
+    {% if CATEGORY_FEED_ATOM and category %}
+    <link href="{{ FEED_DOMAIN }}/{% if CATEGORY_FEED_ATOM_URL %}{{ CATEGORY_FEED_ATOM_URL.format(slug=category.slug) }}{% else %}{{ CATEGORY_FEED_ATOM.format(slug=category.slug) }}{% endif %}"
+          type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Categories Atom Feed"/>
+    {% endif %}
+    {% if CATEGORY_FEED_RSS and category %}
+    <link href="{{ FEED_DOMAIN }}/{% if CATEGORY_FEED_RSS_URL %}{{ CATEGORY_FEED_RSS_URL.format(slug=category.slug) }}{% else %}{{ CATEGORY_FEED_RSS.format(slug=category.slug) }}{% endif %}"
+          type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Categories RSS Feed"/>
+    {% endif %}
+    {% if TAG_FEED_ATOM and tag %}
+    <link href="{{ FEED_DOMAIN }}/{% if TAG_FEED_ATOM_URL %}{{ TAG_FEED_ATOM_URL.format(slug=tag.slug) }}{% else %}{{ TAG_FEED_ATOM.format(slug=tag.slug) }}{% endif %}"
+          type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Tags Atom Feed"/>
+    {% endif %}
+    {% if TAG_FEED_RSS and tag %}
+    <link href="{{ FEED_DOMAIN }}/{% if TAG_FEED_RSS_URL %}{{ TAG_FEED_RSS_URL.format(slug=tag.slug) }}{% else %}{{ TAG_FEED_RSS.format(slug=tag.slug) }}{% endif %}"
+          type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Tags RSS Feed"/>
+    {% endif %}
+    {% endblock head %}
+</head>
+
+<body>
+<header id="banner" class="hero is-primary">
+        <div class="hero-head">
+        <div class="container">
+            <nav class="nav">
+                <div class="nav-left" style="min-width: 150px;">
+                    <span class="nav-item">
+                        <a href="/" title="Home" style="margin-top: 0.5rem;">
+                            <img alt="Glowstone" src="/static/images/glowstone-text.png" />
+                        </a>
+                    </span>
+                </div>
+
+                <div class="nav-right">
+                    <span class="nav-item">
+                        % if self.attr.tab == "feeds":
+                        <a class="button is-light" href="/feeds" title="Feeds">
+                        % else:
+                        <a class="button is-light is-outlined" href="/feeds" title="Feeds">
+                        % endif
+                            <span class="icon">
+                                <i class="fa fa-feed"></i>
+                            </span>
+                        </a>
+                    </span>
+                </div>
+            </nav>
+        </div>
+        {% block hero_head_end %}{% endblock hero_head_end %}
+    </div>
+    <h1><a href="{{ SITEURL }}/">{{ SITENAME }}{% if SITESUBTITLE %} <strong>{{ SITESUBTITLE }}</strong>{% endif %}</a>
+    </h1>
+</header><!-- /#banner -->
+<nav id="menu">
+    <ul>
+        {% for title, link in MENUITEMS %}
+        <li><a href="{{ link }}">{{ title }}</a></li>
+        {% endfor %}
+        {% if DISPLAY_PAGES_ON_MENU %}
+        {% for p in pages %}
+        <li
+        {% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
+        {% endfor %}
+        {% endif %}
+        {% if DISPLAY_CATEGORIES_ON_MENU %}
+        {% for cat, null in categories %}
+        <li
+        {% if cat == category %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+        {% endfor %}
+        {% endif %}
+    </ul>
+</nav><!-- /#menu -->
+{% block content %}
+{% endblock %}
+<footer class="footer">
+    <div class="container">
+        <div class="content has-text-centered">
+            <p>
+                Made with &hearts; by the <a href="https://github.com/GlowstoneMC/">Glowstone project</a>.
+            </p>
+            <p>
+                Glowstone is licensed under the <a href="https://github.com/GlowstoneMC/Glowstone/blob/dev/LICENSE">MIT
+                license</a>,
+                while this site is licensed under the <a href="https://github.com/GlowstoneMC/Site/blob/master/LICENSE">Artistic
+                License 2.0</a>.
+                If you're thinking of contributing, please read <a href="/cla">our CLA</a>.
+            </p>
+            <p>
+                Glowstone would not be possible without <a target="_blank"
+                                                           href="https://github.com/GlowstoneMC/Glowstone#credits">these
+                folks</a> &mdash; thanks for your time and passion!
+            </p>
+        </div>
+    </div>
+</footer>
+<script src="{{THEME_STATIC_DIR}}/js/baguettebox.js"></script>
+<script type="text/javascript">
+    baguetteBox.run(".gallery", {
+        animation: "fadeIn",
+        noScrollbars: true
+    })
+</script>
+</body>
+</html>
