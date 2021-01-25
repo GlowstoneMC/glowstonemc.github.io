@@ -1,3 +1,5 @@
+title: Maven Repository Issues
+
 On Sunday, we updated Archiva (our Maven repository) to a more recent version. During the upgrade, we unfortunately lost all our artifacts stored on the server. There was a major downtime in which we attempted to fix storage and deployment, but the artifacts could not be recovered.
 
 Because we did not have backups for the Maven repository, (that would take a lot of space, considering each snapshot is ~19MB) we had to re-deploy the latest snapshots manually.

@@ -1,3 +1,5 @@
+title: Glowstone's Cheating and Illegal Behavior Policy
+
 Today, we are putting in place Glowstone's new [Cheating and Illegal Behavior Policy](https://github.com/GlowstoneMC/Glowstone/blob/dev/docs/CHEATING_AND_ILLEGAL_BEHAVIOR_POLICY.md). This is an effort to engage ourselves in our position against illegal piracy and behavior in the context of our project.
 
 Although Glowstone will always keep the `online-mode: false` option functional in the server configuration for testing and development reasons, we will not put extended effort into keeping our software compatible with pirated software (such as *cracked clients*). Our mission, on that front, is to stay at the same level of compatibility as Mojang's server software.

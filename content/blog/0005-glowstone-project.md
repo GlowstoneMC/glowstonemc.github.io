@@ -1,3 +1,5 @@
+title: The Glowstone Project
+
 Hi. You've probably seen countless announcements about all the projects under the Glowstone family, like the Glowstone server, Glowkit and more, but we've never really talked about the project as a whole. This is mostly because we've been focusing on polishing and advancing Glowstone in terms of code, and not in terms of community.
 
 For a few weeks after we get the next Glowstone release out, I'll be focusing on improving the experience our community has with the Glowstone project itself. These changes will hopefully increase engagement and reduce the barrier to entry to our project.

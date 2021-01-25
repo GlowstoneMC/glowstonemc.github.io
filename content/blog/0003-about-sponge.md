@@ -1,3 +1,7 @@
+title: About Sponge...
+
+EDIT: A lot has changed since this blog post, both in the goals of Glowstone, and Sponge's API in version 8. We aren't completely ruling out the possibility of using Sponge, and this post's strong language does not reflect the sentiment of the team.
+
 So over time, we've found a lot of people asking us about Sponge. Now that its hype has died down quite a bit, I think it's time to clarify a few things about Glowstone and Sponge, including a few misconceptions:
 
 **Cool, it's Glowstone, that Sponge server I've been hearing about!**
@@ -22,7 +26,6 @@ Nope. And with our current plans, we will never work on Sponge support for Glows
 
 Well no. Now that the hype has died down, its plugin dev community is quite small.
 
-Also, personally, I think Sponge isn't very well designed. [This line](https://github.com/SpongePowered/SpongeAPI/blob/bleeding/src/main/java/org/spongepowered/api/data/value/mutable/CompositeValueStore.java#L52) explains it best. Of course, there are numerous other design flaws, like other problems in the data API, confusing naming patterns, and avoidance of simpler Java constructs, but all of that is out of the scope of this post.
-
+Also, personally, I think Sponge isn't very well designed. [This line](https://github.com/SpongePowered/SpongeAPI/blob/stable-7/src/main/java/org/spongepowered/api/data/value/mutable/CompositeValueStore.java#L49) explains it best. Of course, there are numerous other design flaws, like other problems in the data API, confusing naming patterns, and avoidance of simpler Java constructs, but all of that is out of the scope of this post.
 
 Well, thanks for reading this post. I hope it clarified some things about Sponge and how it relates to Glowstone. If you want to learn more, I would be happy to expand on anything, if asked.

@@ -1,3 +1,5 @@
+title: This Month in Glowstone - 10
+
 Wow, already month 10. I can't believe it! *Wait*, what's that? We were a weekly blog before? No, that can't be true, we only have monthly blog posts on record. You must have gone crazy.
 
 Speaking of crazy, we've been crazy busy on Glowstone. 16 commits and 1,137 additions, along with 176 deletions. 

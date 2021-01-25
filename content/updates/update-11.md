@@ -1,3 +1,5 @@
+title: Glowstone Update - 11
+
 Hello, welcome back to one of these updates on what we've been up to with the Glowstone project!
 
 One of our developers, @momothereal, is giving the update this time around:

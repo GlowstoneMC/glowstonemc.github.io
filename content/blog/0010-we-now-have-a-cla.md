@@ -1,14 +1,18 @@
-Hello, fellow Glowstone... ers...?
+title: We now have a CLA
 
-Welcome to the beta version of the new site! We've decided that the site could use a small facelift and the addition of some much-needed functionality, and this is a preview of what's to come. Some of the things you can look forward to include:
+This is an announcement to let everyone know that we have come up with a CLA, otherwise known as a Contributor License Agreement. It's something we've been thinking about doing for a while, but decided that it deserved extra attention in light of [the swift movement on Bountysource](https://www.bountysource.com/issues/40545454-185-completing-entities-in-glowstone).
 
-* Better syndication for news
-    * Currently, news posts are notified on the forum and across Twitter and Discord, and more can be added easily as required
-    * We also have RSS and ATOM feeds available [here](/feeds)
-* A proper downloads center for everything Glowstone
-    * We haven't done tons of work on this yet, but it'll be coming over the following couple of weeks
-* A central location to learn about our community and how you can help with the project, as well as better sourcing for documentation
+CLAs can look a bit scary, but every contributor submitting a pull request to Glowstone will be required to sign it. We've attempted to make that process as easy as possible - going forward, any new pull requests will automatically get a comment from the CLA helper. To sign the CLA, simply click the button in that comment and sign in with GitHub on the CLA helper site.
 
-Currently the beta site is in a relatively early stage, and not everything works. We would appreciate if you are able to give us feedback on this - you can do so on [GitHub](https://github.com/GlowstoneMC/Site), on [the forums](https://forums.glowstone.net), or on [Discord](https://discord.gg/TFJqhsC).
+In short, by signing the Glowstone CLA, you confirm that:
 
-We want to make sure this site will work well for everyone, so don't be afraid to speak up if there's something you don't like!
+* Anyone can use your contributions anywhere, for free, forever
+* Your contributions do not infringe on anyone else's rights, including Mojang's
+
+If you'd like to read the CLA yourself, it's available [here](https://beta.glowstone.net/cla).
+
+Note that we are not requiring previous contributors to sign the CLA, but if you do sign it, it applies retroactively.
+
+---
+
+If you would like to sign off your own bat before you make any further contributions or do any more work on your forks, feel free to do so  [here](https://cla-assistant.io/GlowstoneMC/Glowstone).

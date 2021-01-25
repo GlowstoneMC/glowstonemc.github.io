@@ -1,3 +1,5 @@
+title: New Site (Beta)
+
 Hello, fellow Glowstone... ers...?
 
 Welcome to the beta version of the new site! We've decided that the site could use a small facelift and the addition of some much-needed functionality, and this is a preview of what's to come. Some of the things you can look forward to include:

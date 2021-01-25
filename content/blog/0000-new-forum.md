@@ -1,3 +1,5 @@
+title: New forum
+
 Yep, that's right. We've moved from Flarum.
 
 From a personal perspective, Flarum doesn't appear to be going anywhere fast. In its current early-beta state, it doesn't have many options, has questionable levels of security and is impossible to upgrade. As a result, we quickly outgrew it. It was time to move on - At least until Flarum becomes viable.
