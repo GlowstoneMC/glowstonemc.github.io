@@ -1,9 +1,304 @@
 {% extends "base.html" %}
+{% block title %}Home{% endblock title %}
+{% block hero %}
+<div class="hero-body">
+    <div class="container">
+      <div class="columns is-vcentered">
+        <div class="column is-one-quarter is-hidden-touch">
+          <figure class="image" style="max-width: 175px;float:left;left:20%">
+            <img src="{{THEME_STATIC_DIR}}/images/glowstone-logo.png">
+          </figure>
+        </div>
+        <div class="column is-hidden-desktop is-hidden-mobile">
+          <figure class="image" style="max-width: 150px;margin-right: 20px;margin-left: 20px">
+            <img src="{{THEME_STATIC_DIR}}/images/glowstone-logo.png">
+          </figure>
+        </div>
+        <div class="column is-three-quarters">
+          <p class="subtitle" style="margin-bottom: 18px; max-width: 90%; font-size: 30px">
+            <strong>Minecraft's future is bright.</strong>
+          </p>
+          <p class="subtitle" style="margin-bottom: 5px;max-width: 90%;font-size: 22px">
+            <strong>Meet Glowstone.</strong> It's open, fast, and compatible. <a style="color:#ffdaaf;" href="#warning-feature-completeness">*</a>
+          </p>
+          <p>
+            Glowstone is a completely open source Minecraft server that doesn't rely on any of Mojang's code - meaning we're free to develop for your needs, and you're free to change it however you want.
+          </p>
+          <br><br>
+          <div class="columns is-hidden-touch">
+            <div class="column is-3">
+              <a class="button is-light is-outlined is-fullwidth" href="https://docs.glowstone.net/en/latest/Getting_Started/install_java.html">
+                <span class="icon"><span class="fa fa-book"></span></span> <span>Instructions</span>
+              </a>
+            </div>
+            <div class="column is-3">
+              <a class="button is-light is-outlined is-fullwidth" href="https://github.com/GlowstoneMC/Glowstone">
+                <span class="icon" style=""><span class="fa fa-code-fork"></span></span> <span>Source Code</span>
+              </a>
+            </div>
+            <div class="column is-3">
+              <a class="button is-light is-outlined is-fullwidth" href="https://discord.gg/TFJqhsC">
+                <span class="icon"><span class="fa fa-comments"></span></span> <span>Chat</span>
+              </a>
+            </div>
+            <div class="column is-3">
+              <a class="button is-light is-outlined is-fullwidth" href="/docs#developers">
+                <span class="icon"><span class="fa fa-file-text-o"></span></span> <span>Javadocs</span>
+              </a>
+            </div>
+          </div>
+          <div class="columns is-hidden-desktop is-hidden-mobile">
+            <div class="column is-half">
+              <a class="button is-light is-outlined is-fullwidth" href="https://github.com/GlowstoneMC/Glowstone/wiki/Installation">
+                <span class="icon"><span class="fa fa-book"></span></span> <span>Instructions</span>
+              </a>
+            </div>
+            <div class="column is-half">
+              <a class="button is-light is-outlined is-fullwidth" href="https://discord.gg/TFJqhsC">
+                <span class="icon"><span class="fa fa-comments"></span></span> <span>Chat</span>
+              </a>
+            </div>
+          </div>
+          <div class="columns is-hidden-desktop is-hidden-mobile">
+            <div class="column is-half">
+              <a class="button is-light is-outlined is-fullwidth" href="https://github.com/GlowstoneMC/Glowstone">
+                <span class="icon" style=""><span class="fa fa-code-fork"></span></span> <span>Source Code</span>
+              </a>
+            </div>
+            <div class="column is-half">
+              <a class="button is-light is-outlined is-fullwidth" href="/docs#developers">
+                <span class="icon"><span class="fa fa-file-text-o"></span></span> <span>Javadocs</span></a>
+            </div>
+          </div>
+          <div class="columns is-hidden-desktop is-hidden-tablet">
+            <div class="column is-3">
+              <a class="button is-light is-outlined is-fullwidth" href="https://github.com/GlowstoneMC/Glowstone/wiki/Installation">
+                <span class="icon"><span class="fa fa-book"></span></span> <span>Instructions</span>
+              </a>
+            </div>
+            <div class="column is-3">
+              <a class="button is-light is-outlined is-fullwidth" href="https://github.com/GlowstoneMC/Glowstone">
+                <span class="icon" style=""><span class="fa fa-code-fork"></span></span> <span>Source Code</span>
+              </a>
+            </div>
+            <div class="column is-3">
+              <a class="button is-light is-outlined is-fullwidth" href="https://discord.gg/TFJqhsC">
+                <span class="icon"><span class="fa fa-comments"></span></span> <span>Chat</span>
+              </a>
+            </div>
+            <div class="column is-3">
+              <a class="button is-light is-outlined is-fullwidth" href="/docs#developers">
+                <span class="icon"><span class="fa fa-file-text-o"></span></span> <span>Javadocs</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
 {% block content %}
 <section id="content">
-{% block content_title %}
-<h2>All articles</h2>
-{% endblock %}
+<nav class="nav has-shadow" style="padding-left: 1%">
+    <div class="container">
+        <div class="nav-left">
+            <a class="nav-item is-tab" href="#features">Features</a>
+            <a class="nav-item is-tab" href="#downloads">Downloads</a>
+            <a class="nav-item is-tab" href="#builds">CI Builds</a>
+        </div>
+    </div>
+</nav>
+
+<section class="section">
+    <div class="container" id="announcements-front">
+        <article class="message is-info">
+            <div class="message-body announcements-front" style="color: #3273dc;">
+                <strong>
+                    <i class="fa fa-bullhorn" style="font-size: 150%; margin-right: 10px;"></i>
+                    Latest news:
+                </strong>
+                <span id="announcements-titles">
+                    {% for article in articles_page.object_list %}
+                    <a class="announcement-link" target="_blank" href="{{ article.url }}">{{article.title}}</a>
+                    {% endfor %}
+                </span>
+            </div>
+        </article>
+    </div>
+    <div class="container" id="features" style="padding-top: 20px;">
+        <h1 class="title is-2">Features
+            <a href="#top" title="Jump to top">
+                <span class="icon is-pulled-right is-large">
+                    <i class="fa fa-angle-up is-large"></i>
+                </span>
+            </a>
+        </h1>
+        <div class="tile is-ancestor" style="text-align: center;">
+            <div class="tile is-4 is-vertical is-parent">
+                <div class="tile is-child box">
+                <p class="title is-4" style="font-size: 20px;">The APIs you know and love</p>
+                <p style="font-size: 110%">Just because Glowstone is original doesn't mean it can't be familiar.</p>
+                <br>
+                <p style="text-align: justify;">Use or code Bukkit plugins and they'll work natively with Glowstone, and enjoy first-class Bukkit2Sponge support for your Sponge powered plugins.</p>
+                <br>
+                <a class="button is-outlined" href="https://docs.glowstone.net/en/latest/About/why_glowstone.html" target="_blank">Learn more</a>
+                </div>
+            </div>
+            <div class="tile is-4 is-vertical is-parent">
+                <div class="tile is-child box">
+                    <p class="title is-4" style="font-size: 20px;">Simplicity is the mother of performance</p>
+                    <p style="font-size: 110%">Glowstone's simplicity affords it a performance improvement over CraftBukkit and other servers.</p>
+                    <br>
+                    <p style="text-align: justify;">
+                    By design, our code is simple and doesn't have to work around the official Minecraft server in order to improve performance or functionality.</p>
+                    <br>
+                    <a class="button is-outlined is-disabled" disabled>Benchmarks (Soon)</a>
+                </div>
+            </div>
+            <div class="tile is-4 is-vertical is-parent">
+                <div class="tile is-child box">
+                <p class="title is-4" style="font-size: 20px;">Any way you want it</p>
+                <p style="font-size: 110%">Glowstone is open source and community centric.</p>
+                <br>
+                <p style="text-align: justify;">
+                Anyone can work on Glowstone, so it reflects what our community wants. And, with Glowstone's MIT license, you can modify it to suit your server's needs. Don't know code? Provide your input in the design process!</p>
+                <br>
+                <a class="button is-outlined" href="https://github.com/GlowstoneMC/Glowstone/wiki/How-to-Help" target="_blank">How to help</a>
+                </div>
+            </div>
+        </div>
+
+        <article class="message is-danger" id="warning-feature-completeness">
+            <div class="message-header">
+                Important warning
+            </div>
+            <div class="message-body">
+                <strong>Glowstone is a small project.</strong>
+                <p>
+                We put all of our efforts into providing efficient and quality software. While the project has been around for a few years, we are not feature-complete in comparison to the vanilla server software.
+                </p>
+                <p>
+                We update our project frequently enough to follow Mojang's updates, but Glowstone is simply not ready for some production servers. <strong>While Glowstone can be used at its best for lobbies, hubs, minigames and creative servers, it is not ready for survival.</strong>
+                </p>
+                <br>
+                <p>
+                More info can be found in the <a href="https://github.com/GlowstoneMC/Glowstone/wiki/Frequently-Asked-Questions#bugs--features">FAQ</a>. You can also ask questions on our <a href="https://forums.glowstone.net/">forums</a> or by <a id="warning-chat-link" href="https://discord.gg/TFJqhsC">chat</a>.
+                </p>
+            </div>
+        </article>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container" id="downloads" style="padding-top: 20px;">
+        <h1 class="title is-2">
+            Downloads
+            <a href="#top" title="Jump to top">
+                <span class="icon is-pulled-right is-large">
+                    <i class="fa fa-angle-up is-large"></i>
+                </span>
+            </a>
+        </h1>
+        <div class="content">
+            <article class="message is-info">
+                <div class="message-header">
+                    How to use
+                </div>
+                <div class="message-body">
+                    Glowstone is a standalone Java server executable. You can run it from your terminal:<br>&nbsp;
+                    <pre><code>java -Xms768M -XX:+UseG1GC -jar glowstone.jar</code></pre>
+                    <br>
+                    You can read more about the installation instructions <a href="https://docs.glowstone.net/en/latest/Getting_Started/install_java.html">here</a>.
+                    <br><br>
+                    <p><strong>Want to test Glowstone out before installing it?</strong> Hop on our test server (1.12.2): <code>mc.glowstone.net</code></p>
+                </div>
+            </article>
+            <div class="columns">
+                <div class="column is-half">
+                    <h4 class="title is-4" style="margin-top: 1.5rem; margin-bottom: 0.5rem">Supported versions</h4>
+                    <div class="latest-downloads">
+                        <!--<div class="latest-downloads-group">
+                            <a class="button is-success is-medium downloads-button" href="https://github.com/GlowstoneMC/Glowstone/releases/download/2018.0.1/glowstone.jar"><span class="icon"><i class="fa fa-download"></i></span> <span>LTS 2018.0.1</span></a>
+                            <br>
+                            <span class="latest-downloads-group-sub">MC 1.12.2 | <a href="https://glowstone.net/news/15">Changelog</a></span>
+                        </div>
+                        <div class="latest-downloads-group">
+                            <a class="button is-success is-medium downloads-button" href="https://github.com/GlowstoneMC/Glowstone/releases/download/2018.9.0/glowstone.jar"><span class="icon"><i class="fa fa-download"></i></span> <span>Release 2018.9.0</span></a>
+                            <br>
+                            <span class="latest-downloads-group-sub">MC 1.12.2 | <a href="https://glowstone.net/news/21">Changelog</a></span>
+                        </div>-->
+                        <div class="latest-downloads-group">
+                            <a class="button is-warning is-medium downloads-button" href="https://repo.glowstone.net/#browse/search=group.raw%3Dnet.glowstone%20AND%20name.raw%3Dglowstone"><span class="icon"><i class="fa fa-download"></i></span> <span>Latest build</span></a>
+                            <br>
+                            <span class="latest-downloads-group-sub">MC 1.12.2 | <a href="https://github.com/GlowstoneMC/Glowstone/commits/dev">dev branch</a></span>
+                        </div>
+                    </div>
+                    <div style="margin-top: 2rem">
+                        <h4>Plugins</h4>
+                        <p>
+                            Glowstone natively supports plugins written for the Bukkit, Spigot and Paper APIs.
+                            Simply place the Java archives (.jar) in your server's <code>plugins</code> directory and run Glowstone.
+                        </p>
+                        <p>
+                            Note that plugins that use platform-dependent code (NMS, OBC, etc.) will not run on Glowstone.
+                        </p>
+                        <div class="latest-downloads">
+                            <div class="latest-downloads-group">
+                                <a class="button downloads-button" href="https://dev.bukkit.org/bukkit-plugins"><span>Bukkit plugins</span></a>
+                            </div>
+                            <div class="latest-downloads-group">
+                                <a class="button downloads-button" href="https://www.spigotmc.org/resources/categories/bukkit.4/?order=download_count"><span>Spigot plugins</span></a>
+                            </div>
+                            <div class="latest-downloads-group">
+                                <a class="button downloads-button" href="https://papermc.io/forums/c/plugin-releases/paper"><span>Paper plugins</span></a>
+                            </div>
+                            <div class="latest-downloads-group">
+                                <a class="button downloads-button" href="https://forums.glowstone.net/category/6/plugins"><span>Glowstone plugins</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-half">
+                    <h4 class="title is-4" style="margin-top: 1.5rem; margin-bottom: 0.5rem">Maven</h4>
+                        <p>You can use Glowstone and Glowkit as Maven dependencies directly from our <a href="https://repo.glowstone.net/#browse~snapshots/net.glowstone" target="_blank">repository</a>:</p>
+                        <pre><code style="padding: 0 1.5rem">
+&lt;!-- Glowstone Maven snapshot repository --&gt;
+&lt;repository&gt;
+    &lt;id&gt;glowstone-repo&lt;/id&gt;
+    &lt;url&gt;https://repo.glowstone.net/content/repositories/snapshots/&lt;/url&gt;
+&lt;/repository&gt;
+                        </code></pre>
+                        <pre><code style="padding: 0 1.5rem">
+&lt;!-- Glowstone server dependency --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;net.glowstone&lt;/groupId&gt;
+    &lt;artifactId&gt;glowstone&lt;/artifactId&gt;
+    &lt;version&gt;2018.10.0-SNAPSHOT&lt;/version&gt;
+&lt;/dependency&gt;
+                        </code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container" id="builds" style="padding-top: 20px;">
+        <h1 class="title is-2">
+            Latest Builds
+            <a href="#top" title="Jump to top">
+                <span class="icon is-pulled-right is-large">
+                    <i class="fa fa-angle-up is-large"></i>
+                </span>
+            </a>
+        </h1>
+        <p>
+            Under Construction - watch this space!
+            <br>
+            In the meantime, you can view our latest CI builds on <a href="https://github.com/GlowstoneMC/Glowstone/actions?query=workflow%3A%22Dev+Build%22">GitHub Actions</a>.
+        </p>
+    </div>
+</section>
 
 <ol id="post-list">
 {% for article in articles_page.object_list %}

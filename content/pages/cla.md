@@ -1,5 +1,4 @@
-!!! Accepting the CLA 
-    If you'd like to contribute to one of our projects, you'll need to accept our CLA. To do that, all you need to do is create your pull request - once it's open, you'll be asked to sign it automatically. Simply click the button in the comment created for you, and you'll be on your way! 
+title: CLA
 
 # Contributor License Agreement
 

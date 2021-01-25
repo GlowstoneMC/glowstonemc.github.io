@@ -2,7 +2,7 @@
 <html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock html_lang %}">
 <head>
     {% block head %}
-    <title>{% block title %}{% endblock title %} | {{ SITENAME }}</title>
+    <title>{% block title %}{% endblock title %} &middot; {{ SITENAME }}</title>
     <meta charset="utf-8"/>
     <meta name="generator" content="Pelican"/>
     {% if FEED_ALL_ATOM %}
@@ -38,6 +38,11 @@
           type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Tags RSS Feed"/>
     {% endif %}
     {% endblock head %}
+    <link rel="stylesheet" href="/{{THEME_STATIC_DIR}}/css/bulma.css"/>
+    <link rel="stylesheet" href="/{{THEME_STATIC_DIR}}/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/{{THEME_STATIC_DIR}}/css/custom.css">
+    <link rel="stylesheet" href="/{{THEME_STATIC_DIR}}/css/pygments-colourful.css">
+    <link rel="stylesheet" href="/{{THEME_STATIC_DIR}}/css/baguettebox.css">
 </head>
 
 <body>
@@ -48,18 +53,18 @@
                 <div class="nav-left" style="min-width: 150px;">
                     <span class="nav-item">
                         <a href="/" title="Home" style="margin-top: 0.5rem;">
-                            <img alt="Glowstone" src="/static/images/glowstone-text.png" />
+                            <img alt="Glowstone" src="/{{THEME_STATIC_DIR}}/images/glowstone-text.png" />
                         </a>
                     </span>
                 </div>
 
                 <div class="nav-right">
                     <span class="nav-item">
-                        % if self.attr.tab == "feeds":
+                        {% if output_file == "feeds.html" %}
                         <a class="button is-light" href="/feeds" title="Feeds">
-                        % else:
+                        {% else %}
                         <a class="button is-light is-outlined" href="/feeds" title="Feeds">
-                        % endif
+                        {% endif %}
                             <span class="icon">
                                 <i class="fa fa-feed"></i>
                             </span>
@@ -70,28 +75,36 @@
         </div>
         {% block hero_head_end %}{% endblock hero_head_end %}
     </div>
-    <h1><a href="{{ SITEURL }}/">{{ SITENAME }}{% if SITESUBTITLE %} <strong>{{ SITESUBTITLE }}</strong>{% endif %}</a>
-    </h1>
-</header><!-- /#banner -->
-<nav id="menu">
-    <ul>
-        {% for title, link in MENUITEMS %}
-        <li><a href="{{ link }}">{{ title }}</a></li>
-        {% endfor %}
-        {% if DISPLAY_PAGES_ON_MENU %}
-        {% for p in pages %}
-        <li
-        {% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
-        {% endfor %}
-        {% endif %}
-        {% if DISPLAY_CATEGORIES_ON_MENU %}
-        {% for cat, null in categories %}
-        <li
-        {% if cat == category %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
-        {% endfor %}
-        {% endif %}
-    </ul>
-</nav><!-- /#menu -->
+    {% block hero %}
+    {% endblock %}
+    <div class="hero-foot">
+    <div class="container">
+        <nav class="tabs is-boxed">
+            <ul>
+                {% if output_file == "index.html" %}
+                <li class="is-active">
+                {% else %}
+                <li>
+                {% endif %}
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/news">News</a>
+                </li>
+                <li>
+                    <a href="/community">Community</a>
+                </li>
+            </ul>
+
+            <ul class="is-right">
+                <li>
+                    <a href="/docs">Docs</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    </div>
+</header>
 {% block content %}
 {% endblock %}
 <footer class="footer">
@@ -115,7 +128,7 @@
         </div>
     </div>
 </footer>
-<script src="{{THEME_STATIC_DIR}}/js/baguettebox.js"></script>
+<script src="/{{THEME_STATIC_DIR}}/js/baguettebox.js"></script>
 <script type="text/javascript">
     baguetteBox.run(".gallery", {
         animation: "fadeIn",
