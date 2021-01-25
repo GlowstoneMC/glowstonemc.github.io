@@ -22,4 +22,4 @@ jobs:
         pipenv sync
     - name: Build and publish
       run: |
-        make github
+        pipenv run make github
