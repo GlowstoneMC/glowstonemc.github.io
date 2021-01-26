@@ -120,6 +120,8 @@
                 <span id="announcements-titles">
                     {% for article in articles_page.object_list %}
                     <a class="announcement-link" target="_blank" href="{{ article.url }}">{{article.title}}</a>
+                    {% else %}
+                    <span class="announcement-link">No news posts found.</span>
                     {% endfor %}
                 </span>
             </div>

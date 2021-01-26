@@ -1,4 +1,5 @@
 title: About Sponge...
+date: 2017-01-31 21:06
 
 EDIT: A lot has changed since this blog post, both in the goals of Glowstone, and Sponge's API in version 8. We aren't completely ruling out the possibility of using Sponge, and this post's strong language does not reflect the sentiment of the team.
 
@@ -14,7 +15,7 @@ Glowstone does not use Sponge at all in its code. We do not support Sponge nativ
 
 https://www.reddit.com/r/admincraft/comments/2foll6/weve_gotten_together_developers_from_spout_forge/
 
-***Edit (May 28, 2017)**: This reddit post has been deleted by its original poster. Here is an archived [snapshot](https://web.archive.org/web/20161210172443/https://www.reddit.com/r/admincraft/comments/2foll6/weve_gotten_together_developers_from_spout_forge/) of this post from December 2016. -Momo*
+**\*Edit (May 28, 2017)**: This reddit post has been deleted by its original poster. Here is an archived [snapshot](https://web.archive.org/web/20161210172443/https://www.reddit.com/r/admincraft/comments/2foll6/weve_gotten_together_developers_from_spout_forge/) of this post from December 2016. -Momo\*
 
 I'm not aware of any Glowstone partnership with Sponge. If there is/was one, Sponge has done a poor job maintaining it, as we haven't been contacted by them at all.
 

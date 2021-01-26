@@ -1,4 +1,5 @@
 title: Intrusion Report (Forums)
+date: 2017-07-28 9:03
 
 This is a post to notify everyone of a possible intrusion relating to the forum. I have provided a full report in an effort to be as transparent as possible.
 
@@ -24,8 +25,8 @@ After reading over NodeBB logs, events and errors, we found nothing of interest.
 
 At around 4AM BST, Momo became available again and continued his investigation. He discovered two things:
 
-* Redis was accessible (without a password) from outside of the network
-* Redis was failing to save any data due to an error, thus disabling the forums
+- Redis was accessible (without a password) from outside of the network
+- Redis was failing to save any data due to an error, thus disabling the forums
 
 At around 8:30AM BST, I came online and restarted my investigation.
 
@@ -39,10 +40,10 @@ I used a GUI tool to inspect the Redis data, and I noticed that the data I had r
 
 I grabbed a copy of the script myself and took a look at it, and it simply downloaded a cryptocurrency miner and ran it. Upon investigation, it was clear that this crontab had never been run, and that the attack was supposed to play out as follows:
 
-* Search for compromisable Redis servers
-* Add a key with a crontab entry to run the script
-* Use the `CONFIG SET` command to overwrite the crontab with the database
-* Wait for the cryptocurrency miner to start
+- Search for compromisable Redis servers
+- Add a key with a crontab entry to run the script
+- Use the `CONFIG SET` command to overwrite the crontab with the database
+- Wait for the cryptocurrency miner to start
 
 The cron daemon I'm using performs very strict syntax checks and did not run the crontab - as soon as it realised there were invalid "entries" in the file, it errored out.
 
