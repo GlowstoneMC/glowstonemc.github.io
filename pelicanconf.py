@@ -7,7 +7,6 @@ SITEURL = ''
 
 PATH = 'content'
 
-PAGE_PATHS = ['']
 PAGE_URL = '{slug}/'
 PAGE_SAVE_AS = '{slug}/index.html'
 
