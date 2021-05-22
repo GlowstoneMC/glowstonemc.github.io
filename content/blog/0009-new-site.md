@@ -1,5 +1,6 @@
 title: New Site (Beta)
 date: 2017-06-20 12:57
+category: news
 
 Hello, fellow Glowstone... ers...?
 

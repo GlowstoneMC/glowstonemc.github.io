@@ -118,8 +118,11 @@
                     Latest news:
                 </strong>
                 <span id="announcements-titles">
-                    {% for article in articles_page.object_list %}
+                    {% for article in articles_page.object_list[:3] %}
                     <a class="announcement-link" target="_blank" href="{{ article.url }}">{{article.title}}</a>
+                    {%- if not loop.last -%}
+                        ,
+                    {%- endif -%}
                     {% else %}
                     <span class="announcement-link">No news posts found.</span>
                     {% endfor %}

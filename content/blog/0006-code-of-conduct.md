@@ -1,5 +1,6 @@
 title: New Code of Conduct
 date: 2017-05-02 21:17
+category: news
 
 Hello, as part of [our initiative](https://forums.glowstone.net/topic/58/the-glowstone-project) to improve the Glowstone Project, we've released [our first draft](https://github.com/GlowstoneMC/Glowstone/blob/9ff0716cce4f30f5c174d319f19681c49dbfecb5/CODE_OF_CONDUCT.md) of our new Code of Conduct. I personally feel that we have outgrown our previous code of conduct, and I'm happy for it. Hopefully this new code of conduct will help grow our community even further and will help foster better and more productive discussion here at Glowstone.
 
