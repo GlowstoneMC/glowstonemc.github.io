@@ -1,5 +1,6 @@
 title: We now have a CLA
 date: 2017-06-24 17:37
+category: news
 
 This is an announcement to let everyone know that we have come up with a CLA, otherwise known as a Contributor License Agreement. It's something we've been thinking about doing for a while, but decided that it deserved extra attention in light of [the swift movement on Bountysource](https://www.bountysource.com/issues/40545454-185-completing-entities-in-glowstone).
 

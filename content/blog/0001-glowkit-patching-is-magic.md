@@ -1,5 +1,6 @@
 title: My Little Glowkit: Patching Is Magic
 date: 2016-06-30 14:07
+category: news
 
 As some of you may know, recently, [Glowkit](https://github.com/GlowstoneMC/Glowkit) has moved to a patch-based system. We feel that it's going to be far easier to work with Glowkit on a development and compilation basis by adopting this method, and it also allows us to base upon much more recent Bukkit forks - such as the one maintained as part of PaperSpigot.
 

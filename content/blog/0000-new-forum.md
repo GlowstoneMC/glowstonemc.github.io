@@ -1,5 +1,6 @@
 title: New forum
 date: 2016-06-05 16:05
+category: news
 
 Yep, that's right. We've moved from Flarum.
 
