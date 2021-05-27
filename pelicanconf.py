@@ -7,6 +7,7 @@ SITEURL = ''
 
 PATH = 'content'
 
+INDEX_SAVE_AS = 'news.html'
 PAGE_URL = '{slug}/'
 PAGE_SAVE_AS = '{slug}/index.html'
 
