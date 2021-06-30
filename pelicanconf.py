@@ -27,8 +27,8 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-DIRECT_TEMPLATES = ['index', 'news', 'authors', 'categories', 'tags', 'archives']
-PAGINATED_TEMPLATES = {'index': None, 'news': None, 'tag': None, 'category': None, 'author': None}
+DIRECT_TEMPLATES = ['index', '404', 'news', 'authors', 'categories', 'tags', 'archives']
+PAGINATED_TEMPLATES = {'news': None, 'tag': None, 'category': None, 'author': None}
 
 THEME = "theme"
 

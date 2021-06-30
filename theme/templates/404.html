@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Not Found{% endblock title %}
+{% block content %}
+
+<section class="section">
+    <div class="container">
+        <article class="message is-primary" style="margin-left: 15%; margin-right: 15%;">
+            <div class="message-header">
+                <p>Error 404 (Not Found)</p>
+            </div>
+            <div class="message-body">
+                <p>Unfortunately, it seems like we weren't able to find that page.</p>
+                <p>Perhaps you'd like to try again <a href="/">from the homepage</a>?</p>
+            </div>
+        </article>
+    </div>
+</section>
+
+{% include 'sponsors.html' %}
+
+{% endblock content %}

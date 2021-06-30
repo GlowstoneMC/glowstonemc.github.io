@@ -1,5 +1,8 @@
 {% extends "base.html" %}
 {% block title %}News{% endblock title %}
+{% block extrahead %}
+<link rel="stylesheet" href="/{{THEME_STATIC_DIR}}/css/news_view.css">
+{% endblock extrahead %}
 {% block content %}
 <nav class="nav has-shadow" style="padding-left: 1%">
     <div class="container">
