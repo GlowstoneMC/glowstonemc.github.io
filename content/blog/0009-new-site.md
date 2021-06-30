@@ -1,6 +1,8 @@
 title: New Site (Beta)
 date: 2017-06-20 12:57
 category: news
+tags: blog
+author: gdude2002
 
 Hello, fellow Glowstone... ers...?
 

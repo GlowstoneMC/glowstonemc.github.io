@@ -1,6 +1,8 @@
 title: Glowstone Update - 11
 date: 2017-01-31 12:00
-category: updates
+category: news
+tags: updates
+author: mastercoms
 
 Hello, welcome back to one of these updates on what we've been up to with the Glowstone project!
 

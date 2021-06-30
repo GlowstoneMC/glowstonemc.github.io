@@ -1,6 +1,8 @@
 title: New forum
 date: 2016-06-05 16:05
 category: news
+tags: blog
+author: gdude2002
 
 Yep, that's right. We've moved from Flarum.
 

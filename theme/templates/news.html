@@ -1,23 +1,66 @@
 {% extends "base.html" %}
 {% block title %}News{% endblock title %}
 {% block content %}
-<ol id="post-list">
-{% for article in articles_page.object_list %}
-        <li><article class="hentry">
-                <header> <h2 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2> </header>
-                <footer class="post-info">
-                    <time class="published" datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }} </time>
-                    <address class="vcard author">By
+<nav class="nav has-shadow" style="padding-left: 1%">
+    <div class="container">
+        <div class="nav-left">
+            <span class="nav-item">Latest news:</span>
+            {% for article in articles_page.object_list[:3] %}
+            <a class="nav-item is-tab" href="{{ article.url }}">{{article.title}}</a>
+            {% else %}
+            <span class="nav-item">No news found</span>
+            {% endfor %}
+        </div>
+    </div>
+</nav>
+<section class="section">
+    <div class="container">
+        <a href="/feeds" class="button is-primary is-pulled-right news-action-button">
+            <span class="icon">
+                <i class="fa fa-rss"></i>
+            </span>
+        </a>
+
+        <h1 class="title">
+            News
+        </h1>
+
+        {% if articles_page.has_other_pages() %}
+            {% include 'pagination.html' %}
+        {% endif %}
+
+        <br>
+
+        {% for article in articles_page.object_list %}
+        <div class="box news-view content gallery">
+            <div class="news-title-section">
+                <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">
+                    <h1 class="news-title" style="display: inline">
+                        {{ article.title }}
+                    </h1>
+                </a>
+                <br>
+                <span class="news-subtitle" style="display: inline" class="title is-3">
+                    <time datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }} </time>
+                    &nbsp;&mdash;&nbsp;
+                    by
                     {% for author in article.authors %}
-                        <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
+                    {{ author }}
                     {% endfor %}
-                    </address>
-                </footer><!-- /.post-info -->
-                <div class="entry-content"> {{ article.summary }} </div><!-- /.entry-content -->
-        </article></li>
-{% endfor %}
-</ol><!-- /#posts-list -->
-{% if articles_page.has_other_pages() %}
-    {% include 'pagination.html' %}
-{% endif %}
+                </span>
+            </div>
+            <hr>
+            <div class="entry-content"> {{ article.summary }} </div><!-- /.entry-content -->
+        </div>
+        {% else %}
+        <h2 class="subtitle">No news posts were found.</h2>
+        {% endfor %}
+        {% if articles_page.has_other_pages() %}
+            {% include 'pagination.html' %}
+        {% endif %}
+    </div>
+</section>
+
+{% include 'sponsors.html' %}
+
 {% endblock content %}

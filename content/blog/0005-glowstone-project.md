@@ -1,6 +1,8 @@
 title: The Glowstone Project
 date: 2017-04-26 15:32
 category: news
+tags: blog
+author: mastercoms
 
 Hi. You've probably seen countless announcements about all the projects under the Glowstone family, like the Glowstone server, Glowkit and more, but we've never really talked about the project as a whole. This is mostly because we've been focusing on polishing and advancing Glowstone in terms of code, and not in terms of community.
 

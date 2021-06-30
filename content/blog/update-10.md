@@ -1,6 +1,8 @@
 title: This Month in Glowstone - 10
 date: 2016-10-16 12:00
-category: updates
+category: news
+tags: updates
+author: mastercoms
 
 Wow, already month 10. I can't believe it! *Wait*, what's that? We were a weekly blog before? No, that can't be true, we only have monthly blog posts on record. You must have gone crazy.
 

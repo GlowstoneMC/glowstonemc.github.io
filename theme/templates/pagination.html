@@ -1,15 +1,54 @@
 {% if DEFAULT_PAGINATION %}
 {% set first_page = articles_paginator.page(1) %}
 {% set last_page = articles_paginator.page(articles_paginator.num_pages) %}
-<p class="paginator">
+<nav class="pagination is-centered">
     {% if articles_page.has_previous() %}
-        <a href="{{ SITEURL }}/{{ first_page.url }}">&#8647;</a>
-        <a href="{{ SITEURL }}/{{ articles_previous_page.url }}">&laquo;</a>
+        <a class="pagination-previous" href="{{ SITEURL }}/{{ articles_previous_page.url }}">Newer posts</a>
+    {% else %}
+        <a class="pagination-previous" disabled>Newer posts</a>
     {% endif %}
-    Page {{ articles_page.number }} / {{ articles_paginator.num_pages }}
     {% if articles_page.has_next() %}
-        <a href="{{ SITEURL }}/{{ articles_next_page.url }}">&raquo;</a>
-        <a href="{{ SITEURL }}/{{ last_page.url }}">&#8649;</a>
+        <a class="pagination-next" href="{{ SITEURL }}/{{ articles_next_page.url }}">Older posts</a>
+    {% else %}
+        <a class="pagination-next" disabled>Older posts</a>
     {% endif %}
-</p>
+    <ul class="pagination-list">
+        {% if articles_page.number > 1 %}
+        <li>
+            <a class="pagination-link" href="{{ SITEURL }}/{{ first_page.url }}">1</a>
+        </li>
+        {% endif %}
+        {% if articles_page.number > 2 %}
+        <li>
+            <span class="pagination-ellipsis">&hellip;</span>
+        </li>
+        {% endif %}
+    
+        {% if articles_page.number - 1 > 1 %}
+        <li>
+            <a class="pagination-link" href="{{ SITEURL }}/{{ articles_paginator.page(articles_page.number - 1).url }}">{{articles_page.number - 1}}</a>
+        </li>
+        {% endif %}
+        <li>
+            <a class="pagination-link is-current">{{ articles_page.number }}</a>
+        </li>
+        {% if articles_page.number + 1 < articles_paginator.num_pages %}
+        <li>
+            <a class="pagination-link" href="{{ SITEURL }}/{{ articles_paginator.page(articles_page.number + 1).url }}">{{articles_page.number + 1}}</a>
+        </li>
+        {% endif %}
+    
+        
+        {% if articles_page.number < articles_paginator.num_pages - 1 %}
+        <li>
+            <span class="pagination-ellipsis">&hellip;</span>
+        </li>
+        {% endif %}
+        {% if articles_page.number < articles_paginator.num_pages %}
+        <li>
+            <a class="pagination-link" href="{{ SITEURL }}/{{ last_page.url }}">{{articles_paginator.num_pages}}</a>
+        </li>
+        {% endif %}
+    </ul>
+</nav>
 {% endif %}

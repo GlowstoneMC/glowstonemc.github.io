@@ -1,6 +1,8 @@
 title: About Sponge...
 date: 2017-01-31 21:06
 category: news
+tags: blog
+author: mastercoms
 
 EDIT: A lot has changed since this blog post, both in the goals of Glowstone, and Sponge's API in version 8. We aren't completely ruling out the possibility of using Sponge, and this post's strong language does not reflect the sentiment of the team.
 
