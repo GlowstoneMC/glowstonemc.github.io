@@ -11,6 +11,10 @@
     color: #ddd !important;
 }
 
+.news-view .is-preview img {
+    float: none;
+}
+
 .is-fanart {
     padding: 0 !important;
 }
