@@ -60,7 +60,7 @@
 
                 <div class="nav-right">
                     <span class="nav-item">
-                        {% if output_file == "feeds.html" %}
+                        {% if output_file == "feeds/index.html" %}
                         <a class="button is-light" href="/feeds" title="Feeds">
                         {% else %}
                         <a class="button is-light is-outlined" href="/feeds" title="Feeds">
@@ -88,16 +88,28 @@
                 {% endif %}
                     <a href="/">Home</a>
                 </li>
+                {% if output_file == "news.html" %}
+                <li class="is-active">
+                {% else %}
                 <li>
+                {% endif %}
                     <a href="/news">News</a>
                 </li>
+                {% if output_file == "community/index.html" %}
+                <li class="is-active">
+                {% else %}
                 <li>
+                {% endif %}
                     <a href="/community">Community</a>
                 </li>
             </ul>
 
             <ul class="is-right">
+                {% if output_file == "docs/index.html" %}
+                <li class="is-active">
+                {% else %}
                 <li>
+                {% endif %}
                     <a href="/docs">Docs</a>
                 </li>
                 <li>

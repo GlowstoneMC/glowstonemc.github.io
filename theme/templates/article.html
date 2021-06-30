@@ -22,6 +22,18 @@
 {% endblock %}
 
 {% block content %}
+<nav class="nav has-shadow" style="padding-left: 1%">
+  <div class="container">
+    <div class="nav-left">
+      <span class="nav-item">Latest news:</span>
+      {% for article in articles[:3] %}
+      <a class="nav-item is-tab" href="{{ article.url }}">{{article.title}}</a>
+      {% else %}
+      <span class="nav-item">No news found</span>
+      {% endfor %}
+    </div>
+  </div>
+</nav>
 <section class="section">
   <div class="container">
     <p class="field">
