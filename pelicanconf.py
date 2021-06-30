@@ -17,7 +17,7 @@ ARTICLE_URL = 'news/{slug}/'
 ARTICLE_SAVE_AS = 'news/{slug}/index.html'
 
 STATIC_PATHS = ['images/favicon.ico', 'jd', 'extra/CNAME']
-EXTRA_PATH_METADATA = {'images/favicon.ico': {'path': 'favicon.ico'},}
+EXTRA_PATH_METADATA = {'images/favicon.ico': {'path': 'favicon.ico'}, 'extra/CNAME': {'path': 'CNAME'}, 'extra/CNAME': {'path': 'CNAME'},}
 
 TIMEZONE = 'UTC'
 
