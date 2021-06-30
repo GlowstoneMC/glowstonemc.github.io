@@ -5,4 +5,5 @@
 # generated files
 /output
 /.venv
+/cache
 __pycache__/

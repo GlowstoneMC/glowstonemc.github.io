@@ -13,6 +13,7 @@ from pelican import main as pelican_main
 from pelican.server import ComplexHTTPRequestHandler, RootedHTTPServer
 from pelican.settings import DEFAULT_CONFIG, get_settings_from_file
 
+OPEN_BROWSER_ON_SERVE = True
 SETTINGS_FILE_BASE = 'pelicanconf.py'
 SETTINGS = {}
 SETTINGS.update(DEFAULT_CONFIG)
@@ -66,6 +67,11 @@ def serve(c):
         (CONFIG['host'], CONFIG['port']),
         ComplexHTTPRequestHandler)
 
+    if OPEN_BROWSER_ON_SERVE:
+        # Open site in default browser
+        import webbrowser
+        webbrowser.open("http://{host}:{port}".format(**CONFIG))
+
     sys.stderr.write('Serving at {host}:{port} ...\n'.format(**CONFIG))
     server.serve_forever()
 
@@ -84,25 +90,38 @@ def preview(c):
 def livereload(c):
     """Automatically reload browser tab upon file modification."""
     from livereload import Server
-    build(c)
+
+    def cached_build():
+        cmd = '-s {settings_base} -e CACHE_CONTENT=True LOAD_CONTENT_CACHE=True'
+        pelican_run(cmd.format(**CONFIG))
+
+    cached_build()
     server = Server()
-    # Watch the base settings file
-    server.watch(CONFIG['settings_base'], lambda: build(c))
-    # Watch content source files
+    theme_path = SETTINGS['THEME']
+    watched_globs = [
+        CONFIG['settings_base'],
+        '{}/templates/**/*.html'.format(theme_path),
+    ]
+
     content_file_extensions = ['.md', '.rst']
     for extension in content_file_extensions:
-        content_blob = '{0}/**/*{1}'.format(SETTINGS['PATH'], extension)
-        server.watch(content_blob, lambda: build(c))
-    # Watch the theme's templates and static assets
-    theme_path = SETTINGS['THEME']
-    server.watch('{}/templates/*.html'.format(theme_path), lambda: build(c))
+        content_glob = '{0}/**/*{1}'.format(SETTINGS['PATH'], extension)
+        watched_globs.append(content_glob)
+
     static_file_extensions = ['.css', '.js']
     for extension in static_file_extensions:
-        static_file = '{0}/static/**/*{1}'.format(theme_path, extension)
-        server.watch(static_file, lambda: build(c))
-    # Serve output path on configured host and port
-    server.serve(host=CONFIG['host'], port=CONFIG['port'], root=CONFIG['deploy_path'])
+        static_file_glob = '{0}/static/**/*{1}'.format(theme_path, extension)
+        watched_globs.append(static_file_glob)
 
+    for glob in watched_globs:
+        server.watch(glob, cached_build)
+
+    if OPEN_BROWSER_ON_SERVE:
+        # Open site in default browser
+        import webbrowser
+        webbrowser.open("http://{host}:{port}".format(**CONFIG))
+
+    server.serve(host=CONFIG['host'], port=CONFIG['port'], root=CONFIG['deploy_path'])
 
 @task
 def publish(c):

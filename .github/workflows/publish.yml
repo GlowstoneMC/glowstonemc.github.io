@@ -35,4 +35,4 @@ jobs:
         pipenv sync
     - name: Build and publish
       run: |
-        pipenv run invoke gh_pages
+        pipenv run invoke gh-pages
