@@ -1,3 +1,27 @@
+* {
+  scrollbar-color: #e8970b #363636;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar-track {
+  background: #363636;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e8970b;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+::selection {
+  background: rgba(232, 151, 1, 0.5);
+  color: #000;
+}
+
 .is-blurple .message-header {
     background-color: #7289DA !important;
     color: white !important;
