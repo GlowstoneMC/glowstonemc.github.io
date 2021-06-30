@@ -3,6 +3,7 @@ date: 2016-07-31 12:00
 category: news
 tags: updates
 author: mastercoms
+email: mastercoms@tuta.io
 
 Yep. We are now going to have one of those weekly blog posts where we spew a bunch of numbers at you: 33 commits. 809 additions. 304 deletions. But we have one special number to throw at you this week: 1.10.2. That's the latest version of Minecraft and now it's also the latest version of Minecraft we support, thanks to the hard work and patience of momo. This PR was actually practically ready a month ago but due to good reasons it was delayed until 2 days ago.
 And here's another milestone/meaningless number: with all the commit spam we've done over the years, Glowstone has reached 1,999 commits. Finally!

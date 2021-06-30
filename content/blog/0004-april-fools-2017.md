@@ -3,6 +3,7 @@ date: 2017-04-01 21:42
 category: news
 tags: blog
 author: aramperes
+email: momothereal.mc@gmail.com
 
 Hello everyone! So we've heard your critism and concerns about no longer planning to support Sponge on our server platform. Well, turn that frown upside down, because we are now dumping Bukkit plugins in favor of Sponge plugins!
 

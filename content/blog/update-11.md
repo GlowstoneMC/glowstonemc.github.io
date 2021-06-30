@@ -3,6 +3,7 @@ date: 2017-01-31 12:00
 category: news
 tags: updates
 author: mastercoms
+email: mastercoms@tuta.io
 
 Hello, welcome back to one of these updates on what we've been up to with the Glowstone project!
 

@@ -3,6 +3,7 @@ date: 2017-06-20 12:57
 category: news
 tags: blog
 author: gdude2002
+email: gdude2002@gmail.com
 
 Hello, fellow Glowstone... ers...?
 

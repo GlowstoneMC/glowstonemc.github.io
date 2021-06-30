@@ -3,6 +3,7 @@ date: 2017-12-05 5:25
 category: news
 tags: blog
 author: aramperes
+email: momothereal.mc@gmail.com
 
 On Sunday, we updated Archiva (our Maven repository) to a more recent version. During the upgrade, we unfortunately lost all our artifacts stored on the server. There was a major downtime in which we attempted to fix storage and deployment, but the artifacts could not be recovered.
 

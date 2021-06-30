@@ -11,6 +11,7 @@ typogrify = "*"
 ghp-import = "*"
 invoke = "*"
 livereload = "*"
+pelican-avatar = "*"
 
 [requires]
 python_version = "3.9"

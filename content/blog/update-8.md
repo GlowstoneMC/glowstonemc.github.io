@@ -3,6 +3,7 @@ date: 2016-09-18 12:00
 category: news
 tags: updates
 author: mastercoms
+email: mastercoms@tuta.io
 
 What comes after 2? 8, because we're bad at counting, except when it comes to commits. In this month (which is roughly a week), we've had [86 commits](https://github.com/GlowstoneMC/Glowstone/compare/14569fae2a5122af730c90985adb3e1c171c02c7...master) on master. Those commits added 1,901 lines and removed 794. You can read through all of those lines, or you can read these lines:
 

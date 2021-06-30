@@ -51,6 +51,9 @@
     <br>
     <div class="box news-view content gallery">
       <div class="news-title-section">
+        <div class="is-pulled-right" style="display: block;">
+          <img src="{{ article.author_avatar }}" class="box image is-32x32" title="Posted by {{ article.authors[0] }}" />
+        </div>
         <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">
           <h1 class="news-title" style="display: inline">
             {{ article.title }}
@@ -59,11 +62,6 @@
         <br>
         <span class="news-subtitle" style="display: inline" class="title is-3">
           <time datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }} </time>
-          &nbsp;&mdash;&nbsp;
-          by
-          {% for author in article.authors %}
-          {{ author }}
-          {% endfor %}
         </span>
       </div>
       <hr>
