@@ -4,7 +4,20 @@
     {% block head %}
     <title>{% block title %}{% endblock title %} &middot; {{ SITENAME }}</title>
     <meta charset="utf-8"/>
+    <meta name="theme-color" content="#e8970b">
     <meta name="generator" content="Pelican"/>
+    <meta property="og:site_name" content="{{ SITENAME }}">
+    <meta property="og:title" content="{{ self.title() }}">
+    <meta property="og:description" content="{% block description %}{{SITESUBTITLE}}{% endblock description %}">
+    <meta name="twitter:description" content="{{ self.description() }}">
+    <meta name="description" content="{{ self.description() }}">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@GlowstoneMC">
+    <meta name="twitter:creator" content="@GlowstoneMC">
+    <meta property="og:image" content="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/glowstone-logo-colour.png">
+    <meta itemprop="image" content="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/glowstone-logo-colour.png">
+    <meta name="twitter:image" content="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/glowstone-logo-colour.png">
     {% if FEED_ALL_ATOM %}
     <link href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}"
           type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Full Atom Feed"/>
@@ -39,10 +52,9 @@
     {% endif %}
     {% endblock head %}
     <link rel="stylesheet" href="/{{THEME_STATIC_DIR}}/css/bulma.css"/>
-    <link rel="stylesheet" href="/{{THEME_STATIC_DIR}}/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
     <link rel="stylesheet" href="/{{THEME_STATIC_DIR}}/css/custom.css">
-    <link rel="stylesheet" href="/{{THEME_STATIC_DIR}}/css/pygments-colourful.css">
-    <link rel="stylesheet" href="/{{THEME_STATIC_DIR}}/css/baguettebox.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/baguettebox.js@1.11.1/dist/baguetteBox.min.css" integrity="sha256-cLMYWYYutHkt+KpNqjg7NVkYSQ+E2VbrXsEvOqU7mL0=" crossorigin="anonymous">
     {% block extrahead %}
     {% endblock extrahead %}
 </head>
@@ -142,7 +154,7 @@
         </div>
     </div>
 </footer>
-<script src="/{{THEME_STATIC_DIR}}/js/baguettebox.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/baguettebox.js@1.11.1/dist/baguetteBox.min.js" integrity="sha256-ULQV01VS9LCI2ePpLsmka+W0mawFpEA0rtxnezUj4A4=" crossorigin="anonymous"></script>
 <script type="text/javascript">
     baguetteBox.run(".gallery", {
         animation: "fadeIn",

@@ -3,6 +3,10 @@
 
 {% block title %}{{ page.title|striptags }}{%endblock%}
 
+{% if page.description %}
+{% block description %}{{page.description}}{% endblock description %}
+{% endif %}
+
 {% block head %}
   {{ super() }}
 

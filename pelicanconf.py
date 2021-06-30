@@ -3,6 +3,7 @@
 
 AUTHOR = 'Glowstone Organization'
 SITENAME = 'Glowstone'
+SITESUBTITLE = 'Minecraft\'s future is bright'
 SITEURL = ''
 
 PATH = 'content'

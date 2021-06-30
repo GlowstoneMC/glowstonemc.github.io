@@ -1,4 +1,8 @@
+# IDEs
 /.idea
+/.vscode
+
+# generated files
 /output
 /.venv
 __pycache__/
