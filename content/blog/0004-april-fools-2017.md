@@ -14,4 +14,4 @@ Bukkit? Gross! Use GlowSpone now and never go back to Spigot or any of its nasty
 Thank you for your continuous support,
 The GlowSpone team.
 
-**Edit: this was our April Fools post for 2017, we are not planning to support Sponge or to drop Bukkit anytime soon. Read more [here](https://forums.glowstone.net/topic/45/about-sponge).**
+**Edit: this was our April Fools post for 2017, we are not planning to support Sponge or to drop Bukkit anytime soon. Read more [here](/news/about-sponge/).**

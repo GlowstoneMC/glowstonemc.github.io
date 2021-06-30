@@ -14,7 +14,7 @@ In short, by signing the Glowstone CLA, you confirm that:
 - Anyone can use your contributions anywhere, for free, forever
 - Your contributions do not infringe on anyone else's rights, including Mojang's
 
-If you'd like to read the CLA yourself, it's available [here](https://beta.glowstone.net/cla).
+If you'd like to read the CLA yourself, it's available [here](/cla).
 
 Note that we are not requiring previous contributors to sign the CLA, but if you do sign it, it applies retroactively.
 
