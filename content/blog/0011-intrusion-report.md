@@ -4,6 +4,7 @@ category: news
 tags: blog
 author: gdude2002
 email: gdude2002@gmail.com
+alias: /news/4/index.html
 
 This is a post to notify everyone of a possible intrusion relating to the forum. I have provided a full report in an effort to be as transparent as possible.
 

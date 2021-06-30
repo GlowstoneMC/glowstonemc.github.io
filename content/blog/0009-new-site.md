@@ -4,6 +4,7 @@ category: news
 tags: blog
 author: gdude2002
 email: gdude2002@gmail.com
+alias: /news/1/index.html
 
 Hello, fellow Glowstone... ers...?
 

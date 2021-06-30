@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 
+from pelican.plugins import alias
+
 AUTHOR = 'Glowstone Organization'
 SITENAME = 'Glowstone'
 SITESUBTITLE = 'Minecraft\'s future is bright'
@@ -15,7 +17,7 @@ ARTICLE_URL = 'news/{slug}/'
 ARTICLE_SAVE_AS = 'news/{slug}/index.html'
 
 STATIC_PATHS = ['images/favicon.ico', 'jd', 'extra/CNAME']
-EXTRA_PATH_METADATA = {'images/favicon.ico': {'path': 'favicon.ico'}, 'extra/CNAME': {'path': 'CNAME'},}
+EXTRA_PATH_METADATA = {'images/favicon.ico': {'path': 'favicon.ico'},}
 
 TIMEZONE = 'UTC'
 

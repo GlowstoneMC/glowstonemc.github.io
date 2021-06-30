@@ -4,6 +4,7 @@ category: news
 tags: blog
 author: aramperes
 email: momothereal.mc@gmail.com
+alias: /news/14/index.html
 
 Today, we are putting in place Glowstone's new [Cheating and Illegal Behavior Policy](https://github.com/GlowstoneMC/Glowstone/blob/dev/docs/CHEATING_AND_ILLEGAL_BEHAVIOR_POLICY.md). This is an effort to engage ourselves in our position against illegal piracy and behavior in the context of our project.
 

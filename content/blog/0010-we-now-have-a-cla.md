@@ -4,6 +4,7 @@ category: news
 tags: blog
 author: gdude2002
 email: gdude2002@gmail.com
+alias: /news/2/index.html
 
 This is an announcement to let everyone know that we have come up with a CLA, otherwise known as a Contributor License Agreement. It's something we've been thinking about doing for a while, but decided that it deserved extra attention in light of [the swift movement on Bountysource](https://www.bountysource.com/issues/40545454-185-completing-entities-in-glowstone).
 
