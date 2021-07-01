@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 
-from pelican.plugins import alias
+from pelican.plugins import alias, issues
 
 AUTHOR = 'Glowstone Organization'
 SITENAME = 'Glowstone'
