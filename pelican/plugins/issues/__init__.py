@@ -4,7 +4,7 @@ import re
 from pelican import signals
 
 
-ISSUE_REGEX = re.compile(r"([\s(])(#[\d]+)([\s)])")
+ISSUE_REGEX = re.compile(r"([\s(])(#[\d]+)([\s),])")
 ISSUE_URL = "https://github.com/GlowstoneMC/Glowstone/issues/{}"
 ISSUE_HTML = """{}<a href="{}">{}</a>{}"""
 
