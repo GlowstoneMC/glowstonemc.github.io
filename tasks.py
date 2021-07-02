@@ -101,6 +101,7 @@ def livereload(c):
     watched_globs = [
         CONFIG['settings_base'],
         '{}/templates/**/*.html'.format(theme_path),
+        'content/pages/*.html'
     ]
 
     content_file_extensions = ['.md', '.rst']
