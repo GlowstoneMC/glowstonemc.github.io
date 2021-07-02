@@ -10,7 +10,7 @@
         <div class="nav-left">
             <span class="nav-item">Latest news:</span>
             {% for article in articles[:3] %}
-            <a class="nav-item is-tab" href="{{ article.url }}">{{article.title}}</a>
+            <a class="nav-item is-tab" href="/{{ article.url }}">{{article.title}}</a>
             {% else %}
             <span class="nav-item">No news found</span>
             {% endfor %}
