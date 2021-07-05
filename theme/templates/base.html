@@ -61,19 +61,19 @@
 </head>
 
 <body>
+
+    
 <header id="banner" class="hero is-primary">
         <div class="hero-head">
         <div class="container">
-            <nav class="nav">
-                <div class="nav-left" style="min-width: 150px;">
-                    <span class="nav-item">
-                        <a href="/" title="Home" style="margin-top: 0.5rem;">
-                            <img alt="Glowstone" src="/{{THEME_STATIC_DIR}}/images/glowstone-text.png" />
-                        </a>
-                    </span>
+            <nav class="navbar is-transparent" role="navigation" aria-label="brand bar">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="/" title="Home">
+                        <img src="/{{THEME_STATIC_DIR}}/images/glowstone-text.png" alt="glowstone" width="112" height="28">
+                    </a>
                 </div>
 
-                <div class="nav-right">
+                <div class="navbar-end">
                     <span class="nav-item">
                         {% if output_file == "feeds/index.html" %}
                         <a class="button is-light" href="/feeds" title="Feeds">

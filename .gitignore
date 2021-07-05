@@ -7,3 +7,4 @@
 /.venv
 /cache
 __pycache__/
+/theme/static/css/bulma.css

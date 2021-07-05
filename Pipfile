@@ -12,6 +12,7 @@ ghp-import = "*"
 invoke = "*"
 livereload = "*"
 pelican-avatar = "*"
+libsass = "*"
 
 [requires]
 python_version = "3.9"

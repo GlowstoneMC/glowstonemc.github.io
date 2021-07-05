@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+$primary: #e8970b;
+$link: $primary;
+
+.nav {
+  align-items: stretch;
+  background-color: white;
+  display: flex;
+  height: 3.25rem;
+  position: relative;
+  text-align: center;
+  z-index: 10; }
+  .nav > .container {
+    align-items: stretch;
+    display: flex;
+    min-height: 3.25rem;
+    width: 100%; }
+  .nav.has-shadow {
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1); }
+
+@import "../../../bulma/bulma.sass";

@@ -5,6 +5,9 @@ import shlex
 import shutil
 import sys
 import datetime
+import pathlib
+import sass
+import logging
 
 from invoke import task
 from invoke.main import program
@@ -88,16 +91,41 @@ def preview(c):
 
 @task
 def livereload(c):
+    logger = logging.getLogger('livereload')
     """Automatically reload browser tab upon file modification."""
     from livereload import Server
+
+    theme_path = SETTINGS['THEME']
+
+    def sass_build(changed=None):
+        if changed:
+            for path in changed:
+                stem = pathlib.Path(path).stem
+                try:
+                    css_str = sass.compile(filename=path, output_style='compressed')
+                    if css_str:
+                        with open(f'{theme_path}/static/css/{stem}.css', 'w') as f:
+                            f.write(css_str)
+                    else:
+                        logger.error(f'Unable to compile {path}')
+                except sass.CompileError as e:
+                    logger.error(str(e))
+        else:
+            sass.compile(dirname=(f'{theme_path}/static/sass', f'{theme_path}/static/css'), output_style='compressed')
 
     def cached_build():
         cmd = '-s {settings_base} -e CACHE_CONTENT=True LOAD_CONTENT_CACHE=True'
         pelican_run(cmd.format(**CONFIG))
 
+    sass_build()
     cached_build()
     server = Server()
-    theme_path = SETTINGS['THEME']
+
+    sass_file_extensions = ['.scss']
+    for extension in sass_file_extensions:
+        sass_glob = f'{theme_path}/static/**/*{extension}'
+        server.watch(sass_glob, sass_build)
+
     watched_globs = [
         CONFIG['settings_base'],
         '{}/templates/**/*.html'.format(theme_path),
