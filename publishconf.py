@@ -18,6 +18,9 @@ FEED_RSS  = 'feeds/rss/news'
 
 DELETE_OUTPUT_DIRECTORY = True
 
+STATIC_PATHS = ['images', 'jd', 'extra/favicon.ico', 'extra/CNAME']
+EXTRA_PATH_METADATA = {'extra/favicon.ico': {'path': 'favicon.ico'}, 'extra/CNAME': {'path': 'CNAME'},}
+
 # Following items are often useful when publishing
 
 #DISQUS_SITENAME = ""
