@@ -46,16 +46,19 @@ def clean(c):
 @task
 def build(c):
     """Build local version of site"""
+    global_sass_build()
     pelican_run('-s {settings_base}'.format(**CONFIG))
 
 @task
 def rebuild(c):
     """`build` with the delete switch"""
+    global_sass_build()
     pelican_run('-d -s {settings_base}'.format(**CONFIG))
 
 @task
 def regenerate(c):
     """Automatically regenerate site upon file modification"""
+    global_sass_build()
     pelican_run('-r -s {settings_base}'.format(**CONFIG))
 
 @task
@@ -87,6 +90,7 @@ def reserve(c):
 @task
 def preview(c):
     """Build production version of site"""
+    global_sass_build()
     pelican_run('-s {settings_publish}'.format(**CONFIG))
 
 @task
@@ -111,7 +115,7 @@ def livereload(c):
                 except sass.CompileError as e:
                     logger.error(str(e))
         else:
-            sass.compile(dirname=(f'{theme_path}/static/sass', f'{theme_path}/static/css'), output_style='compressed')
+            global_sass_build()
 
     def cached_build():
         cmd = '-s {settings_base} -e CACHE_CONTENT=True LOAD_CONTENT_CACHE=True'
@@ -159,6 +163,12 @@ def gh_pages(c):
     c.run('ghp-import -nfpb {github_pages_branch} '
           '-m {commit_message} '
           '{deploy_path}'.format(**CONFIG))
+
+
+def global_sass_build():
+    theme_path = SETTINGS['THEME']
+    sass.compile(dirname=(f'{theme_path}/static/sass', f'{theme_path}/static/css'), output_style='compressed')
+
 
 def pelican_run(cmd):
     cmd += ' ' + program.core.remainder  # allows to pass-through args to pelican
