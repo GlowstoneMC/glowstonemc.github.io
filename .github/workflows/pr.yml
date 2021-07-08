@@ -41,9 +41,6 @@ jobs:
       env:
         PELICAN_OUTPUT_PATH: 'output_base'
 
-    - name: Debug (base)
-      run: ls
-
     # Checkout and build files of a head ref.
     - uses: actions/checkout@v2
       with:
@@ -72,9 +69,6 @@ jobs:
         pipenv run invoke build
       env:
         PELICAN_OUTPUT_PATH: 'output_head'
-
-    - name: Debug (head)
-      run: ls
 
     # Capture page differences.
     - id: diffpages
