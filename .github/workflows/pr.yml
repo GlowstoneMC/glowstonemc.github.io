@@ -19,7 +19,7 @@ jobs:
         python-version: '3.x'
     - uses: actions/cache@v2
       id: cache-pipenv-base
-      name: pipenv cache
+      name: pipenv cache BASE
       with:
         path: |
           ~/.local/share/virtualenvs
@@ -52,7 +52,7 @@ jobs:
         python-version: '3.x'
     - uses: actions/cache@v2
       id: cache-pipenv-head
-      name: pipenv cache
+      name: pipenv cache head
       with:
         path: |
           ~/.local/share/virtualenvs
@@ -81,7 +81,7 @@ jobs:
       with:
         base-path: 'output_base'
         head-path: 'output_head'
-        pattern: '*.html'
+        pattern: '@(news/glowstone-202170/index.html|*.html|*/index.html)'
 
     - name: Upload Pages Diff
       uses: edunad/actions-image@v1.0.1

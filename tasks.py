@@ -95,7 +95,7 @@ def reserve(c):
 def preview(c):
     """Build production version of site"""
     global_sass_build()
-    pelican_run('-d -s {settings_publish} -e OUTPUT_PATH={deploy_path}'.format(**CONFIG))
+    pelican_run('-s {settings_publish} -e OUTPUT_PATH={deploy_path}'.format(**CONFIG))
 
 @task
 def livereload(c):
@@ -131,7 +131,7 @@ def livereload(c):
 
     sass_file_extensions = ['.scss']
     for extension in sass_file_extensions:
-        sass_glob = f'{theme_path}/static/**/*{extension}'
+        sass_glob = f'{theme_path}/sass/**/*{extension}'
         server.watch(sass_glob, sass_build)
 
     watched_globs = [
@@ -171,7 +171,7 @@ def gh_pages(c):
 
 def global_sass_build():
     theme_path = SETTINGS['THEME']
-    sass.compile(dirname=(f'{theme_path}/static/sass', f'{theme_path}/static/css'), output_style='compressed')
+    sass.compile(dirname=(f'{theme_path}/sass', f'{theme_path}/static/css'), output_style='compressed')
 
 
 def pelican_run(cmd):
