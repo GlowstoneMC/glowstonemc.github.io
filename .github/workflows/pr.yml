@@ -81,6 +81,7 @@ jobs:
       with:
         base-path: 'output_base'
         head-path: 'output_head'
+        pattern: '@(news/glowstone-202170/index.html|*.html|*/index.html)'
 
     - name: Upload Pages Diff
       uses: edunad/actions-image@v1.0.1
