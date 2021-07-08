@@ -18,7 +18,7 @@ jobs:
       with:
         python-version: '3.x'
     - uses: actions/cache@v2
-      id: cache-pipenv
+      id: cache-pipenv-base
       name: pipenv cache
       with:
         path: |
@@ -32,7 +32,7 @@ jobs:
         python -m pip install -U pip
         pip install -U pipenv
     - name: Install project dependencies
-      if: steps.cache-pipenv.outputs.cache-hit != 'true'
+      if: steps.cache-pipenv-base.outputs.cache-hit != 'true'
       run: |
         pipenv sync
     - name: Build
@@ -51,7 +51,7 @@ jobs:
       with:
         python-version: '3.x'
     - uses: actions/cache@v2
-      id: cache-pipenv
+      id: cache-pipenv-head
       name: pipenv cache
       with:
         path: |
@@ -65,7 +65,7 @@ jobs:
         python -m pip install -U pip
         pip install -U pipenv
     - name: Install project dependencies
-      if: steps.cache-pipenv.outputs.cache-hit != 'true'
+      if: steps.cache-pipenv-head.outputs.cache-hit != 'true'
       run: |
         pipenv sync
     - name: Build
