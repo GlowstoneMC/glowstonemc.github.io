@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Install system dependencies
+      run: apt-get install libxss1
     # Checkout and build files of a base ref.
     - uses: actions/checkout@v2
       with:
@@ -85,6 +87,6 @@ jobs:
     - name: Upload Pages Diff
       uses: edunad/actions-image@v1.0.1
       with:
-          path: '${{ steps.diffpages.outputs.path }}/**/*.jpg'
+          path: './${{ steps.diffpages.outputs.path }}/**/*.jpg'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           title: 'Pages Diff'
