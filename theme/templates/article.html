@@ -56,7 +56,7 @@
         <div class="is-pulled-right" style="display: block;">
           <img src="{{ article.author_avatar }}" class="box image is-32x32" title="Posted by {{ article.authors[0] }}" />
         </div>
-        <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">
+        <a href="/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">
           <h1 class="news-title" style="display: inline">
             {{ article.title }}
           </h1>
