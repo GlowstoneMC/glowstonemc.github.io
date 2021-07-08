@@ -1,0 +1,90 @@
+name: Pull Request
+
+on:
+  pull_request:
+
+jobs:
+  diff:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checkout and build files of a base ref.
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.pull_request.base.sha }}
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - uses: actions/cache@v2
+      id: cache-pipenv
+      name: pipenv cache
+      with:
+        path: |
+          ~/.local/share/virtualenvs
+          ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/Pipfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+    - name: Install dependencies
+      run: |
+        python -m pip install -U pip
+        pip install -U pipenv
+    - name: Install project dependencies
+      if: steps.cache-pipenv.outputs.cache-hit != 'true'
+      run: |
+        pipenv sync
+    - name: Build
+      run: |
+        pipenv run invoke preview
+      env:
+        PELICAN_OUTPUT_PATH: 'output_base'
+
+    # Checkout and build files of a head ref.
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
+        clean: false # Prevent removing files in 'output_base' folder.
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - uses: actions/cache@v2
+      id: cache-pipenv
+      name: pipenv cache
+      with:
+        path: |
+          ~/.local/share/virtualenvs
+          ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/Pipfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+    - name: Install dependencies
+      run: |
+        python -m pip install -U pip
+        pip install -U pipenv
+    - name: Install project dependencies
+      if: steps.cache-pipenv.outputs.cache-hit != 'true'
+      run: |
+        pipenv sync
+    - name: Build
+      run: |
+        pipenv run invoke preview
+      env:
+        PELICAN_OUTPUT_PATH: 'output_head'
+
+    # Capture page differences.
+    - id: diffpages
+      name: Diff Pages
+      uses: ssowonny/diff-pages-action@v1
+      with:
+        base-path: 'output_base'
+        head-path: 'output_head'
+
+    - name: Upload Pages Diff
+      uses: edunad/action-image@v1.0.0
+      with:
+          path: '${{ steps.diffpages.outputs.path }}/**/*.jpg'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          title: 'Pages Diff'

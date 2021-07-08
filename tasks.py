@@ -23,6 +23,10 @@ SETTINGS.update(DEFAULT_CONFIG)
 LOCAL_SETTINGS = get_settings_from_file(SETTINGS_FILE_BASE)
 SETTINGS.update(LOCAL_SETTINGS)
 
+env_path = os.environ.get('PELICAN_OUTPUT_PATH')
+if env_path is not None:
+    SETTINGS['OUTPUT_PATH'] = env_path
+
 CONFIG = {
     'settings_base': SETTINGS_FILE_BASE,
     'settings_publish': 'publishconf.py',
@@ -91,7 +95,7 @@ def reserve(c):
 def preview(c):
     """Build production version of site"""
     global_sass_build()
-    pelican_run('-s {settings_publish}'.format(**CONFIG))
+    pelican_run('-d -s {settings_publish}'.format(**CONFIG))
 
 @task
 def livereload(c):
