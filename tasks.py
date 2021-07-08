@@ -176,4 +176,5 @@ def global_sass_build():
 
 def pelican_run(cmd):
     cmd += ' ' + program.core.remainder  # allows to pass-through args to pelican
+    print("pelican " + cmd)
     pelican_main(shlex.split(cmd))
