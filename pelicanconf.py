@@ -23,7 +23,7 @@ ARTICLE_SAVE_AS = 'news/{slug}/index.html'
 
 STATIC_PATHS = ['images', 'extra/favicon.ico']
 EXTRA_PATH_METADATA = {'extra/favicon.ico': {'path': 'favicon.ico'},}
-IGNORE_FILES = ['.#*', 'jd', 'sass']
+IGNORE_FILES = ['.#*', 'jd']
 
 TIMEZONE = 'UTC'
 
