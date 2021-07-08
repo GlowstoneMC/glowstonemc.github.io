@@ -79,7 +79,7 @@ jobs:
     # Capture page differences.
     - id: diffpages
       name: Diff Pages
-      uses: ssowonny/diff-pages-action@v1.0.0
+      uses: mastercoms/diff-pages-action@v1.0.2
       with:
         base-path: 'output_base'
         head-path: 'output_head'
