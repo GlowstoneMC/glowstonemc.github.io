@@ -83,7 +83,7 @@ jobs:
         head-path: 'output_head'
 
     - name: Upload Pages Diff
-      uses: edunad/action-image@v1.0.0
+      uses: edunad/actions-image@v1.0.1
       with:
           path: '${{ steps.diffpages.outputs.path }}/**/*.jpg'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
