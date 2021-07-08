@@ -51,19 +51,19 @@ def clean(c):
 def build(c):
     """Build local version of site"""
     global_sass_build()
-    pelican_run('-s {settings_base}'.format(**CONFIG))
+    pelican_run('-s {settings_base} -e OUTPUT_PATH={deploy_path}'.format(**CONFIG))
 
 @task
 def rebuild(c):
     """`build` with the delete switch"""
     global_sass_build()
-    pelican_run('-d -s {settings_base}'.format(**CONFIG))
+    pelican_run('-d -s {settings_base} -e OUTPUT_PATH={deploy_path}'.format(**CONFIG))
 
 @task
 def regenerate(c):
     """Automatically regenerate site upon file modification"""
     global_sass_build()
-    pelican_run('-r -s {settings_base}'.format(**CONFIG))
+    pelican_run('-r -s {settings_base} -e OUTPUT_PATH={deploy_path}'.format(**CONFIG))
 
 @task
 def serve(c):
@@ -95,7 +95,7 @@ def reserve(c):
 def preview(c):
     """Build production version of site"""
     global_sass_build()
-    pelican_run('-d -s {settings_publish}'.format(**CONFIG))
+    pelican_run('-d -s {settings_publish} -e OUTPUT_PATH={deploy_path}'.format(**CONFIG))
 
 @task
 def livereload(c):
