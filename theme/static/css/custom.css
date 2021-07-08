@@ -39,28 +39,6 @@
     float: none;
 }
 
-.is-fanart {
-    padding: 0 !important;
-}
-
-.is-hidden-fanart {
-    border: 0 !important;
-    box-shadow: none !important;
-}
-
-.g-recaptcha {
-    margin-top: 1.5rem !important;
-    margin-bottom: 2rem !important;
-}
-
-.g-recaptcha div{
-    margin: auto;
-}
-
-.tabs ul li a {
-    border-radius: 0 !important;
-}
-
 .icon.is-danger {
     color: #ff3860;
 }
@@ -79,42 +57,6 @@
 
 .icon.is-dark {
     color: #363636;
-}
-
-th.is-primary {
-    background-color: #ffa000 !important;
-    color: white !important;
-}
-
-td.is-primary {
-    background-color: #ffa000 !important;
-    color: white !important;
-}
-
-th.is-grey {
-    background-color: #dbdbdb !important;
-}
-
-td.is-grey {
-    background-color: #dbdbdb !important;
-}
-
-#editor {
-    min-height: 20rem;
-}
-
-#editor-columns {
-    border-top: 1px solid black;
-    border-left: 1px solid black;
-}
-
-#editor-columns .column {
-    border-right: 1px solid black;
-    border-bottom: 1px solid black;
-}
-
-#publish-button.is-pulled-right {
-    margin-left: 1rem;
 }
 
 .message-body ul {
@@ -145,23 +87,12 @@ td.is-grey {
     margin-bottom: 2rem;
 }
 
-.mono {
-    font-family: monospace;
-}
-
 .announcements-front a {
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 .announcements-front a:hover {
-    color: blue;
-}
-
-.content pre {
-    padding: 0;
-}
-
-.latest-downloads {
+    color: blue !important;
 }
 
 .latest-downloads-group {
@@ -177,14 +108,4 @@ td.is-grey {
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;
     margin-right: 0.5rem;
-}
-
-@media screen and (max-width: 768px) {
-    #login-button-text { display: none }
-    #login-button { padding-right: 2px }
-}
-
-@media screen and (min-width: 769px), print {
-    #login-button-text { display: inline }
-    #login-button { padding-right: 12px }
 }

@@ -29,9 +29,6 @@ $link: $primary;
 .nav-left {
     justify-content: flex-start;
     white-space: nowrap;
-}
-
-.nav-left, .nav-right {
     -webkit-overflow-scrolling: touch;
     align-items: stretch;
     display: flex;
