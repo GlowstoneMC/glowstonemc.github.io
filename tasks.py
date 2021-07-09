@@ -5,6 +5,9 @@ import shlex
 import shutil
 import sys
 import datetime
+import pathlib
+import sass
+import logging
 
 from invoke import task
 from invoke.main import program
@@ -19,6 +22,10 @@ SETTINGS = {}
 SETTINGS.update(DEFAULT_CONFIG)
 LOCAL_SETTINGS = get_settings_from_file(SETTINGS_FILE_BASE)
 SETTINGS.update(LOCAL_SETTINGS)
+
+env_path = os.environ.get('PELICAN_OUTPUT_PATH')
+if env_path is not None:
+    SETTINGS['OUTPUT_PATH'] = env_path
 
 CONFIG = {
     'settings_base': SETTINGS_FILE_BASE,
@@ -43,17 +50,20 @@ def clean(c):
 @task
 def build(c):
     """Build local version of site"""
-    pelican_run('-s {settings_base}'.format(**CONFIG))
+    global_sass_build()
+    pelican_run('-s {settings_base} -e OUTPUT_PATH={deploy_path}'.format(**CONFIG))
 
 @task
 def rebuild(c):
     """`build` with the delete switch"""
-    pelican_run('-d -s {settings_base}'.format(**CONFIG))
+    global_sass_build()
+    pelican_run('-d -s {settings_base} -e OUTPUT_PATH={deploy_path}'.format(**CONFIG))
 
 @task
 def regenerate(c):
     """Automatically regenerate site upon file modification"""
-    pelican_run('-r -s {settings_base}'.format(**CONFIG))
+    global_sass_build()
+    pelican_run('-r -s {settings_base} -e OUTPUT_PATH={deploy_path}'.format(**CONFIG))
 
 @task
 def serve(c):
@@ -84,20 +94,46 @@ def reserve(c):
 @task
 def preview(c):
     """Build production version of site"""
-    pelican_run('-s {settings_publish}'.format(**CONFIG))
+    global_sass_build()
+    pelican_run('-s {settings_publish} -e OUTPUT_PATH={deploy_path}'.format(**CONFIG))
 
 @task
 def livereload(c):
+    logger = logging.getLogger('livereload')
     """Automatically reload browser tab upon file modification."""
     from livereload import Server
+
+    theme_path = SETTINGS['THEME']
+
+    def sass_build(changed=None):
+        if changed:
+            for path in changed:
+                stem = pathlib.Path(path).stem
+                try:
+                    css_str = sass.compile(filename=path, output_style='compressed')
+                    if css_str:
+                        with open(f'{theme_path}/static/css/{stem}.css', 'w') as f:
+                            f.write(css_str)
+                    else:
+                        logger.error(f'Unable to compile {path}')
+                except sass.CompileError as e:
+                    logger.error(str(e))
+        else:
+            global_sass_build()
 
     def cached_build():
         cmd = '-s {settings_base} -e CACHE_CONTENT=True LOAD_CONTENT_CACHE=True'
         pelican_run(cmd.format(**CONFIG))
 
+    sass_build()
     cached_build()
     server = Server()
-    theme_path = SETTINGS['THEME']
+
+    sass_file_extensions = ['.scss']
+    for extension in sass_file_extensions:
+        sass_glob = f'{theme_path}/sass/**/*{extension}'
+        server.watch(sass_glob, sass_build)
+
     watched_globs = [
         CONFIG['settings_base'],
         '{}/templates/**/*.html'.format(theme_path),
@@ -132,6 +168,13 @@ def gh_pages(c):
           '-m {commit_message} '
           '{deploy_path}'.format(**CONFIG))
 
+
+def global_sass_build():
+    theme_path = SETTINGS['THEME']
+    sass.compile(dirname=(f'{theme_path}/sass', f'{theme_path}/static/css'), output_style='compressed')
+
+
 def pelican_run(cmd):
     cmd += ' ' + program.core.remainder  # allows to pass-through args to pelican
+    print("pelican " + cmd)
     pelican_main(shlex.split(cmd))

@@ -13,6 +13,11 @@ PATH = 'content'
 PAGE_URL = '{slug}/'
 PAGE_SAVE_AS = '{slug}/index.html'
 
+# Skip generation of some pages
+AUTHOR_SAVE_AS = ''
+CATEGORY_SAVE_AS = ''
+TAG_SAVE_AS = ''
+
 ARTICLE_URL = 'news/{slug}/'
 ARTICLE_SAVE_AS = 'news/{slug}/index.html'
 
@@ -31,7 +36,7 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-DIRECT_TEMPLATES = ['index', '404', 'news/index', 'authors', 'categories', 'tags', 'archives']
+DIRECT_TEMPLATES = ['index', '404', 'news/index']
 PAGINATED_TEMPLATES = {'news/index': None, 'tag': None, 'category': None, 'author': None}
 
 THEME = "theme"
