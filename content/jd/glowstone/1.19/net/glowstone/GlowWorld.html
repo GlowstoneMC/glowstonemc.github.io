@@ -77,7 +77,7 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code>net.kyori.adventure.audience.Audience</code>, <code>net.kyori.adventure.audience.ForwardingAudience</code>, <code>org.bukkit.Keyed</code>, <code>org.bukkit.metadata.Metadatable</code>, <code>org.bukkit.plugin.messaging.PluginMessageRecipient</code>, <code>org.bukkit.World</code></dd>
+<dd><code>net.kyori.adventure.audience.Audience</code>, <code>net.kyori.adventure.audience.ForwardingAudience</code>, <code>net.kyori.adventure.key.Keyed</code>, <code>net.kyori.adventure.pointer.Pointered</code>, <code>org.bukkit.generator.WorldInfo</code>, <code>org.bukkit.Keyed</code>, <code>org.bukkit.metadata.Metadatable</code>, <code>org.bukkit.persistence.PersistentDataHolder</code>, <code>org.bukkit.plugin.messaging.PluginMessageRecipient</code>, <code>org.bukkit.RegionAccessor</code>, <code>org.bukkit.World</code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">GlowWorld</span>
@@ -246,113 +246,163 @@ implements org.bukkit.World</span></div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;obj)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable org.bukkit.Location</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#findLightningRod(org.bukkit.Location)" class="member-name-link">findLightningRod</a><wbr>(@NotNull org.bukkit.Location&nbsp;location)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable org.bukkit.Location</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#findLightningTarget(org.bukkit.Location)" class="member-name-link">findLightningTarget</a><wbr>(@NotNull org.bukkit.Location&nbsp;location)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#generateTree(org.bukkit.Location,org.bukkit.TreeType)" class="member-name-link">generateTree</a><wbr>(org.bukkit.Location&nbsp;location,
- org.bukkit.TreeType&nbsp;type)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#generateTree(org.bukkit.Location,java.util.Random,org.bukkit.TreeType)" class="member-name-link">generateTree</a><wbr>(@NotNull org.bukkit.Location&nbsp;location,
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Random.html" title="class or interface in java.util" class="external-link">Random</a>&nbsp;random,
+ @NotNull org.bukkit.TreeType&nbsp;type)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#generateTree(org.bukkit.Location,org.bukkit.TreeType,org.bukkit.BlockChangeDelegate)" class="member-name-link">generateTree</a><wbr>(org.bukkit.Location&nbsp;loc,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#generateTree(org.bukkit.Location,java.util.Random,org.bukkit.TreeType,java.util.function.Predicate)" class="member-name-link">generateTree</a><wbr>(@NotNull org.bukkit.Location&nbsp;location,
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Random.html" title="class or interface in java.util" class="external-link">Random</a>&nbsp;random,
+ @NotNull org.bukkit.TreeType&nbsp;type,
+ @Nullable <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;org.bukkit.block.BlockState&gt;&nbsp;statePredicate)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#generateTree(org.bukkit.Location,java.util.Random,org.bukkit.TreeType,org.bukkit.util.Consumer)" class="member-name-link">generateTree</a><wbr>(@NotNull org.bukkit.Location&nbsp;location,
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Random.html" title="class or interface in java.util" class="external-link">Random</a>&nbsp;random,
+ @NotNull org.bukkit.TreeType&nbsp;type,
+ @Nullable org.bukkit.util.Consumer&lt;org.bukkit.block.BlockState&gt;&nbsp;stateConsumer)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#generateTree(org.bukkit.Location,org.bukkit.TreeType)" class="member-name-link">generateTree</a><wbr>(org.bukkit.Location&nbsp;location,
+ org.bukkit.TreeType&nbsp;type)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#generateTree(org.bukkit.Location,org.bukkit.TreeType,org.bukkit.BlockChangeDelegate)" class="member-name-link">generateTree</a><wbr>(org.bukkit.Location&nbsp;loc,
  org.bukkit.TreeType&nbsp;type,
  org.bukkit.BlockChangeDelegate&nbsp;delegate)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAllowAnimals()" class="member-name-link">getAllowAnimals</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAllowMonsters()" class="member-name-link">getAllowMonsters</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAllowAnimals()" class="member-name-link">getAllowAnimals</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAmbientSpawnLimit()" class="member-name-link">getAmbientSpawnLimit</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAllowMonsters()" class="member-name-link">getAllowMonsters</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAmbientSpawnLimit()" class="member-name-link">getAmbientSpawnLimit</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Per-world spawn limits on ambient mobs (bats).</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAnimalSpawnLimit()" class="member-name-link">getAnimalSpawnLimit</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAnimalSpawnLimit()" class="member-name-link">getAnimalSpawnLimit</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Per-world spawn limits on passive mobs.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.block.Biome</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBiome(int,int)" class="member-name-link">getBiome</a><wbr>(int&nbsp;x,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.block.Biome</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBiome(int,int)" class="member-name-link">getBiome</a><wbr>(int&nbsp;x,
+ int&nbsp;z)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.block.Biome</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBiome(int,int,int)" class="member-name-link">getBiome</a><wbr>(int&nbsp;x,
+ int&nbsp;y,
  int&nbsp;z)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.block.Biome</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBiome(int,int,int)" class="member-name-link">getBiome</a><wbr>(int&nbsp;x,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBiome(org.bukkit.Location)" class="member-name-link">getBiome</a><wbr>(@NotNull org.bukkit.Location&nbsp;location)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable org.bukkit.generator.BiomeProvider</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBiomeProvider()" class="member-name-link">getBiomeProvider</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="block/GlowBlock.html" title="class in net.glowstone.block">GlowBlock</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBlockAt(int,int,int)" class="member-name-link">getBlockAt</a><wbr>(int&nbsp;x,
  int&nbsp;y,
  int&nbsp;z)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="block/GlowBlock.html" title="class in net.glowstone.block">GlowBlock</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBlockAt(int,int,int)" class="member-name-link">getBlockAt</a><wbr>(int&nbsp;x,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBlockAt(org.bukkit.Location)" class="member-name-link">getBlockAt</a><wbr>(org.bukkit.Location&nbsp;location)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.block.data.BlockData</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBlockData(int,int,int)" class="member-name-link">getBlockData</a><wbr>(int&nbsp;x,
  int&nbsp;y,
  int&nbsp;z)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="block/GlowBlock.html" title="class in net.glowstone.block">GlowBlock</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBlockAt(org.bukkit.Location)" class="member-name-link">getBlockAt</a><wbr>(org.bukkit.Location&nbsp;location)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.block.data.BlockData</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBlockDataAt(int,int,int)" class="member-name-link">getBlockDataAt</a><wbr>(int&nbsp;x,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.block.data.BlockData</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBlockData(org.bukkit.Location)" class="member-name-link">getBlockData</a><wbr>(@NotNull org.bukkit.Location&nbsp;location)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.block.data.BlockData</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBlockDataAt(int,int,int)" class="member-name-link">getBlockDataAt</a><wbr>(int&nbsp;x,
  int&nbsp;y,
  int&nbsp;z)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBlockEntityCount()" class="member-name-link">getBlockEntityCount</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBlockEntityCount()" class="member-name-link">getBlockEntityCount</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the number of block entities in loaded chunkManager.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.Material</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBlockTypeAt(int,int,int)" class="member-name-link">getBlockTypeAt</a><wbr>(int&nbsp;x,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.block.BlockState</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBlockState(int,int,int)" class="member-name-link">getBlockState</a><wbr>(int&nbsp;x,
  int&nbsp;y,
  int&nbsp;z)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.block.BlockState</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBlockState(org.bukkit.Location)" class="member-name-link">getBlockState</a><wbr>(@NotNull org.bukkit.Location&nbsp;location)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="chunk/GlowChunk.html" title="class in net.glowstone.chunk">GlowChunk</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getChunk(net.glowstone.chunk.GlowChunk.Key)" class="member-name-link">getChunk</a><wbr>(<a href="chunk/GlowChunk.Key.html" title="class in net.glowstone.chunk">GlowChunk.Key</a>&nbsp;key)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.Material</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBlockTypeAt(int,int,int)" class="member-name-link">getBlockTypeAt</a><wbr>(int&nbsp;x,
+ int&nbsp;y,
+ int&nbsp;z)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="chunk/GlowChunk.html" title="class in net.glowstone.chunk">GlowChunk</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getChunkAt(int,int)" class="member-name-link">getChunkAt</a><wbr>(int&nbsp;x,
- int&nbsp;z)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getChunk(net.glowstone.chunk.GlowChunk.Key)" class="member-name-link">getChunk</a><wbr>(<a href="chunk/GlowChunk.Key.html" title="class in net.glowstone.chunk">GlowChunk.Key</a>&nbsp;key)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="chunk/GlowChunk.html" title="class in net.glowstone.chunk">GlowChunk</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getChunkAt(long)" class="member-name-link">getChunkAt</a><wbr>(long&nbsp;chunkKey)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getChunkAt(int,int)" class="member-name-link">getChunkAt</a><wbr>(int&nbsp;x,
+ int&nbsp;z)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.Chunk</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getChunkAt(org.bukkit.block.Block)" class="member-name-link">getChunkAt</a><wbr>(org.bukkit.block.Block&nbsp;block)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="chunk/GlowChunk.html" title="class in net.glowstone.chunk">GlowChunk</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getChunkAt(long)" class="member-name-link">getChunkAt</a><wbr>(long&nbsp;chunkKey)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.Chunk</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getChunkAt(org.bukkit.Location)" class="member-name-link">getChunkAt</a><wbr>(org.bukkit.Location&nbsp;location)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getChunkAt(org.bukkit.block.Block)" class="member-name-link">getChunkAt</a><wbr>(org.bukkit.block.Block&nbsp;block)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a>&lt;org.bukkit.Chunk&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getChunkAtAsync(int,int,boolean)" class="member-name-link">getChunkAtAsync</a><wbr>(int&nbsp;x,
- int&nbsp;z,
- boolean&nbsp;gen)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.Chunk</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getChunkAt(org.bukkit.Location)" class="member-name-link">getChunkAt</a><wbr>(org.bukkit.Location&nbsp;location)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a>&lt;org.bukkit.Chunk&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getChunkAtAsync(int,int,boolean,boolean)" class="member-name-link">getChunkAtAsync</a><wbr>(int&nbsp;x,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getChunkAtAsync(int,int,boolean)" class="member-name-link">getChunkAtAsync</a><wbr>(int&nbsp;x,
+ int&nbsp;z,
+ boolean&nbsp;gen)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a>&lt;org.bukkit.Chunk&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getChunkAtAsync(int,int,boolean,boolean)" class="member-name-link">getChunkAtAsync</a><wbr>(int&nbsp;x,
  int&nbsp;z,
  boolean&nbsp;gen,
  boolean&nbsp;urgent)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getChunkAtAsync(int,int,org.bukkit.World.ChunkLoadCallback)" class="member-name-link">getChunkAtAsync</a><wbr>(int&nbsp;x,
+ int&nbsp;z,
+ org.bukkit.World.ChunkLoadCallback&nbsp;cb)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getChunkAtAsync(int,int,org.bukkit.World.ChunkLoadCallback)" class="member-name-link">getChunkAtAsync</a><wbr>(int&nbsp;x,
- int&nbsp;z,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getChunkAtAsync(org.bukkit.block.Block,org.bukkit.World.ChunkLoadCallback)" class="member-name-link">getChunkAtAsync</a><wbr>(org.bukkit.block.Block&nbsp;block,
  org.bukkit.World.ChunkLoadCallback&nbsp;cb)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getChunkAtAsync(org.bukkit.block.Block,org.bukkit.World.ChunkLoadCallback)" class="member-name-link">getChunkAtAsync</a><wbr>(org.bukkit.block.Block&nbsp;block,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getChunkAtAsync(org.bukkit.Location,org.bukkit.World.ChunkLoadCallback)" class="member-name-link">getChunkAtAsync</a><wbr>(org.bukkit.Location&nbsp;location,
  org.bukkit.World.ChunkLoadCallback&nbsp;cb)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getChunkAtAsync(org.bukkit.Location,org.bukkit.World.ChunkLoadCallback)" class="member-name-link">getChunkAtAsync</a><wbr>(org.bukkit.Location&nbsp;location,
- org.bukkit.World.ChunkLoadCallback&nbsp;cb)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getChunkCount()" class="member-name-link">getChunkCount</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getChunkCount()" class="member-name-link">getChunkCount</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="chunk/ChunkManager.html" title="class in net.glowstone.chunk">ChunkManager</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getChunkManager()" class="member-name-link">getChunkManager</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="chunk/ChunkManager.html" title="class in net.glowstone.chunk">ChunkManager</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getChunkManager()" class="member-name-link">getChunkManager</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">The chunk manager.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getClearWeatherDuration()" class="member-name-link">getClearWeatherDuration</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getClearWeatherDuration()" class="member-name-link">getClearWeatherDuration</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.block.Biome</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getComputedBiome(int,int,int)" class="member-name-link">getComputedBiome</a><wbr>(int&nbsp;x,
+ int&nbsp;y,
+ int&nbsp;z)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCoordinateScale()" class="member-name-link">getCoordinateScale</a>()</code></div>
@@ -507,59 +557,65 @@ implements org.bukkit.World</span></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLoadedChunks()" class="member-name-link">getLoadedChunks</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMaxHeight()" class="member-name-link">getMaxHeight</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">The maximum height at which players may place blocks.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;org.bukkit.metadata.MetadataValue&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMetadata(java.lang.String)" class="member-name-link">getMetadata</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;metadataKey)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMinHeight()" class="member-name-link">getMinHeight</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLogicalHeight()" class="member-name-link">getLogicalHeight</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMonsterSpawnLimit()" class="member-name-link">getMonsterSpawnLimit</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMaxHeight()" class="member-name-link">getMaxHeight</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">The maximum height at which players may place blocks.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;org.bukkit.metadata.MetadataValue&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMetadata(java.lang.String)" class="member-name-link">getMetadata</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;metadataKey)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMinHeight()" class="member-name-link">getMinHeight</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMonsterSpawnLimit()" class="member-name-link">getMonsterSpawnLimit</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Per-world spawn limits on hostile mobs.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>io.papermc.paper.world.MoonPhase</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMoonPhase()" class="member-name-link">getMoonPhase</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMoonPhaseFraction()" class="member-name-link">getMoonPhaseFraction</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>io.papermc.paper.world.MoonPhase</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMoonPhase()" class="member-name-link">getMoonPhase</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMoonPhaseFraction()" class="member-name-link">getMoonPhaseFraction</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the fraction of the moon that is illuminated, ranging from 0.0 at new moon to 1.0 at
  full moon.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getName()" class="member-name-link">getName</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getName()" class="member-name-link">getName</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">The name of this world.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;org.bukkit.entity.Entity&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNearbyEntities(org.bukkit.Location,double,double,double,java.util.function.Predicate)" class="member-name-link">getNearbyEntities</a><wbr>(@NotNull org.bukkit.Location&nbsp;location,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;org.bukkit.entity.Entity&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNearbyEntities(org.bukkit.Location,double,double,double,java.util.function.Predicate)" class="member-name-link">getNearbyEntities</a><wbr>(@NotNull org.bukkit.Location&nbsp;location,
  double&nbsp;v,
  double&nbsp;v1,
  double&nbsp;v2,
  @Nullable <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;org.bukkit.entity.Entity&gt;&nbsp;predicate)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;org.bukkit.entity.Entity&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNearbyEntities(org.bukkit.util.BoundingBox)" class="member-name-link">getNearbyEntities</a><wbr>(@NotNull org.bukkit.util.BoundingBox&nbsp;boundingBox)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;org.bukkit.entity.Entity&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNearbyEntities(org.bukkit.util.BoundingBox,java.util.function.Predicate)" class="member-name-link">getNearbyEntities</a><wbr>(@NotNull org.bukkit.util.BoundingBox&nbsp;boundingBox,
- @Nullable <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;org.bukkit.entity.Entity&gt;&nbsp;predicate)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNearbyEntities(org.bukkit.util.BoundingBox)" class="member-name-link">getNearbyEntities</a><wbr>(@NotNull org.bukkit.util.BoundingBox&nbsp;boundingBox)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;org.bukkit.entity.Entity&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNearbyEntities(org.bukkit.Location,double,double,double)" class="member-name-link">getNearbyEntities</a><wbr>(org.bukkit.Location&nbsp;location,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;org.bukkit.entity.Entity&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNearbyEntities(org.bukkit.util.BoundingBox,java.util.function.Predicate)" class="member-name-link">getNearbyEntities</a><wbr>(@NotNull org.bukkit.util.BoundingBox&nbsp;boundingBox,
+ @Nullable <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;org.bukkit.entity.Entity&gt;&nbsp;predicate)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;org.bukkit.entity.Entity&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNearbyEntities(org.bukkit.Location,double,double,double)" class="member-name-link">getNearbyEntities</a><wbr>(org.bukkit.Location&nbsp;location,
  double&nbsp;x,
  double&nbsp;y,
  double&nbsp;z)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a list of entities within a bounding box centered around a Location.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNoTickViewDistance()" class="member-name-link">getNoTickViewDistance</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNoTickViewDistance()" class="member-name-link">getNoTickViewDistance</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.persistence.PersistentDataContainer</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPersistentDataContainer()" class="member-name-link">getPersistentDataContainer</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPlayerCount()" class="member-name-link">getPlayerCount</a>()</code></div>
@@ -604,62 +660,74 @@ implements org.bukkit.World</span></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">The SHA-256 hash of the world seed.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="GlowServer.html" title="class in net.glowstone">GlowServer</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getServer()" class="member-name-link">getServer</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSendViewDistance()" class="member-name-link">getSendViewDistance</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="GlowServer.html" title="class in net.glowstone">GlowServer</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getServer()" class="member-name-link">getServer</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Get the world's parent server.</div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSimulationDistance()" class="member-name-link">getSimulationDistance</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSkyDarkness()" class="member-name-link">getSkyDarkness</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">The sky darkness on the current world tick.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.Location</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSpawnLocation()" class="member-name-link">getSpawnLocation</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSpawnLimit(org.bukkit.entity.SpawnCategory)" class="member-name-link">getSpawnLimit</a><wbr>(@NotNull org.bukkit.entity.SpawnCategory&nbsp;spawnCategory)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="io/WorldStorageProvider.html" title="interface in net.glowstone.io">WorldStorageProvider</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getStorage()" class="member-name-link">getStorage</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.Location</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSpawnLocation()" class="member-name-link">getSpawnLocation</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="io/WorldStorageProvider.html" title="interface in net.glowstone.io">WorldStorageProvider</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getStorage()" class="member-name-link">getStorage</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">The storage provider for the world.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>,<wbr><a href="generator/structures/GlowStructure.html" title="class in net.glowstone.generator.structures">GlowStructure</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getStructures()" class="member-name-link">getStructures</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTemperature(int,int)" class="member-name-link">getTemperature</a><wbr>(int&nbsp;x,
- int&nbsp;z)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>,<wbr><a href="generator/structures/GlowStructure.html" title="class in net.glowstone.generator.structures">GlowStructure</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getStructures()" class="member-name-link">getStructures</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTemperature(int,int,int)" class="member-name-link">getTemperature</a><wbr>(int&nbsp;x,
- int&nbsp;y,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTemperature(int,int)" class="member-name-link">getTemperature</a><wbr>(int&nbsp;x,
  int&nbsp;z)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getThunderDuration()" class="member-name-link">getThunderDuration</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTemperature(int,int,int)" class="member-name-link">getTemperature</a><wbr>(int&nbsp;x,
+ int&nbsp;y,
+ int&nbsp;z)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getThunderDuration()" class="member-name-link">getThunderDuration</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">How many ticks until the thundering status is expected to change.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTickableBlockEntityCount()" class="member-name-link">getTickableBlockEntityCount</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTickableBlockEntityCount()" class="member-name-link">getTickableBlockEntityCount</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the number of tickable block entities in loaded chunkManager.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#getTickableTileEntityCount()" class="member-name-link">getTickableTileEntityCount</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#getTickableTileEntityCount()" class="member-name-link">getTickableTileEntityCount</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated.</span></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="util/collection/ConcurrentSet.html" title="class in net.glowstone.util.collection">ConcurrentSet</a>&lt;org.bukkit.Location&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTickMap()" class="member-name-link">getTickMap</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTicksPerAmbientSpawns()" class="member-name-link">getTicksPerAmbientSpawns</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="util/collection/ConcurrentSet.html" title="class in net.glowstone.util.collection">ConcurrentSet</a>&lt;org.bukkit.Location&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTickMap()" class="member-name-link">getTickMap</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTicksPerAnimalSpawns()" class="member-name-link">getTicksPerAnimalSpawns</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTicksPerAmbientSpawns()" class="member-name-link">getTicksPerAmbientSpawns</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTicksPerMonsterSpawns()" class="member-name-link">getTicksPerMonsterSpawns</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTicksPerAnimalSpawns()" class="member-name-link">getTicksPerAnimalSpawns</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTicksPerMonsterSpawns()" class="member-name-link">getTicksPerMonsterSpawns</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTicksPerSpawns(org.bukkit.entity.SpawnCategory)" class="member-name-link">getTicksPerSpawns</a><wbr>(@NotNull org.bukkit.entity.SpawnCategory&nbsp;spawnCategory)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTicksPerWaterAmbientSpawns()" class="member-name-link">getTicksPerWaterAmbientSpawns</a>()</code></div>
@@ -667,34 +735,48 @@ implements org.bukkit.World</span></div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTicksPerWaterSpawns()" class="member-name-link">getTicksPerWaterSpawns</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#getTileEntityCount()" class="member-name-link">getTileEntityCount</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTicksPerWaterUndergroundCreatureSpawns()" class="member-name-link">getTicksPerWaterUndergroundCreatureSpawns</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#getTileEntityCount()" class="member-name-link">getTileEntityCount</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated.</span></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTime()" class="member-name-link">getTime</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTime()" class="member-name-link">getTime</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">The current world time.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUID()" class="member-name-link">getUID</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.Material</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getType(int,int,int)" class="member-name-link">getType</a><wbr>(int&nbsp;x,
+ int&nbsp;y,
+ int&nbsp;z)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.Material</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getType(org.bukkit.Location)" class="member-name-link">getType</a><wbr>(@NotNull org.bukkit.Location&nbsp;location)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getViewDistance()" class="member-name-link">getViewDistance</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUID()" class="member-name-link">getUID</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getViewDistance()" class="member-name-link">getViewDistance</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Per-world view distance.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWaterAmbientSpawnLimit()" class="member-name-link">getWaterAmbientSpawnLimit</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWaterAmbientSpawnLimit()" class="member-name-link">getWaterAmbientSpawnLimit</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Per-world spawn limits on water ambient mobs.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWaterAnimalSpawnLimit()" class="member-name-link">getWaterAnimalSpawnLimit</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWaterAnimalSpawnLimit()" class="member-name-link">getWaterAnimalSpawnLimit</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Per-world spawn limits on water mobs.</div>
 </div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWaterUndergroundCreatureSpawnLimit()" class="member-name-link">getWaterUndergroundCreatureSpawnLimit</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWeatherDuration()" class="member-name-link">getWeatherDuration</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -718,17 +800,23 @@ implements org.bukkit.World</span></div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasBedrockCeiling()" class="member-name-link">hasBedrockCeiling</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasCeiling()" class="member-name-link">hasCeiling</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasMetadata(java.lang.String)" class="member-name-link">hasMetadata</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;metadataKey)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasRaids()" class="member-name-link">hasRaids</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasMetadata(java.lang.String)" class="member-name-link">hasMetadata</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;metadataKey)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasSkylight()" class="member-name-link">hasSkylight</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasRaids()" class="member-name-link">hasRaids</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasSkylight()" class="member-name-link">hasSkylight</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasSkyLight()" class="member-name-link">hasSkyLight</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasStorm()" class="member-name-link">hasStorm</a>()</code></div>
@@ -739,51 +827,57 @@ implements org.bukkit.World</span></div>
 <div class="block">The check to autosave.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isChunkForceLoaded(int,int)" class="member-name-link">isChunkForceLoaded</a><wbr>(int&nbsp;x,
- int&nbsp;z)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isBedWorks()" class="member-name-link">isBedWorks</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isChunkGenerated(int,int)" class="member-name-link">isChunkGenerated</a><wbr>(int&nbsp;x,
- int&nbsp;z)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isChunkInUse(int,int)" class="member-name-link">isChunkInUse</a><wbr>(int&nbsp;x,
- int&nbsp;z)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isChunkLoaded(int,int)" class="member-name-link">isChunkLoaded</a><wbr>(int&nbsp;x,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isChunkForceLoaded(int,int)" class="member-name-link">isChunkForceLoaded</a><wbr>(int&nbsp;x,
  int&nbsp;z)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isChunkLoaded(org.bukkit.Chunk)" class="member-name-link">isChunkLoaded</a><wbr>(org.bukkit.Chunk&nbsp;chunk)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isChunkGenerated(int,int)" class="member-name-link">isChunkGenerated</a><wbr>(int&nbsp;x,
+ int&nbsp;z)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isClearWeather()" class="member-name-link">isClearWeather</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isChunkInUse(int,int)" class="member-name-link">isChunkInUse</a><wbr>(int&nbsp;x,
+ int&nbsp;z)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDayTime()" class="member-name-link">isDayTime</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isChunkLoaded(int,int)" class="member-name-link">isChunkLoaded</a><wbr>(int&nbsp;x,
+ int&nbsp;z)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFixedTime()" class="member-name-link">isFixedTime</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isChunkLoaded(org.bukkit.Chunk)" class="member-name-link">isChunkLoaded</a><wbr>(org.bukkit.Chunk&nbsp;chunk)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isGameRule(java.lang.String)" class="member-name-link">isGameRule</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;rule)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isClearWeather()" class="member-name-link">isClearWeather</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isHardcore()" class="member-name-link">isHardcore</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDayTime()" class="member-name-link">isDayTime</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFixedTime()" class="member-name-link">isFixedTime</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isGameRule(java.lang.String)" class="member-name-link">isGameRule</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;rule)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isHardcore()" class="member-name-link">isHardcore</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Per-world hardcore setting.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isInitialized()" class="member-name-link">isInitialized</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isInitialized()" class="member-name-link">isInitialized</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Whether the world has been initialized (i.e.</div>
 </div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isNatural()" class="member-name-link">isNatural</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isNatural()" class="member-name-link">isNatural</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isPiglinSafe()" class="member-name-link">isPiglinSafe</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isPiglinSafe()" class="member-name-link">isPiglinSafe</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isRespawnAnchorWorks()" class="member-name-link">isRespawnAnchorWorks</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isThundering()" class="member-name-link">isThundering</a>()</code></div>
@@ -792,6 +886,13 @@ implements org.bukkit.World</span></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isUltrawarm()" class="member-name-link">isUltrawarm</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isUltraWarm()" class="member-name-link">isUltraWarm</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#lineOfSightExists(org.bukkit.Location,org.bukkit.Location)" class="member-name-link">lineOfSightExists</a><wbr>(@NotNull org.bukkit.Location&nbsp;from,
+ @NotNull org.bukkit.Location&nbsp;to)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#loadChunk(int,int)" class="member-name-link">loadChunk</a><wbr>(int&nbsp;x,
@@ -862,6 +963,19 @@ implements org.bukkit.World</span></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Plays an effect to all but one player within a given radius around a location.</div>
 </div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#playSound(org.bukkit.entity.Entity,org.bukkit.Sound,float,float)" class="member-name-link">playSound</a><wbr>(@NotNull org.bukkit.entity.Entity&nbsp;entity,
+ @NotNull org.bukkit.Sound&nbsp;sound,
+ float&nbsp;volume,
+ float&nbsp;pitch)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#playSound(org.bukkit.entity.Entity,org.bukkit.Sound,org.bukkit.SoundCategory,float,float)" class="member-name-link">playSound</a><wbr>(@NotNull org.bukkit.entity.Entity&nbsp;entity,
+ @NotNull org.bukkit.Sound&nbsp;sound,
+ @NotNull org.bukkit.SoundCategory&nbsp;category,
+ float&nbsp;volume,
+ float&nbsp;pitch)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#playSound(org.bukkit.Location,java.lang.String,float,float)" class="member-name-link">playSound</a><wbr>(org.bukkit.Location&nbsp;location,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;sound,
@@ -985,35 +1099,54 @@ implements org.bukkit.World</span></div>
 <div class="block">Saves world to disk synchronously or asynchronously.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendPluginMessage(org.bukkit.plugin.Plugin,java.lang.String,byte%5B%5D)" class="member-name-link">sendPluginMessage</a><wbr>(org.bukkit.plugin.Plugin&nbsp;source,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;channel,
- byte[]&nbsp;message)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendGameEvent(org.bukkit.entity.Entity,org.bukkit.GameEvent,org.bukkit.util.Vector)" class="member-name-link">sendGameEvent</a><wbr>(@Nullable org.bukkit.entity.Entity&nbsp;sourceEntity,
+ @NotNull org.bukkit.GameEvent&nbsp;gameEvent,
+ @NotNull org.bukkit.util.Vector&nbsp;position)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setAmbientSpawnLimit(int)" class="member-name-link">setAmbientSpawnLimit</a><wbr>(int&nbsp;ambientSpawnLimit)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendPluginMessage(org.bukkit.plugin.Plugin,java.lang.String,byte%5B%5D)" class="member-name-link">sendPluginMessage</a><wbr>(org.bukkit.plugin.Plugin&nbsp;source,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;channel,
+ byte[]&nbsp;message)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setAmbientSpawnLimit(int)" class="member-name-link">setAmbientSpawnLimit</a><wbr>(int&nbsp;ambientSpawnLimit)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Per-world spawn limits on ambient mobs (bats).</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setAnimalSpawnLimit(int)" class="member-name-link">setAnimalSpawnLimit</a><wbr>(int&nbsp;animalSpawnLimit)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setAnimalSpawnLimit(int)" class="member-name-link">setAnimalSpawnLimit</a><wbr>(int&nbsp;animalSpawnLimit)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Per-world spawn limits on passive mobs.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setAutoSave(boolean)" class="member-name-link">setAutoSave</a><wbr>(boolean&nbsp;autoSave)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setAutoSave(boolean)" class="member-name-link">setAutoSave</a><wbr>(boolean&nbsp;autoSave)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">The check to autosave.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBiome(int,int,int,org.bukkit.block.Biome)" class="member-name-link">setBiome</a><wbr>(int&nbsp;x,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBiome(int,int,int,org.bukkit.block.Biome)" class="member-name-link">setBiome</a><wbr>(int&nbsp;x,
  int&nbsp;y,
  int&nbsp;z,
  @NotNull org.bukkit.block.Biome&nbsp;biome)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBiome(int,int,org.bukkit.block.Biome)" class="member-name-link">setBiome</a><wbr>(int&nbsp;x,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBiome(int,int,org.bukkit.block.Biome)" class="member-name-link">setBiome</a><wbr>(int&nbsp;x,
  int&nbsp;z,
  @NotNull org.bukkit.block.Biome&nbsp;bio)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBiome(org.bukkit.Location,org.bukkit.block.Biome)" class="member-name-link">setBiome</a><wbr>(@NotNull org.bukkit.Location&nbsp;location,
+ @NotNull org.bukkit.block.Biome&nbsp;biome)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBlockData(int,int,int,org.bukkit.block.data.BlockData)" class="member-name-link">setBlockData</a><wbr>(int&nbsp;x,
+ int&nbsp;y,
+ int&nbsp;z,
+ @NotNull org.bukkit.block.data.BlockData&nbsp;blockData)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBlockData(org.bukkit.Location,org.bukkit.block.data.BlockData)" class="member-name-link">setBlockData</a><wbr>(@NotNull org.bukkit.Location&nbsp;location,
+ @NotNull org.bukkit.block.data.BlockData&nbsp;blockData)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setChunkForceLoaded(int,int,boolean)" class="member-name-link">setChunkForceLoaded</a><wbr>(int&nbsp;x,
@@ -1063,61 +1196,75 @@ implements org.bukkit.World</span></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPVP(boolean)" class="member-name-link">setPVP</a><wbr>(boolean&nbsp;pvp)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSendViewDistance(int)" class="member-name-link">setSendViewDistance</a><wbr>(int&nbsp;viewDistance)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSimulationDistance(int)" class="member-name-link">setSimulationDistance</a><wbr>(int&nbsp;simulationDistance)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSpawnFlags(boolean,boolean)" class="member-name-link">setSpawnFlags</a><wbr>(boolean&nbsp;allowMonsters,
  boolean&nbsp;allowAnimals)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSpawnLocation(int,int,int)" class="member-name-link">setSpawnLocation</a><wbr>(int&nbsp;x,
- int&nbsp;y,
- int&nbsp;z)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSpawnLimit(org.bukkit.entity.SpawnCategory,int)" class="member-name-link">setSpawnLimit</a><wbr>(@NotNull org.bukkit.entity.SpawnCategory&nbsp;spawnCategory,
+ int&nbsp;limit)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSpawnLocation(int,int,int,boolean)" class="member-name-link">setSpawnLocation</a><wbr>(int&nbsp;x,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSpawnLocation(int,int,int)" class="member-name-link">setSpawnLocation</a><wbr>(int&nbsp;x,
+ int&nbsp;y,
+ int&nbsp;z)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSpawnLocation(int,int,int,boolean)" class="member-name-link">setSpawnLocation</a><wbr>(int&nbsp;x,
  int&nbsp;y,
  int&nbsp;z,
  boolean&nbsp;anchor)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSpawnLocation(int,int,int,float)" class="member-name-link">setSpawnLocation</a><wbr>(int&nbsp;x,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSpawnLocation(int,int,int,float)" class="member-name-link">setSpawnLocation</a><wbr>(int&nbsp;x,
  int&nbsp;y,
  int&nbsp;z,
  float&nbsp;angle)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSpawnLocation(org.bukkit.Location)" class="member-name-link">setSpawnLocation</a><wbr>(org.bukkit.Location&nbsp;newSpawn)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSpawnLocation(org.bukkit.Location,boolean)" class="member-name-link">setSpawnLocation</a><wbr>(org.bukkit.Location&nbsp;newSpawn,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSpawnLocation(org.bukkit.Location)" class="member-name-link">setSpawnLocation</a><wbr>(org.bukkit.Location&nbsp;newSpawn)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSpawnLocation(org.bukkit.Location,boolean)" class="member-name-link">setSpawnLocation</a><wbr>(org.bukkit.Location&nbsp;newSpawn,
  boolean&nbsp;anchor)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the spawn location of the world.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setStorm(boolean)" class="member-name-link">setStorm</a><wbr>(boolean&nbsp;hasStorm)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setThunderDuration(int)" class="member-name-link">setThunderDuration</a><wbr>(int&nbsp;thunderDuration)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setStorm(boolean)" class="member-name-link">setStorm</a><wbr>(boolean&nbsp;hasStorm)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setThunderDuration(int)" class="member-name-link">setThunderDuration</a><wbr>(int&nbsp;thunderDuration)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">How many ticks until the thundering status is expected to change.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setThundering(boolean)" class="member-name-link">setThundering</a><wbr>(boolean&nbsp;thundering)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTicksPerAmbientSpawns(int)" class="member-name-link">setTicksPerAmbientSpawns</a><wbr>(int&nbsp;ticksPerAmbientSpawns)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setThundering(boolean)" class="member-name-link">setThundering</a><wbr>(boolean&nbsp;thundering)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTicksPerAmbientSpawns(int)" class="member-name-link">setTicksPerAmbientSpawns</a><wbr>(int&nbsp;ticksPerAmbientSpawns)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Ticks between when ambient mobs are spawned.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTicksPerAnimalSpawns(int)" class="member-name-link">setTicksPerAnimalSpawns</a><wbr>(int&nbsp;ticksPerAnimalSpawns)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTicksPerAnimalSpawns(int)" class="member-name-link">setTicksPerAnimalSpawns</a><wbr>(int&nbsp;ticksPerAnimalSpawns)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Ticks between when passive mobs are spawned.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTicksPerMonsterSpawns(int)" class="member-name-link">setTicksPerMonsterSpawns</a><wbr>(int&nbsp;ticksPerMonsterSpawns)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTicksPerMonsterSpawns(int)" class="member-name-link">setTicksPerMonsterSpawns</a><wbr>(int&nbsp;ticksPerMonsterSpawns)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Ticks between when hostile mobs are spawned.</div>
 </div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTicksPerSpawns(org.bukkit.entity.SpawnCategory,int)" class="member-name-link">setTicksPerSpawns</a><wbr>(@NotNull org.bukkit.entity.SpawnCategory&nbsp;spawnCategory,
+ int&nbsp;ticksPerCategorySpawn)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTicksPerWaterAmbientSpawns(int)" class="member-name-link">setTicksPerWaterAmbientSpawns</a><wbr>(int&nbsp;ticksPerWaterAmbientSpawns)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -1129,23 +1276,39 @@ implements org.bukkit.World</span></div>
 <div class="block">Ticks between when water mobs are spawned.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTime(long)" class="member-name-link">setTime</a><wbr>(long&nbsp;time)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTicksPerWaterUndergroundCreatureSpawns(int)" class="member-name-link">setTicksPerWaterUndergroundCreatureSpawns</a><wbr>(int&nbsp;ticksPerWaterUndergroundCreatureSpawns)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setViewDistance(int)" class="member-name-link">setViewDistance</a><wbr>(int&nbsp;viewDistance)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTime(long)" class="member-name-link">setTime</a><wbr>(long&nbsp;time)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setType(int,int,int,org.bukkit.Material)" class="member-name-link">setType</a><wbr>(int&nbsp;x,
+ int&nbsp;y,
+ int&nbsp;z,
+ @NotNull org.bukkit.Material&nbsp;material)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setType(org.bukkit.Location,org.bukkit.Material)" class="member-name-link">setType</a><wbr>(@NotNull org.bukkit.Location&nbsp;location,
+ @NotNull org.bukkit.Material&nbsp;material)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setViewDistance(int)" class="member-name-link">setViewDistance</a><wbr>(int&nbsp;viewDistance)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Per-world view distance.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setWaterAmbientSpawnLimit(int)" class="member-name-link">setWaterAmbientSpawnLimit</a><wbr>(int&nbsp;waterAmbientSpawnLimit)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setWaterAmbientSpawnLimit(int)" class="member-name-link">setWaterAmbientSpawnLimit</a><wbr>(int&nbsp;waterAmbientSpawnLimit)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Per-world spawn limits on water ambient mobs.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setWaterAnimalSpawnLimit(int)" class="member-name-link">setWaterAnimalSpawnLimit</a><wbr>(int&nbsp;waterAnimalSpawnLimit)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setWaterAnimalSpawnLimit(int)" class="member-name-link">setWaterAnimalSpawnLimit</a><wbr>(int&nbsp;waterAnimalSpawnLimit)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Per-world spawn limits on water mobs.</div>
 </div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setWaterUndergroundCreatureSpawnLimit(int)" class="member-name-link">setWaterUndergroundCreatureSpawnLimit</a><wbr>(int&nbsp;limit)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setWeatherDuration(int)" class="member-name-link">setWeatherDuration</a><wbr>(int&nbsp;weatherDuration)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -1182,46 +1345,57 @@ implements org.bukkit.World</span></div>
 <div class="block">Displays the given particle to all players.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T extends org.bukkit.entity.Entity&gt;<br>T</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spawn(org.bukkit.Location,java.lang.Class)" class="member-name-link">spawn</a><wbr>(org.bukkit.Location&nbsp;location,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;clazz)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spawn(org.bukkit.Location,java.lang.Class,boolean,org.bukkit.util.Consumer)" class="member-name-link">spawn</a><wbr>(@NotNull org.bukkit.Location&nbsp;location,
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;clazz,
+ boolean&nbsp;randomizeData,
+ @Nullable org.bukkit.util.Consumer&lt;T&gt;&nbsp;function)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T extends org.bukkit.entity.Entity&gt;<br>T</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spawn(org.bukkit.Location,java.lang.Class,org.bukkit.util.Consumer)" class="member-name-link">spawn</a><wbr>(org.bukkit.Location&nbsp;location,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;clazz,
- org.bukkit.util.Consumer&lt;T&gt;&nbsp;function)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spawn(org.bukkit.Location,java.lang.Class)" class="member-name-link">spawn</a><wbr>(org.bukkit.Location&nbsp;location,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;clazz)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T extends org.bukkit.entity.Entity&gt;<br>T</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spawn(org.bukkit.Location,java.lang.Class,org.bukkit.util.Consumer,org.bukkit.event.entity.CreatureSpawnEvent.SpawnReason)" class="member-name-link">spawn</a><wbr>(org.bukkit.Location&nbsp;location,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spawn(org.bukkit.Location,java.lang.Class,org.bukkit.util.Consumer)" class="member-name-link">spawn</a><wbr>(org.bukkit.Location&nbsp;location,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;clazz,
+ org.bukkit.util.Consumer&lt;T&gt;&nbsp;function)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T extends org.bukkit.entity.Entity&gt;<br>T</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spawn(org.bukkit.Location,java.lang.Class,org.bukkit.util.Consumer,org.bukkit.event.entity.CreatureSpawnEvent.SpawnReason)" class="member-name-link">spawn</a><wbr>(org.bukkit.Location&nbsp;location,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;clazz,
  org.bukkit.util.Consumer&lt;T&gt;&nbsp;function,
  org.bukkit.event.entity.CreatureSpawnEvent.SpawnReason&nbsp;spawnReason)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T extends org.bukkit.entity.AbstractArrow&gt;<br>T</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spawnArrow(org.bukkit.Location,org.bukkit.util.Vector,float,float,java.lang.Class)" class="member-name-link">spawnArrow</a><wbr>(@NotNull org.bukkit.Location&nbsp;location,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T extends org.bukkit.entity.AbstractArrow&gt;<br>T</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spawnArrow(org.bukkit.Location,org.bukkit.util.Vector,float,float,java.lang.Class)" class="member-name-link">spawnArrow</a><wbr>(@NotNull org.bukkit.Location&nbsp;location,
  @NotNull org.bukkit.util.Vector&nbsp;vector,
  float&nbsp;speed,
  float&nbsp;spread,
  @NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;clazz)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.entity.Arrow</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spawnArrow(org.bukkit.Location,org.bukkit.util.Vector,float,float)" class="member-name-link">spawnArrow</a><wbr>(org.bukkit.Location&nbsp;location,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.entity.Arrow</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spawnArrow(org.bukkit.Location,org.bukkit.util.Vector,float,float)" class="member-name-link">spawnArrow</a><wbr>(org.bukkit.Location&nbsp;location,
  org.bukkit.util.Vector&nbsp;velocity,
  float&nbsp;speed,
  float&nbsp;spread)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T extends org.bukkit.entity.Entity&gt;<br>T</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spawnCustomEntity(org.bukkit.Location,java.lang.String)" class="member-name-link">spawnCustomEntity</a><wbr>(org.bukkit.Location&nbsp;location,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T extends org.bukkit.entity.Entity&gt;<br>T</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spawnCustomEntity(org.bukkit.Location,java.lang.String)" class="member-name-link">spawnCustomEntity</a><wbr>(org.bukkit.Location&nbsp;location,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;id)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Spawn a custom entity at the given <code>Location</code>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T extends org.bukkit.entity.Entity&gt;<br>T</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spawnCustomEntity(org.bukkit.Location,java.lang.String,org.bukkit.event.entity.CreatureSpawnEvent.SpawnReason)" class="member-name-link">spawnCustomEntity</a><wbr>(org.bukkit.Location&nbsp;location,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T extends org.bukkit.entity.Entity&gt;<br>T</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spawnCustomEntity(org.bukkit.Location,java.lang.String,org.bukkit.event.entity.CreatureSpawnEvent.SpawnReason)" class="member-name-link">spawnCustomEntity</a><wbr>(org.bukkit.Location&nbsp;location,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;id,
  org.bukkit.event.entity.CreatureSpawnEvent.SpawnReason&nbsp;reason)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Spawn a custom entity at the given <code>Location</code>, with the given <code>CreatureSpawnEvent.SpawnReason</code>.</div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.entity.Entity</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spawnEntity(org.bukkit.Location,org.bukkit.entity.EntityType,boolean)" class="member-name-link">spawnEntity</a><wbr>(@NotNull org.bukkit.Location&nbsp;loc,
+ @NotNull org.bukkit.entity.EntityType&nbsp;type,
+ boolean&nbsp;randomizeData)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.entity.Entity</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spawnEntity(org.bukkit.Location,org.bukkit.entity.EntityType)" class="member-name-link">spawnEntity</a><wbr>(org.bukkit.Location&nbsp;loc,
  org.bukkit.entity.EntityType&nbsp;type)</code></div>
@@ -1453,6 +1627,9 @@ E extends org.bukkit.entity.Entity&gt;<br><a href="entity/GlowEntity.html" title
  int&nbsp;z,
  boolean&nbsp;safe)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.generator.BiomeProvider</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#vanillaBiomeProvider()" class="member-name-link">vanillaBiomeProvider</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -1461,13 +1638,22 @@ E extends org.bukkit.entity.Entity&gt;<br><a href="entity/GlowEntity.html" title
 <code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.kyori.adventure.audience.Audience">Methods inherited from interface&nbsp;net.kyori.adventure.audience.Audience</h3>
-<code>openBook, sendActionBar, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendPlayerListFooter, sendPlayerListHeader, sendPlayerListHeaderAndFooter</code></div>
+<code>openBook, sendActionBar, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendPlayerListFooter, sendPlayerListHeader, sendPlayerListHeaderAndFooter, showTitle, stopSound</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.kyori.adventure.audience.ForwardingAudience">Methods inherited from interface&nbsp;net.kyori.adventure.audience.ForwardingAudience</h3>
-<code>clearTitle, hideBossBar, openBook, playSound, playSound, resetTitle, sendActionBar, sendMessage, sendMessage, sendPlayerListFooter, sendPlayerListHeader, sendPlayerListHeaderAndFooter, showBossBar, showTitle, stopSound</code></div>
+<code>clearTitle, filterAudience, forEachAudience, hideBossBar, openBook, playSound, playSound, playSound, pointers, resetTitle, sendActionBar, sendMessage, sendMessage, sendPlayerListFooter, sendPlayerListHeader, sendPlayerListHeaderAndFooter, sendTitlePart, showBossBar, stopSound</code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-org.bukkit.Keyed">Methods inherited from interface&nbsp;org.bukkit.Keyed</h3>
+<code>key</code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-net.kyori.adventure.pointer.Pointered">Methods inherited from interface&nbsp;net.kyori.adventure.pointer.Pointered</h3>
+<code>get, getOrDefault, getOrDefaultFrom</code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-org.bukkit.RegionAccessor">Methods inherited from interface&nbsp;org.bukkit.RegionAccessor</h3>
+<code>spawn, spawn, spawnEntity, spawnEntity</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-org.bukkit.World">Methods inherited from interface&nbsp;org.bukkit.World</h3>
-<code>audiences, createExplosion, createExplosion, createExplosion, createExplosion, createExplosion, getBlockAtKey, getChunkAtAsync, getChunkAtAsync, getChunkAtAsync, getChunkAtAsync, getChunkAtAsync, getChunkAtAsync, getChunkAtAsync, getChunkAtAsync, getChunkAtAsync, getChunkAtAsync, getChunkAtAsync, getChunkAtAsyncUrgently, getChunkAtAsyncUrgently, getChunkAtAsyncUrgently, getChunkAtAsyncUrgently, getChunkAtAsyncUrgently, getHighestBlockAt, getHighestBlockAt, getHighestBlockYAt, getLocationAtKey, getNearbyEntitiesByType, getNearbyEntitiesByType, getNearbyEntitiesByType, getNearbyEntitiesByType, getNearbyEntitiesByType, getNearbyEntitiesByType, getNearbyLivingEntities, getNearbyLivingEntities, getNearbyLivingEntities, getNearbyLivingEntities, getNearbyLivingEntities, getNearbyLivingEntities, getNearbyPlayers, getNearbyPlayers, getNearbyPlayers, getNearbyPlayers, getNearbyPlayers, getNearbyPlayers, isChunkGenerated, spawn, spawn, spawnEntity, spawnEntity</code></div>
+<code>audiences, createExplosion, createExplosion, createExplosion, createExplosion, createExplosion, getBlockAtKey, getChunkAtAsync, getChunkAtAsync, getChunkAtAsync, getChunkAtAsync, getChunkAtAsync, getChunkAtAsync, getChunkAtAsync, getChunkAtAsync, getChunkAtAsync, getChunkAtAsync, getChunkAtAsync, getChunkAtAsyncUrgently, getChunkAtAsyncUrgently, getChunkAtAsyncUrgently, getChunkAtAsyncUrgently, getChunkAtAsyncUrgently, getHighestBlockAt, getHighestBlockAt, getHighestBlockYAt, getLocationAtKey, getNearbyEntitiesByType, getNearbyEntitiesByType, getNearbyEntitiesByType, getNearbyEntitiesByType, getNearbyEntitiesByType, getNearbyEntitiesByType, getNearbyLivingEntities, getNearbyLivingEntities, getNearbyLivingEntities, getNearbyLivingEntities, getNearbyLivingEntities, getNearbyLivingEntities, getNearbyPlayers, getNearbyPlayers, getNearbyPlayers, getNearbyPlayers, getNearbyPlayers, getNearbyPlayers, isChunkGenerated</code></div>
 </section>
 </li>
 </ul>
@@ -1572,7 +1758,7 @@ E extends org.bukkit.entity.Entity&gt;<br><a href="entity/GlowEntity.html" title
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">io.papermc.paper.world.MoonPhase</span>&nbsp;<span class="element-name">getMoonPhase</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code>getMoonPhase</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
+<dd><code>getMoonPhase</code>&nbsp;in interface&nbsp;<code>org.bukkit.RegionAccessor</code></dd>
 </dl>
 </section>
 </li>
@@ -1802,6 +1988,8 @@ E extends org.bukkit.entity.Entity&gt;<br><a href="entity/GlowEntity.html" title
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;org.bukkit.entity.Entity&gt;</span>&nbsp;<span class="element-name">getEntities</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
+<dd><code>getEntities</code>&nbsp;in interface&nbsp;<code>org.bukkit.RegionAccessor</code></dd>
+<dt>Specified by:</dt>
 <dd><code>getEntities</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
 </dl>
 </section>
@@ -1811,6 +1999,8 @@ E extends org.bukkit.entity.Entity&gt;<br><a href="entity/GlowEntity.html" title
 <h3>getLivingEntities</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;org.bukkit.entity.LivingEntity&gt;</span>&nbsp;<span class="element-name">getLivingEntities</span>()</div>
 <dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getLivingEntities</code>&nbsp;in interface&nbsp;<code>org.bukkit.RegionAccessor</code></dd>
 <dt>Specified by:</dt>
 <dd><code>getLivingEntities</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
 </dl>
@@ -1836,6 +2026,8 @@ E extends org.bukkit.entity.Entity&gt;<br><a href="entity/GlowEntity.html" title
 <span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;T&gt;</span>&nbsp;<span class="element-name">getEntitiesByClass</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;cls)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
+<dd><code>getEntitiesByClass</code>&nbsp;in interface&nbsp;<code>org.bukkit.RegionAccessor</code></dd>
+<dt>Specified by:</dt>
 <dd><code>getEntitiesByClass</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
 </dl>
 </section>
@@ -1845,6 +2037,8 @@ E extends org.bukkit.entity.Entity&gt;<br><a href="entity/GlowEntity.html" title
 <h3>getEntitiesByClasses</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;org.bukkit.entity.Entity&gt;</span>&nbsp;<span class="element-name">getEntitiesByClasses</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;...&nbsp;classes)</span></div>
 <dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getEntitiesByClasses</code>&nbsp;in interface&nbsp;<code>org.bukkit.RegionAccessor</code></dd>
 <dt>Specified by:</dt>
 <dd><code>getEntitiesByClasses</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
 </dl>
@@ -2006,7 +2200,7 @@ E extends org.bukkit.entity.Entity&gt;<br><a href="entity/GlowEntity.html" title
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a></span>&nbsp;<span class="element-name">getUID</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code>getUID</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
+<dd><code>getUID</code>&nbsp;in interface&nbsp;<code>org.bukkit.generator.WorldInfo</code></dd>
 </dl>
 </section>
 </li>
@@ -2071,12 +2265,98 @@ E extends org.bukkit.entity.Entity&gt;<br><a href="entity/GlowEntity.html" title
 </section>
 </li>
 <li>
+<section class="detail" id="getTicksPerWaterUndergroundCreatureSpawns()">
+<h3>getTicksPerWaterUndergroundCreatureSpawns</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">getTicksPerWaterUndergroundCreatureSpawns</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getTicksPerWaterUndergroundCreatureSpawns</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setTicksPerWaterUndergroundCreatureSpawns(int)">
+<h3>setTicksPerWaterUndergroundCreatureSpawns</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setTicksPerWaterUndergroundCreatureSpawns</span><wbr><span class="parameters">(int&nbsp;ticksPerWaterUndergroundCreatureSpawns)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>setTicksPerWaterUndergroundCreatureSpawns</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="getTicksPerAmbientSpawns()">
 <h3>getTicksPerAmbientSpawns</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">getTicksPerAmbientSpawns</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code>getTicksPerAmbientSpawns</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getTicksPerSpawns(org.bukkit.entity.SpawnCategory)">
+<h3>getTicksPerSpawns</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">getTicksPerSpawns</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.entity.SpawnCategory&nbsp;spawnCategory)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getTicksPerSpawns</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setTicksPerSpawns(org.bukkit.entity.SpawnCategory,int)">
+<h3>setTicksPerSpawns</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setTicksPerSpawns</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.entity.SpawnCategory&nbsp;spawnCategory,
+ int&nbsp;ticksPerCategorySpawn)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>setTicksPerSpawns</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getWaterUndergroundCreatureSpawnLimit()">
+<h3>getWaterUndergroundCreatureSpawnLimit</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getWaterUndergroundCreatureSpawnLimit</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getWaterUndergroundCreatureSpawnLimit</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setWaterUndergroundCreatureSpawnLimit(int)">
+<h3>setWaterUndergroundCreatureSpawnLimit</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setWaterUndergroundCreatureSpawnLimit</span><wbr><span class="parameters">(int&nbsp;limit)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>setWaterUndergroundCreatureSpawnLimit</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getSpawnLimit(org.bukkit.entity.SpawnCategory)">
+<h3>getSpawnLimit</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getSpawnLimit</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.entity.SpawnCategory&nbsp;spawnCategory)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getSpawnLimit</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setSpawnLimit(org.bukkit.entity.SpawnCategory,int)">
+<h3>setSpawnLimit</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setSpawnLimit</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.entity.SpawnCategory&nbsp;spawnCategory,
+ int&nbsp;limit)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>setSpawnLimit</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
 </dl>
 </section>
 </li>
@@ -2108,6 +2388,17 @@ E extends org.bukkit.entity.Entity&gt;<br><a href="entity/GlowEntity.html" title
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code>getGenerator</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getBiomeProvider()">
+<h3>getBiomeProvider</h3>
+<div class="member-signature"><span class="annotations">@Nullable
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@Nullable org.bukkit.generator.BiomeProvider</span>&nbsp;<span class="element-name">getBiomeProvider</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getBiomeProvider</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
 </dl>
 </section>
 </li>
@@ -2506,7 +2797,20 @@ E extends org.bukkit.entity.Entity&gt;<br><a href="entity/GlowEntity.html" title
 <dt>Specified by:</dt>
 <dd><code>getKey</code>&nbsp;in interface&nbsp;<code>org.bukkit.Keyed</code></dd>
 <dt>Specified by:</dt>
-<dd><code>getKey</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
+<dd><code>getKey</code>&nbsp;in interface&nbsp;<code>org.bukkit.RegionAccessor</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="lineOfSightExists(org.bukkit.Location,org.bukkit.Location)">
+<h3>lineOfSightExists</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">lineOfSightExists</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.Location&nbsp;from,
+ @NotNull
+ @NotNull org.bukkit.Location&nbsp;to)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>lineOfSightExists</code>&nbsp;in interface&nbsp;<code>org.bukkit.RegionAccessor</code></dd>
 </dl>
 </section>
 </li>
@@ -2798,6 +3102,18 @@ E extends org.bukkit.entity.Entity&gt;<br><a href="entity/GlowEntity.html" title
 </section>
 </li>
 <li>
+<section class="detail" id="getBiome(org.bukkit.Location)">
+<h3>getBiome</h3>
+<div class="member-signature"><span class="annotations">@NotNull
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull org.bukkit.block.Biome</span>&nbsp;<span class="element-name">getBiome</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.Location&nbsp;location)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getBiome</code>&nbsp;in interface&nbsp;<code>org.bukkit.RegionAccessor</code></dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="getBiome(int,int,int)">
 <h3>getBiome</h3>
 <div class="member-signature"><span class="annotations">@NotNull
@@ -2806,7 +3122,33 @@ E extends org.bukkit.entity.Entity&gt;<br><a href="entity/GlowEntity.html" title
  int&nbsp;z)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code>getBiome</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
+<dd><code>getBiome</code>&nbsp;in interface&nbsp;<code>org.bukkit.RegionAccessor</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getComputedBiome(int,int,int)">
+<h3>getComputedBiome</h3>
+<div class="member-signature"><span class="annotations">@NotNull
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull org.bukkit.block.Biome</span>&nbsp;<span class="element-name">getComputedBiome</span><wbr><span class="parameters">(int&nbsp;x,
+ int&nbsp;y,
+ int&nbsp;z)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getComputedBiome</code>&nbsp;in interface&nbsp;<code>org.bukkit.RegionAccessor</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setBiome(org.bukkit.Location,org.bukkit.block.Biome)">
+<h3>setBiome</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setBiome</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.Location&nbsp;location,
+ @NotNull
+ @NotNull org.bukkit.block.Biome&nbsp;biome)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>setBiome</code>&nbsp;in interface&nbsp;<code>org.bukkit.RegionAccessor</code></dd>
 </dl>
 </section>
 </li>
@@ -2833,7 +3175,185 @@ E extends org.bukkit.entity.Entity&gt;<br><a href="entity/GlowEntity.html" title
  @NotNull org.bukkit.block.Biome&nbsp;biome)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code>setBiome</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
+<dd><code>setBiome</code>&nbsp;in interface&nbsp;<code>org.bukkit.RegionAccessor</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getBlockState(org.bukkit.Location)">
+<h3>getBlockState</h3>
+<div class="member-signature"><span class="annotations">@NotNull
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull org.bukkit.block.BlockState</span>&nbsp;<span class="element-name">getBlockState</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.Location&nbsp;location)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getBlockState</code>&nbsp;in interface&nbsp;<code>org.bukkit.RegionAccessor</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getBlockState(int,int,int)">
+<h3>getBlockState</h3>
+<div class="member-signature"><span class="annotations">@NotNull
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull org.bukkit.block.BlockState</span>&nbsp;<span class="element-name">getBlockState</span><wbr><span class="parameters">(int&nbsp;x,
+ int&nbsp;y,
+ int&nbsp;z)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getBlockState</code>&nbsp;in interface&nbsp;<code>org.bukkit.RegionAccessor</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getBlockData(org.bukkit.Location)">
+<h3>getBlockData</h3>
+<div class="member-signature"><span class="annotations">@NotNull
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull org.bukkit.block.data.BlockData</span>&nbsp;<span class="element-name">getBlockData</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.Location&nbsp;location)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getBlockData</code>&nbsp;in interface&nbsp;<code>org.bukkit.RegionAccessor</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getBlockData(int,int,int)">
+<h3>getBlockData</h3>
+<div class="member-signature"><span class="annotations">@NotNull
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull org.bukkit.block.data.BlockData</span>&nbsp;<span class="element-name">getBlockData</span><wbr><span class="parameters">(int&nbsp;x,
+ int&nbsp;y,
+ int&nbsp;z)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getBlockData</code>&nbsp;in interface&nbsp;<code>org.bukkit.RegionAccessor</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getType(org.bukkit.Location)">
+<h3>getType</h3>
+<div class="member-signature"><span class="annotations">@NotNull
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull org.bukkit.Material</span>&nbsp;<span class="element-name">getType</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.Location&nbsp;location)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getType</code>&nbsp;in interface&nbsp;<code>org.bukkit.RegionAccessor</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getType(int,int,int)">
+<h3>getType</h3>
+<div class="member-signature"><span class="annotations">@NotNull
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull org.bukkit.Material</span>&nbsp;<span class="element-name">getType</span><wbr><span class="parameters">(int&nbsp;x,
+ int&nbsp;y,
+ int&nbsp;z)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getType</code>&nbsp;in interface&nbsp;<code>org.bukkit.RegionAccessor</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setBlockData(org.bukkit.Location,org.bukkit.block.data.BlockData)">
+<h3>setBlockData</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setBlockData</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.Location&nbsp;location,
+ @NotNull
+ @NotNull org.bukkit.block.data.BlockData&nbsp;blockData)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>setBlockData</code>&nbsp;in interface&nbsp;<code>org.bukkit.RegionAccessor</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setBlockData(int,int,int,org.bukkit.block.data.BlockData)">
+<h3>setBlockData</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setBlockData</span><wbr><span class="parameters">(int&nbsp;x,
+ int&nbsp;y,
+ int&nbsp;z,
+ @NotNull
+ @NotNull org.bukkit.block.data.BlockData&nbsp;blockData)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>setBlockData</code>&nbsp;in interface&nbsp;<code>org.bukkit.RegionAccessor</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setType(org.bukkit.Location,org.bukkit.Material)">
+<h3>setType</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setType</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.Location&nbsp;location,
+ @NotNull
+ @NotNull org.bukkit.Material&nbsp;material)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>setType</code>&nbsp;in interface&nbsp;<code>org.bukkit.RegionAccessor</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setType(int,int,int,org.bukkit.Material)">
+<h3>setType</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setType</span><wbr><span class="parameters">(int&nbsp;x,
+ int&nbsp;y,
+ int&nbsp;z,
+ @NotNull
+ @NotNull org.bukkit.Material&nbsp;material)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>setType</code>&nbsp;in interface&nbsp;<code>org.bukkit.RegionAccessor</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="generateTree(org.bukkit.Location,java.util.Random,org.bukkit.TreeType)">
+<h3>generateTree</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">generateTree</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.Location&nbsp;location,
+ @NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Random.html" title="class or interface in java.util" class="external-link">Random</a>&nbsp;random,
+ @NotNull
+ @NotNull org.bukkit.TreeType&nbsp;type)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>generateTree</code>&nbsp;in interface&nbsp;<code>org.bukkit.RegionAccessor</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="generateTree(org.bukkit.Location,java.util.Random,org.bukkit.TreeType,org.bukkit.util.Consumer)">
+<h3>generateTree</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">generateTree</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.Location&nbsp;location,
+ @NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Random.html" title="class or interface in java.util" class="external-link">Random</a>&nbsp;random,
+ @NotNull
+ @NotNull org.bukkit.TreeType&nbsp;type,
+ @Nullable
+ @Nullable org.bukkit.util.Consumer&lt;org.bukkit.block.BlockState&gt;&nbsp;stateConsumer)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>generateTree</code>&nbsp;in interface&nbsp;<code>org.bukkit.RegionAccessor</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="generateTree(org.bukkit.Location,java.util.Random,org.bukkit.TreeType,java.util.function.Predicate)">
+<h3>generateTree</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">generateTree</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.Location&nbsp;location,
+ @NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Random.html" title="class or interface in java.util" class="external-link">Random</a>&nbsp;random,
+ @NotNull
+ @NotNull org.bukkit.TreeType&nbsp;type,
+ @Nullable
+ @Nullable <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;org.bukkit.block.BlockState&gt;&nbsp;statePredicate)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>generateTree</code>&nbsp;in interface&nbsp;<code>org.bukkit.RegionAccessor</code></dd>
 </dl>
 </section>
 </li>
@@ -2884,12 +3404,33 @@ E extends org.bukkit.entity.Entity&gt;<br><a href="entity/GlowEntity.html" title
 </section>
 </li>
 <li>
+<section class="detail" id="getLogicalHeight()">
+<h3>getLogicalHeight</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getLogicalHeight</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getLogicalHeight</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="getMinHeight()">
 <h3>getMinHeight</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getMinHeight</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code>getMinHeight</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
+<dd><code>getMinHeight</code>&nbsp;in interface&nbsp;<code>org.bukkit.generator.WorldInfo</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="vanillaBiomeProvider()">
+<h3>vanillaBiomeProvider</h3>
+<div class="member-signature"><span class="annotations">@NotNull
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull org.bukkit.generator.BiomeProvider</span>&nbsp;<span class="element-name">vanillaBiomeProvider</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>vanillaBiomeProvider</code>&nbsp;in interface&nbsp;<code>org.bukkit.generator.WorldInfo</code></dd>
 </dl>
 </section>
 </li>
@@ -2901,7 +3442,7 @@ E extends org.bukkit.entity.Entity&gt;<br><a href="entity/GlowEntity.html" title
                                              throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code>spawn</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
+<dd><code>spawn</code>&nbsp;in interface&nbsp;<code>org.bukkit.RegionAccessor</code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code></dd>
 </dl>
@@ -2916,7 +3457,7 @@ E extends org.bukkit.entity.Entity&gt;<br><a href="entity/GlowEntity.html" title
                                              throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code>spawn</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
+<dd><code>spawn</code>&nbsp;in interface&nbsp;<code>org.bukkit.RegionAccessor</code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code></dd>
 </dl>
@@ -2933,7 +3474,27 @@ E extends org.bukkit.entity.Entity&gt;<br><a href="entity/GlowEntity.html" title
                                              throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code>spawn</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
+<dd><code>spawn</code>&nbsp;in interface&nbsp;<code>org.bukkit.RegionAccessor</code></dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="spawn(org.bukkit.Location,java.lang.Class,boolean,org.bukkit.util.Consumer)">
+<h3>spawn</h3>
+<div class="member-signature"><span class="annotations">@NotNull
+</span><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;T extends org.bukkit.entity.Entity&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name">spawn</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.Location&nbsp;location,
+ @NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;clazz,
+ boolean&nbsp;randomizeData,
+ @Nullable
+ @Nullable org.bukkit.util.Consumer&lt;T&gt;&nbsp;function)</span>
+                                             throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>spawn</code>&nbsp;in interface&nbsp;<code>org.bukkit.RegionAccessor</code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code></dd>
 </dl>
@@ -3151,7 +3712,22 @@ E extends org.bukkit.entity.Entity&gt;</span>
  org.bukkit.entity.EntityType&nbsp;type)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code>spawnEntity</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
+<dd><code>spawnEntity</code>&nbsp;in interface&nbsp;<code>org.bukkit.RegionAccessor</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="spawnEntity(org.bukkit.Location,org.bukkit.entity.EntityType,boolean)">
+<h3>spawnEntity</h3>
+<div class="member-signature"><span class="annotations">@NotNull
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull org.bukkit.entity.Entity</span>&nbsp;<span class="element-name">spawnEntity</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.Location&nbsp;loc,
+ @NotNull
+ @NotNull org.bukkit.entity.EntityType&nbsp;type,
+ boolean&nbsp;randomizeData)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>spawnEntity</code>&nbsp;in interface&nbsp;<code>org.bukkit.RegionAccessor</code></dd>
 </dl>
 </section>
 </li>
@@ -3172,6 +3748,30 @@ E extends org.bukkit.entity.Entity&gt;</span>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code>strikeLightningEffect</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="findLightningRod(org.bukkit.Location)">
+<h3>findLightningRod</h3>
+<div class="member-signature"><span class="annotations">@Nullable
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@Nullable org.bukkit.Location</span>&nbsp;<span class="element-name">findLightningRod</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.Location&nbsp;location)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>findLightningRod</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="findLightningTarget(org.bukkit.Location)">
+<h3>findLightningTarget</h3>
+<div class="member-signature"><span class="annotations">@Nullable
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@Nullable org.bukkit.Location</span>&nbsp;<span class="element-name">findLightningTarget</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.Location&nbsp;location)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>findLightningTarget</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
 </dl>
 </section>
 </li>
@@ -3532,6 +4132,38 @@ E extends org.bukkit.entity.Entity&gt;</span>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">playSound</span><wbr><span class="parameters">(org.bukkit.Location&nbsp;location,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;sound,
  org.bukkit.SoundCategory&nbsp;category,
+ float&nbsp;volume,
+ float&nbsp;pitch)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>playSound</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="playSound(org.bukkit.entity.Entity,org.bukkit.Sound,float,float)">
+<h3>playSound</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">playSound</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.entity.Entity&nbsp;entity,
+ @NotNull
+ @NotNull org.bukkit.Sound&nbsp;sound,
+ float&nbsp;volume,
+ float&nbsp;pitch)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>playSound</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="playSound(org.bukkit.entity.Entity,org.bukkit.Sound,org.bukkit.SoundCategory,float,float)">
+<h3>playSound</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">playSound</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.entity.Entity&nbsp;entity,
+ @NotNull
+ @NotNull org.bukkit.Sound&nbsp;sound,
+ @NotNull
+ @NotNull org.bukkit.SoundCategory&nbsp;category,
  float&nbsp;volume,
  float&nbsp;pitch)</span></div>
 <dl class="notes">
@@ -4089,6 +4721,36 @@ E extends org.bukkit.entity.Entity&gt;</span>
 </section>
 </li>
 <li>
+<section class="detail" id="isBedWorks()">
+<h3>isBedWorks</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isBedWorks</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>isBedWorks</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="hasSkyLight()">
+<h3>hasSkyLight</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasSkyLight</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>hasSkyLight</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="hasCeiling()">
+<h3>hasCeiling</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasCeiling</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>hasCeiling</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="getCoordinateScale()">
 <h3>getCoordinateScale</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">getCoordinateScale</span>()</div>
@@ -4129,6 +4791,16 @@ E extends org.bukkit.entity.Entity&gt;</span>
 </section>
 </li>
 <li>
+<section class="detail" id="isRespawnAnchorWorks()">
+<h3>isRespawnAnchorWorks</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isRespawnAnchorWorks</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>isRespawnAnchorWorks</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="doesBedWork()">
 <h3>doesBedWork</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">doesBedWork</span>()</div>
@@ -4159,6 +4831,16 @@ E extends org.bukkit.entity.Entity&gt;</span>
 </section>
 </li>
 <li>
+<section class="detail" id="isUltraWarm()">
+<h3>isUltraWarm</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isUltraWarm</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>isUltraWarm</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="isFixedTime()">
 <h3>isFixedTime</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isFixedTime</span>()</div>
@@ -4180,6 +4862,41 @@ E extends org.bukkit.entity.Entity&gt;</span>
 </section>
 </li>
 <li>
+<section class="detail" id="sendGameEvent(org.bukkit.entity.Entity,org.bukkit.GameEvent,org.bukkit.util.Vector)">
+<h3>sendGameEvent</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">sendGameEvent</span><wbr><span class="parameters">(@Nullable
+ @Nullable org.bukkit.entity.Entity&nbsp;sourceEntity,
+ @NotNull
+ @NotNull org.bukkit.GameEvent&nbsp;gameEvent,
+ @NotNull
+ @NotNull org.bukkit.util.Vector&nbsp;position)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>sendGameEvent</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getSimulationDistance()">
+<h3>getSimulationDistance</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getSimulationDistance</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getSimulationDistance</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setSimulationDistance(int)">
+<h3>setSimulationDistance</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setSimulationDistance</span><wbr><span class="parameters">(int&nbsp;simulationDistance)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>setSimulationDistance</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="getNoTickViewDistance()">
 <h3>getNoTickViewDistance</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getNoTickViewDistance</span>()</div>
@@ -4196,6 +4913,26 @@ E extends org.bukkit.entity.Entity&gt;</span>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code>setNoTickViewDistance</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getSendViewDistance()">
+<h3>getSendViewDistance</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getSendViewDistance</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getSendViewDistance</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setSendViewDistance(int)">
+<h3>setSendViewDistance</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setSendViewDistance</span><wbr><span class="parameters">(int&nbsp;viewDistance)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>setSendViewDistance</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
 </dl>
 </section>
 </li>
@@ -4314,6 +5051,17 @@ E extends org.bukkit.entity.Entity&gt;</span>
 </section>
 </li>
 <li>
+<section class="detail" id="getPersistentDataContainer()">
+<h3>getPersistentDataContainer</h3>
+<div class="member-signature"><span class="annotations">@NotNull
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull org.bukkit.persistence.PersistentDataContainer</span>&nbsp;<span class="element-name">getPersistentDataContainer</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getPersistentDataContainer</code>&nbsp;in interface&nbsp;<code>org.bukkit.persistence.PersistentDataHolder</code></dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="toString()">
 <h3>toString</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
@@ -4341,7 +5089,7 @@ E extends org.bukkit.entity.Entity&gt;</span>
 <div class="block">The name of this world.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code>getName</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
+<dd><code>getName</code>&nbsp;in interface&nbsp;<code>org.bukkit.generator.WorldInfo</code></dd>
 </dl>
 </section>
 </li>
@@ -4392,7 +5140,7 @@ E extends org.bukkit.entity.Entity&gt;</span>
 <div class="block">The environment.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code>getEnvironment</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
+<dd><code>getEnvironment</code>&nbsp;in interface&nbsp;<code>org.bukkit.generator.WorldInfo</code></dd>
 </dl>
 </section>
 </li>
@@ -4403,7 +5151,7 @@ E extends org.bukkit.entity.Entity&gt;</span>
 <div class="block">The world seed.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code>getSeed</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
+<dd><code>getSeed</code>&nbsp;in interface&nbsp;<code>org.bukkit.generator.WorldInfo</code></dd>
 </dl>
 </section>
 </li>
@@ -4750,7 +5498,7 @@ E extends org.bukkit.entity.Entity&gt;</span>
 <div class="block">The maximum height at which players may place blocks.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code>getMaxHeight</code>&nbsp;in interface&nbsp;<code>org.bukkit.World</code></dd>
+<dd><code>getMaxHeight</code>&nbsp;in interface&nbsp;<code>org.bukkit.generator.WorldInfo</code></dd>
 </dl>
 </section>
 </li>

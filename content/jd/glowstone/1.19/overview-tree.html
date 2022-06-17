@@ -559,7 +559,7 @@ loadScripts(document, 'script');</script>
 <li class="circle">net.glowstone.net.codec.play.game.<a href="net/glowstone/net/codec/play/game/EditBookCodec.html" class="type-name-link" title="class in net.glowstone.net.codec.play.game">EditBookCodec</a> (implements com.flowpowered.network.Codec&lt;T&gt;)</li>
 <li class="circle">net.glowstone.net.handler.play.game.<a href="net/glowstone/net/handler/play/game/EditBookHandler.html" class="type-name-link" title="class in net.glowstone.net.handler.play.game">EditBookHandler</a> (implements com.flowpowered.network.MessageHandler&lt;S,<wbr>T&gt;)</li>
 <li class="circle">net.glowstone.net.message.play.game.<a href="net/glowstone/net/message/play/game/EditBookMessage.html" class="type-name-link" title="class in net.glowstone.net.message.play.game">EditBookMessage</a> (implements com.flowpowered.network.Message)</li>
-<li class="circle">org.bukkit.enchantments.Enchantment (implements org.bukkit.Keyed)
+<li class="circle">org.bukkit.enchantments.Enchantment (implements org.bukkit.Keyed, net.kyori.adventure.translation.Translatable)
 <ul>
 <li class="circle">net.glowstone.constants.<a href="net/glowstone/constants/GlowEnchantment.html" class="type-name-link" title="class in net.glowstone.constants">GlowEnchantment</a> (implements net.glowstone.util.<a href="net/glowstone/util/WeightedRandom.Choice.html" title="interface in net.glowstone.util">WeightedRandom.Choice</a>)</li>
 </ul>
@@ -731,13 +731,12 @@ loadScripts(document, 'script');</script>
 </ul>
 </li>
 <li class="circle">net.glowstone.advancement.<a href="net/glowstone/advancement/GlowAdvancement.html" class="type-name-link" title="class in net.glowstone.advancement">GlowAdvancement</a> (implements org.bukkit.advancement.Advancement)</li>
-<li class="circle">net.glowstone.advancement.<a href="net/glowstone/advancement/GlowAdvancementDisplay.html" class="type-name-link" title="class in net.glowstone.advancement">GlowAdvancementDisplay</a></li>
+<li class="circle">net.glowstone.advancement.<a href="net/glowstone/advancement/GlowAdvancementDisplay.html" class="type-name-link" title="class in net.glowstone.advancement">GlowAdvancementDisplay</a> (implements io.papermc.paper.advancement.AdvancementDisplay)</li>
 <li class="circle">net.glowstone.constants.<a href="net/glowstone/constants/GlowBiome.html" class="type-name-link" title="class in net.glowstone.constants">GlowBiome</a></li>
 <li class="circle">net.glowstone.constants.<a href="net/glowstone/constants/GlowBiome.GlowBiomeBuilder.html" class="type-name-link" title="class in net.glowstone.constants">GlowBiome.GlowBiomeBuilder</a></li>
 <li class="circle">net.glowstone.constants.<a href="net/glowstone/constants/GlowBiomeClimate.html" class="type-name-link" title="class in net.glowstone.constants">GlowBiomeClimate</a></li>
 <li class="circle">net.glowstone.block.<a href="net/glowstone/block/GlowBlock.html" class="type-name-link" title="class in net.glowstone.block">GlowBlock</a> (implements org.bukkit.block.Block)</li>
-<li class="circle">net.glowstone.block.<a href="net/glowstone/block/GlowBlockSoundGroup.html" class="type-name-link" title="class in net.glowstone.block">GlowBlockSoundGroup</a> (implements com.destroystokyo.paper.block.BlockSoundGroup)</li>
-<li class="circle">net.glowstone.block.<a href="net/glowstone/block/GlowBlockState.html" class="type-name-link" title="class in net.glowstone.block">GlowBlockState</a> (implements org.bukkit.block.BlockState)
+<li class="circle">net.glowstone.block.<a href="net/glowstone/block/GlowBlockState.html" class="type-name-link" title="class in net.glowstone.block">GlowBlockState</a> (implements org.bukkit.block.BlockState, org.bukkit.block.TileState)
 <ul>
 <li class="circle">net.glowstone.block.entity.state.<a href="net/glowstone/block/entity/state/GlowBanner.html" class="type-name-link" title="class in net.glowstone.block.entity.state">GlowBanner</a> (implements org.bukkit.block.Banner)</li>
 <li class="circle">net.glowstone.block.entity.state.<a href="net/glowstone/block/entity/state/GlowBed.html" class="type-name-link" title="class in net.glowstone.block.entity.state">GlowBed</a> (implements org.bukkit.block.Bed)</li>
@@ -1044,6 +1043,7 @@ loadScripts(document, 'script');</script>
 <li class="circle">net.glowstone.<a href="net/glowstone/GlowServer.html" class="type-name-link" title="class in net.glowstone">GlowServer</a> (implements org.bukkit.Server)</li>
 <li class="circle">net.glowstone.util.<a href="net/glowstone/util/GlowServerIcon.html" class="type-name-link" title="class in net.glowstone.util">GlowServerIcon</a> (implements org.bukkit.util.CachedServerIcon)</li>
 <li class="circle">net.glowstone.constants.<a href="net/glowstone/constants/GlowSound.html" class="type-name-link" title="class in net.glowstone.constants">GlowSound</a></li>
+<li class="circle">net.glowstone.block.<a href="net/glowstone/block/GlowSoundGroup.html" class="type-name-link" title="class in net.glowstone.block">GlowSoundGroup</a> (implements org.bukkit.SoundGroup)</li>
 <li class="circle">net.glowstone.constants.<a href="net/glowstone/constants/GlowStatistic.html" class="type-name-link" title="class in net.glowstone.constants">GlowStatistic</a></li>
 <li class="circle">net.glowstone.net.<a href="net/glowstone/net/GlowStatusClient.html" class="type-name-link" title="class in net.glowstone.net">GlowStatusClient</a> (implements com.destroystokyo.paper.network.StatusClient)</li>
 <li class="circle">net.glowstone.generator.structures.<a href="net/glowstone/generator/structures/GlowStructure.html" class="type-name-link" title="class in net.glowstone.generator.structures">GlowStructure</a> (implements net.glowstone.generator.objects.<a href="net/glowstone/generator/objects/TerrainObject.html" title="interface in net.glowstone.generator.objects">TerrainObject</a>)
@@ -1125,7 +1125,7 @@ loadScripts(document, 'script');</script>
 <li class="circle">net.glowstone.inventory.crafting.<a href="net/glowstone/inventory/crafting/GlowRepairMatcher.html" class="type-name-link" title="class in net.glowstone.inventory.crafting">GlowRepairMatcher</a></li>
 </ul>
 </li>
-<li class="circle">org.bukkit.inventory.ItemStack (implements java.lang.<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Cloneable.html" title="class or interface in java.lang" class="external-link">Cloneable</a>, org.bukkit.configuration.serialization.ConfigurationSerializable, net.kyori.adventure.text.event.HoverEventSource&lt;V&gt;)
+<li class="circle">org.bukkit.inventory.ItemStack (implements java.lang.<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Cloneable.html" title="class or interface in java.lang" class="external-link">Cloneable</a>, org.bukkit.configuration.serialization.ConfigurationSerializable, net.kyori.adventure.text.event.HoverEventSource&lt;V&gt;, net.kyori.adventure.translation.Translatable)
 <ul>
 <li class="circle">net.glowstone.util.<a href="net/glowstone/util/ImmutableItemStack.html" class="type-name-link" title="class in net.glowstone.util">ImmutableItemStack</a></li>
 </ul>
@@ -1242,9 +1242,9 @@ loadScripts(document, 'script');</script>
 <li class="circle">net.glowstone.block.blocktype.<a href="net/glowstone/block/blocktype/BlockDirectDrops.html" class="type-name-link" title="class in net.glowstone.block.blocktype">BlockDirectDrops</a>
 <ul>
 <li class="circle">net.glowstone.block.blocktype.<a href="net/glowstone/block/blocktype/BlockBeacon.html" class="type-name-link" title="class in net.glowstone.block.blocktype">BlockBeacon</a></li>
+<li class="circle">net.glowstone.block.blocktype.<a href="net/glowstone/block/blocktype/BlockDirtPath.html" class="type-name-link" title="class in net.glowstone.block.blocktype">BlockDirtPath</a></li>
 <li class="circle">net.glowstone.block.blocktype.<a href="net/glowstone/block/blocktype/BlockEndRod.html" class="type-name-link" title="class in net.glowstone.block.blocktype">BlockEndRod</a></li>
 <li class="circle">net.glowstone.block.blocktype.<a href="net/glowstone/block/blocktype/BlockFence.html" class="type-name-link" title="class in net.glowstone.block.blocktype">BlockFence</a></li>
-<li class="circle">net.glowstone.block.blocktype.<a href="net/glowstone/block/blocktype/BlockGrassPath.html" class="type-name-link" title="class in net.glowstone.block.blocktype">BlockGrassPath</a></li>
 <li class="circle">net.glowstone.block.blocktype.<a href="net/glowstone/block/blocktype/BlockIronTrapDoor.html" class="type-name-link" title="class in net.glowstone.block.blocktype">BlockIronTrapDoor</a></li>
 <li class="circle">net.glowstone.block.blocktype.<a href="net/glowstone/block/blocktype/BlockMagma.html" class="type-name-link" title="class in net.glowstone.block.blocktype">BlockMagma</a></li>
 <li class="circle">net.glowstone.block.blocktype.<a href="net/glowstone/block/blocktype/BlockPumpkinBase.html" class="type-name-link" title="class in net.glowstone.block.blocktype">BlockPumpkinBase</a>
@@ -1499,7 +1499,7 @@ loadScripts(document, 'script');</script>
 <li class="circle">net.glowstone.util.<a href="net/glowstone/util/Position.html" class="type-name-link" title="class in net.glowstone.util">Position</a></li>
 <li class="circle">net.glowstone.net.codec.play.game.<a href="net/glowstone/net/codec/play/game/PositionRotationCodec.html" class="type-name-link" title="class in net.glowstone.net.codec.play.game">PositionRotationCodec</a> (implements com.flowpowered.network.Codec&lt;T&gt;)</li>
 <li class="circle">net.glowstone.net.message.play.game.<a href="net/glowstone/net/message/play/game/PositionRotationMessage.html" class="type-name-link" title="class in net.glowstone.net.message.play.game">PositionRotationMessage</a> (implements com.flowpowered.network.Message)</li>
-<li class="circle">org.bukkit.potion.PotionEffectType
+<li class="circle">org.bukkit.potion.PotionEffectType (implements org.bukkit.Keyed, net.kyori.adventure.translation.Translatable)
 <ul>
 <li class="circle">net.glowstone.constants.<a href="net/glowstone/constants/GlowPotionEffect.html" class="type-name-link" title="class in net.glowstone.constants">GlowPotionEffect</a></li>
 </ul>
@@ -1865,9 +1865,9 @@ loadScripts(document, 'script');</script>
 <li class="circle">net.glowstone.inventory.<a href="net/glowstone/inventory/ClothType.html" class="type-name-link" title="enum class in net.glowstone.inventory">ClothType</a> (implements net.glowstone.inventory.<a href="net/glowstone/inventory/MaterialMatcher.html" title="interface in net.glowstone.inventory">MaterialMatcher</a>)</li>
 <li class="circle">net.glowstone.net.message.play.player.<a href="net/glowstone/net/message/play/player/CombatEventMessage.Event.html" class="type-name-link" title="enum class in net.glowstone.net.message.play.player">CombatEventMessage.Event</a></li>
 <li class="circle">net.glowstone.util.<a href="net/glowstone/util/CompatibilityBundle.html" class="type-name-link" title="enum class in net.glowstone.util">CompatibilityBundle</a></li>
+<li class="circle">net.glowstone.entity.<a href="net/glowstone/entity/EntityAnimation.html" class="type-name-link" title="enum class in net.glowstone.entity">EntityAnimation</a></li>
 <li class="circle">net.glowstone.entity.<a href="net/glowstone/entity/FishingRewardManager.RewardCategory.html" class="type-name-link" title="enum class in net.glowstone.entity">FishingRewardManager.RewardCategory</a></li>
 <li class="circle">net.glowstone.generator.objects.<a href="net/glowstone/generator/objects/FlowerType.html" class="type-name-link" title="enum class in net.glowstone.generator.objects">FlowerType</a></li>
-<li class="circle">net.glowstone.advancement.<a href="net/glowstone/advancement/GlowAdvancementDisplay.FrameType.html" class="type-name-link" title="enum class in net.glowstone.advancement">GlowAdvancementDisplay.FrameType</a></li>
 <li class="circle">net.glowstone.constants.<a href="net/glowstone/constants/GlowBlockEntity.html" class="type-name-link" title="enum class in net.glowstone.constants">GlowBlockEntity</a></li>
 <li class="circle">net.glowstone.entity.<a href="net/glowstone/entity/GlowHangingEntity.HangingFace.html" class="type-name-link" title="enum class in net.glowstone.entity">GlowHangingEntity.HangingFace</a></li>
 <li class="circle">net.glowstone.entity.objects.<a href="net/glowstone/entity/objects/GlowMinecart.MinecartType.html" class="type-name-link" title="enum class in net.glowstone.entity.objects">GlowMinecart.MinecartType</a></li>

@@ -114,28 +114,34 @@ implements org.bukkit.inventory.FurnaceInventory</span></div>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.inventory.ItemStack</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFuel()" class="member-name-link">getFuel</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.block.Furnace</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getHolder()" class="member-name-link">getHolder</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">The owner of this inventory.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.inventory.ItemStack</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getResult()" class="member-name-link">getResult</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#canSmelt(org.bukkit.inventory.ItemStack)" class="member-name-link">canSmelt</a><wbr>(@Nullable org.bukkit.inventory.ItemStack&nbsp;item)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.inventory.ItemStack</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSmelting()" class="member-name-link">getSmelting</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFuel()" class="member-name-link">getFuel</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleShiftClick(net.glowstone.entity.GlowPlayer,org.bukkit.inventory.InventoryView,int,org.bukkit.inventory.ItemStack)" class="member-name-link">handleShiftClick</a><wbr>(<a href="../entity/GlowPlayer.html" title="class in net.glowstone.entity">GlowPlayer</a>&nbsp;player,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.block.Furnace</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getHolder()" class="member-name-link">getHolder</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">The owner of this inventory.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.inventory.ItemStack</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getResult()" class="member-name-link">getResult</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.inventory.ItemStack</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSmelting()" class="member-name-link">getSmelting</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleShiftClick(net.glowstone.entity.GlowPlayer,org.bukkit.inventory.InventoryView,int,org.bukkit.inventory.ItemStack)" class="member-name-link">handleShiftClick</a><wbr>(<a href="../entity/GlowPlayer.html" title="class in net.glowstone.entity">GlowPlayer</a>&nbsp;player,
  org.bukkit.inventory.InventoryView&nbsp;view,
  int&nbsp;clickedSlot,
  org.bukkit.inventory.ItemStack&nbsp;clickedItem)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Handle a shift click in this inventory by the specified player.</div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFuel(org.bukkit.inventory.ItemStack)" class="member-name-link">isFuel</a><wbr>(@Nullable org.bukkit.inventory.ItemStack&nbsp;item)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#itemPlaceAllowed(int,org.bukkit.inventory.ItemStack)" class="member-name-link">itemPlaceAllowed</a><wbr>(int&nbsp;slot,
  org.bukkit.inventory.ItemStack&nbsp;stack)</code></div>
@@ -271,6 +277,28 @@ implements org.bukkit.inventory.FurnaceInventory</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code>setSmelting</code>&nbsp;in interface&nbsp;<code>org.bukkit.inventory.FurnaceInventory</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isFuel(org.bukkit.inventory.ItemStack)">
+<h3>isFuel</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isFuel</span><wbr><span class="parameters">(@Nullable
+ @Nullable org.bukkit.inventory.ItemStack&nbsp;item)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>isFuel</code>&nbsp;in interface&nbsp;<code>org.bukkit.inventory.FurnaceInventory</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="canSmelt(org.bukkit.inventory.ItemStack)">
+<h3>canSmelt</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">canSmelt</span><wbr><span class="parameters">(@Nullable
+ @Nullable org.bukkit.inventory.ItemStack&nbsp;item)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>canSmelt</code>&nbsp;in interface&nbsp;<code>org.bukkit.inventory.FurnaceInventory</code></dd>
 </dl>
 </section>
 </li>

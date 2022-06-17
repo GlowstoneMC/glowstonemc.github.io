@@ -81,7 +81,7 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code>net.kyori.adventure.audience.Audience</code>, <code>net.kyori.adventure.text.event.HoverEventSource&lt;net.kyori.adventure.text.event.HoverEvent.ShowEntity&gt;</code>, <code>org.bukkit.attribute.Attributable</code>, <code>org.bukkit.command.CommandSender</code>, <code>org.bukkit.entity.AnimalTamer</code>, <code>org.bukkit.entity.Damageable</code>, <code>org.bukkit.entity.Entity</code>, <code>org.bukkit.entity.HumanEntity</code>, <code>org.bukkit.entity.LivingEntity</code>, <code>org.bukkit.inventory.InventoryHolder</code>, <code>org.bukkit.metadata.Metadatable</code>, <code>org.bukkit.Nameable</code>, <code>org.bukkit.permissions.Permissible</code>, <code>org.bukkit.permissions.ServerOperator</code>, <code>org.bukkit.persistence.PersistentDataHolder</code>, <code>org.bukkit.projectiles.ProjectileSource</code></dd>
+<dd><code>net.kyori.adventure.audience.Audience</code>, <code>net.kyori.adventure.pointer.Pointered</code>, <code>net.kyori.adventure.sound.Sound.Emitter</code>, <code>net.kyori.adventure.text.event.HoverEventSource&lt;net.kyori.adventure.text.event.HoverEvent.ShowEntity&gt;</code>, <code>org.bukkit.attribute.Attributable</code>, <code>org.bukkit.command.CommandSender</code>, <code>org.bukkit.entity.AnimalTamer</code>, <code>org.bukkit.entity.Damageable</code>, <code>org.bukkit.entity.Entity</code>, <code>org.bukkit.entity.HumanEntity</code>, <code>org.bukkit.entity.LivingEntity</code>, <code>org.bukkit.inventory.InventoryHolder</code>, <code>org.bukkit.metadata.Metadatable</code>, <code>org.bukkit.Nameable</code>, <code>org.bukkit.permissions.Permissible</code>, <code>org.bukkit.permissions.ServerOperator</code>, <code>org.bukkit.persistence.PersistentDataHolder</code>, <code>org.bukkit.projectiles.ProjectileSource</code></dd>
 </dl>
 <dl class="notes">
 <dt>Direct Known Subclasses:</dt>
@@ -193,51 +193,87 @@ implements org.bukkit.entity.HumanEntity</span></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Creates a list of <code>Message</code>s which can be sent to a client to spawn this entity.</div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#discoverRecipe(org.bukkit.NamespacedKey)" class="member-name-link">discoverRecipe</a><wbr>(@NotNull org.bukkit.NamespacedKey&nbsp;recipe)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#discoverRecipes(java.util.Collection)" class="member-name-link">discoverRecipes</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;org.bukkit.NamespacedKey&gt;&nbsp;recipes)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="objects/GlowItem.html" title="class in net.glowstone.entity.objects">GlowItem</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drop(org.bukkit.inventory.ItemStack)" class="member-name-link">drop</a><wbr>(org.bukkit.inventory.ItemStack&nbsp;stack)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Spawns a new <a href="objects/GlowItem.html" title="class in net.glowstone.entity.objects"><code>GlowItem</code></a> in the world, as if this HumanEntity had dropped it.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#dropItemInHand(boolean)" class="member-name-link">dropItemInHand</a><wbr>(boolean&nbsp;wholeStack)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#dropItem(boolean)" class="member-name-link">dropItem</a><wbr>(boolean&nbsp;dropAll)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#dropItemInHand(boolean)" class="member-name-link">dropItemInHand</a><wbr>(boolean&nbsp;wholeStack)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Drops the item this entity currently has in its hands and remove the item from the
  HumanEntity's inventory.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;org.bukkit.permissions.PermissionAttachmentInfo&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEffectivePermissions()" class="member-name-link">getEffectivePermissions</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAttackCooldown()" class="member-name-link">getAttackCooldown</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.Location</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBedLocation()" class="member-name-link">getBedLocation</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../inventory/GlowInventory.html" title="class in net.glowstone.inventory">GlowInventory</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEnderChest()" class="member-name-link">getEnderChest</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCooldown(org.bukkit.Material)" class="member-name-link">getCooldown</a><wbr>(@NotNull org.bukkit.Material&nbsp;material)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;org.bukkit.NamespacedKey&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDiscoveredRecipes()" class="member-name-link">getDiscoveredRecipes</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;org.bukkit.permissions.PermissionAttachmentInfo&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEffectivePermissions()" class="member-name-link">getEffectivePermissions</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../inventory/GlowInventory.html" title="class in net.glowstone.inventory">GlowInventory</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEnderChest()" class="member-name-link">getEnderChest</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">The ender chest inventory of this human.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.inventory.EntityEquipment</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEquipment()" class="member-name-link">getEquipment</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.inventory.EntityEquipment</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEquipment()" class="member-name-link">getEquipment</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getExhaustion()" class="member-name-link">getExhaustion</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getExpToLevel()" class="member-name-link">getExpToLevel</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.GameMode</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getGameMode()" class="member-name-link">getGameMode</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFoodLevel()" class="member-name-link">getFoodLevel</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.GameMode</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getGameMode()" class="member-name-link">getGameMode</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">The player's active game mode.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../inventory/GlowPlayerInventory.html" title="class in net.glowstone.inventory">GlowPlayerInventory</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getInventory()" class="member-name-link">getInventory</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../inventory/GlowPlayerInventory.html" title="class in net.glowstone.inventory">GlowPlayerInventory</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getInventory()" class="member-name-link">getInventory</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">The inventory of this human.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.inventory.ItemStack</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getItemInHand()" class="member-name-link">getItemInHand</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.inventory.ItemStack</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getItemInHand()" class="member-name-link">getItemInHand</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable org.bukkit.inventory.ItemStack</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getItemInUse()" class="member-name-link">getItemInUse</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.inventory.ItemStack</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getItemOnCursor()" class="member-name-link">getItemOnCursor</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">The item the player has on their cursor.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../util/nbt/CompoundTag.html" title="class in net.glowstone.util.nbt">CompoundTag</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLeftShoulderTag()" class="member-name-link">getLeftShoulderTag</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable org.bukkit.Location</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLastDeathLocation()" class="member-name-link">getLastDeathLocation</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../util/nbt/CompoundTag.html" title="class in net.glowstone.util.nbt">CompoundTag</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLeftShoulderTag()" class="member-name-link">getLeftShoulderTag</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.inventory.MainHand</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMainHand()" class="member-name-link">getMainHand</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getName()" class="member-name-link">getName</a>()</code></div>
@@ -247,41 +283,65 @@ implements org.bukkit.entity.HumanEntity</span></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">The player's currently open inventory.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="meta/profile/GlowPlayerProfile.html" title="class in net.glowstone.entity.meta.profile">GlowPlayerProfile</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getProfile()" class="member-name-link">getProfile</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable org.bukkit.Location</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPotentialBedLocation()" class="member-name-link">getPotentialBedLocation</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="meta/profile/GlowPlayerProfile.html" title="class in net.glowstone.entity.meta.profile">GlowPlayerProfile</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getProfile()" class="member-name-link">getProfile</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">The player profile with name and UUID information.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../util/nbt/CompoundTag.html" title="class in net.glowstone.util.nbt">CompoundTag</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRightShoulderTag()" class="member-name-link">getRightShoulderTag</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../util/nbt/CompoundTag.html" title="class in net.glowstone.util.nbt">CompoundTag</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRightShoulderTag()" class="member-name-link">getRightShoulderTag</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSaturatedRegenRate()" class="member-name-link">getSaturatedRegenRate</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.entity.Entity</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getShoulderEntityLeft()" class="member-name-link">getShoulderEntityLeft</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSaturation()" class="member-name-link">getSaturation</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.entity.Entity</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getShoulderEntityRight()" class="member-name-link">getShoulderEntityRight</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getShoulderEntityLeft()" class="member-name-link">getShoulderEntityLeft</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSleepTicks()" class="member-name-link">getSleepTicks</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.entity.Entity</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getShoulderEntityRight()" class="member-name-link">getShoulderEntityRight</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSleepTicks()" class="member-name-link">getSleepTicks</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">How long this human has been sleeping.</div>
 </div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getStarvationRate()" class="member-name-link">getStarvationRate</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUniqueId()" class="member-name-link">getUniqueId</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getXpSeed()" class="member-name-link">getXpSeed</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUnsaturatedRegenRate()" class="member-name-link">getUnsaturatedRegenRate</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getXpSeed()" class="member-name-link">getXpSeed</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">The player's xpSeed.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasPermission(java.lang.String)" class="member-name-link">hasPermission</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasPermission(org.bukkit.permissions.Permission)" class="member-name-link">hasPermission</a><wbr>(org.bukkit.permissions.Permission&nbsp;perm)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasCooldown(org.bukkit.Material)" class="member-name-link">hasCooldown</a><wbr>(@NotNull org.bukkit.Material&nbsp;material)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isBlocking()" class="member-name-link">isBlocking</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasDiscoveredRecipe(org.bukkit.NamespacedKey)" class="member-name-link">hasDiscoveredRecipe</a><wbr>(@NotNull org.bukkit.NamespacedKey&nbsp;recipe)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasPermission(java.lang.String)" class="member-name-link">hasPermission</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasPermission(org.bukkit.permissions.Permission)" class="member-name-link">hasPermission</a><wbr>(org.bukkit.permissions.Permission&nbsp;perm)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isBlocking()" class="member-name-link">isBlocking</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDeeplySleeping()" class="member-name-link">isDeeplySleeping</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isOp()" class="member-name-link">isOp</a>()</code></div>
@@ -299,18 +359,50 @@ implements org.bukkit.entity.HumanEntity</span></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Whether this human is sleeping or not.</div>
 </div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable org.bukkit.inventory.InventoryView</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#openAnvil(org.bukkit.Location,boolean)" class="member-name-link">openAnvil</a><wbr>(@Nullable org.bukkit.Location&nbsp;location,
+ boolean&nbsp;force)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable org.bukkit.inventory.InventoryView</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#openCartographyTable(org.bukkit.Location,boolean)" class="member-name-link">openCartographyTable</a><wbr>(@Nullable org.bukkit.Location&nbsp;location,
+ boolean&nbsp;force)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.inventory.InventoryView</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#openEnchanting(org.bukkit.Location,boolean)" class="member-name-link">openEnchanting</a><wbr>(org.bukkit.Location&nbsp;location,
  boolean&nbsp;force)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.inventory.InventoryView</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#openInventory(org.bukkit.inventory.Inventory)" class="member-name-link">openInventory</a><wbr>(org.bukkit.inventory.Inventory&nbsp;inventory)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable org.bukkit.inventory.InventoryView</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#openGrindstone(org.bukkit.Location,boolean)" class="member-name-link">openGrindstone</a><wbr>(@Nullable org.bukkit.Location&nbsp;location,
+ boolean&nbsp;force)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#openInventory(org.bukkit.inventory.InventoryView)" class="member-name-link">openInventory</a><wbr>(org.bukkit.inventory.InventoryView&nbsp;inventory)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.inventory.InventoryView</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#openInventory(org.bukkit.inventory.Inventory)" class="member-name-link">openInventory</a><wbr>(org.bukkit.inventory.Inventory&nbsp;inventory)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#openInventory(org.bukkit.inventory.InventoryView)" class="member-name-link">openInventory</a><wbr>(org.bukkit.inventory.InventoryView&nbsp;inventory)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable org.bukkit.inventory.InventoryView</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#openLoom(org.bukkit.Location,boolean)" class="member-name-link">openLoom</a><wbr>(@Nullable org.bukkit.Location&nbsp;location,
+ boolean&nbsp;force)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable org.bukkit.inventory.InventoryView</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#openMerchant(org.bukkit.entity.Villager,boolean)" class="member-name-link">openMerchant</a><wbr>(@NotNull org.bukkit.entity.Villager&nbsp;trader,
+ boolean&nbsp;force)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable org.bukkit.inventory.InventoryView</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#openMerchant(org.bukkit.inventory.Merchant,boolean)" class="member-name-link">openMerchant</a><wbr>(@NotNull org.bukkit.inventory.Merchant&nbsp;merchant,
+ boolean&nbsp;force)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#openSign(org.bukkit.block.Sign)" class="member-name-link">openSign</a><wbr>(org.bukkit.block.Sign&nbsp;sign)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable org.bukkit.inventory.InventoryView</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#openSmithingTable(org.bukkit.Location,boolean)" class="member-name-link">openSmithingTable</a><wbr>(@Nullable org.bukkit.Location&nbsp;location,
+ boolean&nbsp;force)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable org.bukkit.inventory.InventoryView</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#openStonecutter(org.bukkit.Location,boolean)" class="member-name-link">openStonecutter</a><wbr>(@Nullable org.bukkit.Location&nbsp;location,
+ boolean&nbsp;force)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.inventory.InventoryView</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#openWorkbench(org.bukkit.Location,boolean)" class="member-name-link">openWorkbench</a><wbr>(org.bukkit.Location&nbsp;location,
@@ -334,23 +426,36 @@ implements org.bukkit.entity.HumanEntity</span></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeAttachment(org.bukkit.permissions.PermissionAttachment)" class="member-name-link">removeAttachment</a><wbr>(org.bukkit.permissions.PermissionAttachment&nbsp;attachment)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCooldown(org.bukkit.Material,int)" class="member-name-link">setCooldown</a><wbr>(@NotNull org.bukkit.Material&nbsp;material,
+ int&nbsp;ticks)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setExhaustion(float)" class="member-name-link">setExhaustion</a><wbr>(float&nbsp;value)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setFireTicks(int)" class="member-name-link">setFireTicks</a><wbr>(int&nbsp;ticks)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">How long the entity has been on fire, or 0 if it is not.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setGameMode(org.bukkit.GameMode)" class="member-name-link">setGameMode</a><wbr>(org.bukkit.GameMode&nbsp;gameMode)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setFoodLevel(int)" class="member-name-link">setFoodLevel</a><wbr>(int&nbsp;value)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setGameMode(org.bukkit.GameMode)" class="member-name-link">setGameMode</a><wbr>(org.bukkit.GameMode&nbsp;gameMode)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">The player's active game mode.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setItemInHand(org.bukkit.inventory.ItemStack)" class="member-name-link">setItemInHand</a><wbr>(org.bukkit.inventory.ItemStack&nbsp;item)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setItemOnCursor(org.bukkit.inventory.ItemStack)" class="member-name-link">setItemOnCursor</a><wbr>(org.bukkit.inventory.ItemStack&nbsp;itemOnCursor)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setItemInHand(org.bukkit.inventory.ItemStack)" class="member-name-link">setItemInHand</a><wbr>(org.bukkit.inventory.ItemStack&nbsp;item)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setItemOnCursor(org.bukkit.inventory.ItemStack)" class="member-name-link">setItemOnCursor</a><wbr>(org.bukkit.inventory.ItemStack&nbsp;itemOnCursor)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">The item the player has on their cursor.</div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setLastDeathLocation(org.bukkit.Location)" class="member-name-link">setLastDeathLocation</a><wbr>(@Nullable org.bukkit.Location&nbsp;location)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setLeftShoulderTag(net.glowstone.util.nbt.CompoundTag)" class="member-name-link">setLeftShoulderTag</a><wbr>(<a href="../util/nbt/CompoundTag.html" title="class in net.glowstone.util.nbt">CompoundTag</a>&nbsp;tag)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -363,16 +468,28 @@ implements org.bukkit.entity.HumanEntity</span></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setRightShoulderTag(net.glowstone.util.nbt.CompoundTag)" class="member-name-link">setRightShoulderTag</a><wbr>(<a href="../util/nbt/CompoundTag.html" title="class in net.glowstone.util.nbt">CompoundTag</a>&nbsp;tag)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSaturatedRegenRate(int)" class="member-name-link">setSaturatedRegenRate</a><wbr>(int&nbsp;ticks)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSaturation(float)" class="member-name-link">setSaturation</a><wbr>(float&nbsp;value)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setShoulderEntityLeft(org.bukkit.entity.Entity)" class="member-name-link">setShoulderEntityLeft</a><wbr>(org.bukkit.entity.Entity&nbsp;entity)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setShoulderEntityRight(org.bukkit.entity.Entity)" class="member-name-link">setShoulderEntityRight</a><wbr>(org.bukkit.entity.Entity&nbsp;entity)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setUniqueId(java.util.UUID)" class="member-name-link">setUniqueId</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;uuid)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setStarvationRate(int)" class="member-name-link">setStarvationRate</a><wbr>(int&nbsp;ticks)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setUniqueId(java.util.UUID)" class="member-name-link">setUniqueId</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;uuid)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets this entity's unique identifier if possible.</div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setUnsaturatedRegenRate(int)" class="member-name-link">setUnsaturatedRegenRate</a><wbr>(int&nbsp;ticks)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setWindowProperty(org.bukkit.inventory.InventoryView.Property,int)" class="member-name-link">setWindowProperty</a><wbr>(org.bukkit.inventory.InventoryView.Property&nbsp;prop,
  int&nbsp;value)</code></div>
@@ -382,12 +499,25 @@ implements org.bukkit.entity.HumanEntity</span></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">The player's xpSeed.</div>
 </div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sleep(org.bukkit.Location,boolean)" class="member-name-link">sleep</a><wbr>(@NotNull org.bukkit.Location&nbsp;location,
+ boolean&nbsp;force)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#undiscoverRecipe(org.bukkit.NamespacedKey)" class="member-name-link">undiscoverRecipe</a><wbr>(@NotNull org.bukkit.NamespacedKey&nbsp;recipe)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#undiscoverRecipes(java.util.Collection)" class="member-name-link">undiscoverRecipes</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;org.bukkit.NamespacedKey&gt;&nbsp;recipes)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wakeup(boolean)" class="member-name-link">wakeup</a><wbr>(boolean&nbsp;setSpawnLocation)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.glowstone.entity.GlowLivingEntity">Methods inherited from class&nbsp;net.glowstone.entity.<a href="GlowLivingEntity.html" title="class in net.glowstone.entity">GlowLivingEntity</a></h3>
-<code><a href="GlowLivingEntity.html#addPotionEffect(org.bukkit.potion.PotionEffect)">addPotionEffect</a>, <a href="GlowLivingEntity.html#addPotionEffect(org.bukkit.potion.PotionEffect,boolean)">addPotionEffect</a>, <a href="GlowLivingEntity.html#addPotionEffects(java.util.Collection)">addPotionEffects</a>, <a href="GlowLivingEntity.html#attack(org.bukkit.entity.Entity)">attack</a>, <a href="GlowLivingEntity.html#clearActiveItem()">clearActiveItem</a>, <a href="GlowLivingEntity.html#clearActivePotionEffects()">clearActivePotionEffects</a>, <a href="GlowLivingEntity.html#createUpdateMessage(net.glowstone.net.GlowSession)">createUpdateMessage</a>, <a href="GlowLivingEntity.html#damage(double,org.bukkit.entity.Entity,org.bukkit.event.entity.EntityDamageEvent.DamageCause)">damage</a>, <a href="GlowLivingEntity.html#entityInteract(net.glowstone.entity.GlowPlayer,net.glowstone.net.message.play.player.InteractEntityMessage)">entityInteract</a>, <a href="GlowLivingEntity.html#getAbsorptionAmount()">getAbsorptionAmount</a>, <a href="GlowLivingEntity.html#getActiveItem()">getActiveItem</a>, <a href="GlowLivingEntity.html#getActivePotionEffects()">getActivePotionEffects</a>, <a href="GlowLivingEntity.html#getAmbientDelay()">getAmbientDelay</a>, <a href="GlowLivingEntity.html#getAmbientSound()">getAmbientSound</a>, <a href="GlowLivingEntity.html#getArrowCooldown()">getArrowCooldown</a>, <a href="GlowLivingEntity.html#getArrowsInBody()">getArrowsInBody</a>, <a href="GlowLivingEntity.html#getArrowsStuck()">getArrowsStuck</a>, <a href="GlowLivingEntity.html#getAttribute(org.bukkit.attribute.Attribute)">getAttribute</a>, <a href="GlowLivingEntity.html#getAttributeManager()">getAttributeManager</a>, <a href="GlowLivingEntity.html#getCanPickupItems()">getCanPickupItems</a>, <a href="GlowLivingEntity.html#getCategory()">getCategory</a>, <a href="GlowLivingEntity.html#getCollidableExemptions()">getCollidableExemptions</a>, <a href="GlowLivingEntity.html#getDeathSound()">getDeathSound</a>, <a href="GlowLivingEntity.html#getDeathTicks()">getDeathTicks</a>, <a href="GlowLivingEntity.html#getEquipmentMonitor()">getEquipmentMonitor</a>, <a href="GlowLivingEntity.html#getEyeHeight()">getEyeHeight</a>, <a href="GlowLivingEntity.html#getEyeHeight(boolean)">getEyeHeight</a>, <a href="GlowLivingEntity.html#getEyeLocation()">getEyeLocation</a>, <a href="GlowLivingEntity.html#getHandRaisedTime()">getHandRaisedTime</a>, <a href="GlowLivingEntity.html#getHeadYaw()">getHeadYaw</a>, <a href="GlowLivingEntity.html#getHealth()">getHealth</a>, <a href="GlowLivingEntity.html#getHurtDirection()">getHurtDirection</a>, <a href="GlowLivingEntity.html#getHurtSound()">getHurtSound</a>, <a href="GlowLivingEntity.html#getItemUseRemainingTime()">getItemUseRemainingTime</a>, <a href="GlowLivingEntity.html#getKiller()">getKiller</a>, <a href="GlowLivingEntity.html#getLastDamage()">getLastDamage</a>, <a href="GlowLivingEntity.html#getLastDamager()">getLastDamager</a>, <a href="GlowLivingEntity.html#getLastTwoTargetBlocks(java.util.Set,int)">getLastTwoTargetBlocks</a>, <a href="GlowLivingEntity.html#getLineOfSight(java.util.Set,int)">getLineOfSight</a>, <a href="GlowLivingEntity.html#getMaxHealth()">getMaxHealth</a>, <a href="GlowLivingEntity.html#getMaximumAir()">getMaximumAir</a>, <a href="GlowLivingEntity.html#getMaximumNoDamageTicks()">getMaximumNoDamageTicks</a>, <a href="GlowLivingEntity.html#getMemory(org.bukkit.entity.memory.MemoryKey)">getMemory</a>, <a href="GlowLivingEntity.html#getMovement()">getMovement</a>, <a href="GlowLivingEntity.html#getNoDamageTicks()">getNoDamageTicks</a>, <a href="GlowLivingEntity.html#getPlayerDamageTick()">getPlayerDamageTick</a>, <a href="GlowLivingEntity.html#getPotionEffect(org.bukkit.potion.PotionEffectType)">getPotionEffect</a>, <a href="GlowLivingEntity.html#getRemainingAir()">getRemainingAir</a>, <a href="GlowLivingEntity.html#getRemoveWhenFarAway()">getRemoveWhenFarAway</a>, <a href="GlowLivingEntity.html#getShieldBlockingDelay()">getShieldBlockingDelay</a>, <a href="GlowLivingEntity.html#getSoundPitch()">getSoundPitch</a>, <a href="GlowLivingEntity.html#getSoundVolume()">getSoundVolume</a>, <a href="GlowLivingEntity.html#getSpeed()">getSpeed</a>, <a href="GlowLivingEntity.html#getState()">getState</a>, <a href="GlowLivingEntity.html#getTargetBlock(int,com.destroystokyo.paper.block.TargetBlockInfo.FluidMode)">getTargetBlock</a>, <a href="GlowLivingEntity.html#getTargetBlock(java.util.Set,int)">getTargetBlock</a>, <a href="GlowLivingEntity.html#getTargetBlockExact(int)">getTargetBlockExact</a>, <a href="GlowLivingEntity.html#getTargetBlockExact(int,org.bukkit.FluidCollisionMode)">getTargetBlockExact</a>, <a href="GlowLivingEntity.html#getTargetBlockFace(int,com.destroystokyo.paper.block.TargetBlockInfo.FluidMode)">getTargetBlockFace</a>, <a href="GlowLivingEntity.html#getTargetBlockInfo(int,com.destroystokyo.paper.block.TargetBlockInfo.FluidMode)">getTargetBlockInfo</a>, <a href="GlowLivingEntity.html#getTargetEntity(int,boolean)">getTargetEntity</a>, <a href="GlowLivingEntity.html#getTargetEntityInfo(int,boolean)">getTargetEntityInfo</a>, <a href="GlowLivingEntity.html#getTaskManager()">getTaskManager</a>, <a href="GlowLivingEntity.html#getVelocityFromMovement()">getVelocityFromMovement</a>, <a href="GlowLivingEntity.html#hasAI()">hasAI</a>, <a href="GlowLivingEntity.html#hasLineOfSight(org.bukkit.entity.Entity)">hasLineOfSight</a>, <a href="GlowLivingEntity.html#hasPotionEffect(org.bukkit.potion.PotionEffectType)">hasPotionEffect</a>, <a href="GlowLivingEntity.html#isArthropod()">isArthropod</a>, <a href="GlowLivingEntity.html#isCollidable()">isCollidable</a>, <a href="GlowLivingEntity.html#isFallFlying()">isFallFlying</a>, <a href="GlowLivingEntity.html#isGliding()">isGliding</a>, <a href="GlowLivingEntity.html#isHandRaised()">isHandRaised</a>, <a href="GlowLivingEntity.html#isInvisible()">isInvisible</a>, <a href="GlowLivingEntity.html#isJumping()">isJumping</a>, <a href="GlowLivingEntity.html#isRiptiding()">isRiptiding</a>, <a href="GlowLivingEntity.html#isSwimming()">isSwimming</a>, <a href="GlowLivingEntity.html#isUndead()">isUndead</a>, <a href="GlowLivingEntity.html#isWithinSolidBlock()">isWithinSolidBlock</a>, <a href="GlowLivingEntity.html#jump()">jump</a>, <a href="GlowLivingEntity.html#launchProjectile(java.lang.Class)">launchProjectile</a>, <a href="GlowLivingEntity.html#launchProjectile(java.lang.Class,org.bukkit.util.Vector)">launchProjectile</a>, <a href="GlowLivingEntity.html#launchProjectile(java.lang.Class,org.bukkit.Location,org.bukkit.util.Vector,float,float)">launchProjectile</a>, <a href="GlowLivingEntity.html#launchProjectile(java.lang.Class,org.bukkit.util.Vector,float,float)">launchProjectile</a>, <a href="GlowLivingEntity.html#playAnimation(org.bukkit.EntityAnimation)">playAnimation</a>, <a href="GlowLivingEntity.html#playPickupItemAnimation(org.bukkit.entity.Item,int)">playPickupItemAnimation</a>, <a href="GlowLivingEntity.html#pulsePhysics()">pulsePhysics</a>, <a href="GlowLivingEntity.html#rayTraceBlocks(double)">rayTraceBlocks</a>, <a href="GlowLivingEntity.html#rayTraceBlocks(double,org.bukkit.FluidCollisionMode)">rayTraceBlocks</a>, <a href="GlowLivingEntity.html#registerAttribute(org.bukkit.attribute.Attribute)">registerAttribute</a>, <a href="GlowLivingEntity.html#removePotionEffect(org.bukkit.potion.PotionEffectType)">removePotionEffect</a>, <a href="GlowLivingEntity.html#reset()">reset</a>, <a href="GlowLivingEntity.html#resetMaxHealth()">resetMaxHealth</a>, <a href="GlowLivingEntity.html#setAbsorptionAmount(double)">setAbsorptionAmount</a>, <a href="GlowLivingEntity.html#setAI(boolean)">setAI</a>, <a href="GlowLivingEntity.html#setArrowCooldown(int)">setArrowCooldown</a>, <a href="GlowLivingEntity.html#setArrowsInBody(int)">setArrowsInBody</a>, <a href="GlowLivingEntity.html#setArrowsStuck(int)">setArrowsStuck</a>, <a href="GlowLivingEntity.html#setCanPickupItems(boolean)">setCanPickupItems</a>, <a href="GlowLivingEntity.html#setCollidable(boolean)">setCollidable</a>, <a href="GlowLivingEntity.html#setFallFlying(boolean)">setFallFlying</a>, <a href="GlowLivingEntity.html#setGliding(boolean)">setGliding</a>, <a href="GlowLivingEntity.html#setHeadYaw(float)">setHeadYaw</a>, <a href="GlowLivingEntity.html#setHealth(double)">setHealth</a>, <a href="GlowLivingEntity.html#setHurtDirection(float)">setHurtDirection</a>, <a href="GlowLivingEntity.html#setInvisible(boolean)">setInvisible</a>, <a href="GlowLivingEntity.html#setJumping(boolean)">setJumping</a>, <a href="GlowLivingEntity.html#setKiller(org.bukkit.entity.Player)">setKiller</a>, <a href="GlowLivingEntity.html#setLastDamage(double)">setLastDamage</a>, <a href="GlowLivingEntity.html#setLastDamager(org.bukkit.entity.Entity)">setLastDamager</a>, <a href="GlowLivingEntity.html#setMaxHealth(double)">setMaxHealth</a>, <a href="GlowLivingEntity.html#setMaximumAir(int)">setMaximumAir</a>, <a href="GlowLivingEntity.html#setMaximumNoDamageTicks(int)">setMaximumNoDamageTicks</a>, <a href="GlowLivingEntity.html#setMemory(org.bukkit.entity.memory.MemoryKey,T)">setMemory</a>, <a href="GlowLivingEntity.html#setMovement(org.bukkit.util.Vector)">setMovement</a>, <a href="GlowLivingEntity.html#setNoDamageTicks(int)">setNoDamageTicks</a>, <a href="GlowLivingEntity.html#setOnGround(boolean)">setOnGround</a>, <a href="GlowLivingEntity.html#setPlayerDamageTick(int)">setPlayerDamageTick</a>, <a href="GlowLivingEntity.html#setRemainingAir(int)">setRemainingAir</a>, <a href="GlowLivingEntity.html#setRemoveWhenFarAway(boolean)">setRemoveWhenFarAway</a>, <a href="GlowLivingEntity.html#setShieldBlockingDelay(int)">setShieldBlockingDelay</a>, <a href="GlowLivingEntity.html#setSpeed(double)">setSpeed</a>, <a href="GlowLivingEntity.html#setState(net.glowstone.entity.ai.MobState)">setState</a>, <a href="GlowLivingEntity.html#setSwimming(boolean)">setSwimming</a>, <a href="GlowLivingEntity.html#swingMainHand()">swingMainHand</a>, <a href="GlowLivingEntity.html#swingOffHand()">swingOffHand</a>, <a href="GlowLivingEntity.html#tryUseTotem()">tryUseTotem</a>, <a href="GlowLivingEntity.html#updatePotionEffectsMetadata()">updatePotionEffectsMetadata</a></code></div>
+<code><a href="GlowLivingEntity.html#addPotionEffect(org.bukkit.potion.PotionEffect)">addPotionEffect</a>, <a href="GlowLivingEntity.html#addPotionEffect(org.bukkit.potion.PotionEffect,boolean)">addPotionEffect</a>, <a href="GlowLivingEntity.html#addPotionEffects(java.util.Collection)">addPotionEffects</a>, <a href="GlowLivingEntity.html#attack(org.bukkit.entity.Entity)">attack</a>, <a href="GlowLivingEntity.html#clearActiveItem()">clearActiveItem</a>, <a href="GlowLivingEntity.html#clearActivePotionEffects()">clearActivePotionEffects</a>, <a href="GlowLivingEntity.html#createUpdateMessage(net.glowstone.net.GlowSession)">createUpdateMessage</a>, <a href="GlowLivingEntity.html#damage(double,org.bukkit.entity.Entity,org.bukkit.event.entity.EntityDamageEvent.DamageCause)">damage</a>, <a href="GlowLivingEntity.html#entityInteract(net.glowstone.entity.GlowPlayer,net.glowstone.net.message.play.player.InteractEntityMessage)">entityInteract</a>, <a href="GlowLivingEntity.html#getAbsorptionAmount()">getAbsorptionAmount</a>, <a href="GlowLivingEntity.html#getActiveItem()">getActiveItem</a>, <a href="GlowLivingEntity.html#getActivePotionEffects()">getActivePotionEffects</a>, <a href="GlowLivingEntity.html#getAmbientDelay()">getAmbientDelay</a>, <a href="GlowLivingEntity.html#getAmbientSound()">getAmbientSound</a>, <a href="GlowLivingEntity.html#getArrowCooldown()">getArrowCooldown</a>, <a href="GlowLivingEntity.html#getArrowsInBody()">getArrowsInBody</a>, <a href="GlowLivingEntity.html#getArrowsStuck()">getArrowsStuck</a>, <a href="GlowLivingEntity.html#getAttribute(org.bukkit.attribute.Attribute)">getAttribute</a>, <a href="GlowLivingEntity.html#getAttributeManager()">getAttributeManager</a>, <a href="GlowLivingEntity.html#getBeeStingerCooldown()">getBeeStingerCooldown</a>, <a href="GlowLivingEntity.html#getBeeStingersInBody()">getBeeStingersInBody</a>, <a href="GlowLivingEntity.html#getCanPickupItems()">getCanPickupItems</a>, <a href="GlowLivingEntity.html#getCategory()">getCategory</a>, <a href="GlowLivingEntity.html#getCollidableExemptions()">getCollidableExemptions</a>, <a href="GlowLivingEntity.html#getDeathSound()">getDeathSound</a>, <a href="GlowLivingEntity.html#getDeathTicks()">getDeathTicks</a>, <a href="GlowLivingEntity.html#getEquipmentMonitor()">getEquipmentMonitor</a>, <a href="GlowLivingEntity.html#getEyeHeight()">getEyeHeight</a>, <a href="GlowLivingEntity.html#getEyeHeight(boolean)">getEyeHeight</a>, <a href="GlowLivingEntity.html#getEyeLocation()">getEyeLocation</a>, <a href="GlowLivingEntity.html#getFreezeTicks()">getFreezeTicks</a>, <a href="GlowLivingEntity.html#getHandRaised()">getHandRaised</a>, <a href="GlowLivingEntity.html#getHandRaisedTime()">getHandRaisedTime</a>, <a href="GlowLivingEntity.html#getHeadYaw()">getHeadYaw</a>, <a href="GlowLivingEntity.html#getHealth()">getHealth</a>, <a href="GlowLivingEntity.html#getHurtDirection()">getHurtDirection</a>, <a href="GlowLivingEntity.html#getHurtSound()">getHurtSound</a>, <a href="GlowLivingEntity.html#getItemUseRemainingTime()">getItemUseRemainingTime</a>, <a href="GlowLivingEntity.html#getKiller()">getKiller</a>, <a href="GlowLivingEntity.html#getLastDamage()">getLastDamage</a>, <a href="GlowLivingEntity.html#getLastDamager()">getLastDamager</a>, <a href="GlowLivingEntity.html#getLastTwoTargetBlocks(java.util.Set,int)">getLastTwoTargetBlocks</a>, <a href="GlowLivingEntity.html#getLineOfSight(java.util.Set,int)">getLineOfSight</a>, <a href="GlowLivingEntity.html#getMaxFreezeTicks()">getMaxFreezeTicks</a>, <a href="GlowLivingEntity.html#getMaxHealth()">getMaxHealth</a>, <a href="GlowLivingEntity.html#getMaximumAir()">getMaximumAir</a>, <a href="GlowLivingEntity.html#getMaximumNoDamageTicks()">getMaximumNoDamageTicks</a>, <a href="GlowLivingEntity.html#getMemory(org.bukkit.entity.memory.MemoryKey)">getMemory</a>, <a href="GlowLivingEntity.html#getMovement()">getMovement</a>, <a href="GlowLivingEntity.html#getNoDamageTicks()">getNoDamageTicks</a>, <a href="GlowLivingEntity.html#getPlayerDamageTick()">getPlayerDamageTick</a>, <a href="GlowLivingEntity.html#getPotionEffect(org.bukkit.potion.PotionEffectType)">getPotionEffect</a>, <a href="GlowLivingEntity.html#getRemainingAir()">getRemainingAir</a>, <a href="GlowLivingEntity.html#getRemoveWhenFarAway()">getRemoveWhenFarAway</a>, <a href="GlowLivingEntity.html#getShieldBlockingDelay()">getShieldBlockingDelay</a>, <a href="GlowLivingEntity.html#getSoundPitch()">getSoundPitch</a>, <a href="GlowLivingEntity.html#getSoundVolume()">getSoundVolume</a>, <a href="GlowLivingEntity.html#getSpawnCategory()">getSpawnCategory</a>, <a href="GlowLivingEntity.html#getSpeed()">getSpeed</a>, <a href="GlowLivingEntity.html#getState()">getState</a>, <a href="GlowLivingEntity.html#getTargetBlock(int,com.destroystokyo.paper.block.TargetBlockInfo.FluidMode)">getTargetBlock</a>, <a href="GlowLivingEntity.html#getTargetBlock(java.util.Set,int)">getTargetBlock</a>, <a href="GlowLivingEntity.html#getTargetBlockExact(int)">getTargetBlockExact</a>, <a href="GlowLivingEntity.html#getTargetBlockExact(int,org.bukkit.FluidCollisionMode)">getTargetBlockExact</a>, <a href="GlowLivingEntity.html#getTargetBlockFace(int,com.destroystokyo.paper.block.TargetBlockInfo.FluidMode)">getTargetBlockFace</a>, <a href="GlowLivingEntity.html#getTargetBlockInfo(int,com.destroystokyo.paper.block.TargetBlockInfo.FluidMode)">getTargetBlockInfo</a>, <a href="GlowLivingEntity.html#getTargetEntity(int,boolean)">getTargetEntity</a>, <a href="GlowLivingEntity.html#getTargetEntityInfo(int,boolean)">getTargetEntityInfo</a>, <a href="GlowLivingEntity.html#getTaskManager()">getTaskManager</a>, <a href="GlowLivingEntity.html#getTrackedPlayers()">getTrackedPlayers</a>, <a href="GlowLivingEntity.html#getVelocityFromMovement()">getVelocityFromMovement</a>, <a href="GlowLivingEntity.html#hasAI()">hasAI</a>, <a href="GlowLivingEntity.html#hasLineOfSight(org.bukkit.entity.Entity)">hasLineOfSight</a>, <a href="GlowLivingEntity.html#hasLineOfSight(org.bukkit.Location)">hasLineOfSight</a>, <a href="GlowLivingEntity.html#hasPotionEffect(org.bukkit.potion.PotionEffectType)">hasPotionEffect</a>, <a href="GlowLivingEntity.html#isArthropod()">isArthropod</a>, <a href="GlowLivingEntity.html#isClimbing()">isClimbing</a>, <a href="GlowLivingEntity.html#isCollidable()">isCollidable</a>, <a href="GlowLivingEntity.html#isFallFlying()">isFallFlying</a>, <a href="GlowLivingEntity.html#isFreezeTickingLocked()">isFreezeTickingLocked</a>, <a href="GlowLivingEntity.html#isFrozen()">isFrozen</a>, <a href="GlowLivingEntity.html#isGliding()">isGliding</a>, <a href="GlowLivingEntity.html#isHandRaised()">isHandRaised</a>, <a href="GlowLivingEntity.html#isInPowderedSnow()">isInPowderedSnow</a>, <a href="GlowLivingEntity.html#isInvisible()">isInvisible</a>, <a href="GlowLivingEntity.html#isJumping()">isJumping</a>, <a href="GlowLivingEntity.html#isRiptiding()">isRiptiding</a>, <a href="GlowLivingEntity.html#isSwimming()">isSwimming</a>, <a href="GlowLivingEntity.html#isUndead()">isUndead</a>, <a href="GlowLivingEntity.html#isVisualFire()">isVisualFire</a>, <a href="GlowLivingEntity.html#isWithinSolidBlock()">isWithinSolidBlock</a>, <a href="GlowLivingEntity.html#jump()">jump</a>, <a href="GlowLivingEntity.html#launchProjectile(java.lang.Class)">launchProjectile</a>, <a href="GlowLivingEntity.html#launchProjectile(java.lang.Class,org.bukkit.util.Vector)">launchProjectile</a>, <a href="GlowLivingEntity.html#launchProjectile(java.lang.Class,org.bukkit.Location,org.bukkit.util.Vector,float,float)">launchProjectile</a>, <a href="GlowLivingEntity.html#launchProjectile(java.lang.Class,org.bukkit.util.Vector,float,float)">launchProjectile</a>, <a href="GlowLivingEntity.html#lockFreezeTicks(boolean)">lockFreezeTicks</a>, <a href="GlowLivingEntity.html#name()">name</a>, <a href="GlowLivingEntity.html#playAnimation(net.glowstone.entity.EntityAnimation)">playAnimation</a>, <a href="GlowLivingEntity.html#playPickupItemAnimation(org.bukkit.entity.Item,int)">playPickupItemAnimation</a>, <a href="GlowLivingEntity.html#pulsePhysics()">pulsePhysics</a>, <a href="GlowLivingEntity.html#rayTraceBlocks(double)">rayTraceBlocks</a>, <a href="GlowLivingEntity.html#rayTraceBlocks(double,org.bukkit.FluidCollisionMode)">rayTraceBlocks</a>, <a href="GlowLivingEntity.html#registerAttribute(org.bukkit.attribute.Attribute)">registerAttribute</a>, <a href="GlowLivingEntity.html#removePotionEffect(org.bukkit.potion.PotionEffectType)">removePotionEffect</a>, <a href="GlowLivingEntity.html#reset()">reset</a>, <a href="GlowLivingEntity.html#resetMaxHealth()">resetMaxHealth</a>, <a href="GlowLivingEntity.html#setAbsorptionAmount(double)">setAbsorptionAmount</a>, <a href="GlowLivingEntity.html#setAI(boolean)">setAI</a>, <a href="GlowLivingEntity.html#setArrowCooldown(int)">setArrowCooldown</a>, <a href="GlowLivingEntity.html#setArrowsInBody(int)">setArrowsInBody</a>, <a href="GlowLivingEntity.html#setArrowsStuck(int)">setArrowsStuck</a>, <a href="GlowLivingEntity.html#setBeeStingerCooldown(int)">setBeeStingerCooldown</a>, <a href="GlowLivingEntity.html#setBeeStingersInBody(int)">setBeeStingersInBody</a>, <a href="GlowLivingEntity.html#setCanPickupItems(boolean)">setCanPickupItems</a>, <a href="GlowLivingEntity.html#setCollidable(boolean)">setCollidable</a>, <a href="GlowLivingEntity.html#setFallFlying(boolean)">setFallFlying</a>, <a href="GlowLivingEntity.html#setFreezeTicks(int)">setFreezeTicks</a>, <a href="GlowLivingEntity.html#setGliding(boolean)">setGliding</a>, <a href="GlowLivingEntity.html#setHeadYaw(float)">setHeadYaw</a>, <a href="GlowLivingEntity.html#setHealth(double)">setHealth</a>, <a href="GlowLivingEntity.html#setHurtDirection(float)">setHurtDirection</a>, <a href="GlowLivingEntity.html#setInvisible(boolean)">setInvisible</a>, <a href="GlowLivingEntity.html#setJumping(boolean)">setJumping</a>, <a href="GlowLivingEntity.html#setKiller(org.bukkit.entity.Player)">setKiller</a>, <a href="GlowLivingEntity.html#setLastDamage(double)">setLastDamage</a>, <a href="GlowLivingEntity.html#setLastDamager(org.bukkit.entity.Entity)">setLastDamager</a>, <a href="GlowLivingEntity.html#setMaxHealth(double)">setMaxHealth</a>, <a href="GlowLivingEntity.html#setMaximumAir(int)">setMaximumAir</a>, <a href="GlowLivingEntity.html#setMaximumNoDamageTicks(int)">setMaximumNoDamageTicks</a>, <a href="GlowLivingEntity.html#setMemory(org.bukkit.entity.memory.MemoryKey,T)">setMemory</a>, <a href="GlowLivingEntity.html#setMovement(org.bukkit.util.Vector)">setMovement</a>, <a href="GlowLivingEntity.html#setNoDamageTicks(int)">setNoDamageTicks</a>, <a href="GlowLivingEntity.html#setOnGround(boolean)">setOnGround</a>, <a href="GlowLivingEntity.html#setPlayerDamageTick(int)">setPlayerDamageTick</a>, <a href="GlowLivingEntity.html#setRemainingAir(int)">setRemainingAir</a>, <a href="GlowLivingEntity.html#setRemoveWhenFarAway(boolean)">setRemoveWhenFarAway</a>, <a href="GlowLivingEntity.html#setShieldBlockingDelay(int)">setShieldBlockingDelay</a>, <a href="GlowLivingEntity.html#setSpeed(double)">setSpeed</a>, <a href="GlowLivingEntity.html#setState(net.glowstone.entity.ai.MobState)">setState</a>, <a href="GlowLivingEntity.html#setSwimming(boolean)">setSwimming</a>, <a href="GlowLivingEntity.html#setVisualFire(boolean)">setVisualFire</a>, <a href="GlowLivingEntity.html#spawnAt(org.bukkit.Location,org.bukkit.event.entity.CreatureSpawnEvent.SpawnReason)">spawnAt</a>, <a href="GlowLivingEntity.html#swingMainHand()">swingMainHand</a>, <a href="GlowLivingEntity.html#swingOffHand()">swingOffHand</a>, <a href="GlowLivingEntity.html#teamDisplayName()">teamDisplayName</a>, <a href="GlowLivingEntity.html#tryUseTotem()">tryUseTotem</a>, <a href="GlowLivingEntity.html#updatePotionEffectsMetadata()">updatePotionEffectsMetadata</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.glowstone.entity.GlowEntity">Methods inherited from class&nbsp;net.glowstone.entity.<a href="GlowEntity.html" title="class in net.glowstone.entity">GlowEntity</a></h3>
 <code><a href="GlowEntity.html#addPassenger(org.bukkit.entity.Entity)">addPassenger</a>, <a href="GlowEntity.html#addScoreboardTag(java.lang.String)">addScoreboardTag</a>, <a href="GlowEntity.html#collide(org.bukkit.block.Block)">collide</a>, <a href="GlowEntity.html#createAfterSpawnMessage(net.glowstone.net.GlowSession)">createAfterSpawnMessage</a>, <a href="GlowEntity.html#customName()">customName</a>, <a href="GlowEntity.html#customName(net.kyori.adventure.text.Component)">customName</a>, <a href="GlowEntity.html#damage(double)">damage</a>, <a href="GlowEntity.html#damage(double,org.bukkit.entity.Entity)">damage</a>, <a href="GlowEntity.html#damage(double,org.bukkit.event.entity.EntityDamageEvent.DamageCause)">damage</a>, <a href="GlowEntity.html#eject()">eject</a>, <a href="GlowEntity.html#equals(java.lang.Object)">equals</a>, <a href="GlowEntity.html#fromMobSpawner()">fromMobSpawner</a>, <a href="GlowEntity.html#getBoundingBox()">getBoundingBox</a>, <a href="GlowEntity.html#getCardinalFacing()">getCardinalFacing</a>, <a href="GlowEntity.html#getChunk()">getChunk</a>, <a href="GlowEntity.html#getCustomName()">getCustomName</a>, <a href="GlowEntity.html#getCustomTags()">getCustomTags</a>, <a href="GlowEntity.html#getDismountLocation()">getDismountLocation</a>, <a href="GlowEntity.html#getEntityId()">getEntityId</a>, <a href="GlowEntity.html#getEntitySpawnReason()">getEntitySpawnReason</a>, <a href="GlowEntity.html#getFacing()">getFacing</a>, <a href="GlowEntity.html#getFallDistance()">getFallDistance</a>, <a href="GlowEntity.html#getFireTicks()">getFireTicks</a>, <a href="GlowEntity.html#getGravityAccel()">getGravityAccel</a>, <a href="GlowEntity.html#getHeight()">getHeight</a>, <a href="GlowEntity.html#getLastDamageCause()">getLastDamageCause</a>, <a href="GlowEntity.html#getLeashedEntities()">getLeashedEntities</a>, <a href="GlowEntity.html#getLeashHolder()">getLeashHolder</a>, <a href="GlowEntity.html#getLocation()">getLocation</a>, <a href="GlowEntity.html#getLocation(org.bukkit.Location)">getLocation</a>, <a href="GlowEntity.html#getMaxFireTicks()">getMaxFireTicks</a>, <a href="GlowEntity.html#getMetadata()">getMetadata</a>, <a href="GlowEntity.html#getMetadata(java.lang.String)">getMetadata</a>, <a href="GlowEntity.html#getMountLocation()">getMountLocation</a>, <a href="GlowEntity.html#getNearbyEntities(double,double,double)">getNearbyEntities</a>, <a href="GlowEntity.html#getOrigin()">getOrigin</a>, <a href="GlowEntity.html#getPassenger()">getPassenger</a>, <a href="GlowEntity.html#getPassengers()">getPassengers</a>, <a href="GlowEntity.html#getPersistentDataContainer()">getPersistentDataContainer</a>, <a href="GlowEntity.html#getPistonMoveReaction()">getPistonMoveReaction</a>, <a href="GlowEntity.html#getPortalCooldown()">getPortalCooldown</a>, <a href="GlowEntity.html#getPose()">getPose</a>, <a href="GlowEntity.html#getScoreboardTags()">getScoreboardTags</a>, <a href="GlowEntity.html#getServer()">getServer</a>, <a href="GlowEntity.html#getTicksLived()">getTicksLived</a>, <a href="GlowEntity.html#getType()">getType</a>, <a href="GlowEntity.html#getVehicle()">getVehicle</a>, <a href="GlowEntity.html#getVelocity()">getVelocity</a>, <a href="GlowEntity.html#getWidth()">getWidth</a>, <a href="GlowEntity.html#getWorld()">getWorld</a>, <a href="GlowEntity.html#hasDefaultLandingBehavior()">hasDefaultLandingBehavior</a>, <a href="GlowEntity.html#hasFriction()">hasFriction</a>, <a href="GlowEntity.html#hasGravity()">hasGravity</a>, <a href="GlowEntity.html#hashCode()">hashCode</a>, <a href="GlowEntity.html#hasMetadata(java.lang.String)">hasMetadata</a>, <a href="GlowEntity.html#hasMoved()">hasMoved</a>, <a href="GlowEntity.html#hasRotated()">hasRotated</a>, <a href="GlowEntity.html#intersects(net.glowstone.entity.physics.BoundingBox)">intersects</a>, <a href="GlowEntity.html#isCustomNameVisible()">isCustomNameVisible</a>, <a href="GlowEntity.html#isDead()">isDead</a>, <a href="GlowEntity.html#isEmpty()">isEmpty</a>, <a href="GlowEntity.html#isGlowing()">isGlowing</a>, <a href="GlowEntity.html#isInBubbleColumn()">isInBubbleColumn</a>, <a href="GlowEntity.html#isInLava()">isInLava</a>, <a href="GlowEntity.html#isInMaterial(org.bukkit.Material)">isInMaterial</a>, <a href="GlowEntity.html#isInRain()">isInRain</a>, <a href="GlowEntity.html#isInsideVehicle()">isInsideVehicle</a>, <a href="GlowEntity.html#isInvulnerable()">isInvulnerable</a>, <a href="GlowEntity.html#isInWater()">isInWater</a>, <a href="GlowEntity.html#isInWaterOrBubbleColumn()">isInWaterOrBubbleColumn</a>, <a href="GlowEntity.html#isInWaterOrRain()">isInWaterOrRain</a>, <a href="GlowEntity.html#isInWaterOrRainOrBubbleColumn()">isInWaterOrRainOrBubbleColumn</a>, <a href="GlowEntity.html#isLeashed()">isLeashed</a>, <a href="GlowEntity.html#isOnGround()">isOnGround</a>, <a href="GlowEntity.html#isPersistent()">isPersistent</a>, <a href="GlowEntity.html#isRemoved()">isRemoved</a>, <a href="GlowEntity.html#isSilent()">isSilent</a>, <a href="GlowEntity.html#isTeleported()">isTeleported</a>, <a href="GlowEntity.html#isTicking()">isTicking</a>, <a href="GlowEntity.html#isTouchingMaterial(org.bukkit.Material)">isTouchingMaterial</a>, <a href="GlowEntity.html#isValid()">isValid</a>, <a href="GlowEntity.html#isWithinDistance(net.glowstone.entity.GlowEntity)">isWithinDistance</a>, <a href="GlowEntity.html#isWithinDistance(org.bukkit.Location)">isWithinDistance</a>, <a href="GlowEntity.html#leaveVehicle()">leaveVehicle</a>, <a href="GlowEntity.html#playEffect(org.bukkit.EntityEffect)">playEffect</a>, <a href="GlowEntity.html#playEffectKnownAndSelf(org.bukkit.EntityEffect)">playEffectKnownAndSelf</a>, <a href="GlowEntity.html#remove()">remove</a>, <a href="GlowEntity.html#removeMetadata(java.lang.String,org.bukkit.plugin.Plugin)">removeMetadata</a>, <a href="GlowEntity.html#removePassenger(org.bukkit.entity.Entity)">removePassenger</a>, <a href="GlowEntity.html#removeScoreboardTag(java.lang.String)">removeScoreboardTag</a>, <a href="GlowEntity.html#sendMessage(java.util.UUID,java.lang.String)">sendMessage</a>, <a href="GlowEntity.html#sendMessage(java.util.UUID,java.lang.String%5B%5D)">sendMessage</a>, <a href="GlowEntity.html#sendMessage(java.lang.String)">sendMessage</a>, <a href="GlowEntity.html#sendMessage(java.lang.String%5B%5D)">sendMessage</a>, <a href="GlowEntity.html#setAirDrag(double)">setAirDrag</a>, <a href="GlowEntity.html#setApplyDragBeforeAccel(boolean)">setApplyDragBeforeAccel</a>, <a href="GlowEntity.html#setBoundingBox(double,double)">setBoundingBox</a>, <a href="GlowEntity.html#setCustomName(java.lang.String)">setCustomName</a>, <a href="GlowEntity.html#setCustomNameVisible(boolean)">setCustomNameVisible</a>, <a href="GlowEntity.html#setFallDistance(float)">setFallDistance</a>, <a href="GlowEntity.html#setFriction(boolean)">setFriction</a>, <a href="GlowEntity.html#setGlowing(boolean)">setGlowing</a>, <a href="GlowEntity.html#setGravity(boolean)">setGravity</a>, <a href="GlowEntity.html#setGravityAccel(org.bukkit.util.Vector)">setGravityAccel</a>, <a href="GlowEntity.html#setInvulnerable(boolean)">setInvulnerable</a>, <a href="GlowEntity.html#setLastDamageCause(org.bukkit.event.entity.EntityDamageEvent)">setLastDamageCause</a>, <a href="GlowEntity.html#setLeashHolder(org.bukkit.entity.Entity)">setLeashHolder</a>, <a href="GlowEntity.html#setLeashHolderUniqueId(java.util.UUID)">setLeashHolderUniqueId</a>, <a href="GlowEntity.html#setLiquidDrag(double)">setLiquidDrag</a>, <a href="GlowEntity.html#setMetadata(java.lang.String,org.bukkit.metadata.MetadataValue)">setMetadata</a>, <a href="GlowEntity.html#setPassenger(org.bukkit.entity.Entity)">setPassenger</a>, <a href="GlowEntity.html#setPersistent(boolean)">setPersistent</a>, <a href="GlowEntity.html#setPortalCooldown(int)">setPortalCooldown</a>, <a href="GlowEntity.html#setRawLocation(org.bukkit.Location)">setRawLocation</a>, <a href="GlowEntity.html#setRawLocation(org.bukkit.Location,boolean)">setRawLocation</a>, <a href="GlowEntity.html#setRotation(float,float)">setRotation</a>, <a href="GlowEntity.html#setSilent(boolean)">setSilent</a>, <a href="GlowEntity.html#setSize(float,float)">setSize</a>, <a href="GlowEntity.html#setTicksLived(int)">setTicksLived</a>, <a href="GlowEntity.html#setVelocity(org.bukkit.util.Vector)">setVelocity</a>, <a href="GlowEntity.html#shouldSave()">shouldSave</a>, <a href="GlowEntity.html#spigot()">spigot</a>, <a href="GlowEntity.html#teleport(org.bukkit.entity.Entity)">teleport</a>, <a href="GlowEntity.html#teleport(org.bukkit.entity.Entity,org.bukkit.event.player.PlayerTeleportEvent.TeleportCause)">teleport</a>, <a href="GlowEntity.html#teleport(org.bukkit.Location)">teleport</a>, <a href="GlowEntity.html#teleport(org.bukkit.Location,org.bukkit.event.player.PlayerTeleportEvent.TeleportCause)">teleport</a>, <a href="GlowEntity.html#teleportToEnd()">teleportToEnd</a>, <a href="GlowEntity.html#teleportToSpawn()">teleportToSpawn</a>, <a href="GlowEntity.html#toString()">toString</a>, <a href="GlowEntity.html#updateBoundingBox()">updateBoundingBox</a></code></div>
@@ -399,25 +529,25 @@ implements org.bukkit.entity.HumanEntity</span></div>
 <code>getAttribute, registerAttribute</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.kyori.adventure.audience.Audience">Methods inherited from interface&nbsp;net.kyori.adventure.audience.Audience</h3>
-<code>clearTitle, hideBossBar, openBook, openBook, playSound, playSound, resetTitle, sendActionBar, sendActionBar, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendPlayerListFooter, sendPlayerListFooter, sendPlayerListHeader, sendPlayerListHeader, sendPlayerListHeaderAndFooter, sendPlayerListHeaderAndFooter, showBossBar, showTitle, stopSound</code></div>
+<code>clearTitle, filterAudience, forEachAudience, hideBossBar, openBook, openBook, playSound, playSound, playSound, resetTitle, sendActionBar, sendActionBar, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendPlayerListFooter, sendPlayerListFooter, sendPlayerListHeader, sendPlayerListHeader, sendPlayerListHeaderAndFooter, sendPlayerListHeaderAndFooter, sendTitlePart, showBossBar, showTitle, stopSound, stopSound</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-org.bukkit.command.CommandSender">Methods inherited from interface&nbsp;org.bukkit.command.CommandSender</h3>
-<code>sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage</code></div>
+<code>name, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendPlainMessage, sendRichMessage</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-org.bukkit.entity.Damageable">Methods inherited from interface&nbsp;org.bukkit.entity.Damageable</h3>
-<code>damage, damage, damage, damage, getAbsorptionAmount, getHealth, getMaxHealth, resetMaxHealth, setAbsorptionAmount, setHealth, setMaxHealth</code></div>
+<code>damage, damage, getAbsorptionAmount, getHealth, getMaxHealth, resetMaxHealth, setAbsorptionAmount, setHealth, setMaxHealth</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-org.bukkit.entity.Entity">Methods inherited from interface&nbsp;org.bukkit.entity.Entity</h3>
-<code>addPassenger, addScoreboardTag, asHoverEvent, eject, fromMobSpawner, getBoundingBox, getChunk, getEntityId, getEntitySpawnReason, getFacing, getFallDistance, getFireTicks, getHeight, getLastDamageCause, getLocation, getLocation, getMaxFireTicks, getNearbyEntities, getOrigin, getPassenger, getPassengers, getPistonMoveReaction, getPortalCooldown, getPose, getScoreboardTags, getServer, getTicksLived, getType, getVehicle, getVelocity, getWidth, getWorld, hasGravity, isCustomNameVisible, isDead, isEmpty, isGlowing, isInBubbleColumn, isInLava, isInRain, isInsideVehicle, isInvulnerable, isInWater, isInWaterOrBubbleColumn, isInWaterOrRain, isInWaterOrRainOrBubbleColumn, isOnGround, isPersistent, isSilent, isTicking, isValid, leaveVehicle, playEffect, remove, removePassenger, removeScoreboardTag, setCustomNameVisible, setFallDistance, setGlowing, setGravity, setInvulnerable, setLastDamageCause, setPassenger, setPersistent, setPortalCooldown, setRotation, setSilent, setTicksLived, setVelocity, spigot, teleport, teleport, teleport, teleport, teleportAsync, teleportAsync</code></div>
+<code>addPassenger, addScoreboardTag, asHoverEvent, eject, fromMobSpawner, getBoundingBox, getChunk, getEntityId, getEntitySpawnReason, getFacing, getFallDistance, getFireTicks, getFreezeTicks, getHeight, getLastDamageCause, getLocation, getLocation, getMaxFireTicks, getMaxFreezeTicks, getNearbyEntities, getOrigin, getPassenger, getPassengers, getPistonMoveReaction, getPortalCooldown, getPose, getScoreboardTags, getServer, getSpawnCategory, getTicksLived, getTrackedPlayers, getType, getVehicle, getVelocity, getWidth, getWorld, hasGravity, isCustomNameVisible, isDead, isEmpty, isFreezeTickingLocked, isFrozen, isGlowing, isInBubbleColumn, isInLava, isInPowderedSnow, isInRain, isInsideVehicle, isInvulnerable, isInWater, isInWaterOrBubbleColumn, isInWaterOrRain, isInWaterOrRainOrBubbleColumn, isOnGround, isPersistent, isSilent, isTicking, isValid, isVisualFire, leaveVehicle, lockFreezeTicks, playEffect, remove, removePassenger, removeScoreboardTag, setCustomNameVisible, setFallDistance, setFreezeTicks, setGlowing, setGravity, setInvulnerable, setLastDamageCause, setPassenger, setPersistent, setPortalCooldown, setRotation, setSilent, setTicksLived, setVelocity, setVisualFire, spawnAt, spawnAt, spigot, teamDisplayName, teleport, teleport, teleport, teleport, teleportAsync, teleportAsync</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.kyori.adventure.text.event.HoverEventSource">Methods inherited from interface&nbsp;net.kyori.adventure.text.event.HoverEventSource</h3>
 <code>asHoverEvent</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-org.bukkit.entity.HumanEntity">Methods inherited from interface&nbsp;org.bukkit.entity.HumanEntity</h3>
-<code>discoverRecipe, discoverRecipes, dropItem, getAttackCooldown, getBedLocation, getCooldown, getDiscoveredRecipes, getExhaustion, getFoodLevel, getMainHand, getPotentialBedLocation, getSaturatedRegenRate, getSaturation, getStarvationRate, getUnsaturatedRegenRate, hasCooldown, hasDiscoveredRecipe, isDeeplySleeping, isHandRaised, openAnvil, openCartographyTable, openGrindstone, openLoom, openMerchant, openMerchant, openSmithingTable, openStonecutter, setCooldown, setExhaustion, setFoodLevel, setSaturatedRegenRate, setSaturation, setStarvationRate, setUnsaturatedRegenRate, sleep, undiscoverRecipe, undiscoverRecipes, wakeup</code></div>
+<code>isHandRaised</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-org.bukkit.entity.LivingEntity">Methods inherited from interface&nbsp;org.bukkit.entity.LivingEntity</h3>
-<code>addPotionEffect, addPotionEffect, addPotionEffects, attack, clearActiveItem, getActiveItem, getActivePotionEffects, getArrowCooldown, getArrowsInBody, getArrowsStuck, getCanPickupItems, getCategory, getCollidableExemptions, getEyeHeight, getEyeHeight, getEyeLocation, getHandRaisedTime, getHurtDirection, getItemUseRemainingTime, getKiller, getLastDamage, getLastTwoTargetBlocks, getLeashHolder, getLineOfSight, getMaximumAir, getMaximumNoDamageTicks, getMemory, getNoDamageTicks, getPotionEffect, getRemainingAir, getRemoveWhenFarAway, getShieldBlockingDelay, getTargetBlock, getTargetBlock, getTargetBlock, getTargetBlockExact, getTargetBlockExact, getTargetBlockFace, getTargetBlockFace, getTargetBlockInfo, getTargetBlockInfo, getTargetEntity, getTargetEntity, getTargetEntityInfo, getTargetEntityInfo, hasAI, hasLineOfSight, hasPotionEffect, isCollidable, isGliding, isInvisible, isJumping, isLeashed, isRiptiding, isSwimming, playAnimation, playPickupItemAnimation, playPickupItemAnimation, rayTraceBlocks, rayTraceBlocks, removePotionEffect, setAI, setArrowCooldown, setArrowsInBody, setArrowsStuck, setCanPickupItems, setCollidable, setGliding, setHurtDirection, setInvisible, setJumping, setKiller, setLastDamage, setLeashHolder, setMaximumAir, setMaximumNoDamageTicks, setMemory, setNoDamageTicks, setRemainingAir, setRemoveWhenFarAway, setShieldBlockingDelay, setSwimming, swingMainHand, swingOffHand</code></div>
+<code>addPotionEffect, addPotionEffect, addPotionEffects, attack, clearActiveItem, getActiveItem, getActivePotionEffects, getArrowCooldown, getArrowsInBody, getArrowsStuck, getBeeStingerCooldown, getBeeStingersInBody, getCanPickupItems, getCategory, getCollidableExemptions, getEyeHeight, getEyeHeight, getEyeLocation, getHandRaised, getHandRaisedTime, getHurtDirection, getItemUseRemainingTime, getKiller, getLastDamage, getLastTwoTargetBlocks, getLeashHolder, getLineOfSight, getMaximumAir, getMaximumNoDamageTicks, getMemory, getNoDamageTicks, getPotionEffect, getRemainingAir, getRemoveWhenFarAway, getShieldBlockingDelay, getTargetBlock, getTargetBlock, getTargetBlock, getTargetBlockExact, getTargetBlockExact, getTargetBlockFace, getTargetBlockFace, getTargetBlockInfo, getTargetBlockInfo, getTargetEntity, getTargetEntity, getTargetEntityInfo, getTargetEntityInfo, hasAI, hasLineOfSight, hasLineOfSight, hasPotionEffect, isClimbing, isCollidable, isGliding, isInvisible, isJumping, isLeashed, isRiptiding, isSwimming, playPickupItemAnimation, playPickupItemAnimation, rayTraceBlocks, rayTraceBlocks, removePotionEffect, setAI, setArrowCooldown, setArrowsInBody, setArrowsStuck, setBeeStingerCooldown, setBeeStingersInBody, setCanPickupItems, setCollidable, setGliding, setHurtDirection, setInvisible, setJumping, setKiller, setLastDamage, setLeashHolder, setMaximumAir, setMaximumNoDamageTicks, setMemory, setNoDamageTicks, setRemainingAir, setRemoveWhenFarAway, setShieldBlockingDelay, setSwimming, swingMainHand, swingOffHand</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-org.bukkit.metadata.Metadatable">Methods inherited from interface&nbsp;org.bukkit.metadata.Metadatable</h3>
 <code>getMetadata, hasMetadata, removeMetadata, setMetadata</code></div>
@@ -425,8 +555,14 @@ implements org.bukkit.entity.HumanEntity</span></div>
 <h3 id="methods-inherited-from-class-org.bukkit.Nameable">Methods inherited from interface&nbsp;org.bukkit.Nameable</h3>
 <code>customName, customName, getCustomName, setCustomName</code></div>
 <div class="inherited-list">
+<h3 id="methods-inherited-from-class-org.bukkit.permissions.Permissible">Methods inherited from interface&nbsp;org.bukkit.permissions.Permissible</h3>
+<code>permissionValue, permissionValue</code></div>
+<div class="inherited-list">
 <h3 id="methods-inherited-from-class-org.bukkit.persistence.PersistentDataHolder">Methods inherited from interface&nbsp;org.bukkit.persistence.PersistentDataHolder</h3>
 <code>getPersistentDataContainer</code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-net.kyori.adventure.pointer.Pointered">Methods inherited from interface&nbsp;net.kyori.adventure.pointer.Pointered</h3>
+<code>get, getOrDefault, getOrDefaultFrom, pointers</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-org.bukkit.projectiles.ProjectileSource">Methods inherited from interface&nbsp;org.bukkit.projectiles.ProjectileSource</h3>
 <code>launchProjectile, launchProjectile</code></div>
@@ -492,8 +628,8 @@ implements org.bukkit.entity.HumanEntity</span></div>
 <div class="block">Creates a list of <code>Message</code>s which can be sent to a client to spawn this entity.
  Implementations in concrete subclasses may return a shallowly immutable list.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="GlowEntity.html#createSpawnMessage()">createSpawnMessage</a></code>&nbsp;in class&nbsp;<code><a href="GlowEntity.html" title="class in net.glowstone.entity">GlowEntity</a></code></dd>
+<dt>Overrides:</dt>
+<dd><code><a href="GlowLivingEntity.html#createSpawnMessage()">createSpawnMessage</a></code>&nbsp;in class&nbsp;<code><a href="GlowLivingEntity.html" title="class in net.glowstone.entity">GlowLivingEntity</a></code></dd>
 <dt>Returns:</dt>
 <dd>A list of messages which can spawn this entity.</dd>
 </dl>
@@ -525,6 +661,17 @@ implements org.bukkit.entity.HumanEntity</span></div>
 <dd><code>getName</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
 <dt>Overrides:</dt>
 <dd><code><a href="GlowEntity.html#getName()">getName</a></code>&nbsp;in class&nbsp;<code><a href="GlowEntity.html" title="class in net.glowstone.entity">GlowEntity</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getMainHand()">
+<h3>getMainHand</h3>
+<div class="member-signature"><span class="annotations">@NotNull
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull org.bukkit.inventory.MainHand</span>&nbsp;<span class="element-name">getMainHand</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getMainHand</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
 </dl>
 </section>
 </li>
@@ -567,6 +714,17 @@ implements org.bukkit.entity.HumanEntity</span></div>
 </section>
 </li>
 <li>
+<section class="detail" id="getItemInUse()">
+<h3>getItemInUse</h3>
+<div class="member-signature"><span class="annotations">@Nullable
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@Nullable org.bukkit.inventory.ItemStack</span>&nbsp;<span class="element-name">getItemInUse</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getItemInUse</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="getExpToLevel()">
 <h3>getExpToLevel</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getExpToLevel</span>()</div>
@@ -581,6 +739,8 @@ implements org.bukkit.entity.HumanEntity</span></div>
 <h3>getEquipment</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">org.bukkit.inventory.EntityEquipment</span>&nbsp;<span class="element-name">getEquipment</span>()</div>
 <dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getEquipment</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
 <dt>Specified by:</dt>
 <dd><code>getEquipment</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.LivingEntity</code></dd>
 <dt>Overrides:</dt>
@@ -793,6 +953,94 @@ implements org.bukkit.entity.HumanEntity</span></div>
 </section>
 </li>
 <li>
+<section class="detail" id="hasCooldown(org.bukkit.Material)">
+<h3>hasCooldown</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasCooldown</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.Material&nbsp;material)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>hasCooldown</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getCooldown(org.bukkit.Material)">
+<h3>getCooldown</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getCooldown</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.Material&nbsp;material)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getCooldown</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setCooldown(org.bukkit.Material,int)">
+<h3>setCooldown</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setCooldown</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.Material&nbsp;material,
+ int&nbsp;ticks)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>setCooldown</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isDeeplySleeping()">
+<h3>isDeeplySleeping</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isDeeplySleeping</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>isDeeplySleeping</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getPotentialBedLocation()">
+<h3>getPotentialBedLocation</h3>
+<div class="member-signature"><span class="annotations">@Nullable
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@Nullable org.bukkit.Location</span>&nbsp;<span class="element-name">getPotentialBedLocation</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getPotentialBedLocation</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="sleep(org.bukkit.Location,boolean)">
+<h3>sleep</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">sleep</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.Location&nbsp;location,
+ boolean&nbsp;force)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>sleep</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="wakeup(boolean)">
+<h3>wakeup</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">wakeup</span><wbr><span class="parameters">(boolean&nbsp;setSpawnLocation)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>wakeup</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getBedLocation()">
+<h3>getBedLocation</h3>
+<div class="member-signature"><span class="annotations">@NotNull
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull org.bukkit.Location</span>&nbsp;<span class="element-name">getBedLocation</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getBedLocation</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="setWindowProperty(org.bukkit.inventory.InventoryView.Property,int)">
 <h3>setWindowProperty</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">setWindowProperty</span><wbr><span class="parameters">(org.bukkit.inventory.InventoryView.Property&nbsp;prop,
@@ -820,6 +1068,110 @@ implements org.bukkit.entity.HumanEntity</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code>openInventory</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="openMerchant(org.bukkit.entity.Villager,boolean)">
+<h3>openMerchant</h3>
+<div class="member-signature"><span class="annotations">@Nullable
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@Nullable org.bukkit.inventory.InventoryView</span>&nbsp;<span class="element-name">openMerchant</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.entity.Villager&nbsp;trader,
+ boolean&nbsp;force)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>openMerchant</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="openMerchant(org.bukkit.inventory.Merchant,boolean)">
+<h3>openMerchant</h3>
+<div class="member-signature"><span class="annotations">@Nullable
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@Nullable org.bukkit.inventory.InventoryView</span>&nbsp;<span class="element-name">openMerchant</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.inventory.Merchant&nbsp;merchant,
+ boolean&nbsp;force)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>openMerchant</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="openAnvil(org.bukkit.Location,boolean)">
+<h3>openAnvil</h3>
+<div class="member-signature"><span class="annotations">@Nullable
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@Nullable org.bukkit.inventory.InventoryView</span>&nbsp;<span class="element-name">openAnvil</span><wbr><span class="parameters">(@Nullable
+ @Nullable org.bukkit.Location&nbsp;location,
+ boolean&nbsp;force)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>openAnvil</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="openCartographyTable(org.bukkit.Location,boolean)">
+<h3>openCartographyTable</h3>
+<div class="member-signature"><span class="annotations">@Nullable
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@Nullable org.bukkit.inventory.InventoryView</span>&nbsp;<span class="element-name">openCartographyTable</span><wbr><span class="parameters">(@Nullable
+ @Nullable org.bukkit.Location&nbsp;location,
+ boolean&nbsp;force)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>openCartographyTable</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="openGrindstone(org.bukkit.Location,boolean)">
+<h3>openGrindstone</h3>
+<div class="member-signature"><span class="annotations">@Nullable
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@Nullable org.bukkit.inventory.InventoryView</span>&nbsp;<span class="element-name">openGrindstone</span><wbr><span class="parameters">(@Nullable
+ @Nullable org.bukkit.Location&nbsp;location,
+ boolean&nbsp;force)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>openGrindstone</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="openLoom(org.bukkit.Location,boolean)">
+<h3>openLoom</h3>
+<div class="member-signature"><span class="annotations">@Nullable
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@Nullable org.bukkit.inventory.InventoryView</span>&nbsp;<span class="element-name">openLoom</span><wbr><span class="parameters">(@Nullable
+ @Nullable org.bukkit.Location&nbsp;location,
+ boolean&nbsp;force)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>openLoom</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="openSmithingTable(org.bukkit.Location,boolean)">
+<h3>openSmithingTable</h3>
+<div class="member-signature"><span class="annotations">@Nullable
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@Nullable org.bukkit.inventory.InventoryView</span>&nbsp;<span class="element-name">openSmithingTable</span><wbr><span class="parameters">(@Nullable
+ @Nullable org.bukkit.Location&nbsp;location,
+ boolean&nbsp;force)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>openSmithingTable</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="openStonecutter(org.bukkit.Location,boolean)">
+<h3>openStonecutter</h3>
+<div class="member-signature"><span class="annotations">@Nullable
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@Nullable org.bukkit.inventory.InventoryView</span>&nbsp;<span class="element-name">openStonecutter</span><wbr><span class="parameters">(@Nullable
+ @Nullable org.bukkit.Location&nbsp;location,
+ boolean&nbsp;force)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>openStonecutter</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
 </dl>
 </section>
 </li>
@@ -955,6 +1307,82 @@ implements org.bukkit.entity.HumanEntity</span></div>
 </section>
 </li>
 <li>
+<section class="detail" id="getAttackCooldown()">
+<h3>getAttackCooldown</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getAttackCooldown</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getAttackCooldown</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="discoverRecipe(org.bukkit.NamespacedKey)">
+<h3>discoverRecipe</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">discoverRecipe</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.NamespacedKey&nbsp;recipe)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>discoverRecipe</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="discoverRecipes(java.util.Collection)">
+<h3>discoverRecipes</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">discoverRecipes</span><wbr><span class="parameters">(@NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;org.bukkit.NamespacedKey&gt;&nbsp;recipes)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>discoverRecipes</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="undiscoverRecipe(org.bukkit.NamespacedKey)">
+<h3>undiscoverRecipe</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">undiscoverRecipe</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.NamespacedKey&nbsp;recipe)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>undiscoverRecipe</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="undiscoverRecipes(java.util.Collection)">
+<h3>undiscoverRecipes</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">undiscoverRecipes</span><wbr><span class="parameters">(@NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;org.bukkit.NamespacedKey&gt;&nbsp;recipes)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>undiscoverRecipes</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="hasDiscoveredRecipe(org.bukkit.NamespacedKey)">
+<h3>hasDiscoveredRecipe</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasDiscoveredRecipe</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.NamespacedKey&nbsp;recipe)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>hasDiscoveredRecipe</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getDiscoveredRecipes()">
+<h3>getDiscoveredRecipes</h3>
+<div class="member-signature"><span class="annotations">@NotNull
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;org.bukkit.NamespacedKey&gt;</span>&nbsp;<span class="element-name">getDiscoveredRecipes</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getDiscoveredRecipes</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="getLeftShoulderTag()">
 <h3>getLeftShoulderTag</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../util/nbt/CompoundTag.html" title="class in net.glowstone.util.nbt">CompoundTag</a></span>&nbsp;<span class="element-name">getLeftShoulderTag</span>()</div>
@@ -985,6 +1413,158 @@ implements org.bukkit.entity.HumanEntity</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code>openSign</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="dropItem(boolean)">
+<h3>dropItem</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">dropItem</span><wbr><span class="parameters">(boolean&nbsp;dropAll)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>dropItem</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getExhaustion()">
+<h3>getExhaustion</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getExhaustion</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getExhaustion</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setExhaustion(float)">
+<h3>setExhaustion</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setExhaustion</span><wbr><span class="parameters">(float&nbsp;value)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>setExhaustion</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getSaturation()">
+<h3>getSaturation</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getSaturation</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getSaturation</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setSaturation(float)">
+<h3>setSaturation</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setSaturation</span><wbr><span class="parameters">(float&nbsp;value)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>setSaturation</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getFoodLevel()">
+<h3>getFoodLevel</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getFoodLevel</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getFoodLevel</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setFoodLevel(int)">
+<h3>setFoodLevel</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setFoodLevel</span><wbr><span class="parameters">(int&nbsp;value)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>setFoodLevel</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getSaturatedRegenRate()">
+<h3>getSaturatedRegenRate</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getSaturatedRegenRate</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getSaturatedRegenRate</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setSaturatedRegenRate(int)">
+<h3>setSaturatedRegenRate</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setSaturatedRegenRate</span><wbr><span class="parameters">(int&nbsp;ticks)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>setSaturatedRegenRate</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getUnsaturatedRegenRate()">
+<h3>getUnsaturatedRegenRate</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getUnsaturatedRegenRate</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getUnsaturatedRegenRate</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setUnsaturatedRegenRate(int)">
+<h3>setUnsaturatedRegenRate</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setUnsaturatedRegenRate</span><wbr><span class="parameters">(int&nbsp;ticks)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>setUnsaturatedRegenRate</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getStarvationRate()">
+<h3>getStarvationRate</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getStarvationRate</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getStarvationRate</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setStarvationRate(int)">
+<h3>setStarvationRate</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setStarvationRate</span><wbr><span class="parameters">(int&nbsp;ticks)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>setStarvationRate</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getLastDeathLocation()">
+<h3>getLastDeathLocation</h3>
+<div class="member-signature"><span class="annotations">@Nullable
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@Nullable org.bukkit.Location</span>&nbsp;<span class="element-name">getLastDeathLocation</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getLastDeathLocation</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setLastDeathLocation(org.bukkit.Location)">
+<h3>setLastDeathLocation</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setLastDeathLocation</span><wbr><span class="parameters">(@Nullable
+ @Nullable org.bukkit.Location&nbsp;location)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>setLastDeathLocation</code>&nbsp;in interface&nbsp;<code>org.bukkit.entity.HumanEntity</code></dd>
 </dl>
 </section>
 </li>

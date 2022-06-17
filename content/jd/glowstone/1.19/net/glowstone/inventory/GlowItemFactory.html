@@ -110,8 +110,17 @@ implements org.bukkit.inventory.ItemFactory</span></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#asMetaFor(org.bukkit.inventory.meta.ItemMeta,org.bukkit.inventory.ItemStack)" class="member-name-link">asMetaFor</a><wbr>(@NotNull org.bukkit.inventory.meta.ItemMeta&nbsp;meta,
  org.bukkit.inventory.ItemStack&nbsp;stack)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull net.kyori.adventure.text.Component</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#displayName(org.bukkit.inventory.ItemStack)" class="member-name-link">displayName</a><wbr>(@NotNull org.bukkit.inventory.ItemStack&nbsp;itemStack)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.inventory.ItemStack</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createItemStack(java.lang.String)" class="member-name-link">createItemStack</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;input)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull net.kyori.adventure.text.Component</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#displayName(org.bukkit.inventory.ItemStack)" class="member-name-link">displayName</a><wbr>(@NotNull org.bukkit.inventory.ItemStack&nbsp;itemStack)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.inventory.ItemStack</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#enchantWithLevels(org.bukkit.inventory.ItemStack,int,boolean,java.util.Random)" class="member-name-link">enchantWithLevels</a><wbr>(@NotNull org.bukkit.inventory.ItemStack&nbsp;itemStack,
+ @org.jetbrains.annotations.Range(from=1L, to=30L) int&nbsp;levels,
+ boolean&nbsp;allowTreasure,
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Random.html" title="class or interface in java.util" class="external-link">Random</a>&nbsp;random)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.inventory.ItemStack</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#ensureServerConversions(org.bukkit.inventory.ItemStack)" class="member-name-link">ensureServerConversions</a><wbr>(org.bukkit.inventory.ItemStack&nbsp;itemStack)</code></div>
@@ -129,50 +138,53 @@ implements org.bukkit.inventory.ItemFactory</span></div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.inventory.meta.ItemMeta</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getItemMeta(org.bukkit.Material)" class="member-name-link">getItemMeta</a><wbr>(@NotNull org.bukkit.Material&nbsp;material)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull net.md_5.bungee.api.chat.hover.content.Content</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hoverContentOf(org.bukkit.entity.Entity)" class="member-name-link">hoverContentOf</a><wbr>(@NotNull org.bukkit.entity.Entity&nbsp;entity)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable org.bukkit.inventory.ItemStack</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSpawnEgg(org.bukkit.entity.EntityType)" class="member-name-link">getSpawnEgg</a><wbr>(@Nullable org.bukkit.entity.EntityType&nbsp;type)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull net.md_5.bungee.api.chat.hover.content.Content</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hoverContentOf(org.bukkit.entity.Entity,net.md_5.bungee.api.chat.BaseComponent%5B%5D)" class="member-name-link">hoverContentOf</a><wbr>(@NotNull org.bukkit.entity.Entity&nbsp;entity,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hoverContentOf(org.bukkit.entity.Entity)" class="member-name-link">hoverContentOf</a><wbr>(@NotNull org.bukkit.entity.Entity&nbsp;entity)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull net.md_5.bungee.api.chat.hover.content.Content</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hoverContentOf(org.bukkit.entity.Entity,net.md_5.bungee.api.chat.BaseComponent%5B%5D)" class="member-name-link">hoverContentOf</a><wbr>(@NotNull org.bukkit.entity.Entity&nbsp;entity,
  @NotNull net.md_5.bungee.api.chat.BaseComponent[]&nbsp;baseComponents)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull net.md_5.bungee.api.chat.hover.content.Content</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hoverContentOf(org.bukkit.entity.Entity,java.lang.String)" class="member-name-link">hoverContentOf</a><wbr>(@NotNull org.bukkit.entity.Entity&nbsp;entity,
- @Nullable <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull net.md_5.bungee.api.chat.hover.content.Content</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hoverContentOf(org.bukkit.entity.Entity,net.md_5.bungee.api.chat.BaseComponent)" class="member-name-link">hoverContentOf</a><wbr>(@NotNull org.bukkit.entity.Entity&nbsp;entity,
- @Nullable net.md_5.bungee.api.chat.BaseComponent&nbsp;baseComponent)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hoverContentOf(org.bukkit.entity.Entity,java.lang.String)" class="member-name-link">hoverContentOf</a><wbr>(@NotNull org.bukkit.entity.Entity&nbsp;entity,
+ @Nullable <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull net.md_5.bungee.api.chat.hover.content.Content</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hoverContentOf(org.bukkit.inventory.ItemStack)" class="member-name-link">hoverContentOf</a><wbr>(@NotNull org.bukkit.inventory.ItemStack&nbsp;itemStack)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hoverContentOf(org.bukkit.entity.Entity,net.md_5.bungee.api.chat.BaseComponent)" class="member-name-link">hoverContentOf</a><wbr>(@NotNull org.bukkit.entity.Entity&nbsp;entity,
+ @Nullable net.md_5.bungee.api.chat.BaseComponent&nbsp;baseComponent)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="GlowItemFactory.html" title="class in net.glowstone.inventory">GlowItemFactory</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#instance()" class="member-name-link">instance</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull net.md_5.bungee.api.chat.hover.content.Content</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hoverContentOf(org.bukkit.inventory.ItemStack)" class="member-name-link">hoverContentOf</a><wbr>(@NotNull org.bukkit.inventory.ItemStack&nbsp;itemStack)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="GlowItemFactory.html" title="class in net.glowstone.inventory">GlowItemFactory</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#instance()" class="member-name-link">instance</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Get the static GlowItemFactory instance.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isApplicable(org.bukkit.inventory.meta.ItemMeta,org.bukkit.inventory.ItemStack)" class="member-name-link">isApplicable</a><wbr>(org.bukkit.inventory.meta.ItemMeta&nbsp;meta,
- org.bukkit.inventory.ItemStack&nbsp;stack)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isApplicable(org.bukkit.inventory.meta.ItemMeta,org.bukkit.Material)" class="member-name-link">isApplicable</a><wbr>(org.bukkit.inventory.meta.ItemMeta&nbsp;meta,
- org.bukkit.Material&nbsp;material)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isApplicable(org.bukkit.inventory.meta.ItemMeta,org.bukkit.inventory.ItemStack)" class="member-name-link">isApplicable</a><wbr>(org.bukkit.inventory.meta.ItemMeta&nbsp;meta,
+ org.bukkit.inventory.ItemStack&nbsp;stack)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.inventory.meta.ItemMeta</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readNbt(org.bukkit.Material,net.glowstone.util.nbt.CompoundTag)" class="member-name-link">readNbt</a><wbr>(org.bukkit.Material&nbsp;material,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isApplicable(org.bukkit.inventory.meta.ItemMeta,org.bukkit.Material)" class="member-name-link">isApplicable</a><wbr>(org.bukkit.inventory.meta.ItemMeta&nbsp;meta,
+ org.bukkit.Material&nbsp;material)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.inventory.meta.ItemMeta</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readNbt(org.bukkit.Material,net.glowstone.util.nbt.CompoundTag)" class="member-name-link">readNbt</a><wbr>(org.bukkit.Material&nbsp;material,
  <a href="../util/nbt/CompoundTag.html" title="class in net.glowstone.util.nbt">CompoundTag</a>&nbsp;tag)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Reads an <code>ItemMeta</code> from an NBT tag.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.Material</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateMaterial(org.bukkit.inventory.meta.ItemMeta,org.bukkit.Material)" class="member-name-link">updateMaterial</a><wbr>(@NotNull org.bukkit.inventory.meta.ItemMeta&nbsp;meta,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.Material</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateMaterial(org.bukkit.inventory.meta.ItemMeta,org.bukkit.Material)" class="member-name-link">updateMaterial</a><wbr>(@NotNull org.bukkit.inventory.meta.ItemMeta&nbsp;meta,
  @NotNull org.bukkit.Material&nbsp;material)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../util/nbt/CompoundTag.html" title="class in net.glowstone.util.nbt">CompoundTag</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeNbt(org.bukkit.inventory.meta.ItemMeta)" class="member-name-link">writeNbt</a><wbr>(org.bukkit.inventory.meta.ItemMeta&nbsp;meta)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../util/nbt/CompoundTag.html" title="class in net.glowstone.util.nbt">CompoundTag</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeNbt(org.bukkit.inventory.meta.ItemMeta)" class="member-name-link">writeNbt</a><wbr>(org.bukkit.inventory.meta.ItemMeta&nbsp;meta)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Writes an <code>ItemMeta</code> to an NBT tag.</div>
 </div>
 </div>
@@ -299,6 +311,21 @@ implements org.bukkit.inventory.ItemFactory</span></div>
 </section>
 </li>
 <li>
+<section class="detail" id="createItemStack(java.lang.String)">
+<h3>createItemStack</h3>
+<div class="member-signature"><span class="annotations">@NotNull
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull org.bukkit.inventory.ItemStack</span>&nbsp;<span class="element-name">createItemStack</span><wbr><span class="parameters">(@NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;input)</span>
+                                                        throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>createItemStack</code>&nbsp;in interface&nbsp;<code>org.bukkit.inventory.ItemFactory</code></dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="updateMaterial(org.bukkit.inventory.meta.ItemMeta,org.bukkit.Material)">
 <h3>updateMaterial</h3>
 <div class="member-signature"><span class="annotations">@NotNull
@@ -312,6 +339,22 @@ implements org.bukkit.inventory.ItemFactory</span></div>
 <dd><code>updateMaterial</code>&nbsp;in interface&nbsp;<code>org.bukkit.inventory.ItemFactory</code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="enchantWithLevels(org.bukkit.inventory.ItemStack,int,boolean,java.util.Random)">
+<h3>enchantWithLevels</h3>
+<div class="member-signature"><span class="annotations">@NotNull
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull org.bukkit.inventory.ItemStack</span>&nbsp;<span class="element-name">enchantWithLevels</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.inventory.ItemStack&nbsp;itemStack,
+ @org.jetbrains.annotations.Range(from=1L, to=30L) int&nbsp;levels,
+ boolean&nbsp;allowTreasure,
+ @NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Random.html" title="class or interface in java.util" class="external-link">Random</a>&nbsp;random)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>enchantWithLevels</code>&nbsp;in interface&nbsp;<code>org.bukkit.inventory.ItemFactory</code></dd>
 </dl>
 </section>
 </li>
@@ -425,6 +468,18 @@ implements org.bukkit.inventory.ItemFactory</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code>hoverContentOf</code>&nbsp;in interface&nbsp;<code>org.bukkit.inventory.ItemFactory</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getSpawnEgg(org.bukkit.entity.EntityType)">
+<h3>getSpawnEgg</h3>
+<div class="member-signature"><span class="annotations">@Nullable
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@Nullable org.bukkit.inventory.ItemStack</span>&nbsp;<span class="element-name">getSpawnEgg</span><wbr><span class="parameters">(@Nullable
+ @Nullable org.bukkit.entity.EntityType&nbsp;type)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getSpawnEgg</code>&nbsp;in interface&nbsp;<code>org.bukkit.inventory.ItemFactory</code></dd>
 </dl>
 </section>
 </li>

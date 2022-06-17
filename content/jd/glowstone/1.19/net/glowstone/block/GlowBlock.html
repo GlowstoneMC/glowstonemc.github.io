@@ -77,7 +77,7 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code>org.bukkit.block.Block</code>, <code>org.bukkit.metadata.Metadatable</code></dd>
+<dd><code>net.kyori.adventure.translation.Translatable</code>, <code>org.bukkit.block.Block</code>, <code>org.bukkit.metadata.Metadatable</code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">GlowBlock</span>
@@ -131,22 +131,28 @@ implements org.bukkit.block.Block</span></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#breakNaturally()" class="member-name-link">breakNaturally</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#breakNaturally(float)" class="member-name-link">breakNaturally</a><wbr>(float&nbsp;yield)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Break the block naturally, randomly dropping only some of the drops.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#breakNaturally(float,java.util.Collection)" class="member-name-link">breakNaturally</a><wbr>(float&nbsp;yield,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;org.bukkit.inventory.ItemStack&gt;&nbsp;drops)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Breaks this block and drops items.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#breakNaturally(org.bukkit.inventory.ItemStack,boolean)" class="member-name-link">breakNaturally</a><wbr>(@NotNull org.bukkit.inventory.ItemStack&nbsp;tool,
- boolean&nbsp;triggerEffect)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#breakNaturally(boolean)" class="member-name-link">breakNaturally</a><wbr>(boolean&nbsp;triggerEffect)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#breakNaturally(org.bukkit.inventory.ItemStack)" class="member-name-link">breakNaturally</a><wbr>(org.bukkit.inventory.ItemStack&nbsp;tool)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#breakNaturally(float)" class="member-name-link">breakNaturally</a><wbr>(float&nbsp;yield)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Break the block naturally, randomly dropping only some of the drops.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#breakNaturally(float,java.util.Collection)" class="member-name-link">breakNaturally</a><wbr>(float&nbsp;yield,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;org.bukkit.inventory.ItemStack&gt;&nbsp;drops)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Breaks this block and drops items.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#breakNaturally(org.bukkit.inventory.ItemStack,boolean)" class="member-name-link">breakNaturally</a><wbr>(@NotNull org.bukkit.inventory.ItemStack&nbsp;tool,
+ boolean&nbsp;triggerEffect)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#breakNaturally(org.bukkit.inventory.ItemStack)" class="member-name-link">breakNaturally</a><wbr>(org.bukkit.inventory.ItemStack&nbsp;tool)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#canPlace(org.bukkit.block.data.BlockData)" class="member-name-link">canPlace</a><wbr>(@NotNull org.bukkit.block.data.BlockData&nbsp;data)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#count(int)" class="member-name-link">count</a><wbr>(int&nbsp;timeout)</code></div>
@@ -171,11 +177,23 @@ implements org.bukkit.block.Block</span></div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBlockPower(org.bukkit.block.BlockFace)" class="member-name-link">getBlockPower</a><wbr>(org.bukkit.block.BlockFace&nbsp;face)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.util.BoundingBox</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBoundingBox()" class="member-name-link">getBoundingBox</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.SoundGroup</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBlockSoundGroup()" class="member-name-link">getBlockSoundGroup</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.util.BoundingBox</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBoundingBox()" class="member-name-link">getBoundingBox</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBreakSpeed(org.bukkit.entity.Player)" class="member-name-link">getBreakSpeed</a><wbr>(@NotNull org.bukkit.entity.Player&nbsp;player)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull <a href="../chunk/GlowChunk.html" title="class in net.glowstone.chunk">GlowChunk</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getChunk()" class="member-name-link">getChunk</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.util.VoxelShape</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCollisionShape()" class="member-name-link">getCollisionShape</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.block.Biome</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getComputedBiome()" class="member-name-link">getComputedBiome</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCounter()" class="member-name-link">getCounter</a>()</code></div>
@@ -304,98 +322,104 @@ implements org.bukkit.block.Block</span></div>
 <div class="block">Get block material's burn ability.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isEmpty()" class="member-name-link">isEmpty</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isCollidable()" class="member-name-link">isCollidable</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFlammable()" class="member-name-link">isFlammable</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isEmpty()" class="member-name-link">isEmpty</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFlammable()" class="member-name-link">isFlammable</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Get block material's flammable ability.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isLiquid()" class="member-name-link">isLiquid</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isPassable()" class="member-name-link">isPassable</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isLiquid()" class="member-name-link">isLiquid</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isPreferredTool(org.bukkit.inventory.ItemStack)" class="member-name-link">isPreferredTool</a><wbr>(@NotNull org.bukkit.inventory.ItemStack&nbsp;itemStack)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isPassable()" class="member-name-link">isPassable</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isReplaceable()" class="member-name-link">isReplaceable</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isPreferredTool(org.bukkit.inventory.ItemStack)" class="member-name-link">isPreferredTool</a><wbr>(@NotNull org.bukkit.inventory.ItemStack&nbsp;itemStack)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSolid()" class="member-name-link">isSolid</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isReplaceable()" class="member-name-link">isReplaceable</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isValidTool(org.bukkit.inventory.ItemStack)" class="member-name-link">isValidTool</a><wbr>(@NotNull org.bukkit.inventory.ItemStack&nbsp;itemStack)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSolid()" class="member-name-link">isSolid</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable org.bukkit.util.RayTraceResult</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#rayTrace(org.bukkit.Location,org.bukkit.util.Vector,double,org.bukkit.FluidCollisionMode)" class="member-name-link">rayTrace</a><wbr>(@NotNull org.bukkit.Location&nbsp;start,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isValidTool(org.bukkit.inventory.ItemStack)" class="member-name-link">isValidTool</a><wbr>(@NotNull org.bukkit.inventory.ItemStack&nbsp;itemStack)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable org.bukkit.util.RayTraceResult</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#rayTrace(org.bukkit.Location,org.bukkit.util.Vector,double,org.bukkit.FluidCollisionMode)" class="member-name-link">rayTrace</a><wbr>(@NotNull org.bukkit.Location&nbsp;start,
  @NotNull org.bukkit.util.Vector&nbsp;direction,
  double&nbsp;maxDistance,
  @NotNull org.bukkit.FluidCollisionMode&nbsp;fluidCollisionMode)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeMetadata(java.lang.String,org.bukkit.plugin.Plugin)" class="member-name-link">removeMetadata</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;metadataKey,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeMetadata(java.lang.String,org.bukkit.plugin.Plugin)" class="member-name-link">removeMetadata</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;metadataKey,
  @NotNull org.bukkit.plugin.Plugin&nbsp;owningPlugin)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBiome(org.bukkit.block.Biome)" class="member-name-link">setBiome</a><wbr>(@NotNull org.bukkit.block.Biome&nbsp;bio)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBlockData(org.bukkit.block.data.BlockData)" class="member-name-link">setBlockData</a><wbr>(@NotNull org.bukkit.block.data.BlockData&nbsp;data)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBiome(org.bukkit.block.Biome)" class="member-name-link">setBiome</a><wbr>(@NotNull org.bukkit.block.Biome&nbsp;bio)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBlockData(org.bukkit.block.data.BlockData,boolean)" class="member-name-link">setBlockData</a><wbr>(@NotNull org.bukkit.block.data.BlockData&nbsp;data,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBlockData(org.bukkit.block.data.BlockData)" class="member-name-link">setBlockData</a><wbr>(@NotNull org.bukkit.block.data.BlockData&nbsp;data)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBlockData(org.bukkit.block.data.BlockData,boolean)" class="member-name-link">setBlockData</a><wbr>(@NotNull org.bukkit.block.data.BlockData&nbsp;data,
  boolean&nbsp;applyPhysics)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setData(byte)" class="member-name-link">setData</a><wbr>(byte&nbsp;data)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setData(byte,boolean)" class="member-name-link">setData</a><wbr>(byte&nbsp;data,
- boolean&nbsp;applyPhysics)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setData(byte)" class="member-name-link">setData</a><wbr>(byte&nbsp;data)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setMetadata(java.lang.String,org.bukkit.metadata.MetadataValue)" class="member-name-link">setMetadata</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;metadataKey,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setData(byte,boolean)" class="member-name-link">setData</a><wbr>(byte&nbsp;data,
+ boolean&nbsp;applyPhysics)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setMetadata(java.lang.String,org.bukkit.metadata.MetadataValue)" class="member-name-link">setMetadata</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;metadataKey,
  org.bukkit.metadata.MetadataValue&nbsp;newMetadataValue)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setType(org.bukkit.Material)" class="member-name-link">setType</a><wbr>(org.bukkit.Material&nbsp;type)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setType(org.bukkit.Material,boolean)" class="member-name-link">setType</a><wbr>(org.bukkit.Material&nbsp;type,
- boolean&nbsp;applyPhysics)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Set the Material type of a block and optionally apply physics.</div>
-</div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setType(org.bukkit.Material)" class="member-name-link">setType</a><wbr>(org.bukkit.Material&nbsp;type)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setType(org.bukkit.Material,byte,boolean)" class="member-name-link">setType</a><wbr>(org.bukkit.Material&nbsp;type,
- byte&nbsp;data,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setType(org.bukkit.Material,boolean)" class="member-name-link">setType</a><wbr>(org.bukkit.Material&nbsp;type,
  boolean&nbsp;applyPhysics)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Set the Material type of a block and optionally apply physics.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setType(org.bukkit.Material,byte,boolean)" class="member-name-link">setType</a><wbr>(org.bukkit.Material&nbsp;type,
+ byte&nbsp;data,
+ boolean&nbsp;applyPhysics)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Set the Material type of a block with data and optionally apply physics.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#setTypeId(int)" class="member-name-link">setTypeId</a><wbr>(int&nbsp;type)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
-<div class="block"><span class="deprecated-label">Deprecated.</span></div>
-</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#setTypeId(int,boolean)" class="member-name-link">setTypeId</a><wbr>(int&nbsp;type,
- boolean&nbsp;applyPhysics)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#setTypeId(int)" class="member-name-link">setTypeId</a><wbr>(int&nbsp;type)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated.</span></div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#setTypeIdAndData(int,byte,boolean)" class="member-name-link">setTypeIdAndData</a><wbr>(int&nbsp;type,
- byte&nbsp;data,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#setTypeId(int,boolean)" class="member-name-link">setTypeId</a><wbr>(int&nbsp;type,
  boolean&nbsp;applyPhysics)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated.</span></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#setTypeIdAndData(int,byte,boolean)" class="member-name-link">setTypeIdAndData</a><wbr>(int&nbsp;type,
+ byte&nbsp;data,
+ boolean&nbsp;applyPhysics)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
+<div class="block"><span class="deprecated-label">Deprecated.</span></div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#translationKey()" class="member-name-link">translationKey</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
@@ -510,6 +534,17 @@ implements org.bukkit.block.Block</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code>getBiome</code>&nbsp;in interface&nbsp;<code>org.bukkit.block.Block</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getComputedBiome()">
+<h3>getComputedBiome</h3>
+<div class="member-signature"><span class="annotations">@NotNull
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull org.bukkit.block.Biome</span>&nbsp;<span class="element-name">getComputedBiome</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getComputedBiome</code>&nbsp;in interface&nbsp;<code>org.bukkit.block.Block</code></dd>
 </dl>
 </section>
 </li>
@@ -747,6 +782,16 @@ implements org.bukkit.block.Block</span></div>
 </section>
 </li>
 <li>
+<section class="detail" id="isCollidable()">
+<h3>isCollidable</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isCollidable</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>isCollidable</code>&nbsp;in interface&nbsp;<code>org.bukkit.block.Block</code></dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="getMaterialValues()">
 <h3>getMaterialValues</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MaterialValueManager.ValueCollection.html" title="interface in net.glowstone.block">MaterialValueManager.ValueCollection</a></span>&nbsp;<span class="element-name">getMaterialValues</span>()</div>
@@ -980,6 +1025,16 @@ implements org.bukkit.block.Block</span></div>
 </section>
 </li>
 <li>
+<section class="detail" id="breakNaturally(boolean)">
+<h3>breakNaturally</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">breakNaturally</span><wbr><span class="parameters">(boolean&nbsp;triggerEffect)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>breakNaturally</code>&nbsp;in interface&nbsp;<code>org.bukkit.block.Block</code></dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="breakNaturally(org.bukkit.inventory.ItemStack,boolean)">
 <h3>breakNaturally</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">breakNaturally</span><wbr><span class="parameters">(@NotNull
@@ -1048,6 +1103,17 @@ implements org.bukkit.block.Block</span></div>
 </section>
 </li>
 <li>
+<section class="detail" id="getBreakSpeed(org.bukkit.entity.Player)">
+<h3>getBreakSpeed</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getBreakSpeed</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.entity.Player&nbsp;player)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getBreakSpeed</code>&nbsp;in interface&nbsp;<code>org.bukkit.block.Block</code></dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="isPassable()">
 <h3>isPassable</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isPassable</span>()</div>
@@ -1086,6 +1152,28 @@ implements org.bukkit.block.Block</span></div>
 </section>
 </li>
 <li>
+<section class="detail" id="getCollisionShape()">
+<h3>getCollisionShape</h3>
+<div class="member-signature"><span class="annotations">@NotNull
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull org.bukkit.util.VoxelShape</span>&nbsp;<span class="element-name">getCollisionShape</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getCollisionShape</code>&nbsp;in interface&nbsp;<code>org.bukkit.block.Block</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="canPlace(org.bukkit.block.data.BlockData)">
+<h3>canPlace</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">canPlace</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.block.data.BlockData&nbsp;data)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>canPlace</code>&nbsp;in interface&nbsp;<code>org.bukkit.block.Block</code></dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="getSoundGroup()">
 <h3>getSoundGroup</h3>
 <div class="member-signature"><span class="annotations">@NotNull
@@ -1093,6 +1181,17 @@ implements org.bukkit.block.Block</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code>getSoundGroup</code>&nbsp;in interface&nbsp;<code>org.bukkit.block.Block</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getBlockSoundGroup()">
+<h3>getBlockSoundGroup</h3>
+<div class="member-signature"><span class="annotations">@NotNull
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull org.bukkit.SoundGroup</span>&nbsp;<span class="element-name">getBlockSoundGroup</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getBlockSoundGroup</code>&nbsp;in interface&nbsp;<code>org.bukkit.block.Block</code></dd>
 </dl>
 </section>
 </li>
@@ -1234,6 +1333,17 @@ implements org.bukkit.block.Block</span></div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="translationKey()">
+<h3>translationKey</h3>
+<div class="member-signature"><span class="annotations">@NotNull
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">translationKey</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>translationKey</code>&nbsp;in interface&nbsp;<code>net.kyori.adventure.translation.Translatable</code></dd>
 </dl>
 </section>
 </li>

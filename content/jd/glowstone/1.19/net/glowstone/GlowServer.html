@@ -77,7 +77,7 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code>net.kyori.adventure.audience.Audience</code>, <code>net.kyori.adventure.audience.ForwardingAudience</code>, <code>org.bukkit.plugin.messaging.PluginMessageRecipient</code>, <code>org.bukkit.Server</code></dd>
+<dd><code>net.kyori.adventure.audience.Audience</code>, <code>net.kyori.adventure.audience.ForwardingAudience</code>, <code>net.kyori.adventure.pointer.Pointered</code>, <code>org.bukkit.plugin.messaging.PluginMessageRecipient</code>, <code>org.bukkit.Server</code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">GlowServer</span>
@@ -188,29 +188,37 @@ implements org.bukkit.Server</span></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#banIP(java.lang.String)" class="member-name-link">banIP</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;address)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#broadcast(net.kyori.adventure.text.Component,java.lang.String)" class="member-name-link">broadcast</a><wbr>(@NotNull net.kyori.adventure.text.Component&nbsp;component,
- @NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#broadcast(net.kyori.adventure.text.Component)" class="member-name-link">broadcast</a><wbr>(@NotNull net.kyori.adventure.text.Component&nbsp;message)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#broadcast(java.lang.String,java.lang.String)" class="member-name-link">broadcast</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;permission)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#broadcast(net.md_5.bungee.api.chat.BaseComponent)" class="member-name-link">broadcast</a><wbr>(net.md_5.bungee.api.chat.BaseComponent&nbsp;component)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#broadcast(net.md_5.bungee.api.chat.BaseComponent...)" class="member-name-link">broadcast</a><wbr>(net.md_5.bungee.api.chat.BaseComponent...&nbsp;components)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#broadcast(net.kyori.adventure.text.Component,java.lang.String)" class="member-name-link">broadcast</a><wbr>(@NotNull net.kyori.adventure.text.Component&nbsp;component,
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#broadcastMessage(java.lang.String)" class="member-name-link">broadcastMessage</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#broadcast(java.lang.String,java.lang.String)" class="member-name-link">broadcast</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;permission)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#broadcastPacket(com.flowpowered.network.Message)" class="member-name-link">broadcastPacket</a><wbr>(com.flowpowered.network.Message&nbsp;message)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#broadcast(net.md_5.bungee.api.chat.BaseComponent)" class="member-name-link">broadcast</a><wbr>(net.md_5.bungee.api.chat.BaseComponent&nbsp;component)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#broadcast(net.md_5.bungee.api.chat.BaseComponent...)" class="member-name-link">broadcast</a><wbr>(net.md_5.bungee.api.chat.BaseComponent...&nbsp;components)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#broadcastMessage(java.lang.String)" class="member-name-link">broadcastMessage</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#broadcastPacket(com.flowpowered.network.Message)" class="member-name-link">broadcastPacket</a><wbr>(com.flowpowered.network.Message&nbsp;message)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Broadcasts a packet for all online players.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clearRecipes()" class="member-name-link">clearRecipes</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clearRecipes()" class="member-name-link">clearRecipes</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.inventory.ItemStack</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#craftItem(org.bukkit.inventory.ItemStack%5B%5D,org.bukkit.World,org.bukkit.entity.Player)" class="member-name-link">craftItem</a><wbr>(@NotNull org.bukkit.inventory.ItemStack[]&nbsp;craftingMatrix,
+ @NotNull org.bukkit.World&nbsp;world,
+ @NotNull org.bukkit.entity.Player&nbsp;player)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="net/message/play/player/AdvancementsMessage.html" title="class in net.glowstone.net.message.play.player">AdvancementsMessage</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createAdvancementsMessage(boolean,java.util.List,org.bukkit.entity.Player)" class="member-name-link">createAdvancementsMessage</a><wbr>(boolean&nbsp;clear,
@@ -259,59 +267,72 @@ implements org.bukkit.Server</span></div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.generator.ChunkGenerator.ChunkData</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createChunkData(org.bukkit.World)" class="member-name-link">createChunkData</a><wbr>(org.bukkit.World&nbsp;world)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.inventory.ItemStack</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createExplorerMap(org.bukkit.World,org.bukkit.Location,org.bukkit.StructureType)" class="member-name-link">createExplorerMap</a><wbr>(@NotNull org.bukkit.World&nbsp;world,
- @NotNull org.bukkit.Location&nbsp;location,
- @NotNull org.bukkit.StructureType&nbsp;structureType)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.command.CommandSender</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createCommandSender(java.util.function.Consumer)" class="member-name-link">createCommandSender</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;? super net.kyori.adventure.text.Component&gt;&nbsp;feedback)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.inventory.ItemStack</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createExplorerMap(org.bukkit.World,org.bukkit.Location,org.bukkit.StructureType,int,boolean)" class="member-name-link">createExplorerMap</a><wbr>(@NotNull org.bukkit.World&nbsp;world,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createExplorerMap(org.bukkit.World,org.bukkit.Location,org.bukkit.StructureType)" class="member-name-link">createExplorerMap</a><wbr>(@NotNull org.bukkit.World&nbsp;world,
+ @NotNull org.bukkit.Location&nbsp;location,
+ @NotNull org.bukkit.StructureType&nbsp;structureType)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.inventory.ItemStack</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createExplorerMap(org.bukkit.World,org.bukkit.Location,org.bukkit.StructureType,int,boolean)" class="member-name-link">createExplorerMap</a><wbr>(@NotNull org.bukkit.World&nbsp;world,
  @NotNull org.bukkit.Location&nbsp;location,
  @NotNull org.bukkit.StructureType&nbsp;structureType,
  int&nbsp;i,
  boolean&nbsp;b)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="GlowServer.html" title="class in net.glowstone">GlowServer</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createFromArguments(java.lang.String...)" class="member-name-link">createFromArguments</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>...&nbsp;args)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="GlowServer.html" title="class in net.glowstone">GlowServer</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createFromArguments(java.lang.String...)" class="member-name-link">createFromArguments</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>...&nbsp;args)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Initialize a server using the command-line arguments.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.inventory.Inventory</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createInventory(org.bukkit.inventory.InventoryHolder,int,net.kyori.adventure.text.Component)" class="member-name-link">createInventory</a><wbr>(@Nullable org.bukkit.inventory.InventoryHolder&nbsp;inventoryHolder,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.inventory.Inventory</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createInventory(org.bukkit.inventory.InventoryHolder,int,net.kyori.adventure.text.Component)" class="member-name-link">createInventory</a><wbr>(@Nullable org.bukkit.inventory.InventoryHolder&nbsp;inventoryHolder,
  int&nbsp;i,
  @NotNull net.kyori.adventure.text.Component&nbsp;component)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.inventory.Inventory</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createInventory(org.bukkit.inventory.InventoryHolder,org.bukkit.event.inventory.InventoryType,net.kyori.adventure.text.Component)" class="member-name-link">createInventory</a><wbr>(@Nullable org.bukkit.inventory.InventoryHolder&nbsp;inventoryHolder,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.inventory.Inventory</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createInventory(org.bukkit.inventory.InventoryHolder,org.bukkit.event.inventory.InventoryType,net.kyori.adventure.text.Component)" class="member-name-link">createInventory</a><wbr>(@Nullable org.bukkit.inventory.InventoryHolder&nbsp;inventoryHolder,
  @NotNull org.bukkit.event.inventory.InventoryType&nbsp;inventoryType,
  @NotNull net.kyori.adventure.text.Component&nbsp;component)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.inventory.Inventory</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createInventory(org.bukkit.inventory.InventoryHolder,int)" class="member-name-link">createInventory</a><wbr>(org.bukkit.inventory.InventoryHolder&nbsp;owner,
- int&nbsp;size)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.inventory.Inventory</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createInventory(org.bukkit.inventory.InventoryHolder,int,java.lang.String)" class="member-name-link">createInventory</a><wbr>(org.bukkit.inventory.InventoryHolder&nbsp;owner,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createInventory(org.bukkit.inventory.InventoryHolder,int)" class="member-name-link">createInventory</a><wbr>(org.bukkit.inventory.InventoryHolder&nbsp;owner,
+ int&nbsp;size)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.inventory.Inventory</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createInventory(org.bukkit.inventory.InventoryHolder,int,java.lang.String)" class="member-name-link">createInventory</a><wbr>(org.bukkit.inventory.InventoryHolder&nbsp;owner,
  int&nbsp;size,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;title)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.inventory.Inventory</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createInventory(org.bukkit.inventory.InventoryHolder,org.bukkit.event.inventory.InventoryType)" class="member-name-link">createInventory</a><wbr>(org.bukkit.inventory.InventoryHolder&nbsp;owner,
- org.bukkit.event.inventory.InventoryType&nbsp;type)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.inventory.Inventory</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createInventory(org.bukkit.inventory.InventoryHolder,org.bukkit.event.inventory.InventoryType,java.lang.String)" class="member-name-link">createInventory</a><wbr>(org.bukkit.inventory.InventoryHolder&nbsp;owner,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createInventory(org.bukkit.inventory.InventoryHolder,org.bukkit.event.inventory.InventoryType)" class="member-name-link">createInventory</a><wbr>(org.bukkit.inventory.InventoryHolder&nbsp;owner,
+ org.bukkit.event.inventory.InventoryType&nbsp;type)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.inventory.Inventory</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createInventory(org.bukkit.inventory.InventoryHolder,org.bukkit.event.inventory.InventoryType,java.lang.String)" class="member-name-link">createInventory</a><wbr>(org.bukkit.inventory.InventoryHolder&nbsp;owner,
  org.bukkit.event.inventory.InventoryType&nbsp;type,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;title)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="map/GlowMapView.html" title="class in net.glowstone.map">GlowMapView</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createMap(org.bukkit.World)" class="member-name-link">createMap</a><wbr>(org.bukkit.World&nbsp;world)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.inventory.Merchant</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createMerchant(net.kyori.adventure.text.Component)" class="member-name-link">createMerchant</a><wbr>(@Nullable net.kyori.adventure.text.Component&nbsp;component)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="map/GlowMapView.html" title="class in net.glowstone.map">GlowMapView</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createMap(org.bukkit.World)" class="member-name-link">createMap</a><wbr>(org.bukkit.World&nbsp;world)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.inventory.Merchant</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createMerchant(java.lang.String)" class="member-name-link">createMerchant</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;title)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.inventory.Merchant</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createMerchant(net.kyori.adventure.text.Component)" class="member-name-link">createMerchant</a><wbr>(@Nullable net.kyori.adventure.text.Component&nbsp;component)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.inventory.Merchant</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createMerchant(java.lang.String)" class="member-name-link">createMerchant</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;title)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.profile.PlayerProfile</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createPlayerProfile(java.lang.String)" class="member-name-link">createPlayerProfile</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.profile.PlayerProfile</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createPlayerProfile(java.util.UUID)" class="member-name-link">createPlayerProfile</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;uniqueId)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.profile.PlayerProfile</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createPlayerProfile(java.util.UUID,java.lang.String)" class="member-name-link">createPlayerProfile</a><wbr>(@Nullable <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;uniqueId,
+ @Nullable <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="entity/meta/profile/GlowPlayerProfile.html" title="class in net.glowstone.entity.meta.profile">GlowPlayerProfile</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createProfile(java.lang.String)" class="member-name-link">createProfile</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
@@ -330,13 +351,20 @@ implements org.bukkit.Server</span></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Creates a player profile.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.generator.ChunkGenerator.ChunkData</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createVanillaChunkData(org.bukkit.World,int,int)" class="member-name-link">createVanillaChunkData</a><wbr>(org.bukkit.World&nbsp;world,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull com.destroystokyo.paper.profile.PlayerProfile</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createProfileExact(java.util.UUID,java.lang.String)" class="member-name-link">createProfileExact</a><wbr>(@Nullable <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;uuid,
+ @Nullable <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.generator.ChunkGenerator.ChunkData</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createVanillaChunkData(org.bukkit.World,int,int)" class="member-name-link">createVanillaChunkData</a><wbr>(org.bukkit.World&nbsp;world,
  int&nbsp;x,
  int&nbsp;z)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="GlowWorld.html" title="class in net.glowstone">GlowWorld</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createWorld(org.bukkit.WorldCreator)" class="member-name-link">createWorld</a><wbr>(org.bukkit.WorldCreator&nbsp;creator)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="GlowWorld.html" title="class in net.glowstone">GlowWorld</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createWorld(org.bukkit.WorldCreator)" class="member-name-link">createWorld</a><wbr>(org.bukkit.WorldCreator&nbsp;creator)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.WorldBorder</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createWorldBorder()" class="member-name-link">createWorldBorder</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#dispatchCommand(org.bukkit.command.CommandSender,java.lang.String)" class="member-name-link">dispatchCommand</a><wbr>(org.bukkit.command.CommandSender&nbsp;sender,
@@ -447,43 +475,50 @@ implements org.bukkit.Server</span></div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.command.ConsoleCommandSender</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getConsoleSender()" class="member-name-link">getConsoleSender</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCurrentTick()" class="member-name-link">getCurrentTick</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable org.bukkit.inventory.Recipe</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCraftingRecipe(org.bukkit.inventory.ItemStack%5B%5D,org.bukkit.World)" class="member-name-link">getCraftingRecipe</a><wbr>(@NotNull org.bukkit.inventory.ItemStack[]&nbsp;craftingMatrix,
+ @NotNull org.bukkit.World&nbsp;world)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull io.papermc.paper.datapack.DatapackManager</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDatapackManager()" class="member-name-link">getDatapackManager</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCurrentTick()" class="member-name-link">getCurrentTick</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.GameMode</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDefaultGameMode()" class="member-name-link">getDefaultGameMode</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull io.papermc.paper.datapack.DatapackManager</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDatapackManager()" class="member-name-link">getDatapackManager</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.Difficulty</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDifficulty()" class="member-name-link">getDifficulty</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.GameMode</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDefaultGameMode()" class="member-name-link">getDefaultGameMode</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.Difficulty</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDifficulty()" class="member-name-link">getDifficulty</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Get the default game difficulty defined in the config.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.entity.Entity</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEntity(java.util.UUID)" class="member-name-link">getEntity</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;uuid)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="entity/EntityIdManager.html" title="class in net.glowstone.entity">EntityIdManager</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEntityIdManager()" class="member-name-link">getEntityIdManager</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.entity.Entity</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEntity(java.util.UUID)" class="member-name-link">getEntity</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;uuid)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="entity/EntityIdManager.html" title="class in net.glowstone.entity">EntityIdManager</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEntityIdManager()" class="member-name-link">getEntityIdManager</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Gets the entity id manager.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="entity/FishingRewardManager.html" title="class in net.glowstone.entity">FishingRewardManager</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFishingRewardManager()" class="member-name-link">getFishingRewardManager</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="entity/FishingRewardManager.html" title="class in net.glowstone.entity">FishingRewardManager</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFishingRewardManager()" class="member-name-link">getFishingRewardManager</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">The FishingRewards of this server.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>net.glowstone.datapack.FuelManager</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFuelManager()" class="member-name-link">getFuelManager</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>net.glowstone.datapack.FuelManager</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFuelManager()" class="member-name-link">getFuelManager</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Return the fuel manager.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getGenerateStructures()" class="member-name-link">getGenerateStructures</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getGenerateStructures()" class="member-name-link">getGenerateStructures</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.help.HelpMap</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getHelpMap()" class="member-name-link">getHelpMap</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.help.HelpMap</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getHelpMap()" class="member-name-link">getHelpMap</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getHideOnlinePlayers()" class="member-name-link">getHideOnlinePlayers</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getIdleTimeout()" class="member-name-link">getIdleTimeout</a>()</code></div>
@@ -643,8 +678,14 @@ implements org.bukkit.Server</span></div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.plugin.PluginManager</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPluginManager()" class="member-name-link">getPluginManager</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPort()" class="member-name-link">getPort</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link">File</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPluginsFolder()" class="member-name-link">getPluginsFolder</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPort()" class="member-name-link">getPort</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.potion.PotionBrewer</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPotionBrewer()" class="member-name-link">getPotionBrewer</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getProfileLookupTimeout()" class="member-name-link">getProfileLookupTimeout</a>()</code></div>
@@ -672,11 +713,17 @@ implements org.bukkit.Server</span></div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;org.bukkit.inventory.Recipe&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRecipesFor(org.bukkit.inventory.ItemStack)" class="member-name-link">getRecipesFor</a><wbr>(org.bukkit.inventory.ItemStack&nbsp;result)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getResourcePackHash()" class="member-name-link">getResourcePackHash</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getResourcePack()" class="member-name-link">getResourcePack</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getResourcePackHash()" class="member-name-link">getResourcePackHash</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Get the resource pack hash for this server, or the empty string if not set.</div>
 </div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getResourcePackPrompt()" class="member-name-link">getResourcePackPrompt</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getResourcePackUrl()" class="member-name-link">getResourcePackUrl</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -719,6 +766,12 @@ implements org.bukkit.Server</span></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getShutdownMessage()" class="member-name-link">getShutdownMessage</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSimulationDistance()" class="member-name-link">getSimulationDistance</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSpawnLimit(org.bukkit.entity.SpawnCategory)" class="member-name-link">getSpawnLimit</a><wbr>(@NotNull org.bukkit.entity.SpawnCategory&nbsp;spawnCategory)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSpawnRadius()" class="member-name-link">getSpawnRadius</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link">File</a>&gt;</code></div>
@@ -732,23 +785,29 @@ implements org.bukkit.Server</span></div>
 <div class="block">Gets the current storage provider factory, or null if none has been set by a plugin and the
  server has not started yet.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T extends org.bukkit.Keyed&gt;<br>org.bukkit.Tag&lt;T&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTag(java.lang.String,org.bukkit.NamespacedKey,java.lang.Class)" class="member-name-link">getTag</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;registry,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.structure.StructureManager</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getStructureManager()" class="member-name-link">getStructureManager</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T extends org.bukkit.Keyed&gt;<br>org.bukkit.Tag&lt;T&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTag(java.lang.String,org.bukkit.NamespacedKey,java.lang.Class)" class="member-name-link">getTag</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;registry,
  @NotNull org.bukkit.NamespacedKey&nbsp;tagKey,
  @NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;clazz)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T extends org.bukkit.Keyed&gt;<br>@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;org.bukkit.Tag&lt;T&gt;&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTags(java.lang.String,java.lang.Class)" class="member-name-link">getTags</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;registry,
- @NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;clazz)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTicksPerAmbientSpawns()" class="member-name-link">getTicksPerAmbientSpawns</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T extends org.bukkit.Keyed&gt;<br>@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;org.bukkit.Tag&lt;T&gt;&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTags(java.lang.String,java.lang.Class)" class="member-name-link">getTags</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;registry,
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;clazz)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTicksPerAnimalSpawns()" class="member-name-link">getTicksPerAnimalSpawns</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTicksPerAmbientSpawns()" class="member-name-link">getTicksPerAmbientSpawns</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTicksPerMonsterSpawns()" class="member-name-link">getTicksPerMonsterSpawns</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTicksPerAnimalSpawns()" class="member-name-link">getTicksPerAnimalSpawns</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTicksPerMonsterSpawns()" class="member-name-link">getTicksPerMonsterSpawns</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTicksPerSpawns(org.bukkit.entity.SpawnCategory)" class="member-name-link">getTicksPerSpawns</a><wbr>(@NotNull org.bukkit.entity.SpawnCategory&nbsp;spawnCategory)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTicksPerWaterAmbientSpawns()" class="member-name-link">getTicksPerWaterAmbientSpawns</a>()</code></div>
@@ -756,37 +815,43 @@ implements org.bukkit.Server</span></div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTicksPerWaterSpawns()" class="member-name-link">getTicksPerWaterSpawns</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long[]</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTickTimes()" class="member-name-link">getTickTimes</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTicksPerWaterUndergroundCreatureSpawns()" class="member-name-link">getTicksPerWaterUndergroundCreatureSpawns</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double[]</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTPS()" class="member-name-link">getTPS</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long[]</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTickTimes()" class="member-name-link">getTickTimes</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>org.bukkit.UnsafeValues</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#getUnsafe()" class="member-name-link">getUnsafe</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double[]</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTPS()" class="member-name-link">getTPS</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>org.bukkit.UnsafeValues</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#getUnsafe()" class="member-name-link">getUnsafe</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated.</span></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUpdateFolder()" class="member-name-link">getUpdateFolder</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link">File</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUpdateFolderFile()" class="member-name-link">getUpdateFolderFile</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUpdateFolder()" class="member-name-link">getUpdateFolder</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getVersion()" class="member-name-link">getVersion</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link">File</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUpdateFolderFile()" class="member-name-link">getUpdateFolderFile</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getViewDistance()" class="member-name-link">getViewDistance</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.Warning.WarningState</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWarningState()" class="member-name-link">getWarningState</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWaterAmbientSpawnLimit()" class="member-name-link">getWaterAmbientSpawnLimit</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getVersion()" class="member-name-link">getVersion</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWaterAnimalSpawnLimit()" class="member-name-link">getWaterAnimalSpawnLimit</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getViewDistance()" class="member-name-link">getViewDistance</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.Warning.WarningState</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWarningState()" class="member-name-link">getWarningState</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWaterAmbientSpawnLimit()" class="member-name-link">getWaterAmbientSpawnLimit</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWaterAnimalSpawnLimit()" class="member-name-link">getWaterAnimalSpawnLimit</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWaterUndergroundCreatureSpawnLimit()" class="member-name-link">getWaterUndergroundCreatureSpawnLimit</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="util/bans/UuidListFile.html" title="class in net.glowstone.util.bans">UuidListFile</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWhitelist()" class="member-name-link">getWhitelist</a>()</code></div>
@@ -839,7 +904,13 @@ implements org.bukkit.Server</span></div>
 <div class="block">Gets whether PVP is enabled on the server.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isStopping()" class="member-name-link">isStopping</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isResourcePackRequired()" class="member-name-link">isResourcePackRequired</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isStopping()" class="member-name-link">isStopping</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isWhitelistEnforced()" class="member-name-link">isWhitelistEnforced</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#keepSpawnLoaded()" class="member-name-link">keepSpawnLoaded</a>()</code></div>
@@ -863,100 +934,106 @@ implements org.bukkit.Server</span></div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull net.kyori.adventure.text.Component</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#motd()" class="member-name-link">motd</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#populateAnchoredChunks()" class="member-name-link">populateAnchoredChunks</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull net.kyori.adventure.text.Component</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#permissionMessage()" class="member-name-link">permissionMessage</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#populateAnchoredChunks()" class="member-name-link">populateAnchoredChunks</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Get whether to populate chunks when they are anchored.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a>&lt;org.bukkit.inventory.Recipe&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#recipeIterator()" class="member-name-link">recipeIterator</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reload()" class="member-name-link">reload</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a>&lt;org.bukkit.inventory.Recipe&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#recipeIterator()" class="member-name-link">recipeIterator</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reload()" class="member-name-link">reload</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Reloads the server, refreshing settings and plugin information.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reloadCommandAliases()" class="member-name-link">reloadCommandAliases</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reloadData()" class="member-name-link">reloadData</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reloadCommandAliases()" class="member-name-link">reloadCommandAliases</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reloadPermissions()" class="member-name-link">reloadPermissions</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reloadData()" class="member-name-link">reloadData</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reloadWhitelist()" class="member-name-link">reloadWhitelist</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reloadPermissions()" class="member-name-link">reloadPermissions</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeBossBar(org.bukkit.NamespacedKey)" class="member-name-link">removeBossBar</a><wbr>(@NotNull org.bukkit.NamespacedKey&nbsp;namespacedKey)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reloadWhitelist()" class="member-name-link">reloadWhitelist</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeRecipe(org.bukkit.NamespacedKey)" class="member-name-link">removeRecipe</a><wbr>(@NotNull org.bukkit.NamespacedKey&nbsp;key)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeBossBar(org.bukkit.NamespacedKey)" class="member-name-link">removeBossBar</a><wbr>(@NotNull org.bukkit.NamespacedKey&nbsp;namespacedKey)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resetRecipes()" class="member-name-link">resetRecipes</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeRecipe(org.bukkit.NamespacedKey)" class="member-name-link">removeRecipe</a><wbr>(@NotNull org.bukkit.NamespacedKey&nbsp;key)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#run()" class="member-name-link">run</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Starts the server starting sequence (starting, binding to port, etc.)</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#savePlayers()" class="member-name-link">savePlayers</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;org.bukkit.entity.Entity&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selectEntities(org.bukkit.command.CommandSender,java.lang.String)" class="member-name-link">selectEntities</a><wbr>(@NotNull org.bukkit.command.CommandSender&nbsp;commandSender,
- @NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resetRecipes()" class="member-name-link">resetRecipes</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendPlayerAbilities(net.glowstone.entity.GlowPlayer)" class="member-name-link">sendPlayerAbilities</a><wbr>(<a href="entity/GlowPlayer.html" title="class in net.glowstone.entity">GlowPlayer</a>&nbsp;player)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#run()" class="member-name-link">run</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Starts the server starting sequence (starting, binding to port, etc.)</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#savePlayers()" class="member-name-link">savePlayers</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;org.bukkit.entity.Entity&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selectEntities(org.bukkit.command.CommandSender,java.lang.String)" class="member-name-link">selectEntities</a><wbr>(@NotNull org.bukkit.command.CommandSender&nbsp;commandSender,
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendPlayerAbilities(net.glowstone.entity.GlowPlayer)" class="member-name-link">sendPlayerAbilities</a><wbr>(<a href="entity/GlowPlayer.html" title="class in net.glowstone.entity">GlowPlayer</a>&nbsp;player)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sends a <a href="entity/GlowPlayer.html" title="class in net.glowstone.entity"><code>GlowPlayer</code></a> their abilities regarding
  flying and walking.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendPluginMessage(org.bukkit.plugin.Plugin,java.lang.String,byte%5B%5D)" class="member-name-link">sendPluginMessage</a><wbr>(org.bukkit.plugin.Plugin&nbsp;source,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendPluginMessage(org.bukkit.plugin.Plugin,java.lang.String,byte%5B%5D)" class="member-name-link">sendPluginMessage</a><wbr>(org.bukkit.plugin.Plugin&nbsp;source,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;channel,
  byte[]&nbsp;message)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setDefaultGameMode(org.bukkit.GameMode)" class="member-name-link">setDefaultGameMode</a><wbr>(org.bukkit.GameMode&nbsp;mode)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setIdleTimeout(int)" class="member-name-link">setIdleTimeout</a><wbr>(int&nbsp;timeout)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setDefaultGameMode(org.bukkit.GameMode)" class="member-name-link">setDefaultGameMode</a><wbr>(org.bukkit.GameMode&nbsp;mode)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setIp(java.lang.String)" class="member-name-link">setIp</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;ip)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setIdleTimeout(int)" class="member-name-link">setIdleTimeout</a><wbr>(int&nbsp;timeout)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setIp(java.lang.String)" class="member-name-link">setIp</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;ip)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the IP address that the Query server will expose.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setMaxPlayers(int)" class="member-name-link">setMaxPlayers</a><wbr>(int&nbsp;maxPlayers)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPlayerOnline(net.glowstone.entity.GlowPlayer,boolean)" class="member-name-link">setPlayerOnline</a><wbr>(<a href="entity/GlowPlayer.html" title="class in net.glowstone.entity">GlowPlayer</a>&nbsp;player,
- boolean&nbsp;online)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets a player as being online internally.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPort(int)" class="member-name-link">setPort</a><wbr>(int&nbsp;port)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the port that the Query server will expose.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSpawnRadius(int)" class="member-name-link">setSpawnRadius</a><wbr>(int&nbsp;value)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setMaxPlayers(int)" class="member-name-link">setMaxPlayers</a><wbr>(int&nbsp;maxPlayers)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setStorageProvider(net.glowstone.io.WorldStorageProviderFactory)" class="member-name-link">setStorageProvider</a><wbr>(<a href="io/WorldStorageProviderFactory.html" title="interface in net.glowstone.io">WorldStorageProviderFactory</a>&nbsp;storageProviderFactory)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPlayerOnline(net.glowstone.entity.GlowPlayer,boolean)" class="member-name-link">setPlayerOnline</a><wbr>(<a href="entity/GlowPlayer.html" title="class in net.glowstone.entity">GlowPlayer</a>&nbsp;player,
+ boolean&nbsp;online)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets a player as being online internally.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPort(int)" class="member-name-link">setPort</a><wbr>(int&nbsp;port)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the port that the Query server will expose.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSpawnRadius(int)" class="member-name-link">setSpawnRadius</a><wbr>(int&nbsp;value)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setStorageProvider(net.glowstone.io.WorldStorageProviderFactory)" class="member-name-link">setStorageProvider</a><wbr>(<a href="io/WorldStorageProviderFactory.html" title="interface in net.glowstone.io">WorldStorageProviderFactory</a>&nbsp;storageProviderFactory)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">If a storage provider factory has not yet been set, and the server has not fully started yet,
  this allows plugins to set a storage provider factory, which will be used to create a storage
  provider for each world.</div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setWhitelist(boolean)" class="member-name-link">setWhitelist</a><wbr>(boolean&nbsp;enabled)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setWhitelist(boolean)" class="member-name-link">setWhitelist</a><wbr>(boolean&nbsp;enabled)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setWhitelistEnforced(boolean)" class="member-name-link">setWhitelistEnforced</a><wbr>(boolean&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldPreventProxy()" class="member-name-link">shouldPreventProxy</a>()</code></div>
@@ -1014,10 +1091,13 @@ implements org.bukkit.Server</span></div>
 <code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.kyori.adventure.audience.Audience">Methods inherited from interface&nbsp;net.kyori.adventure.audience.Audience</h3>
-<code>openBook, sendActionBar, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendPlayerListFooter, sendPlayerListHeader, sendPlayerListHeaderAndFooter</code></div>
+<code>openBook, sendActionBar, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendMessage, sendPlayerListFooter, sendPlayerListHeader, sendPlayerListHeaderAndFooter, showTitle, stopSound</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.kyori.adventure.audience.ForwardingAudience">Methods inherited from interface&nbsp;net.kyori.adventure.audience.ForwardingAudience</h3>
-<code>clearTitle, hideBossBar, openBook, playSound, playSound, resetTitle, sendActionBar, sendMessage, sendMessage, sendPlayerListFooter, sendPlayerListHeader, sendPlayerListHeaderAndFooter, showBossBar, showTitle, stopSound</code></div>
+<code>clearTitle, filterAudience, forEachAudience, hideBossBar, openBook, playSound, playSound, playSound, pointers, resetTitle, sendActionBar, sendMessage, sendMessage, sendPlayerListFooter, sendPlayerListHeader, sendPlayerListHeaderAndFooter, sendTitlePart, showBossBar, stopSound</code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-net.kyori.adventure.pointer.Pointered">Methods inherited from interface&nbsp;net.kyori.adventure.pointer.Pointered</h3>
+<code>get, getOrDefault, getOrDefaultFrom</code></div>
 </section>
 </li>
 </ul>
@@ -1341,6 +1421,17 @@ implements org.bukkit.Server</span></div>
 </section>
 </li>
 <li>
+<section class="detail" id="getStructureManager()">
+<h3>getStructureManager</h3>
+<div class="member-signature"><span class="annotations">@NotNull
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull org.bukkit.structure.StructureManager</span>&nbsp;<span class="element-name">getStructureManager</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getStructureManager</code>&nbsp;in interface&nbsp;<code>org.bukkit.Server</code></dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="addAdvancement(org.bukkit.advancement.Advancement)">
 <h3>addAdvancement</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addAdvancement</span><wbr><span class="parameters">(org.bukkit.advancement.Advancement&nbsp;advancement)</span></div>
@@ -1446,6 +1537,26 @@ implements org.bukkit.Server</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code>setWhitelist</code>&nbsp;in interface&nbsp;<code>org.bukkit.Server</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isWhitelistEnforced()">
+<h3>isWhitelistEnforced</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isWhitelistEnforced</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>isWhitelistEnforced</code>&nbsp;in interface&nbsp;<code>org.bukkit.Server</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setWhitelistEnforced(boolean)">
+<h3>setWhitelistEnforced</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setWhitelistEnforced</span><wbr><span class="parameters">(boolean&nbsp;value)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>setWhitelistEnforced</code>&nbsp;in interface&nbsp;<code>org.bukkit.Server</code></dd>
 </dl>
 </section>
 </li>
@@ -1620,8 +1731,31 @@ implements org.bukkit.Server</span></div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getResourcePackHash</span>()</div>
 <div class="block">Get the resource pack hash for this server, or the empty string if not set.</div>
 <dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getResourcePackHash</code>&nbsp;in interface&nbsp;<code>org.bukkit.Server</code></dd>
 <dt>Returns:</dt>
 <dd>The hash of the resource pack, or the empty string</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getResourcePackPrompt()">
+<h3>getResourcePackPrompt</h3>
+<div class="member-signature"><span class="annotations">@NotNull
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getResourcePackPrompt</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getResourcePackPrompt</code>&nbsp;in interface&nbsp;<code>org.bukkit.Server</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isResourcePackRequired()">
+<h3>isResourcePackRequired</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isResourcePackRequired</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>isResourcePackRequired</code>&nbsp;in interface&nbsp;<code>org.bukkit.Server</code></dd>
 </dl>
 </section>
 </li>
@@ -1646,6 +1780,17 @@ implements org.bukkit.Server</span></div>
 <dt>Parameters:</dt>
 <dd><code>player</code> - player to set online/offline</dd>
 <dd><code>online</code> - whether the player is online or offline</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getPluginsFolder()">
+<h3>getPluginsFolder</h3>
+<div class="member-signature"><span class="annotations">@NotNull
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link">File</a></span>&nbsp;<span class="element-name">getPluginsFolder</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getPluginsFolder</code>&nbsp;in interface&nbsp;<code>org.bukkit.Server</code></dd>
 </dl>
 </section>
 </li>
@@ -1853,6 +1998,17 @@ implements org.bukkit.Server</span></div>
 </section>
 </li>
 <li>
+<section class="detail" id="permissionMessage()">
+<h3>permissionMessage</h3>
+<div class="member-signature"><span class="annotations">@NotNull
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull net.kyori.adventure.text.Component</span>&nbsp;<span class="element-name">permissionMessage</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>permissionMessage</code>&nbsp;in interface&nbsp;<code>org.bukkit.Server</code></dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="createProfile(java.util.UUID)">
 <h3>createProfile</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="entity/meta/profile/GlowPlayerProfile.html" title="class in net.glowstone.entity.meta.profile">GlowPlayerProfile</a></span>&nbsp;<span class="element-name">createProfile</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;id)</span></div>
@@ -1880,6 +2036,19 @@ implements org.bukkit.Server</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code>createProfile</code>&nbsp;in interface&nbsp;<code>org.bukkit.Server</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="createProfileExact(java.util.UUID,java.lang.String)">
+<h3>createProfileExact</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull com.destroystokyo.paper.profile.PlayerProfile</span>&nbsp;<span class="element-name">createProfileExact</span><wbr><span class="parameters">(@Nullable
+ @Nullable <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;uuid,
+ @Nullable
+ @Nullable <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>createProfileExact</code>&nbsp;in interface&nbsp;<code>org.bukkit.Server</code></dd>
 </dl>
 </section>
 </li>
@@ -1917,6 +2086,18 @@ implements org.bukkit.Server</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code>getConsoleSender</code>&nbsp;in interface&nbsp;<code>org.bukkit.Server</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="createCommandSender(java.util.function.Consumer)">
+<h3>createCommandSender</h3>
+<div class="member-signature"><span class="annotations">@NotNull
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull org.bukkit.command.CommandSender</span>&nbsp;<span class="element-name">createCommandSender</span><wbr><span class="parameters">(@NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;? super net.kyori.adventure.text.Component&gt;&nbsp;feedback)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>createCommandSender</code>&nbsp;in interface&nbsp;<code>org.bukkit.Server</code></dd>
 </dl>
 </section>
 </li>
@@ -2093,6 +2274,44 @@ implements org.bukkit.Server</span></div>
 </section>
 </li>
 <li>
+<section class="detail" id="createPlayerProfile(java.util.UUID,java.lang.String)">
+<h3>createPlayerProfile</h3>
+<div class="member-signature"><span class="annotations">@NotNull
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull org.bukkit.profile.PlayerProfile</span>&nbsp;<span class="element-name">createPlayerProfile</span><wbr><span class="parameters">(@Nullable
+ @Nullable <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;uniqueId,
+ @Nullable
+ @Nullable <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>createPlayerProfile</code>&nbsp;in interface&nbsp;<code>org.bukkit.Server</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="createPlayerProfile(java.util.UUID)">
+<h3>createPlayerProfile</h3>
+<div class="member-signature"><span class="annotations">@NotNull
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull org.bukkit.profile.PlayerProfile</span>&nbsp;<span class="element-name">createPlayerProfile</span><wbr><span class="parameters">(@NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;uniqueId)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>createPlayerProfile</code>&nbsp;in interface&nbsp;<code>org.bukkit.Server</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="createPlayerProfile(java.lang.String)">
+<h3>createPlayerProfile</h3>
+<div class="member-signature"><span class="annotations">@NotNull
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull org.bukkit.profile.PlayerProfile</span>&nbsp;<span class="element-name">createPlayerProfile</span><wbr><span class="parameters">(@NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>createPlayerProfile</code>&nbsp;in interface&nbsp;<code>org.bukkit.Server</code></dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="getOfflinePlayerIfCached(java.lang.String)">
 <h3>getOfflinePlayerIfCached</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">org.bukkit.OfflinePlayer</span>&nbsp;<span class="element-name">getOfflinePlayerIfCached</span><wbr><span class="parameters">(@NotNull
@@ -2144,6 +2363,17 @@ implements org.bukkit.Server</span></div>
 <h3>broadcast</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">broadcast</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;permission)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>broadcast</code>&nbsp;in interface&nbsp;<code>org.bukkit.Server</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="broadcast(net.kyori.adventure.text.Component)">
+<h3>broadcast</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">broadcast</span><wbr><span class="parameters">(@NotNull
+ @NotNull net.kyori.adventure.text.Component&nbsp;message)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code>broadcast</code>&nbsp;in interface&nbsp;<code>org.bukkit.Server</code></dd>
@@ -2308,6 +2538,17 @@ implements org.bukkit.Server</span></div>
 </section>
 </li>
 <li>
+<section class="detail" id="createWorldBorder()">
+<h3>createWorldBorder</h3>
+<div class="member-signature"><span class="annotations">@NotNull
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull org.bukkit.WorldBorder</span>&nbsp;<span class="element-name">createWorldBorder</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>createWorldBorder</code>&nbsp;in interface&nbsp;<code>org.bukkit.Server</code></dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="getMap(int)">
 <h3>getMap</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="map/GlowMapView.html" title="class in net.glowstone.map">GlowMapView</a></span>&nbsp;<span class="element-name">getMap</span><wbr><span class="parameters">(int&nbsp;id)</span></div>
@@ -2421,6 +2662,36 @@ implements org.bukkit.Server</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code>getRecipe</code>&nbsp;in interface&nbsp;<code>org.bukkit.Server</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getCraftingRecipe(org.bukkit.inventory.ItemStack[],org.bukkit.World)">
+<h3>getCraftingRecipe</h3>
+<div class="member-signature"><span class="annotations">@Nullable
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@Nullable org.bukkit.inventory.Recipe</span>&nbsp;<span class="element-name">getCraftingRecipe</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.inventory.ItemStack[]&nbsp;craftingMatrix,
+ @NotNull
+ @NotNull org.bukkit.World&nbsp;world)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getCraftingRecipe</code>&nbsp;in interface&nbsp;<code>org.bukkit.Server</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="craftItem(org.bukkit.inventory.ItemStack[],org.bukkit.World,org.bukkit.entity.Player)">
+<h3>craftItem</h3>
+<div class="member-signature"><span class="annotations">@NotNull
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull org.bukkit.inventory.ItemStack</span>&nbsp;<span class="element-name">craftItem</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.inventory.ItemStack[]&nbsp;craftingMatrix,
+ @NotNull
+ @NotNull org.bukkit.World&nbsp;world,
+ @NotNull
+ @NotNull org.bukkit.entity.Player&nbsp;player)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>craftItem</code>&nbsp;in interface&nbsp;<code>org.bukkit.Server</code></dd>
 </dl>
 </section>
 </li>
@@ -2672,6 +2943,16 @@ implements org.bukkit.Server</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code>setSpawnRadius</code>&nbsp;in interface&nbsp;<code>org.bukkit.Server</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getHideOnlinePlayers()">
+<h3>getHideOnlinePlayers</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">getHideOnlinePlayers</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getHideOnlinePlayers</code>&nbsp;in interface&nbsp;<code>org.bukkit.Server</code></dd>
 </dl>
 </section>
 </li>
@@ -2931,6 +3212,17 @@ implements org.bukkit.Server</span></div>
 </section>
 </li>
 <li>
+<section class="detail" id="getResourcePack()">
+<h3>getResourcePack</h3>
+<div class="member-signature"><span class="annotations">@NotNull
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getResourcePack</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getResourcePack</code>&nbsp;in interface&nbsp;<code>org.bukkit.Server</code></dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="getAllowEnd()">
 <h3>getAllowEnd</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">getAllowEnd</span>()</div>
@@ -2947,6 +3239,16 @@ implements org.bukkit.Server</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code>getViewDistance</code>&nbsp;in interface&nbsp;<code>org.bukkit.Server</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getSimulationDistance()">
+<h3>getSimulationDistance</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getSimulationDistance</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getSimulationDistance</code>&nbsp;in interface&nbsp;<code>org.bukkit.Server</code></dd>
 </dl>
 </section>
 </li>
@@ -3074,12 +3376,33 @@ implements org.bukkit.Server</span></div>
 </section>
 </li>
 <li>
+<section class="detail" id="getTicksPerWaterUndergroundCreatureSpawns()">
+<h3>getTicksPerWaterUndergroundCreatureSpawns</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getTicksPerWaterUndergroundCreatureSpawns</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getTicksPerWaterUndergroundCreatureSpawns</code>&nbsp;in interface&nbsp;<code>org.bukkit.Server</code></dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="getTicksPerAmbientSpawns()">
 <h3>getTicksPerAmbientSpawns</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getTicksPerAmbientSpawns</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code>getTicksPerAmbientSpawns</code>&nbsp;in interface&nbsp;<code>org.bukkit.Server</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getTicksPerSpawns(org.bukkit.entity.SpawnCategory)">
+<h3>getTicksPerSpawns</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getTicksPerSpawns</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.entity.SpawnCategory&nbsp;spawnCategory)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getTicksPerSpawns</code>&nbsp;in interface&nbsp;<code>org.bukkit.Server</code></dd>
 </dl>
 </section>
 </li>
@@ -3145,6 +3468,17 @@ implements org.bukkit.Server</span></div>
 </section>
 </li>
 <li>
+<section class="detail" id="getPotionBrewer()">
+<h3>getPotionBrewer</h3>
+<div class="member-signature"><span class="annotations">@NotNull
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull org.bukkit.potion.PotionBrewer</span>&nbsp;<span class="element-name">getPotionBrewer</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getPotionBrewer</code>&nbsp;in interface&nbsp;<code>org.bukkit.Server</code></dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="isHardcore()">
 <h3>isHardcore</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isHardcore</span>()</div>
@@ -3206,12 +3540,33 @@ implements org.bukkit.Server</span></div>
 </section>
 </li>
 <li>
+<section class="detail" id="getSpawnLimit(org.bukkit.entity.SpawnCategory)">
+<h3>getSpawnLimit</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getSpawnLimit</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.entity.SpawnCategory&nbsp;spawnCategory)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getSpawnLimit</code>&nbsp;in interface&nbsp;<code>org.bukkit.Server</code></dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="getWaterAmbientSpawnLimit()">
 <h3>getWaterAmbientSpawnLimit</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getWaterAmbientSpawnLimit</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code>getWaterAmbientSpawnLimit</code>&nbsp;in interface&nbsp;<code>org.bukkit.Server</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getWaterUndergroundCreatureSpawnLimit()">
+<h3>getWaterUndergroundCreatureSpawnLimit</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getWaterUndergroundCreatureSpawnLimit</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getWaterUndergroundCreatureSpawnLimit</code>&nbsp;in interface&nbsp;<code>org.bukkit.Server</code></dd>
 </dl>
 </section>
 </li>
