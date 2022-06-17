@@ -138,6 +138,17 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates an empty ItemStack (Material.AIR * 0).</div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static org.bukkit.inventory.ItemStack</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createItem(org.bukkit.Material)" class="member-name-link">createItem</a><wbr>(@NotNull org.bukkit.Material&nbsp;type)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Defaults stack size to 1, with no extra data.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static org.bukkit.inventory.ItemStack</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createItem(org.bukkit.Material,int)" class="member-name-link">createItem</a><wbr>(@NotNull org.bukkit.Material&nbsp;type,
+ int&nbsp;amount)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">An item stack with no extra data.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @NotNull org.bukkit.inventory.ItemStack</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#damageItem(net.glowstone.entity.GlowPlayer,org.bukkit.inventory.ItemStack)" class="member-name-link">damageItem</a><wbr>(<a href="../entity/GlowPlayer.html" title="class in net.glowstone.entity">GlowPlayer</a>&nbsp;player,
  @NotNull org.bukkit.inventory.ItemStack&nbsp;holding)</code></div>
@@ -218,6 +229,32 @@ loadScripts(document, 'script');</script>
 <section class="method-details" id="method-detail">
 <h2>Method Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="createItem(org.bukkit.Material)">
+<h3>createItem</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">org.bukkit.inventory.ItemStack</span>&nbsp;<span class="element-name">createItem</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.Material&nbsp;type)</span></div>
+<div class="block">Defaults stack size to 1, with no extra data.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>type</code> - item material</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="createItem(org.bukkit.Material,int)">
+<h3>createItem</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">org.bukkit.inventory.ItemStack</span>&nbsp;<span class="element-name">createItem</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.Material&nbsp;type,
+ int&nbsp;amount)</span></div>
+<div class="block">An item stack with no extra data.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>type</code> - item material</dd>
+<dd><code>amount</code> - stack size</dd>
+</dl>
+</section>
+</li>
 <li>
 <section class="detail" id="isEmpty(org.bukkit.inventory.ItemStack)">
 <h3>isEmpty</h3>
