@@ -77,7 +77,7 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Cloneable.html" title="class or interface in java.lang" class="external-link">Cloneable</a></code>, <code>org.bukkit.configuration.serialization.ConfigurationSerializable</code>, <code>org.bukkit.inventory.meta.ItemMeta</code>, <code>org.bukkit.persistence.PersistentDataHolder</code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Cloneable.html" title="class or interface in java.lang" class="external-link">Cloneable</a></code>, <code>org.bukkit.configuration.serialization.ConfigurationSerializable</code>, <code>org.bukkit.inventory.meta.BlockDataMeta</code>, <code>org.bukkit.inventory.meta.Damageable</code>, <code>org.bukkit.inventory.meta.ItemMeta</code>, <code>org.bukkit.inventory.meta.Repairable</code>, <code>org.bukkit.persistence.PersistentDataHolder</code></dd>
 </dl>
 <dl class="notes">
 <dt>Direct Known Subclasses:</dt>
@@ -86,7 +86,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">GlowMetaItem</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
-implements org.bukkit.inventory.meta.ItemMeta</span></div>
+implements org.bukkit.inventory.meta.ItemMeta, org.bukkit.inventory.meta.Damageable, org.bukkit.inventory.meta.Repairable, org.bukkit.inventory.meta.BlockDataMeta</span></div>
 <div class="block">An implementation of <code>ItemMeta</code>, created through <a href="GlowItemFactory.html" title="class in net.glowstone.inventory"><code>GlowItemFactory</code></a>.</div>
 </section>
 <section class="summary">
@@ -129,7 +129,7 @@ implements org.bukkit.inventory.meta.ItemMeta</span></div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addItemFlags(org.bukkit.inventory.ItemFlag...)" class="member-name-link">addItemFlags</a><wbr>(org.bukkit.inventory.ItemFlag...&nbsp;itemFlags)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.inventory.meta.ItemMeta</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull <a href="GlowMetaItem.html" title="class in net.glowstone.inventory">GlowMetaItem</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clone()" class="member-name-link">clone</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable net.kyori.adventure.text.Component</code></div>
@@ -150,17 +150,23 @@ implements org.bukkit.inventory.meta.ItemMeta</span></div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull com.google.common.collect.Multimap&lt;org.bukkit.attribute.Attribute,<wbr>org.bukkit.attribute.AttributeModifier&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAttributeModifiers(org.bukkit.inventory.EquipmentSlot)" class="member-name-link">getAttributeModifiers</a><wbr>(@NotNull org.bukkit.inventory.EquipmentSlot&nbsp;slot)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;org.bukkit.Material&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCanDestroy()" class="member-name-link">getCanDestroy</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.block.data.BlockData</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBlockData(org.bukkit.Material)" class="member-name-link">getBlockData</a><wbr>(@NotNull org.bukkit.Material&nbsp;material)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;org.bukkit.Material&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCanPlaceOn()" class="member-name-link">getCanPlaceOn</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCanDestroy()" class="member-name-link">getCanDestroy</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCustomModelData()" class="member-name-link">getCustomModelData</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;org.bukkit.Material&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCanPlaceOn()" class="member-name-link">getCanPlaceOn</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.inventory.meta.tags.CustomItemTagContainer</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCustomTagContainer()" class="member-name-link">getCustomTagContainer</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCustomModelData()" class="member-name-link">getCustomModelData</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull org.bukkit.inventory.meta.tags.CustomItemTagContainer</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCustomTagContainer()" class="member-name-link">getCustomTagContainer</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDamage()" class="member-name-link">getDamage</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;com.destroystokyo.paper.Namespaced&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDestroyableKeys()" class="member-name-link">getDestroyableKeys</a>()</code></div>
@@ -195,8 +201,14 @@ implements org.bukkit.inventory.meta.ItemMeta</span></div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;com.destroystokyo.paper.Namespaced&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPlaceableKeys()" class="member-name-link">getPlaceableKeys</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRepairCost()" class="member-name-link">getRepairCost</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasAttributeModifiers()" class="member-name-link">hasAttributeModifiers</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasAttributeModifiers()" class="member-name-link">hasAttributeModifiers</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasBlockData()" class="member-name-link">hasBlockData</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasConflictingEnchant(org.bukkit.enchantments.Enchantment)" class="member-name-link">hasConflictingEnchant</a><wbr>(@NotNull org.bukkit.enchantments.Enchantment&nbsp;ench)</code></div>
@@ -205,28 +217,34 @@ implements org.bukkit.inventory.meta.ItemMeta</span></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasCustomModelData()" class="member-name-link">hasCustomModelData</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasDestroyableKeys()" class="member-name-link">hasDestroyableKeys</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasDamage()" class="member-name-link">hasDamage</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasDisplayName()" class="member-name-link">hasDisplayName</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasDestroyableKeys()" class="member-name-link">hasDestroyableKeys</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasEnchant(org.bukkit.enchantments.Enchantment)" class="member-name-link">hasEnchant</a><wbr>(@NotNull org.bukkit.enchantments.Enchantment&nbsp;ench)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasDisplayName()" class="member-name-link">hasDisplayName</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasEnchants()" class="member-name-link">hasEnchants</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasEnchant(org.bukkit.enchantments.Enchantment)" class="member-name-link">hasEnchant</a><wbr>(@NotNull org.bukkit.enchantments.Enchantment&nbsp;ench)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasItemFlag(org.bukkit.inventory.ItemFlag)" class="member-name-link">hasItemFlag</a><wbr>(@NotNull org.bukkit.inventory.ItemFlag&nbsp;itemFlag)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasEnchants()" class="member-name-link">hasEnchants</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasLocalizedName()" class="member-name-link">hasLocalizedName</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasItemFlag(org.bukkit.inventory.ItemFlag)" class="member-name-link">hasItemFlag</a><wbr>(@NotNull org.bukkit.inventory.ItemFlag&nbsp;itemFlag)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasLore()" class="member-name-link">hasLore</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasLocalizedName()" class="member-name-link">hasLocalizedName</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasPlaceableKeys()" class="member-name-link">hasPlaceableKeys</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasLore()" class="member-name-link">hasLore</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasPlaceableKeys()" class="member-name-link">hasPlaceableKeys</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasRepairCost()" class="member-name-link">hasRepairCost</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isApplicable(org.bukkit.Material)" class="member-name-link">isApplicable</a><wbr>(org.bukkit.Material&nbsp;material)</code></div>
@@ -274,13 +292,19 @@ implements org.bukkit.inventory.meta.ItemMeta</span></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setAttributeModifiers(com.google.common.collect.Multimap)" class="member-name-link">setAttributeModifiers</a><wbr>(@Nullable com.google.common.collect.Multimap&lt;org.bukkit.attribute.Attribute,<wbr>org.bukkit.attribute.AttributeModifier&gt;&nbsp;attributeModifiers)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCanDestroy(java.util.Set)" class="member-name-link">setCanDestroy</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;org.bukkit.Material&gt;&nbsp;canDestroy)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBlockData(org.bukkit.block.data.BlockData)" class="member-name-link">setBlockData</a><wbr>(@NotNull org.bukkit.block.data.BlockData&nbsp;blockData)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCanPlaceOn(java.util.Set)" class="member-name-link">setCanPlaceOn</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;org.bukkit.Material&gt;&nbsp;canPlaceOn)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCanDestroy(java.util.Set)" class="member-name-link">setCanDestroy</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;org.bukkit.Material&gt;&nbsp;canDestroy)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCustomModelData(java.lang.Integer)" class="member-name-link">setCustomModelData</a><wbr>(@Nullable <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&nbsp;integer)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCanPlaceOn(java.util.Set)" class="member-name-link">setCanPlaceOn</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;org.bukkit.Material&gt;&nbsp;canPlaceOn)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCustomModelData(java.lang.Integer)" class="member-name-link">setCustomModelData</a><wbr>(@Nullable <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&nbsp;integer)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setDamage(int)" class="member-name-link">setDamage</a><wbr>(int&nbsp;damage)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setDestroyableKeys(java.util.Collection)" class="member-name-link">setDestroyableKeys</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;com.destroystokyo.paper.Namespaced&gt;&nbsp;canDestroy)</code></div>
@@ -304,19 +328,22 @@ implements org.bukkit.inventory.meta.ItemMeta</span></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPlaceableKeys(java.util.Collection)" class="member-name-link">setPlaceableKeys</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;com.destroystokyo.paper.Namespaced&gt;&nbsp;canPlaceOn)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setUnbreakable(boolean)" class="member-name-link">setUnbreakable</a><wbr>(boolean&nbsp;unbreakable)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setRepairCost(int)" class="member-name-link">setRepairCost</a><wbr>(int&nbsp;cost)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setVersion(int)" class="member-name-link">setVersion</a><wbr>(int&nbsp;version)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setUnbreakable(boolean)" class="member-name-link">setUnbreakable</a><wbr>(boolean&nbsp;unbreakable)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setVersion(int)" class="member-name-link">setVersion</a><wbr>(int&nbsp;version)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>protected static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#writeNbtEnchants(java.lang.String,net.glowstone.util.nbt.CompoundTag,java.util.Map)" class="member-name-link">writeNbtEnchants</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>protected static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#writeNbtEnchants(java.lang.String,net.glowstone.util.nbt.CompoundTag,java.util.Map)" class="member-name-link">writeNbtEnchants</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="../util/nbt/CompoundTag.html" title="class in net.glowstone.util.nbt">CompoundTag</a>&nbsp;to,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;org.bukkit.enchantments.Enchantment,<wbr><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;&nbsp;enchants)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -783,13 +810,77 @@ implements org.bukkit.inventory.meta.ItemMeta</span></div>
 </section>
 </li>
 <li>
+<section class="detail" id="hasDamage()">
+<h3>hasDamage</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasDamage</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>hasDamage</code>&nbsp;in interface&nbsp;<code>org.bukkit.inventory.meta.Damageable</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getDamage()">
+<h3>getDamage</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getDamage</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getDamage</code>&nbsp;in interface&nbsp;<code>org.bukkit.inventory.meta.Damageable</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setDamage(int)">
+<h3>setDamage</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setDamage</span><wbr><span class="parameters">(int&nbsp;damage)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>setDamage</code>&nbsp;in interface&nbsp;<code>org.bukkit.inventory.meta.Damageable</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="hasRepairCost()">
+<h3>hasRepairCost</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasRepairCost</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>hasRepairCost</code>&nbsp;in interface&nbsp;<code>org.bukkit.inventory.meta.Repairable</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getRepairCost()">
+<h3>getRepairCost</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getRepairCost</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getRepairCost</code>&nbsp;in interface&nbsp;<code>org.bukkit.inventory.meta.Repairable</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setRepairCost(int)">
+<h3>setRepairCost</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setRepairCost</span><wbr><span class="parameters">(int&nbsp;cost)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>setRepairCost</code>&nbsp;in interface&nbsp;<code>org.bukkit.inventory.meta.Repairable</code></dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="clone()">
 <h3>clone</h3>
 <div class="member-signature"><span class="annotations">@NotNull
-</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull org.bukkit.inventory.meta.ItemMeta</span>&nbsp;<span class="element-name">clone</span>()</div>
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull <a href="GlowMetaItem.html" title="class in net.glowstone.inventory">GlowMetaItem</a></span>&nbsp;<span class="element-name">clone</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
+<dd><code>clone</code>&nbsp;in interface&nbsp;<code>org.bukkit.inventory.meta.Damageable</code></dd>
+<dt>Specified by:</dt>
 <dd><code>clone</code>&nbsp;in interface&nbsp;<code>org.bukkit.inventory.meta.ItemMeta</code></dd>
+<dt>Specified by:</dt>
+<dd><code>clone</code>&nbsp;in interface&nbsp;<code>org.bukkit.inventory.meta.Repairable</code></dd>
 <dt>Overrides:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
 </dl>
@@ -981,6 +1072,39 @@ implements org.bukkit.inventory.meta.ItemMeta</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code>getPersistentDataContainer</code>&nbsp;in interface&nbsp;<code>org.bukkit.persistence.PersistentDataHolder</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="hasBlockData()">
+<h3>hasBlockData</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasBlockData</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>hasBlockData</code>&nbsp;in interface&nbsp;<code>org.bukkit.inventory.meta.BlockDataMeta</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getBlockData(org.bukkit.Material)">
+<h3>getBlockData</h3>
+<div class="member-signature"><span class="annotations">@NotNull
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NotNull org.bukkit.block.data.BlockData</span>&nbsp;<span class="element-name">getBlockData</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.Material&nbsp;material)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getBlockData</code>&nbsp;in interface&nbsp;<code>org.bukkit.inventory.meta.BlockDataMeta</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setBlockData(org.bukkit.block.data.BlockData)">
+<h3>setBlockData</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setBlockData</span><wbr><span class="parameters">(@NotNull
+ @NotNull org.bukkit.block.data.BlockData&nbsp;blockData)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>setBlockData</code>&nbsp;in interface&nbsp;<code>org.bukkit.inventory.meta.BlockDataMeta</code></dd>
 </dl>
 </section>
 </li>
