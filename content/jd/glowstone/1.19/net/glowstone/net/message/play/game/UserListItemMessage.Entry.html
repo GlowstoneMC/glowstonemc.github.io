@@ -106,9 +106,18 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color"><code>final <a href="../../../../entity/meta/profile/GlowPlayerProfile.html" title="class in net.glowstone.entity.meta.profile">GlowPlayerProfile</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#profile" class="member-name-link">profile</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>final <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a></code></div>
-<div class="col-second even-row-color"><code><a href="#uuid" class="member-name-link">uuid</a></code></div>
+<div class="col-first even-row-color"><code>final byte[]</code></div>
+<div class="col-second even-row-color"><code><a href="#publicKey" class="member-name-link">publicKey</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>final byte[]</code></div>
+<div class="col-second odd-row-color"><code><a href="#signature" class="member-name-link">signature</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#timestamp" class="member-name-link">timestamp</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>final <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#uuid" class="member-name-link">uuid</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -127,6 +136,16 @@ loadScripts(document, 'script');</script>
  <a href="../../../../util/TextMessage.html" title="class in net.glowstone.util">TextMessage</a>&nbsp;displayName,
  <a href="UserListItemMessage.Action.html" title="enum class in net.glowstone.net.message.play.game">UserListItemMessage.Action</a>&nbsp;action)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.util.UUID,net.glowstone.entity.meta.profile.GlowPlayerProfile,int,int,net.glowstone.util.TextMessage,net.glowstone.net.message.play.game.UserListItemMessage.Action,long,byte%5B%5D,byte%5B%5D)" class="member-name-link">Entry</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;uuid,
+ <a href="../../../../entity/meta/profile/GlowPlayerProfile.html" title="class in net.glowstone.entity.meta.profile">GlowPlayerProfile</a>&nbsp;profile,
+ int&nbsp;gameMode,
+ int&nbsp;ping,
+ <a href="../../../../util/TextMessage.html" title="class in net.glowstone.util">TextMessage</a>&nbsp;displayName,
+ <a href="UserListItemMessage.Action.html" title="enum class in net.glowstone.net.message.play.game">UserListItemMessage.Action</a>&nbsp;action,
+ long&nbsp;timestamp,
+ byte[]&nbsp;publicKey,
+ byte[]&nbsp;signature)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -159,15 +178,24 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../entity/meta/profile/GlowPlayerProfile.html" title="class in net.glowstone.entity.meta.profile">GlowPlayerProfile</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getProfile()" class="member-name-link">getProfile</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUuid()" class="member-name-link">getUuid</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>byte[]</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPublicKey()" class="member-name-link">getPublicKey</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>byte[]</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSignature()" class="member-name-link">getSignature</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTimestamp()" class="member-name-link">getTimestamp</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUuid()" class="member-name-link">getUuid</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -215,6 +243,24 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../../../../util/TextMessage.html" title="class in net.glowstone.util">TextMessage</a></span>&nbsp;<span class="element-name">displayName</span></div>
 </section>
 </li>
+<li>
+<section class="detail" id="timestamp">
+<h3>timestamp</h3>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">timestamp</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="publicKey">
+<h3>publicKey</h3>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">byte[]</span>&nbsp;<span class="element-name">publicKey</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="signature">
+<h3>signature</h3>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">byte[]</span>&nbsp;<span class="element-name">signature</span></div>
+</section>
+</li>
 </ul>
 </section>
 </li>
@@ -232,6 +278,20 @@ loadScripts(document, 'script');</script>
  int&nbsp;ping,
  <a href="../../../../util/TextMessage.html" title="class in net.glowstone.util">TextMessage</a>&nbsp;displayName,
  <a href="UserListItemMessage.Action.html" title="enum class in net.glowstone.net.message.play.game">UserListItemMessage.Action</a>&nbsp;action)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="&lt;init&gt;(java.util.UUID,net.glowstone.entity.meta.profile.GlowPlayerProfile,int,int,net.glowstone.util.TextMessage,net.glowstone.net.message.play.game.UserListItemMessage.Action,long,byte[],byte[])">
+<h3>Entry</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Entry</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;uuid,
+ <a href="../../../../entity/meta/profile/GlowPlayerProfile.html" title="class in net.glowstone.entity.meta.profile">GlowPlayerProfile</a>&nbsp;profile,
+ int&nbsp;gameMode,
+ int&nbsp;ping,
+ <a href="../../../../util/TextMessage.html" title="class in net.glowstone.util">TextMessage</a>&nbsp;displayName,
+ <a href="UserListItemMessage.Action.html" title="enum class in net.glowstone.net.message.play.game">UserListItemMessage.Action</a>&nbsp;action,
+ long&nbsp;timestamp,
+ byte[]&nbsp;publicKey,
+ byte[]&nbsp;signature)</span></div>
 </section>
 </li>
 </ul>
@@ -276,6 +336,24 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getAction()">
 <h3>getAction</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="UserListItemMessage.Action.html" title="enum class in net.glowstone.net.message.play.game">UserListItemMessage.Action</a></span>&nbsp;<span class="element-name">getAction</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getTimestamp()">
+<h3>getTimestamp</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">getTimestamp</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getPublicKey()">
+<h3>getPublicKey</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">byte[]</span>&nbsp;<span class="element-name">getPublicKey</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getSignature()">
+<h3>getSignature</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">byte[]</span>&nbsp;<span class="element-name">getSignature</span>()</div>
 </section>
 </li>
 <li>

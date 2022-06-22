@@ -108,14 +108,20 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Read an uncompressed compound NBT tag from the buffer.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static org.bukkit.inventory.EquipmentSlot</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#readHand(io.netty.buffer.ByteBuf)" class="member-name-link">readHand</a><wbr>(io.netty.buffer.ByteBuf&nbsp;buf)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../util/GlobalPosition.html" title="class in net.glowstone.util">GlobalPosition</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#readGlobalPos(io.netty.buffer.ByteBuf)" class="member-name-link">readGlobalPos</a><wbr>(io.netty.buffer.ByteBuf&nbsp;buf)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../entity/meta/MetadataMap.Entry.html" title="class in net.glowstone.entity.meta">MetadataMap.Entry</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#readMetadata(io.netty.buffer.ByteBuf)" class="member-name-link">readMetadata</a><wbr>(io.netty.buffer.ByteBuf&nbsp;buf)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static org.bukkit.inventory.EquipmentSlot</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#readHand(io.netty.buffer.ByteBuf)" class="member-name-link">readHand</a><wbr>(io.netty.buffer.ByteBuf&nbsp;buf)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../entity/meta/MetadataMap.Entry.html" title="class in net.glowstone.entity.meta">MetadataMap.Entry</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#readMetadata(io.netty.buffer.ByteBuf)" class="member-name-link">readMetadata</a><wbr>(io.netty.buffer.ByteBuf&nbsp;buf)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Read a list of mob metadata entries from the buffer.</div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static org.bukkit.NamespacedKey</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#readNamespacedKey(io.netty.buffer.ByteBuf)" class="member-name-link">readNamespacedKey</a><wbr>(io.netty.buffer.ByteBuf&nbsp;buf)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static org.bukkit.inventory.ItemStack</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#readSlot(io.netty.buffer.ByteBuf)" class="member-name-link">readSlot</a><wbr>(io.netty.buffer.ByteBuf&nbsp;buf)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
@@ -133,31 +139,39 @@ loadScripts(document, 'script');</script>
 <div class="block">Read a UUID encoded as two longs from the buffer.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#writeBlockPosition(io.netty.buffer.ByteBuf,long,long,long)" class="member-name-link">writeBlockPosition</a><wbr>(io.netty.buffer.ByteBuf&nbsp;buf,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#writeBitSet(io.netty.buffer.ByteBuf,java.util.BitSet)" class="member-name-link">writeBitSet</a><wbr>(io.netty.buffer.ByteBuf&nbsp;buf,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/BitSet.html" title="class or interface in java.util" class="external-link">BitSet</a>&nbsp;bitSet)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#writeBlockPosition(io.netty.buffer.ByteBuf,long,long,long)" class="member-name-link">writeBlockPosition</a><wbr>(io.netty.buffer.ByteBuf&nbsp;buf,
  long&nbsp;x,
  long&nbsp;y,
  long&nbsp;z)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Write an encoded block vector (position) to the buffer.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#writeBlockPosition(io.netty.buffer.ByteBuf,org.bukkit.util.Vector)" class="member-name-link">writeBlockPosition</a><wbr>(io.netty.buffer.ByteBuf&nbsp;buf,
- org.bukkit.util.Vector&nbsp;vector)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Write an encoded block vector (position) to the buffer.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#writeChat(io.netty.buffer.ByteBuf,net.glowstone.util.TextMessage)" class="member-name-link">writeChat</a><wbr>(io.netty.buffer.ByteBuf&nbsp;buf,
- <a href="../util/TextMessage.html" title="class in net.glowstone.util">TextMessage</a>&nbsp;text)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#writeBlockPosition(io.netty.buffer.ByteBuf,org.bukkit.util.Vector)" class="member-name-link">writeBlockPosition</a><wbr>(io.netty.buffer.ByteBuf&nbsp;buf,
+ org.bukkit.util.Vector&nbsp;vector)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Write an encoded chat message to the buffer.</div>
+<div class="block">Write an encoded block vector (position) to the buffer.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#writeCompound(io.netty.buffer.ByteBuf,net.glowstone.util.nbt.CompoundTag)" class="member-name-link">writeCompound</a><wbr>(io.netty.buffer.ByteBuf&nbsp;buf,
- <a href="../util/nbt/CompoundTag.html" title="class in net.glowstone.util.nbt">CompoundTag</a>&nbsp;data)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#writeChat(io.netty.buffer.ByteBuf,net.glowstone.util.TextMessage)" class="member-name-link">writeChat</a><wbr>(io.netty.buffer.ByteBuf&nbsp;buf,
+ <a href="../util/TextMessage.html" title="class in net.glowstone.util">TextMessage</a>&nbsp;text)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Write an encoded chat message to the buffer.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#writeCompound(io.netty.buffer.ByteBuf,net.glowstone.util.nbt.CompoundTag)" class="member-name-link">writeCompound</a><wbr>(io.netty.buffer.ByteBuf&nbsp;buf,
+ <a href="../util/nbt/CompoundTag.html" title="class in net.glowstone.util.nbt">CompoundTag</a>&nbsp;data)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Write an uncompressed compound NBT tag to the buffer.</div>
 </div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#writeGlobalPos(io.netty.buffer.ByteBuf,net.glowstone.util.GlobalPosition)" class="member-name-link">writeGlobalPos</a><wbr>(io.netty.buffer.ByteBuf&nbsp;buf,
+ <a href="../util/GlobalPosition.html" title="class in net.glowstone.util">GlobalPosition</a>&nbsp;globalPosition)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#writeHand(io.netty.buffer.ByteBuf,org.bukkit.inventory.EquipmentSlot)" class="member-name-link">writeHand</a><wbr>(io.netty.buffer.ByteBuf&nbsp;buf,
  org.bukkit.inventory.EquipmentSlot&nbsp;hand)</code></div>
@@ -169,28 +183,32 @@ loadScripts(document, 'script');</script>
 <div class="block">Write a list of mob metadata entries to the buffer.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#writeParticle(io.netty.buffer.ByteBuf,com.destroystokyo.paper.ParticleBuilder)" class="member-name-link">writeParticle</a><wbr>(io.netty.buffer.ByteBuf&nbsp;buf,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#writeNamespacedKey(io.netty.buffer.ByteBuf,org.bukkit.NamespacedKey)" class="member-name-link">writeNamespacedKey</a><wbr>(io.netty.buffer.ByteBuf&nbsp;buf,
+ org.bukkit.NamespacedKey&nbsp;key)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#writeParticle(io.netty.buffer.ByteBuf,com.destroystokyo.paper.ParticleBuilder)" class="member-name-link">writeParticle</a><wbr>(io.netty.buffer.ByteBuf&nbsp;buf,
  com.destroystokyo.paper.ParticleBuilder&nbsp;particle)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Write a Particle to the buffer.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#writeSlot(io.netty.buffer.ByteBuf,org.bukkit.inventory.ItemStack)" class="member-name-link">writeSlot</a><wbr>(io.netty.buffer.ByteBuf&nbsp;buf,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#writeSlot(io.netty.buffer.ByteBuf,org.bukkit.inventory.ItemStack)" class="member-name-link">writeSlot</a><wbr>(io.netty.buffer.ByteBuf&nbsp;buf,
  org.bukkit.inventory.ItemStack&nbsp;stack)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Write an item stack to the buffer.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#writeUuid(io.netty.buffer.ByteBuf,java.util.UUID)" class="member-name-link">writeUuid</a><wbr>(io.netty.buffer.ByteBuf&nbsp;buf,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#writeUuid(io.netty.buffer.ByteBuf,java.util.UUID)" class="member-name-link">writeUuid</a><wbr>(io.netty.buffer.ByteBuf&nbsp;buf,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;uuid)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Write a UUID encoded as two longs to the buffer.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#writeValue(io.netty.buffer.ByteBuf,java.lang.Object,net.glowstone.entity.meta.MetadataType)" class="member-name-link">writeValue</a><wbr>(io.netty.buffer.ByteBuf&nbsp;buf,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#writeValue(io.netty.buffer.ByteBuf,java.lang.Object,net.glowstone.entity.meta.MetadataType)" class="member-name-link">writeValue</a><wbr>(io.netty.buffer.ByteBuf&nbsp;buf,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;value,
  <a href="../entity/meta/MetadataType.html" title="enum class in net.glowstone.entity.meta">MetadataType</a>&nbsp;type)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -459,6 +477,39 @@ loadScripts(document, 'script');</script>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - on write failure.</dd>
 </dl>
+</section>
+</li>
+<li>
+<section class="detail" id="writeBitSet(io.netty.buffer.ByteBuf,java.util.BitSet)">
+<h3>writeBitSet</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">writeBitSet</span><wbr><span class="parameters">(io.netty.buffer.ByteBuf&nbsp;buf,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/BitSet.html" title="class or interface in java.util" class="external-link">BitSet</a>&nbsp;bitSet)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="readNamespacedKey(io.netty.buffer.ByteBuf)">
+<h3>readNamespacedKey</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">org.bukkit.NamespacedKey</span>&nbsp;<span class="element-name">readNamespacedKey</span><wbr><span class="parameters">(io.netty.buffer.ByteBuf&nbsp;buf)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="writeNamespacedKey(io.netty.buffer.ByteBuf,org.bukkit.NamespacedKey)">
+<h3>writeNamespacedKey</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">writeNamespacedKey</span><wbr><span class="parameters">(io.netty.buffer.ByteBuf&nbsp;buf,
+ org.bukkit.NamespacedKey&nbsp;key)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="readGlobalPos(io.netty.buffer.ByteBuf)">
+<h3>readGlobalPos</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../util/GlobalPosition.html" title="class in net.glowstone.util">GlobalPosition</a></span>&nbsp;<span class="element-name">readGlobalPos</span><wbr><span class="parameters">(io.netty.buffer.ByteBuf&nbsp;buf)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="writeGlobalPos(io.netty.buffer.ByteBuf,net.glowstone.util.GlobalPosition)">
+<h3>writeGlobalPos</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">writeGlobalPos</span><wbr><span class="parameters">(io.netty.buffer.ByteBuf&nbsp;buf,
+ <a href="../util/GlobalPosition.html" title="class in net.glowstone.util">GlobalPosition</a>&nbsp;globalPosition)</span></div>
 </section>
 </li>
 </ul>

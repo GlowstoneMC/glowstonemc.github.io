@@ -115,18 +115,26 @@ implements com.flowpowered.network.Message</span></div>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(int,boolean,boolean,boolean,boolean,int%5B%5D)" class="member-name-link">UnlockRecipesMessage</a><wbr>(int&nbsp;action,
- boolean&nbsp;bookOpen,
- boolean&nbsp;filterOpen,
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(int,boolean,boolean,boolean,boolean,boolean,boolean,boolean,boolean,int%5B%5D)" class="member-name-link">UnlockRecipesMessage</a><wbr>(int&nbsp;action,
+ boolean&nbsp;craftingBookOpen,
+ boolean&nbsp;craftingBookFilter,
  boolean&nbsp;smeltingBookOpen,
- boolean&nbsp;smeltingFilterOpen,
+ boolean&nbsp;smeltingBookFilter,
+ boolean&nbsp;blastBookOpen,
+ boolean&nbsp;blastBookFilter,
+ boolean&nbsp;smokerBookOpen,
+ boolean&nbsp;smokerBookFilter,
  int[]&nbsp;recipes)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(int,boolean,boolean,boolean,boolean,int%5B%5D,int%5B%5D)" class="member-name-link">UnlockRecipesMessage</a><wbr>(int&nbsp;action,
- boolean&nbsp;bookOpen,
- boolean&nbsp;filterOpen,
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(int,boolean,boolean,boolean,boolean,boolean,boolean,boolean,boolean,int%5B%5D,int%5B%5D)" class="member-name-link">UnlockRecipesMessage</a><wbr>(int&nbsp;action,
+ boolean&nbsp;craftingBookOpen,
+ boolean&nbsp;craftingBookFilter,
  boolean&nbsp;smeltingBookOpen,
- boolean&nbsp;smeltingFilterOpen,
+ boolean&nbsp;smeltingBookFilter,
+ boolean&nbsp;blastBookOpen,
+ boolean&nbsp;blastBookFilter,
+ boolean&nbsp;smokerBookOpen,
+ boolean&nbsp;smokerBookFilter,
  int[]&nbsp;recipes,
  int[]&nbsp;allRecipes)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
@@ -160,16 +168,28 @@ implements com.flowpowered.network.Message</span></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isBookOpen()" class="member-name-link">isBookOpen</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isBlastBookFilter()" class="member-name-link">isBlastBookFilter</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFilterOpen()" class="member-name-link">isFilterOpen</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isBlastBookOpen()" class="member-name-link">isBlastBookOpen</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSmeltingBookOpen()" class="member-name-link">isSmeltingBookOpen</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isCraftingBookFilter()" class="member-name-link">isCraftingBookFilter</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSmeltingFilterOpen()" class="member-name-link">isSmeltingFilterOpen</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isCraftingBookOpen()" class="member-name-link">isCraftingBookOpen</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSmeltingBookFilter()" class="member-name-link">isSmeltingBookFilter</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSmeltingBookOpen()" class="member-name-link">isSmeltingBookOpen</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSmokerBookFilter()" class="member-name-link">isSmokerBookFilter</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSmokerBookOpen()" class="member-name-link">isSmokerBookOpen</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
@@ -242,24 +262,32 @@ implements com.flowpowered.network.Message</span></div>
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(int,boolean,boolean,boolean,boolean,int[])">
+<section class="detail" id="&lt;init&gt;(int,boolean,boolean,boolean,boolean,boolean,boolean,boolean,boolean,int[])">
 <h3>UnlockRecipesMessage</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">UnlockRecipesMessage</span><wbr><span class="parameters">(int&nbsp;action,
- boolean&nbsp;bookOpen,
- boolean&nbsp;filterOpen,
+ boolean&nbsp;craftingBookOpen,
+ boolean&nbsp;craftingBookFilter,
  boolean&nbsp;smeltingBookOpen,
- boolean&nbsp;smeltingFilterOpen,
+ boolean&nbsp;smeltingBookFilter,
+ boolean&nbsp;blastBookOpen,
+ boolean&nbsp;blastBookFilter,
+ boolean&nbsp;smokerBookOpen,
+ boolean&nbsp;smokerBookFilter,
  int[]&nbsp;recipes)</span></div>
 </section>
 </li>
 <li>
-<section class="detail" id="&lt;init&gt;(int,boolean,boolean,boolean,boolean,int[],int[])">
+<section class="detail" id="&lt;init&gt;(int,boolean,boolean,boolean,boolean,boolean,boolean,boolean,boolean,int[],int[])">
 <h3>UnlockRecipesMessage</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">UnlockRecipesMessage</span><wbr><span class="parameters">(int&nbsp;action,
- boolean&nbsp;bookOpen,
- boolean&nbsp;filterOpen,
+ boolean&nbsp;craftingBookOpen,
+ boolean&nbsp;craftingBookFilter,
  boolean&nbsp;smeltingBookOpen,
- boolean&nbsp;smeltingFilterOpen,
+ boolean&nbsp;smeltingBookFilter,
+ boolean&nbsp;blastBookOpen,
+ boolean&nbsp;blastBookFilter,
+ boolean&nbsp;smokerBookOpen,
+ boolean&nbsp;smokerBookFilter,
  int[]&nbsp;recipes,
  int[]&nbsp;allRecipes)</span></div>
 </section>
@@ -279,15 +307,15 @@ implements com.flowpowered.network.Message</span></div>
 </section>
 </li>
 <li>
-<section class="detail" id="isBookOpen()">
-<h3>isBookOpen</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isBookOpen</span>()</div>
+<section class="detail" id="isCraftingBookOpen()">
+<h3>isCraftingBookOpen</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isCraftingBookOpen</span>()</div>
 </section>
 </li>
 <li>
-<section class="detail" id="isFilterOpen()">
-<h3>isFilterOpen</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isFilterOpen</span>()</div>
+<section class="detail" id="isCraftingBookFilter()">
+<h3>isCraftingBookFilter</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isCraftingBookFilter</span>()</div>
 </section>
 </li>
 <li>
@@ -297,9 +325,33 @@ implements com.flowpowered.network.Message</span></div>
 </section>
 </li>
 <li>
-<section class="detail" id="isSmeltingFilterOpen()">
-<h3>isSmeltingFilterOpen</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isSmeltingFilterOpen</span>()</div>
+<section class="detail" id="isSmeltingBookFilter()">
+<h3>isSmeltingBookFilter</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isSmeltingBookFilter</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isBlastBookOpen()">
+<h3>isBlastBookOpen</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isBlastBookOpen</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isBlastBookFilter()">
+<h3>isBlastBookFilter</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isBlastBookFilter</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isSmokerBookOpen()">
+<h3>isSmokerBookOpen</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isSmokerBookOpen</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isSmokerBookFilter()">
+<h3>isSmokerBookFilter</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isSmokerBookFilter</span>()</div>
 </section>
 </li>
 <li>

@@ -168,6 +168,12 @@ loadScripts(document, 'script');</script>
 </li>
 </ul>
 </li>
+<li class="circle">net.glowstone.net.codec.play.game.<a href="net/glowstone/net/codec/play/game/AbstractLightCodec.html" class="type-name-link" title="class in net.glowstone.net.codec.play.game">AbstractLightCodec</a>
+<ul>
+<li class="circle">net.glowstone.net.codec.play.game.<a href="net/glowstone/net/codec/play/game/ChunkDataCodec.html" class="type-name-link" title="class in net.glowstone.net.codec.play.game">ChunkDataCodec</a> (implements com.flowpowered.network.Codec&lt;T&gt;)</li>
+<li class="circle">net.glowstone.net.codec.play.game.<a href="net/glowstone/net/codec/play/game/ChunkLightDataCodec.html" class="type-name-link" title="class in net.glowstone.net.codec.play.game">ChunkLightDataCodec</a> (implements com.flowpowered.network.Codec&lt;T&gt;)</li>
+</ul>
+</li>
 <li class="circle">com.flowpowered.network.protocol.AbstractProtocol (implements com.flowpowered.network.protocol.Protocol)
 <ul>
 <li class="circle">net.glowstone.net.protocol.<a href="net/glowstone/net/protocol/GlowProtocol.html" class="type-name-link" title="class in net.glowstone.net.protocol">GlowProtocol</a>
@@ -180,6 +186,8 @@ loadScripts(document, 'script');</script>
 </li>
 </ul>
 </li>
+<li class="circle">net.glowstone.net.message.play.game.<a href="net/glowstone/net/message/play/game/AcknowledgeBlockChanges.html" class="type-name-link" title="class in net.glowstone.net.message.play.game">AcknowledgeBlockChanges</a> (implements com.flowpowered.network.Message)</li>
+<li class="circle">net.glowstone.net.codec.play.game.<a href="net/glowstone/net/codec/play/game/AcknowledgeBlockChangesCodec.html" class="type-name-link" title="class in net.glowstone.net.codec.play.game">AcknowledgeBlockChangesCodec</a> (implements com.flowpowered.network.Codec&lt;T&gt;)</li>
 <li class="circle">net.glowstone.net.codec.play.game.<a href="net/glowstone/net/codec/play/game/AcknowledgePlayerDiggingCodec.html" class="type-name-link" title="class in net.glowstone.net.codec.play.game">AcknowledgePlayerDiggingCodec</a> (implements com.flowpowered.network.Codec&lt;T&gt;)</li>
 <li class="circle">net.glowstone.net.message.play.game.<a href="net/glowstone/net/message/play/game/AcknowledgePlayerDiggingMessage.html" class="type-name-link" title="class in net.glowstone.net.message.play.game">AcknowledgePlayerDiggingMessage</a> (implements com.flowpowered.network.Message)</li>
 <li class="circle">net.glowstone.net.codec.play.player.<a href="net/glowstone/net/codec/play/player/AdvancementsCodec.html" class="type-name-link" title="class in net.glowstone.net.codec.play.player">AdvancementsCodec</a> (implements com.flowpowered.network.Codec&lt;T&gt;)</li>
@@ -416,8 +424,6 @@ loadScripts(document, 'script');</script>
 </li>
 <li class="circle">net.glowstone.net.codec.play.game.<a href="net/glowstone/net/codec/play/game/ChatCodec.html" class="type-name-link" title="class in net.glowstone.net.codec.play.game">ChatCodec</a> (implements com.flowpowered.network.Codec&lt;T&gt;)</li>
 <li class="circle">net.glowstone.net.message.play.game.<a href="net/glowstone/net/message/play/game/ChatMessage.html" class="type-name-link" title="class in net.glowstone.net.message.play.game">ChatMessage</a> (implements com.flowpowered.network.Message)</li>
-<li class="circle">net.glowstone.net.codec.play.game.<a href="net/glowstone/net/codec/play/game/ChunkDataCodec.html" class="type-name-link" title="class in net.glowstone.net.codec.play.game">ChunkDataCodec</a> (implements com.flowpowered.network.Codec&lt;T&gt;)</li>
-<li class="circle">net.glowstone.net.message.play.game.<a href="net/glowstone/net/message/play/game/ChunkDataMessage.html" class="type-name-link" title="class in net.glowstone.net.message.play.game">ChunkDataMessage</a> (implements com.flowpowered.network.Message)</li>
 <li class="circle">org.bukkit.generator.ChunkGenerator
 <ul>
 <li class="circle">net.glowstone.generator.<a href="net/glowstone/generator/GlowChunkGenerator.html" class="type-name-link" title="class in net.glowstone.generator">GlowChunkGenerator</a>
@@ -428,6 +434,11 @@ loadScripts(document, 'script');</script>
 <li class="circle">net.glowstone.generator.<a href="net/glowstone/generator/TheEndGenerator.html" class="type-name-link" title="class in net.glowstone.generator">TheEndGenerator</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="circle">net.glowstone.net.message.play.game.<a href="net/glowstone/net/message/play/game/ChunkLightDataMessage.html" class="type-name-link" title="class in net.glowstone.net.message.play.game">ChunkLightDataMessage</a> (implements com.flowpowered.network.Message)
+<ul>
+<li class="circle">net.glowstone.net.message.play.game.<a href="net/glowstone/net/message/play/game/ChunkDataMessage.html" class="type-name-link" title="class in net.glowstone.net.message.play.game">ChunkDataMessage</a></li>
 </ul>
 </li>
 <li class="circle">net.glowstone.chunk.<a href="net/glowstone/chunk/ChunkManager.html" class="type-name-link" title="class in net.glowstone.chunk">ChunkManager</a></li>
@@ -547,6 +558,8 @@ loadScripts(document, 'script');</script>
 <li class="circle">net.glowstone.net.codec.play.player.<a href="net/glowstone/net/codec/play/player/DiggingCodec.html" class="type-name-link" title="class in net.glowstone.net.codec.play.player">DiggingCodec</a> (implements com.flowpowered.network.Codec&lt;T&gt;)</li>
 <li class="circle">net.glowstone.net.handler.play.player.<a href="net/glowstone/net/handler/play/player/DiggingHandler.html" class="type-name-link" title="class in net.glowstone.net.handler.play.player">DiggingHandler</a> (implements com.flowpowered.network.MessageHandler&lt;S,<wbr>T&gt;)</li>
 <li class="circle">net.glowstone.net.message.play.player.<a href="net/glowstone/net/message/play/player/DiggingMessage.html" class="type-name-link" title="class in net.glowstone.net.message.play.player">DiggingMessage</a> (implements com.flowpowered.network.Message)</li>
+<li class="circle">net.glowstone.chunk.<a href="net/glowstone/chunk/DimensionType.html" class="type-name-link" title="class in net.glowstone.chunk">DimensionType</a></li>
+<li class="circle">net.glowstone.chunk.<a href="net/glowstone/chunk/DimensionTypes.html" class="type-name-link" title="class in net.glowstone.chunk">DimensionTypes</a></li>
 <li class="circle">net.glowstone.dispenser.<a href="net/glowstone/dispenser/DispenseBehaviorRegistry.html" class="type-name-link" title="class in net.glowstone.dispenser">DispenseBehaviorRegistry</a></li>
 <li class="circle">net.glowstone.net.codec.play.game.<a href="net/glowstone/net/codec/play/game/DisplayedRecipeCodec.html" class="type-name-link" title="class in net.glowstone.net.codec.play.game">DisplayedRecipeCodec</a> (implements com.flowpowered.network.Codec&lt;T&gt;)</li>
 <li class="circle">net.glowstone.net.handler.play.game.<a href="net/glowstone/net/handler/play/game/DisplayedRecipeHandler.html" class="type-name-link" title="class in net.glowstone.net.handler.play.game">DisplayedRecipeHandler</a> (implements com.flowpowered.network.MessageHandler&lt;S,<wbr>T&gt;)</li>
@@ -730,6 +743,7 @@ loadScripts(document, 'script');</script>
 </li>
 </ul>
 </li>
+<li class="circle">net.glowstone.util.<a href="net/glowstone/util/GlobalPosition.html" class="type-name-link" title="class in net.glowstone.util">GlobalPosition</a></li>
 <li class="circle">net.glowstone.advancement.<a href="net/glowstone/advancement/GlowAdvancement.html" class="type-name-link" title="class in net.glowstone.advancement">GlowAdvancement</a> (implements org.bukkit.advancement.Advancement)</li>
 <li class="circle">net.glowstone.advancement.<a href="net/glowstone/advancement/GlowAdvancementDisplay.html" class="type-name-link" title="class in net.glowstone.advancement">GlowAdvancementDisplay</a> (implements io.papermc.paper.advancement.AdvancementDisplay)</li>
 <li class="circle">net.glowstone.constants.<a href="net/glowstone/constants/GlowBiome.html" class="type-name-link" title="class in net.glowstone.constants">GlowBiome</a></li>
@@ -1540,6 +1554,7 @@ loadScripts(document, 'script');</script>
 <li class="circle">net.glowstone.net.message.play.scoreboard.<a href="net/glowstone/net/message/play/scoreboard/ScoreboardScoreMessage.html" class="type-name-link" title="class in net.glowstone.net.message.play.scoreboard">ScoreboardScoreMessage</a> (implements com.flowpowered.network.Message)</li>
 <li class="circle">net.glowstone.net.codec.play.scoreboard.<a href="net/glowstone/net/codec/play/scoreboard/ScoreboardTeamCodec.html" class="type-name-link" title="class in net.glowstone.net.codec.play.scoreboard">ScoreboardTeamCodec</a> (implements com.flowpowered.network.Codec&lt;T&gt;)</li>
 <li class="circle">net.glowstone.net.message.play.scoreboard.<a href="net/glowstone/net/message/play/scoreboard/ScoreboardTeamMessage.html" class="type-name-link" title="class in net.glowstone.net.message.play.scoreboard">ScoreboardTeamMessage</a> (implements com.flowpowered.network.Message)</li>
+<li class="circle">net.glowstone.chunk.<a href="net/glowstone/chunk/SectionPosition.html" class="type-name-link" title="class in net.glowstone.chunk">SectionPosition</a></li>
 <li class="circle">net.glowstone.util.<a href="net/glowstone/util/SecurityUtils.html" class="type-name-link" title="class in net.glowstone.util">SecurityUtils</a></li>
 <li class="circle">net.glowstone.util.config.<a href="net/glowstone/util/config/ServerConfig.html" class="type-name-link" title="class in net.glowstone.util.config">ServerConfig</a> (implements net.glowstone.util.<a href="net/glowstone/util/DynamicallyTypedMap.html" title="interface in net.glowstone.util">DynamicallyTypedMap</a>&lt;K&gt;)</li>
 <li class="circle">net.glowstone.net.codec.play.player.<a href="net/glowstone/net/codec/play/player/ServerDifficultyCodec.html" class="type-name-link" title="class in net.glowstone.net.codec.play.player">ServerDifficultyCodec</a> (implements com.flowpowered.network.Codec&lt;T&gt;)</li>
@@ -1562,12 +1577,10 @@ loadScripts(document, 'script');</script>
 <li class="circle">net.glowstone.net.message.play.game.<a href="net/glowstone/net/message/play/game/SoundEffectMessage.html" class="type-name-link" title="class in net.glowstone.net.message.play.game">SoundEffectMessage</a> (implements com.flowpowered.network.Message)</li>
 <li class="circle">net.glowstone.util.<a href="net/glowstone/util/SoundInfo.html" class="type-name-link" title="class in net.glowstone.util">SoundInfo</a></li>
 <li class="circle">net.glowstone.util.<a href="net/glowstone/util/SoundUtil.html" class="type-name-link" title="class in net.glowstone.util">SoundUtil</a></li>
+<li class="circle">net.glowstone.net.codec.play.entity.<a href="net/glowstone/net/codec/play/entity/SpawnEntityCodec.html" class="type-name-link" title="class in net.glowstone.net.codec.play.entity">SpawnEntityCodec</a> (implements com.flowpowered.network.Codec&lt;T&gt;)</li>
+<li class="circle">net.glowstone.net.message.play.entity.<a href="net/glowstone/net/message/play/entity/SpawnEntityMessage.html" class="type-name-link" title="class in net.glowstone.net.message.play.entity">SpawnEntityMessage</a> (implements com.flowpowered.network.Message)</li>
 <li class="circle">net.glowstone.net.codec.play.entity.<a href="net/glowstone/net/codec/play/entity/SpawnGlobalEntityCodec.html" class="type-name-link" title="class in net.glowstone.net.codec.play.entity">SpawnGlobalEntityCodec</a> (implements com.flowpowered.network.Codec&lt;T&gt;)</li>
 <li class="circle">net.glowstone.net.message.play.entity.<a href="net/glowstone/net/message/play/entity/SpawnGlobalEntityMessage.html" class="type-name-link" title="class in net.glowstone.net.message.play.entity">SpawnGlobalEntityMessage</a> (implements com.flowpowered.network.Message)</li>
-<li class="circle">net.glowstone.net.codec.play.entity.<a href="net/glowstone/net/codec/play/entity/SpawnMobCodec.html" class="type-name-link" title="class in net.glowstone.net.codec.play.entity">SpawnMobCodec</a> (implements com.flowpowered.network.Codec&lt;T&gt;)</li>
-<li class="circle">net.glowstone.net.message.play.entity.<a href="net/glowstone/net/message/play/entity/SpawnMobMessage.html" class="type-name-link" title="class in net.glowstone.net.message.play.entity">SpawnMobMessage</a> (implements com.flowpowered.network.Message)</li>
-<li class="circle">net.glowstone.net.codec.play.entity.<a href="net/glowstone/net/codec/play/entity/SpawnObjectCodec.html" class="type-name-link" title="class in net.glowstone.net.codec.play.entity">SpawnObjectCodec</a> (implements com.flowpowered.network.Codec&lt;T&gt;)</li>
-<li class="circle">net.glowstone.net.message.play.entity.<a href="net/glowstone/net/message/play/entity/SpawnObjectMessage.html" class="type-name-link" title="class in net.glowstone.net.message.play.entity">SpawnObjectMessage</a> (implements com.flowpowered.network.Message)</li>
 <li class="circle">net.glowstone.net.codec.play.entity.<a href="net/glowstone/net/codec/play/entity/SpawnPaintingCodec.html" class="type-name-link" title="class in net.glowstone.net.codec.play.entity">SpawnPaintingCodec</a> (implements com.flowpowered.network.Codec&lt;T&gt;)</li>
 <li class="circle">net.glowstone.net.message.play.entity.<a href="net/glowstone/net/message/play/entity/SpawnPaintingMessage.html" class="type-name-link" title="class in net.glowstone.net.message.play.entity">SpawnPaintingMessage</a> (implements com.flowpowered.network.Message)</li>
 <li class="circle">net.glowstone.net.codec.play.entity.<a href="net/glowstone/net/codec/play/entity/SpawnPlayerCodec.html" class="type-name-link" title="class in net.glowstone.net.codec.play.entity">SpawnPlayerCodec</a> (implements com.flowpowered.network.Codec&lt;T&gt;)</li>
@@ -1729,6 +1742,8 @@ loadScripts(document, 'script');</script>
 <li class="circle">net.glowstone.net.message.play.game.<a href="net/glowstone/net/message/play/game/WorldBorderMessage.html" class="type-name-link" title="class in net.glowstone.net.message.play.game">WorldBorderMessage</a> (implements com.flowpowered.network.Message)</li>
 <li class="circle">net.glowstone.util.config.<a href="net/glowstone/util/config/WorldConfig.html" class="type-name-link" title="class in net.glowstone.util.config">WorldConfig</a> (implements net.glowstone.util.<a href="net/glowstone/util/DynamicallyTypedMapWithDoubles.html" title="interface in net.glowstone.util">DynamicallyTypedMapWithDoubles</a>&lt;K&gt;)</li>
 <li class="circle">net.glowstone.io.data.<a href="net/glowstone/io/data/WorldFunctionIoService.html" class="type-name-link" title="class in net.glowstone.io.data">WorldFunctionIoService</a> (implements net.glowstone.io.<a href="net/glowstone/io/FunctionIoService.html" title="interface in net.glowstone.io">FunctionIoService</a>)</li>
+<li class="circle">net.glowstone.chunk.<a href="net/glowstone/chunk/WorldGenBiome.html" class="type-name-link" title="class in net.glowstone.chunk">WorldGenBiome</a></li>
+<li class="circle">net.glowstone.chunk.<a href="net/glowstone/chunk/WorldGenBiomes.html" class="type-name-link" title="class in net.glowstone.chunk">WorldGenBiomes</a></li>
 <li class="circle">net.glowstone.io.<a href="net/glowstone/io/WorldMetadataService.WorldFinalValues.html" class="type-name-link" title="class in net.glowstone.io">WorldMetadataService.WorldFinalValues</a></li>
 <li class="circle">net.glowstone.scheduler.<a href="net/glowstone/scheduler/WorldScheduler.html" class="type-name-link" title="class in net.glowstone.scheduler">WorldScheduler</a></li>
 </ul>
@@ -1899,7 +1914,6 @@ loadScripts(document, 'script');</script>
 <li class="circle">net.glowstone.inventory.<a href="net/glowstone/inventory/ToolType.html" class="type-name-link" title="enum class in net.glowstone.inventory">ToolType</a> (implements net.glowstone.inventory.<a href="net/glowstone/inventory/MaterialMatcher.html" title="interface in net.glowstone.inventory">MaterialMatcher</a>)</li>
 <li class="circle">net.glowstone.net.message.play.game.<a href="net/glowstone/net/message/play/game/UserListItemMessage.Action.html" class="type-name-link" title="enum class in net.glowstone.net.message.play.game">UserListItemMessage.Action</a></li>
 <li class="circle">net.glowstone.generator.biomegrid.<a href="net/glowstone/generator/biomegrid/WhittakerMapLayer.ClimateType.html" class="type-name-link" title="enum class in net.glowstone.generator.biomegrid">WhittakerMapLayer.ClimateType</a></li>
-<li class="circle">net.glowstone.net.message.play.game.<a href="net/glowstone/net/message/play/game/WorldBorderMessage.Action.html" class="type-name-link" title="enum class in net.glowstone.net.message.play.game">WorldBorderMessage.Action</a></li>
 <li class="circle">net.glowstone.util.config.<a href="net/glowstone/util/config/WorldConfig.Key.html" class="type-name-link" title="enum class in net.glowstone.util.config">WorldConfig.Key</a></li>
 <li class="circle">net.glowstone.generator.biomegrid.<a href="net/glowstone/generator/biomegrid/ZoomMapLayer.ZoomType.html" class="type-name-link" title="enum class in net.glowstone.generator.biomegrid">ZoomMapLayer.ZoomType</a></li>
 </ul>

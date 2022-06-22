@@ -100,13 +100,14 @@ implements com.flowpowered.network.Message</span></div>
  float&nbsp;rotation,
  float&nbsp;pitch)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(double,double,double,float,float,int,int)" class="member-name-link">PositionRotationMessage</a><wbr>(double&nbsp;x,
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(double,double,double,float,float,int,int,boolean)" class="member-name-link">PositionRotationMessage</a><wbr>(double&nbsp;x,
  double&nbsp;y,
  double&nbsp;z,
  float&nbsp;rotation,
  float&nbsp;pitch,
  int&nbsp;flags,
- int&nbsp;teleportId)</code></div>
+ int&nbsp;teleportId,
+ boolean&nbsp;dismountVehicle)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(org.bukkit.Location)" class="member-name-link">PositionRotationMessage</a><wbr>(org.bukkit.Location&nbsp;location)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
@@ -151,9 +152,12 @@ implements com.flowpowered.network.Message</span></div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDismountVehicle()" class="member-name-link">isDismountVehicle</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -188,7 +192,7 @@ implements com.flowpowered.network.Message</span></div>
 </section>
 </li>
 <li>
-<section class="detail" id="&lt;init&gt;(double,double,double,float,float,int,int)">
+<section class="detail" id="&lt;init&gt;(double,double,double,float,float,int,int,boolean)">
 <h3>PositionRotationMessage</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">PositionRotationMessage</span><wbr><span class="parameters">(double&nbsp;x,
  double&nbsp;y,
@@ -196,7 +200,8 @@ implements com.flowpowered.network.Message</span></div>
  float&nbsp;rotation,
  float&nbsp;pitch,
  int&nbsp;flags,
- int&nbsp;teleportId)</span></div>
+ int&nbsp;teleportId,
+ boolean&nbsp;dismountVehicle)</span></div>
 </section>
 </li>
 </ul>
@@ -247,6 +252,12 @@ implements com.flowpowered.network.Message</span></div>
 <section class="detail" id="getTeleportId()">
 <h3>getTeleportId</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getTeleportId</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isDismountVehicle()">
+<h3>isDismountVehicle</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isDismountVehicle</span>()</div>
 </section>
 </li>
 <li>

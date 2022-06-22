@@ -94,19 +94,23 @@ implements com.flowpowered.network.Message</span></div>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(int,boolean,int,int,java.lang.String%5B%5D,java.lang.String,byte%5B%5D,int,int,boolean,boolean,boolean,boolean)" class="member-name-link">JoinGameMessage</a><wbr>(int&nbsp;id,
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(int,boolean,int,int,java.util.List,net.glowstone.util.nbt.CompoundTag,org.bukkit.NamespacedKey,org.bukkit.NamespacedKey,byte%5B%5D,int,int,int,boolean,boolean,boolean,boolean,net.glowstone.util.GlobalPosition)" class="member-name-link">JoinGameMessage</a><wbr>(int&nbsp;id,
  boolean&nbsp;hardcore,
  int&nbsp;mode,
  int&nbsp;previousMode,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;worlds,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;currentWorld,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;org.bukkit.NamespacedKey&gt;&nbsp;worlds,
+ <a href="../../../../util/nbt/CompoundTag.html" title="class in net.glowstone.util.nbt">CompoundTag</a>&nbsp;registryCodec,
+ org.bukkit.NamespacedKey&nbsp;worldType,
+ org.bukkit.NamespacedKey&nbsp;currentWorld,
  byte[]&nbsp;seedHash,
  int&nbsp;maxPlayers,
  int&nbsp;viewDistance,
+ int&nbsp;simulationDistance,
  boolean&nbsp;reducedDebugInfo,
  boolean&nbsp;enableRespawnScreen,
  boolean&nbsp;debug,
- boolean&nbsp;flat)</code></div>
+ boolean&nbsp;flat,
+ <a href="../../../../util/GlobalPosition.html" title="class in net.glowstone.util">GlobalPosition</a>&nbsp;lastDeathLocation)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -125,29 +129,41 @@ implements com.flowpowered.network.Message</span></div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.NamespacedKey</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCurrentWorld()" class="member-name-link">getCurrentWorld</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getId()" class="member-name-link">getId</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMaxPlayers()" class="member-name-link">getMaxPlayers</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../util/GlobalPosition.html" title="class in net.glowstone.util">GlobalPosition</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLastDeathLocation()" class="member-name-link">getLastDeathLocation</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMode()" class="member-name-link">getMode</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMaxPlayers()" class="member-name-link">getMaxPlayers</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPreviousMode()" class="member-name-link">getPreviousMode</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMode()" class="member-name-link">getMode</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPreviousMode()" class="member-name-link">getPreviousMode</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../util/nbt/CompoundTag.html" title="class in net.glowstone.util.nbt">CompoundTag</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRegistryCodec()" class="member-name-link">getRegistryCodec</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>byte[]</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSeedHash()" class="member-name-link">getSeedHash</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getViewDistance()" class="member-name-link">getViewDistance</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSimulationDistance()" class="member-name-link">getSimulationDistance</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWorlds()" class="member-name-link">getWorlds</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getViewDistance()" class="member-name-link">getViewDistance</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;org.bukkit.NamespacedKey&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWorlds()" class="member-name-link">getWorlds</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.bukkit.NamespacedKey</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWorldType()" class="member-name-link">getWorldType</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
@@ -188,21 +204,25 @@ implements com.flowpowered.network.Message</span></div>
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(int,boolean,int,int,java.lang.String[],java.lang.String,byte[],int,int,boolean,boolean,boolean,boolean)">
+<section class="detail" id="&lt;init&gt;(int,boolean,int,int,java.util.List,net.glowstone.util.nbt.CompoundTag,org.bukkit.NamespacedKey,org.bukkit.NamespacedKey,byte[],int,int,int,boolean,boolean,boolean,boolean,net.glowstone.util.GlobalPosition)">
 <h3>JoinGameMessage</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">JoinGameMessage</span><wbr><span class="parameters">(int&nbsp;id,
  boolean&nbsp;hardcore,
  int&nbsp;mode,
  int&nbsp;previousMode,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;worlds,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;currentWorld,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;org.bukkit.NamespacedKey&gt;&nbsp;worlds,
+ <a href="../../../../util/nbt/CompoundTag.html" title="class in net.glowstone.util.nbt">CompoundTag</a>&nbsp;registryCodec,
+ org.bukkit.NamespacedKey&nbsp;worldType,
+ org.bukkit.NamespacedKey&nbsp;currentWorld,
  byte[]&nbsp;seedHash,
  int&nbsp;maxPlayers,
  int&nbsp;viewDistance,
+ int&nbsp;simulationDistance,
  boolean&nbsp;reducedDebugInfo,
  boolean&nbsp;enableRespawnScreen,
  boolean&nbsp;debug,
- boolean&nbsp;flat)</span></div>
+ boolean&nbsp;flat,
+ <a href="../../../../util/GlobalPosition.html" title="class in net.glowstone.util">GlobalPosition</a>&nbsp;lastDeathLocation)</span></div>
 </section>
 </li>
 </ul>
@@ -240,13 +260,25 @@ implements com.flowpowered.network.Message</span></div>
 <li>
 <section class="detail" id="getWorlds()">
 <h3>getWorlds</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]</span>&nbsp;<span class="element-name">getWorlds</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;org.bukkit.NamespacedKey&gt;</span>&nbsp;<span class="element-name">getWorlds</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getRegistryCodec()">
+<h3>getRegistryCodec</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../../util/nbt/CompoundTag.html" title="class in net.glowstone.util.nbt">CompoundTag</a></span>&nbsp;<span class="element-name">getRegistryCodec</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getWorldType()">
+<h3>getWorldType</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">org.bukkit.NamespacedKey</span>&nbsp;<span class="element-name">getWorldType</span>()</div>
 </section>
 </li>
 <li>
 <section class="detail" id="getCurrentWorld()">
 <h3>getCurrentWorld</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getCurrentWorld</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">org.bukkit.NamespacedKey</span>&nbsp;<span class="element-name">getCurrentWorld</span>()</div>
 </section>
 </li>
 <li>
@@ -265,6 +297,12 @@ implements com.flowpowered.network.Message</span></div>
 <section class="detail" id="getViewDistance()">
 <h3>getViewDistance</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getViewDistance</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getSimulationDistance()">
+<h3>getSimulationDistance</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getSimulationDistance</span>()</div>
 </section>
 </li>
 <li>
@@ -289,6 +327,12 @@ implements com.flowpowered.network.Message</span></div>
 <section class="detail" id="isFlat()">
 <h3>isFlat</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isFlat</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getLastDeathLocation()">
+<h3>getLastDeathLocation</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../../util/GlobalPosition.html" title="class in net.glowstone.util">GlobalPosition</a></span>&nbsp;<span class="element-name">getLastDeathLocation</span>()</div>
 </section>
 </li>
 <li>
