@@ -54,7 +54,6 @@ net.glowstone.map
 net.glowstone.net
 net.glowstone.net.codec
 net.glowstone.net.codec.handshake
-net.glowstone.net.codec.login
 net.glowstone.net.codec.play.entity
 net.glowstone.net.codec.play.game
 net.glowstone.net.codec.play.inv
