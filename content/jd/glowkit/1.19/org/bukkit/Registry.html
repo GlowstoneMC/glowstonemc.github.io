@@ -201,19 +201,24 @@ extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/ja
 <div class="col-last even-row-color">
 <div class="block">Server statistics.</div>
 </div>
-<div class="col-first odd-row-color"><code>static final <a href="Registry.html" title="interface in org.bukkit">Registry</a>&lt;<a href="StructureType.html" title="class in org.bukkit">StructureType</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#STRUCTURE_TYPE" class="member-name-link">STRUCTURE_TYPE</a></code></div>
+<div class="col-first odd-row-color"><code>static final <a href="Registry.html" title="interface in org.bukkit">Registry</a>&lt;<a href="generator/structure/Structure.html" title="class in org.bukkit.generator.structure">Structure</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#STRUCTURE" class="member-name-link">STRUCTURE</a></code></div>
 <div class="col-last odd-row-color">
-<div class="block">Structure types.</div>
+<div class="block">Server structures.</div>
 </div>
-<div class="col-first even-row-color"><code>static final <a href="Registry.html" title="interface in org.bukkit">Registry</a>&lt;<a href="entity/Villager.Profession.html" title="enum class in org.bukkit.entity">Villager.Profession</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#VILLAGER_PROFESSION" class="member-name-link">VILLAGER_PROFESSION</a></code></div>
+<div class="col-first even-row-color"><code>static final <a href="Registry.html" title="interface in org.bukkit">Registry</a>&lt;<a href="generator/structure/StructureType.html" title="class in org.bukkit.generator.structure">StructureType</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#STRUCTURE_TYPE" class="member-name-link">STRUCTURE_TYPE</a></code></div>
 <div class="col-last even-row-color">
+<div class="block">Server structure types.</div>
+</div>
+<div class="col-first odd-row-color"><code>static final <a href="Registry.html" title="interface in org.bukkit">Registry</a>&lt;<a href="entity/Villager.Profession.html" title="enum class in org.bukkit.entity">Villager.Profession</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#VILLAGER_PROFESSION" class="member-name-link">VILLAGER_PROFESSION</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Villager profession.</div>
 </div>
-<div class="col-first odd-row-color"><code>static final <a href="Registry.html" title="interface in org.bukkit">Registry</a>&lt;<a href="entity/Villager.Type.html" title="enum class in org.bukkit.entity">Villager.Type</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#VILLAGER_TYPE" class="member-name-link">VILLAGER_TYPE</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>static final <a href="Registry.html" title="interface in org.bukkit">Registry</a>&lt;<a href="entity/Villager.Type.html" title="enum class in org.bukkit.entity">Villager.Type</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#VILLAGER_TYPE" class="member-name-link">VILLAGER_TYPE</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Villager type.</div>
 </div>
 </div>
@@ -405,6 +410,36 @@ extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/ja
 </section>
 </li>
 <li>
+<section class="detail" id="STRUCTURE">
+<h3>STRUCTURE</h3>
+<div class="member-signature"><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="Registry.html" title="interface in org.bukkit">Registry</a>&lt;<a href="generator/structure/Structure.html" title="class in org.bukkit.generator.structure">Structure</a>&gt;</span>&nbsp;<span class="element-name">STRUCTURE</span></div>
+<div class="block">Server structures.</div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="see-list">
+<li><a href="generator/structure/Structure.html" title="class in org.bukkit.generator.structure"><code>Structure</code></a></li>
+</ul>
+</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="STRUCTURE_TYPE">
+<h3>STRUCTURE_TYPE</h3>
+<div class="member-signature"><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="Registry.html" title="interface in org.bukkit">Registry</a>&lt;<a href="generator/structure/StructureType.html" title="class in org.bukkit.generator.structure">StructureType</a>&gt;</span>&nbsp;<span class="element-name">STRUCTURE_TYPE</span></div>
+<div class="block">Server structure types.</div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="see-list">
+<li><a href="generator/structure/StructureType.html" title="class in org.bukkit.generator.structure"><code>StructureType</code></a></li>
+</ul>
+</dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="SOUNDS">
 <h3>SOUNDS</h3>
 <div class="member-signature"><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="Registry.html" title="interface in org.bukkit">Registry</a>&lt;<a href="Sound.html" title="enum class in org.bukkit">Sound</a>&gt;</span>&nbsp;<span class="element-name">SOUNDS</span></div>
@@ -534,21 +569,6 @@ extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/ja
 <dd>
 <ul class="see-list">
 <li><a href="potion/PotionEffectType.html" title="class in org.bukkit.potion"><code>PotionEffectType</code></a></li>
-</ul>
-</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="STRUCTURE_TYPE">
-<h3>STRUCTURE_TYPE</h3>
-<div class="member-signature"><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="Registry.html" title="interface in org.bukkit">Registry</a>&lt;<a href="StructureType.html" title="class in org.bukkit">StructureType</a>&gt;</span>&nbsp;<span class="element-name">STRUCTURE_TYPE</span></div>
-<div class="block">Structure types.</div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="see-list">
-<li><a href="StructureType.html" title="class in org.bukkit"><code>StructureType</code></a></li>
 </ul>
 </dd>
 </dl>

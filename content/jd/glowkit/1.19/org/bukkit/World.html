@@ -1397,13 +1397,34 @@ extends <a href="RegionAccessor.html" title="interface in org.bukkit">RegionAcce
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Finds the nearest raid close to the given location.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="Location.html" title="class in org.bukkit">Location</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#locateNearestStructure(org.bukkit.Location,org.bukkit.StructureType,int,boolean)" class="member-name-link">locateNearestStructure</a><wbr>(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="Location.html" title="class in org.bukkit">Location</a>&nbsp;origin,
- <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="StructureType.html" title="class in org.bukkit">StructureType</a>&nbsp;structureType,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="util/StructureSearchResult.html" title="interface in org.bukkit.util">StructureSearchResult</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#locateNearestStructure(org.bukkit.Location,org.bukkit.generator.structure.Structure,int,boolean)" class="member-name-link">locateNearestStructure</a><wbr>(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="Location.html" title="class in org.bukkit">Location</a>&nbsp;origin,
+ <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="generator/structure/Structure.html" title="class in org.bukkit.generator.structure">Structure</a>&nbsp;structure,
  int&nbsp;radius,
  boolean&nbsp;findUnexplored)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Find the closest nearby structure of a given <a href="StructureType.html" title="class in org.bukkit"><code>StructureType</code></a>.</div>
+<div class="block">Find the closest nearby structure of a given <a href="generator/structure/Structure.html" title="class in org.bukkit.generator.structure"><code>Structure</code></a>.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="util/StructureSearchResult.html" title="interface in org.bukkit.util">StructureSearchResult</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#locateNearestStructure(org.bukkit.Location,org.bukkit.generator.structure.StructureType,int,boolean)" class="member-name-link">locateNearestStructure</a><wbr>(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="Location.html" title="class in org.bukkit">Location</a>&nbsp;origin,
+ <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="generator/structure/StructureType.html" title="class in org.bukkit.generator.structure">StructureType</a>&nbsp;structureType,
+ int&nbsp;radius,
+ boolean&nbsp;findUnexplored)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Find the closest nearby structure of a given <a href="generator/structure/StructureType.html" title="class in org.bukkit.generator.structure"><code>StructureType</code></a>.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="Location.html" title="class in org.bukkit">Location</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code><a href="#locateNearestStructure(org.bukkit.Location,org.bukkit.StructureType,int,boolean)" class="member-name-link">locateNearestStructure</a><wbr>(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="Location.html" title="class in org.bukkit">Location</a>&nbsp;origin,
+ <a href="StructureType.html" title="class in org.bukkit">StructureType</a>&nbsp;structureType,
+ int&nbsp;radius,
+ boolean&nbsp;findUnexplored)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6">
+<div class="block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">Use
+ <a href="#locateNearestStructure(org.bukkit.Location,org.bukkit.generator.structure.Structure,int,boolean)"><code>locateNearestStructure(Location, Structure, int, boolean)</code></a> or
+ <a href="#locateNearestStructure(org.bukkit.Location,org.bukkit.generator.structure.StructureType,int,boolean)"><code>locateNearestStructure(Location, StructureType, int, boolean)</code></a>
+ instead.</div>
+</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#playEffect(org.bukkit.Location,org.bukkit.Effect,int)" class="member-name-link">playEffect</a><wbr>(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="Location.html" title="class in org.bukkit">Location</a>&nbsp;location,
@@ -7612,13 +7633,20 @@ extends <a href="RegionAccessor.html" title="interface in org.bukkit">RegionAcce
 <section class="detail" id="locateNearestStructure(org.bukkit.Location,org.bukkit.StructureType,int,boolean)">
 <h3>locateNearestStructure</h3>
 <div class="member-signature"><span class="annotations"><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a>
+<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>
 </span><span class="return-type"><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="Location.html" title="class in org.bukkit">Location</a></span>&nbsp;<span class="element-name">locateNearestStructure</span><wbr><span class="parameters">(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a>
  <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="Location.html" title="class in org.bukkit">Location</a>&nbsp;origin,
  <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a>
- <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="StructureType.html" title="class in org.bukkit">StructureType</a>&nbsp;structureType,
+ <a href="StructureType.html" title="class in org.bukkit">StructureType</a>&nbsp;structureType,
  int&nbsp;radius,
  boolean&nbsp;findUnexplored)</span></div>
-<div class="block">Find the closest nearby structure of a given <a href="StructureType.html" title="class in org.bukkit"><code>StructureType</code></a>.
+<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">Use
+ <a href="#locateNearestStructure(org.bukkit.Location,org.bukkit.generator.structure.Structure,int,boolean)"><code>locateNearestStructure(Location, Structure, int, boolean)</code></a> or
+ <a href="#locateNearestStructure(org.bukkit.Location,org.bukkit.generator.structure.StructureType,int,boolean)"><code>locateNearestStructure(Location, StructureType, int, boolean)</code></a>
+ instead.</div>
+</div>
+<div class="block">Find the closest nearby structure of a given <a href="generator/structure/StructureType.html" title="class in org.bukkit.generator.structure"><code>StructureType</code></a>.
  Finding unexplored structures can, and will, block if the world is
  looking in chunks that gave not generated yet. This can lead to the world
  temporarily freezing while locating an unexplored structure.
@@ -7626,7 +7654,7 @@ extends <a href="RegionAccessor.html" title="interface in org.bukkit">RegionAcce
  The <code>radius</code> is not a rigid square radius. Each structure may alter
  how many chunks to check for each iteration. Do not assume that only a
  radius x radius chunk area will be checked. For example,
- <a href="StructureType.html#WOODLAND_MANSION"><code>StructureType.WOODLAND_MANSION</code></a> can potentially check up to 20,000
+ <a href="generator/structure/StructureType.html#WOODLAND_MANSION"><code>StructureType.WOODLAND_MANSION</code></a> can potentially check up to 20,000
  blocks away (or more) regardless of the radius used.
  <p>
  This will <i>not</i> load or generate chunks. This can also lead to
@@ -7642,6 +7670,109 @@ extends <a href="RegionAccessor.html" title="interface in org.bukkit">RegionAcce
 <dt>Returns:</dt>
 <dd>the closest <a href="Location.html" title="class in org.bukkit"><code>Location</code></a>, or null if no structure of the
  specified type exists.</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="see-list-long">
+<li><a href="#locateNearestStructure(org.bukkit.Location,org.bukkit.generator.structure.Structure,int,boolean)"><code>locateNearestStructure(Location, Structure, int, boolean)</code></a></li>
+<li><a href="#locateNearestStructure(org.bukkit.Location,org.bukkit.generator.structure.StructureType,int,boolean)"><code>locateNearestStructure(Location, StructureType, int, boolean)</code></a></li>
+</ul>
+</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="locateNearestStructure(org.bukkit.Location,org.bukkit.generator.structure.StructureType,int,boolean)">
+<h3>locateNearestStructure</h3>
+<div class="member-signature"><span class="annotations"><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a>
+</span><span class="return-type"><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="util/StructureSearchResult.html" title="interface in org.bukkit.util">StructureSearchResult</a></span>&nbsp;<span class="element-name">locateNearestStructure</span><wbr><span class="parameters">(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a>
+ <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="Location.html" title="class in org.bukkit">Location</a>&nbsp;origin,
+ <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a>
+ <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="generator/structure/StructureType.html" title="class in org.bukkit.generator.structure">StructureType</a>&nbsp;structureType,
+ int&nbsp;radius,
+ boolean&nbsp;findUnexplored)</span></div>
+<div class="block">Find the closest nearby structure of a given <a href="generator/structure/StructureType.html" title="class in org.bukkit.generator.structure"><code>StructureType</code></a>.
+ Finding unexplored structures can, and will, block if the world is
+ looking in chunks that gave not generated yet. This can lead to the world
+ temporarily freezing while locating an unexplored structure.
+ <p>
+ The <code>radius</code> is not a rigid square radius. Each structure may alter
+ how many chunks to check for each iteration. Do not assume that only a
+ radius x radius chunk area will be checked. For example,
+ <a href="generator/structure/StructureType.html#WOODLAND_MANSION"><code>StructureType.WOODLAND_MANSION</code></a> can potentially check up to 20,000
+ blocks away (or more) regardless of the radius used.
+ <p>
+ This will <i>not</i> load or generate chunks. This can also lead to
+ instances where the server can hang if you are only looking for
+ unexplored structures. This is because it will keep looking further and
+ further out in order to find the structure.
+ <p>
+ The difference between searching for a <a href="generator/structure/StructureType.html" title="class in org.bukkit.generator.structure"><code>StructureType</code></a> and a
+ <a href="generator/structure/Structure.html" title="class in org.bukkit.generator.structure"><code>Structure</code></a> is, that a <a href="generator/structure/StructureType.html" title="class in org.bukkit.generator.structure"><code>StructureType</code></a> can refer to multiple
+ <a href="generator/structure/Structure.html" title="class in org.bukkit.generator.structure"><code>Structures</code></a> while searching for a <a href="generator/structure/Structure.html" title="class in org.bukkit.generator.structure"><code>Structure</code></a>
+ while only search for the given <a href="generator/structure/Structure.html" title="class in org.bukkit.generator.structure"><code>Structure</code></a>.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>origin</code> - where to start looking for a structure</dd>
+<dd><code>structureType</code> - the type of structure to find</dd>
+<dd><code>radius</code> - the radius, in chunks, around which to search</dd>
+<dd><code>findUnexplored</code> - true to only find unexplored structures</dd>
+<dt>Returns:</dt>
+<dd>the closest <a href="Location.html" title="class in org.bukkit"><code>Location</code></a> and <a href="generator/structure/Structure.html" title="class in org.bukkit.generator.structure"><code>Structure</code></a>, or null if no
+ structure of the specified type exists.</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="see-list-long">
+<li><a href="#locateNearestStructure(org.bukkit.Location,org.bukkit.generator.structure.Structure,int,boolean)"><code>locateNearestStructure(Location, Structure, int, boolean)</code></a></li>
+</ul>
+</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="locateNearestStructure(org.bukkit.Location,org.bukkit.generator.structure.Structure,int,boolean)">
+<h3>locateNearestStructure</h3>
+<div class="member-signature"><span class="annotations"><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a>
+</span><span class="return-type"><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="util/StructureSearchResult.html" title="interface in org.bukkit.util">StructureSearchResult</a></span>&nbsp;<span class="element-name">locateNearestStructure</span><wbr><span class="parameters">(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a>
+ <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="Location.html" title="class in org.bukkit">Location</a>&nbsp;origin,
+ <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a>
+ <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="generator/structure/Structure.html" title="class in org.bukkit.generator.structure">Structure</a>&nbsp;structure,
+ int&nbsp;radius,
+ boolean&nbsp;findUnexplored)</span></div>
+<div class="block">Find the closest nearby structure of a given <a href="generator/structure/Structure.html" title="class in org.bukkit.generator.structure"><code>Structure</code></a>. Finding
+ unexplored structures can, and will, block if the world is looking in
+ chunks that gave not generated yet. This can lead to the world
+ temporarily freezing while locating an unexplored structure.
+ <p>
+ The <code>radius</code> is not a rigid square radius. Each structure may alter
+ how many chunks to check for each iteration. Do not assume that only a
+ radius x radius chunk area will be checked. For example,
+ <a href="generator/structure/Structure.html#MANSION"><code>Structure.MANSION</code></a> can potentially check up to 20,000 blocks away
+ (or more) regardless of the radius used.
+ <p>
+ This will <i>not</i> load or generate chunks. This can also lead to
+ instances where the server can hang if you are only looking for
+ unexplored structures. This is because it will keep looking further and
+ further out in order to find the structure.
+ <p>
+ The difference between searching for a <a href="generator/structure/StructureType.html" title="class in org.bukkit.generator.structure"><code>StructureType</code></a> and a
+ <a href="generator/structure/Structure.html" title="class in org.bukkit.generator.structure"><code>Structure</code></a> is, that a <a href="generator/structure/StructureType.html" title="class in org.bukkit.generator.structure"><code>StructureType</code></a> can refer to multiple
+ <a href="generator/structure/Structure.html" title="class in org.bukkit.generator.structure"><code>Structures</code></a> while searching for a <a href="generator/structure/Structure.html" title="class in org.bukkit.generator.structure"><code>Structure</code></a>
+ while only search for the given <a href="generator/structure/Structure.html" title="class in org.bukkit.generator.structure"><code>Structure</code></a>.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>origin</code> - where to start looking for a structure</dd>
+<dd><code>structure</code> - the structure to find</dd>
+<dd><code>radius</code> - the radius, in chunks, around which to search</dd>
+<dd><code>findUnexplored</code> - true to only find unexplored structures</dd>
+<dt>Returns:</dt>
+<dd>the closest <a href="Location.html" title="class in org.bukkit"><code>Location</code></a> and <a href="generator/structure/Structure.html" title="class in org.bukkit.generator.structure"><code>Structure</code></a>, or null if no
+ structure was found.</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="see-list-long">
+<li><a href="#locateNearestStructure(org.bukkit.Location,org.bukkit.generator.structure.StructureType,int,boolean)"><code>locateNearestStructure(Location, StructureType, int, boolean)</code></a></li>
+</ul>
+</dd>
 </dl>
 </section>
 </li>
