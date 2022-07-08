@@ -142,13 +142,20 @@ extends <a href="Zombie.html" title="interface in org.bukkit.entity">Zombie</a><
  Villager as a result of being cured.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setVillagerProfession(org.bukkit.entity.Villager.Profession)" class="member-name-link">setVillagerProfession</a><wbr>(<a href="Villager.Profession.html" title="enum class in org.bukkit.entity">Villager.Profession</a>&nbsp;profession)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setConversionTime(int,boolean)" class="member-name-link">setConversionTime</a><wbr>(int&nbsp;time,
+ boolean&nbsp;broadcastEntityEvent)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Sets the villager profession of this zombie.</div>
+<div class="block">Sets the amount of ticks until this entity will be converted to a
+ Villager as a result of being cured.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setVillagerType(org.bukkit.entity.Villager.Type)" class="member-name-link">setVillagerType</a><wbr>(<a href="Villager.Type.html" title="enum class in org.bukkit.entity">Villager.Type</a>&nbsp;type)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setVillagerProfession(org.bukkit.entity.Villager.Profession)" class="member-name-link">setVillagerProfession</a><wbr>(<a href="Villager.Profession.html" title="enum class in org.bukkit.entity">Villager.Profession</a>&nbsp;profession)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Sets the villager profession of this zombie.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setVillagerType(org.bukkit.entity.Villager.Type)" class="member-name-link">setVillagerType</a><wbr>(<a href="Villager.Type.html" title="enum class in org.bukkit.entity">Villager.Type</a>&nbsp;type)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Sets the new type of this villager.</div>
 </div>
 </div>
@@ -357,6 +364,27 @@ extends <a href="Zombie.html" title="interface in org.bukkit.entity">Zombie</a><
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>conversionPlayer</code> - the player</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setConversionTime(int,boolean)">
+<h3>setConversionTime</h3>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">setConversionTime</span><wbr><span class="parameters">(int&nbsp;time,
+ boolean&nbsp;broadcastEntityEvent)</span></div>
+<div class="block">Sets the amount of ticks until this entity will be converted to a
+ Villager as a result of being cured.
+ <p>
+ When this reaches 0, the entity will be converted. A value of less than 0
+ will stop the current conversion process without converting the current
+ entity.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>time</code> - new conversion time</dd>
+<dd><code>broadcastEntityEvent</code> - whether this conversion time mutation should broadcast the
+                             org.bukkit.<a href="../EntityEffect.html#ZOMBIE_TRANSFORM"><code>EntityEffect.ZOMBIE_TRANSFORM</code></a> entity event to the
+                             world. If false, no entity event is published, preventing for example the
+                             org.bukkit.<a href="../Sound.html#ENTITY_ZOMBIE_VILLAGER_CURE"><code>Sound.ENTITY_ZOMBIE_VILLAGER_CURE</code></a> from playing.</dd>
 </dl>
 </section>
 </li>
