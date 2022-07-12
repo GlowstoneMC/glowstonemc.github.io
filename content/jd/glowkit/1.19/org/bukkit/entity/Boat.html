@@ -91,6 +91,22 @@ extends <a href="Vehicle.html" title="interface in org.bukkit.entity">Vehicle</a
 <li>
 <section class="nested-class-summary" id="nested-class-summary">
 <h2>Nested Class Summary</h2>
+<div class="caption"><span>Nested Classes</span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Interface</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>static enum&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="Boat.Status.html" class="type-name-link" title="enum class in org.bukkit.entity">Boat.Status</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Represents the status of the boat.</div>
+</div>
+<div class="col-first odd-row-color"><code>static enum&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="Boat.Type.html" class="type-name-link" title="enum class in org.bukkit.entity">Boat.Type</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Represents the type of boats.</div>
+</div>
+</div>
 <div class="inherited-list">
 <h2 id="nested-classes-inherited-from-class-org.bukkit.entity.Entity">Nested classes/interfaces inherited from interface&nbsp;org.bukkit.entity.<a href="Entity.html" title="interface in org.bukkit.entity">Entity</a></h2>
 <code><a href="Entity.Spigot.html" title="class in org.bukkit.entity">Entity.Spigot</a></code></div>
@@ -107,24 +123,36 @@ extends <a href="Vehicle.html" title="interface in org.bukkit.entity">Vehicle</a
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Material.html" title="enum class in org.bukkit">Material</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getBoatMaterial()" class="member-name-link">getBoatMaterial</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Gets the <a href="../Material.html" title="enum class in org.bukkit"><code>Material</code></a> that represents this Boat type.</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Material.html" title="enum class in org.bukkit">Material</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code><a href="#getBoatMaterial()" class="member-name-link">getBoatMaterial</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6">
+<div class="block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">use <a href="#getBoatType()"><code>getBoatType()</code></a> and <a href="Boat.Type.html#getMaterial()"><code>Boat.Type.getMaterial()</code></a></div>
+</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="Boat.Type.html" title="enum class in org.bukkit.entity">Boat.Type</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getBoatType()" class="member-name-link">getBoatType</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Gets the type of the boat.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code>double</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code><a href="#getMaxSpeed()" class="member-name-link">getMaxSpeed</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6">
+<div class="block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">boats are complex and many of these methods do not work correctly across multiple versions.</div>
+</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code>double</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code><a href="#getMaxSpeed()" class="member-name-link">getMaxSpeed</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code><a href="#getOccupiedDeceleration()" class="member-name-link">getOccupiedDeceleration</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated.</span>
 <div class="deprecation-comment">boats are complex and many of these methods do not work correctly across multiple versions.</div>
 </div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code>double</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code><a href="#getOccupiedDeceleration()" class="member-name-link">getOccupiedDeceleration</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6">
-<div class="block"><span class="deprecated-label">Deprecated.</span>
-<div class="deprecation-comment">boats are complex and many of these methods do not work correctly across multiple versions.</div>
-</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="Boat.Status.html" title="enum class in org.bukkit.entity">Boat.Status</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getStatus()" class="member-name-link">getStatus</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Gets the status of the boat.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code>double</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code><a href="#getUnoccupiedDeceleration()" class="member-name-link">getUnoccupiedDeceleration</a>()</code></div>
@@ -133,10 +161,12 @@ extends <a href="Vehicle.html" title="interface in org.bukkit.entity">Vehicle</a
 <div class="deprecation-comment">boats are complex and many of these methods do not work correctly across multiple versions.</div>
 </div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../TreeSpecies.html" title="enum class in org.bukkit">TreeSpecies</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getWoodType()" class="member-name-link">getWoodType</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Gets the wood type of the boat.</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../TreeSpecies.html" title="enum class in org.bukkit">TreeSpecies</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code><a href="#getWoodType()" class="member-name-link">getWoodType</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6">
+<div class="block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">deprecated in favor of <a href="#getBoatType()"><code>getBoatType()</code></a></div>
+</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code><a href="#getWorkOnLand()" class="member-name-link">getWorkOnLand</a>()</code></div>
@@ -145,35 +175,42 @@ extends <a href="Vehicle.html" title="interface in org.bukkit.entity">Vehicle</a
 <div class="deprecation-comment">boats are complex and many of these methods do not work correctly across multiple versions.</div>
 </div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code><a href="#setMaxSpeed(double)" class="member-name-link">setMaxSpeed</a><wbr>(double&nbsp;speed)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6">
-<div class="block"><span class="deprecated-label">Deprecated.</span>
-<div class="deprecation-comment">boats are complex and many of these methods do not work correctly across multiple versions.</div>
-</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setBoatType(org.bukkit.entity.Boat.Type)" class="member-name-link">setBoatType</a><wbr>(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="Boat.Type.html" title="enum class in org.bukkit.entity">Boat.Type</a>&nbsp;type)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Sets the type of the boat.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code><a href="#setOccupiedDeceleration(double)" class="member-name-link">setOccupiedDeceleration</a><wbr>(double&nbsp;rate)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code><a href="#setMaxSpeed(double)" class="member-name-link">setMaxSpeed</a><wbr>(double&nbsp;speed)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated.</span>
 <div class="deprecation-comment">boats are complex and many of these methods do not work correctly across multiple versions.</div>
 </div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code><a href="#setUnoccupiedDeceleration(double)" class="member-name-link">setUnoccupiedDeceleration</a><wbr>(double&nbsp;rate)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code><a href="#setOccupiedDeceleration(double)" class="member-name-link">setOccupiedDeceleration</a><wbr>(double&nbsp;rate)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated.</span>
 <div class="deprecation-comment">boats are complex and many of these methods do not work correctly across multiple versions.</div>
 </div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setWoodType(org.bukkit.TreeSpecies)" class="member-name-link">setWoodType</a><wbr>(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../TreeSpecies.html" title="enum class in org.bukkit">TreeSpecies</a>&nbsp;species)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Sets the wood type of the boat.</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code><a href="#setUnoccupiedDeceleration(double)" class="member-name-link">setUnoccupiedDeceleration</a><wbr>(double&nbsp;rate)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6">
+<div class="block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">boats are complex and many of these methods do not work correctly across multiple versions.</div>
+</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code><a href="#setWorkOnLand(boolean)" class="member-name-link">setWorkOnLand</a><wbr>(boolean&nbsp;workOnLand)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code><a href="#setWoodType(org.bukkit.TreeSpecies)" class="member-name-link">setWoodType</a><wbr>(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../TreeSpecies.html" title="enum class in org.bukkit">TreeSpecies</a>&nbsp;species)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6">
+<div class="block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">deprecated in favor of <a href="#setBoatType(org.bukkit.entity.Boat.Type)"><code>setBoatType(Type)</code></a></div>
+</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code><a href="#setWorkOnLand(boolean)" class="member-name-link">setWorkOnLand</a><wbr>(boolean&nbsp;workOnLand)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated.</span>
 <div class="deprecation-comment">boats are complex and many of these methods do not work correctly across multiple versions.</div>
 </div>
@@ -228,8 +265,12 @@ extends <a href="Vehicle.html" title="interface in org.bukkit.entity">Vehicle</a
 <li>
 <section class="detail" id="getWoodType()">
 <h3>getWoodType</h3>
-<div class="member-signature"><span class="annotations"><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a>
+<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>
+<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a>
 </span><span class="return-type"><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../TreeSpecies.html" title="enum class in org.bukkit">TreeSpecies</a></span>&nbsp;<span class="element-name">getWoodType</span>()</div>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">deprecated in favor of <a href="#getBoatType()"><code>getBoatType()</code></a></div>
+</div>
 <div class="block">Gets the wood type of the boat.</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -240,12 +281,40 @@ extends <a href="Vehicle.html" title="interface in org.bukkit.entity">Vehicle</a
 <li>
 <section class="detail" id="setWoodType(org.bukkit.TreeSpecies)">
 <h3>setWoodType</h3>
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">setWoodType</span><wbr><span class="parameters">(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a>
+<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>
+</span><span class="return-type">void</span>&nbsp;<span class="element-name">setWoodType</span><wbr><span class="parameters">(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a>
  <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../TreeSpecies.html" title="enum class in org.bukkit">TreeSpecies</a>&nbsp;species)</span></div>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">deprecated in favor of <a href="#setBoatType(org.bukkit.entity.Boat.Type)"><code>setBoatType(Type)</code></a></div>
+</div>
 <div class="block">Sets the wood type of the boat.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>species</code> - the new wood type</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getBoatType()">
+<h3>getBoatType</h3>
+<div class="member-signature"><span class="annotations"><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a>
+</span><span class="return-type"><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="Boat.Type.html" title="enum class in org.bukkit.entity">Boat.Type</a></span>&nbsp;<span class="element-name">getBoatType</span>()</div>
+<div class="block">Gets the type of the boat.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the boat type</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setBoatType(org.bukkit.entity.Boat.Type)">
+<h3>setBoatType</h3>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">setBoatType</span><wbr><span class="parameters">(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a>
+ <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="Boat.Type.html" title="enum class in org.bukkit.entity">Boat.Type</a>&nbsp;type)</span></div>
+<div class="block">Sets the type of the boat.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>type</code> - the new type</dd>
 </dl>
 </section>
 </li>
@@ -379,10 +448,26 @@ extends <a href="Vehicle.html" title="interface in org.bukkit.entity">Vehicle</a
 </section>
 </li>
 <li>
+<section class="detail" id="getStatus()">
+<h3>getStatus</h3>
+<div class="member-signature"><span class="annotations"><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a>
+</span><span class="return-type"><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="Boat.Status.html" title="enum class in org.bukkit.entity">Boat.Status</a></span>&nbsp;<span class="element-name">getStatus</span>()</div>
+<div class="block">Gets the status of the boat.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the status</dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="getBoatMaterial()">
 <h3>getBoatMaterial</h3>
-<div class="member-signature"><span class="annotations"><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a>
+<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>
+<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a>
 </span><span class="return-type"><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Material.html" title="enum class in org.bukkit">Material</a></span>&nbsp;<span class="element-name">getBoatMaterial</span>()</div>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">use <a href="#getBoatType()"><code>getBoatType()</code></a> and <a href="Boat.Type.html#getMaterial()"><code>Boat.Type.getMaterial()</code></a></div>
+</div>
 <div class="block">Gets the <a href="../Material.html" title="enum class in org.bukkit"><code>Material</code></a> that represents this Boat type.</div>
 <dl class="notes">
 <dt>Returns:</dt>
