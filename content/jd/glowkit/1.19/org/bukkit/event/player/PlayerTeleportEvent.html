@@ -141,6 +141,13 @@ loadScripts(document, 'script');</script>
  <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="../../Location.html" title="class in org.bukkit">Location</a>&nbsp;to,
  <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="PlayerTeleportEvent.TeleportCause.html" title="enum class in org.bukkit.event.player">PlayerTeleportEvent.TeleportCause</a>&nbsp;cause)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.Location,org.bukkit.Location,org.bukkit.event.player.PlayerTeleportEvent.TeleportCause,boolean,java.util.Set)" class="member-name-link">PlayerTeleportEvent</a><wbr>(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../entity/Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+ <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../Location.html" title="class in org.bukkit">Location</a>&nbsp;from,
+ <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="../../Location.html" title="class in org.bukkit">Location</a>&nbsp;to,
+ <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="PlayerTeleportEvent.TeleportCause.html" title="enum class in org.bukkit.event.player">PlayerTeleportEvent.TeleportCause</a>&nbsp;cause,
+ boolean&nbsp;dismounted,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../../../io/papermc/paper/entity/RelativeTeleportFlag.html" title="enum class in io.papermc.paper.entity">RelativeTeleportFlag</a>&gt;&nbsp;teleportFlagSet)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -166,6 +173,16 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../HandlerList.html" title="class in org.bukkit.event">HandlerList</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getHandlers()" class="member-name-link">getHandlers</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../../../io/papermc/paper/entity/RelativeTeleportFlag.html" title="enum class in io.papermc.paper.entity">RelativeTeleportFlag</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRelativeTeleportationFlags()" class="member-name-link">getRelativeTeleportationFlags</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the relative teleportation flags used in this teleportation.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#willDismountPlayer()" class="member-name-link">willDismountPlayer</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Gets if the player will be dismounted in this teleportation.</div>
+</div>
 </div>
 </div>
 </div>
@@ -216,6 +233,23 @@ loadScripts(document, 'script');</script>
  <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="PlayerTeleportEvent.TeleportCause.html" title="enum class in org.bukkit.event.player">PlayerTeleportEvent.TeleportCause</a>&nbsp;cause)</span></div>
 </section>
 </li>
+<li>
+<section class="detail" id="&lt;init&gt;(org.bukkit.entity.Player,org.bukkit.Location,org.bukkit.Location,org.bukkit.event.player.PlayerTeleportEvent.TeleportCause,boolean,java.util.Set)">
+<h3>PlayerTeleportEvent</h3>
+<div class="member-signature"><span class="annotations"><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/ApiStatus.Experimental.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Experimental</a>
+</span><span class="modifiers">public</span>&nbsp;<span class="element-name">PlayerTeleportEvent</span><wbr><span class="parameters">(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a>
+ <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../entity/Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+ <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a>
+ <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../Location.html" title="class in org.bukkit">Location</a>&nbsp;from,
+ <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a>
+ <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="../../Location.html" title="class in org.bukkit">Location</a>&nbsp;to,
+ <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a>
+ <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="PlayerTeleportEvent.TeleportCause.html" title="enum class in org.bukkit.event.player">PlayerTeleportEvent.TeleportCause</a>&nbsp;cause,
+ boolean&nbsp;dismounted,
+ <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a>
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../../../io/papermc/paper/entity/RelativeTeleportFlag.html" title="enum class in io.papermc.paper.entity">RelativeTeleportFlag</a>&gt;&nbsp;teleportFlagSet)</span></div>
+</section>
+</li>
 </ul>
 </section>
 </li>
@@ -233,6 +267,32 @@ loadScripts(document, 'script');</script>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>Cause of the event</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="willDismountPlayer()">
+<h3>willDismountPlayer</h3>
+<div class="member-signature"><span class="annotations"><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/ApiStatus.Experimental.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Experimental</a>
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">willDismountPlayer</span>()</div>
+<div class="block">Gets if the player will be dismounted in this teleportation.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>dismounted or not</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getRelativeTeleportationFlags()">
+<h3>getRelativeTeleportationFlags</h3>
+<div class="member-signature"><span class="annotations"><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/ApiStatus.Experimental.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Experimental</a>
+<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a>
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../../../io/papermc/paper/entity/RelativeTeleportFlag.html" title="enum class in io.papermc.paper.entity">RelativeTeleportFlag</a>&gt;</span>&nbsp;<span class="element-name">getRelativeTeleportationFlags</span>()</div>
+<div class="block">Returns the relative teleportation flags used in this teleportation.
+ This determines which axis the player will not lose their velocity in.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>an immutable set of relative teleportation flags</dd>
 </dl>
 </section>
 </li>

@@ -578,9 +578,37 @@ extends <a href="../metadata/Metadatable.html" title="interface in org.bukkit.me
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Teleports this entity to the given location.</div>
 </div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#teleport(org.bukkit.Location,boolean)" class="member-name-link">teleport</a><wbr>(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Location.html" title="class in org.bukkit">Location</a>&nbsp;location,
+ boolean&nbsp;ignorePassengers)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Teleports this entity to the given location.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#teleport(org.bukkit.Location,boolean,boolean)" class="member-name-link">teleport</a><wbr>(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Location.html" title="class in org.bukkit">Location</a>&nbsp;location,
+ boolean&nbsp;ignorePassengers,
+ boolean&nbsp;dismount)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Teleports this entity to the given location.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#teleport(org.bukkit.Location,org.bukkit.event.player.PlayerTeleportEvent.TeleportCause)" class="member-name-link">teleport</a><wbr>(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Location.html" title="class in org.bukkit">Location</a>&nbsp;location,
  <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../event/player/PlayerTeleportEvent.TeleportCause.html" title="enum class in org.bukkit.event.player">PlayerTeleportEvent.TeleportCause</a>&nbsp;cause)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Teleports this entity to the given location.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#teleport(org.bukkit.Location,org.bukkit.event.player.PlayerTeleportEvent.TeleportCause,boolean)" class="member-name-link">teleport</a><wbr>(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Location.html" title="class in org.bukkit">Location</a>&nbsp;location,
+ <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../event/player/PlayerTeleportEvent.TeleportCause.html" title="enum class in org.bukkit.event.player">PlayerTeleportEvent.TeleportCause</a>&nbsp;cause,
+ boolean&nbsp;ignorePassengers)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Teleports this entity to the given location.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#teleport(org.bukkit.Location,org.bukkit.event.player.PlayerTeleportEvent.TeleportCause,boolean,boolean)" class="member-name-link">teleport</a><wbr>(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Location.html" title="class in org.bukkit">Location</a>&nbsp;location,
+ <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../event/player/PlayerTeleportEvent.TeleportCause.html" title="enum class in org.bukkit.event.player">PlayerTeleportEvent.TeleportCause</a>&nbsp;cause,
+ boolean&nbsp;ignorePassengers,
+ boolean&nbsp;dismount)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Teleports this entity to the given location.</div>
 </div>
@@ -782,8 +810,100 @@ extends <a href="../metadata/Metadatable.html" title="interface in org.bukkit.me
 <dt>Parameters:</dt>
 <dd><code>yaw</code> - the yaw</dd>
 <dd><code>pitch</code> - the pitch</dd>
-<dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/UnsupportedOperationException.html" title="class or interface in java.lang" class="external-link">UnsupportedOperationException</a></code> - if used for players</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="teleport(org.bukkit.Location,boolean)">
+<h3>teleport</h3>
+<div class="member-signature"><span class="annotations"><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/ApiStatus.Experimental.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Experimental</a>
+</span><span class="modifiers">default</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">teleport</span><wbr><span class="parameters">(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a>
+ <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Location.html" title="class in org.bukkit">Location</a>&nbsp;location,
+ boolean&nbsp;ignorePassengers)</span></div>
+<div class="block">Teleports this entity to the given location.
+ <p>
+ Note: Teleporting to a different world with ignorePassengers to true while the entity has entities riding it
+ will cause this teleportation to return false and not occur.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>location</code> - New location to teleport this entity to</dd>
+<dd><code>ignorePassengers</code> - If all passengers should not be required to be removed prior to teleportation</dd>
+<dt>Returns:</dt>
+<dd><code>true</code> if the teleport was successful</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="teleport(org.bukkit.Location,org.bukkit.event.player.PlayerTeleportEvent.TeleportCause,boolean)">
+<h3>teleport</h3>
+<div class="member-signature"><span class="annotations"><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/ApiStatus.Experimental.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Experimental</a>
+</span><span class="modifiers">default</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">teleport</span><wbr><span class="parameters">(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a>
+ <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Location.html" title="class in org.bukkit">Location</a>&nbsp;location,
+ <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a>
+ <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../event/player/PlayerTeleportEvent.TeleportCause.html" title="enum class in org.bukkit.event.player">PlayerTeleportEvent.TeleportCause</a>&nbsp;cause,
+ boolean&nbsp;ignorePassengers)</span></div>
+<div class="block">Teleports this entity to the given location.
+ <p>
+ Note: Teleporting to a different world with ignorePassengers to true while the entity has entities riding it
+ will cause this teleportation to return false and not occur.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>location</code> - New location to teleport this entity to</dd>
+<dd><code>cause</code> - The cause of this teleportation</dd>
+<dd><code>ignorePassengers</code> - If all passengers should not be required to be removed prior to teleportation</dd>
+<dt>Returns:</dt>
+<dd><code>true</code> if the teleport was successful</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="teleport(org.bukkit.Location,boolean,boolean)">
+<h3>teleport</h3>
+<div class="member-signature"><span class="annotations"><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/ApiStatus.Experimental.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Experimental</a>
+</span><span class="modifiers">default</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">teleport</span><wbr><span class="parameters">(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a>
+ <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Location.html" title="class in org.bukkit">Location</a>&nbsp;location,
+ boolean&nbsp;ignorePassengers,
+ boolean&nbsp;dismount)</span></div>
+<div class="block">Teleports this entity to the given location.
+ <p>
+ Note: Teleporting to a different world with ignorePassengers to true while the entity has entities riding it
+ will cause this teleportation to return false and not occur.
+ Note: Teleporting to a different world with dismount to false while this entity is riding another entity will
+ cause this teleportation to return false and not occur.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>location</code> - New location to teleport this entity to</dd>
+<dd><code>ignorePassengers</code> - If all passengers should not be required to be removed prior to teleportation</dd>
+<dd><code>dismount</code> - If the entity should be dismounted if they are riding another entity</dd>
+<dt>Returns:</dt>
+<dd><code>true</code> if the teleport was successful</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="teleport(org.bukkit.Location,org.bukkit.event.player.PlayerTeleportEvent.TeleportCause,boolean,boolean)">
+<h3>teleport</h3>
+<div class="member-signature"><span class="annotations"><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/ApiStatus.Experimental.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Experimental</a>
+</span><span class="return-type">boolean</span>&nbsp;<span class="element-name">teleport</span><wbr><span class="parameters">(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a>
+ <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../Location.html" title="class in org.bukkit">Location</a>&nbsp;location,
+ <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a>
+ <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../event/player/PlayerTeleportEvent.TeleportCause.html" title="enum class in org.bukkit.event.player">PlayerTeleportEvent.TeleportCause</a>&nbsp;cause,
+ boolean&nbsp;ignorePassengers,
+ boolean&nbsp;dismount)</span></div>
+<div class="block">Teleports this entity to the given location.
+ <p>
+ Note: Teleporting to a different world with ignorePassengers to true while the entity has entities riding it
+ will cause this teleportation to return false and not occur.
+ Note: Teleporting to a different world with dismount to false while this entity is riding another entity will
+ cause this teleportation to return false and not occur.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>location</code> - New location to teleport this entity to</dd>
+<dd><code>cause</code> - The cause of this teleportation</dd>
+<dd><code>ignorePassengers</code> - If all passengers should not be required to be removed prior to teleportation</dd>
+<dd><code>dismount</code> - If the entity should be dismounted if they are riding another entity</dd>
+<dt>Returns:</dt>
+<dd><code>true</code> if the teleport was successful</dd>
 </dl>
 </section>
 </li>
