@@ -717,14 +717,18 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="col-summary-item-name even-row-color"><a href="org/bukkit/potion/Potion.html" title="class in org.bukkit.potion">org.bukkit.potion.Potion</a></div>
 <div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/bukkit/StructureType.html" title="class in org.bukkit">org.bukkit.StructureType</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/bukkit/scoreboard/Criterias.html" title="class in org.bukkit.scoreboard">org.bukkit.scoreboard.Criterias</a></div>
 <div class="col-last odd-row-color">
+<div class="deprecation-comment">use the constants declared in <a href="org/bukkit/scoreboard/Criteria.html" title="interface in org.bukkit.scoreboard"><code>Criteria</code></a> instead</div>
+</div>
+<div class="col-summary-item-name even-row-color"><a href="org/bukkit/StructureType.html" title="class in org.bukkit">org.bukkit.StructureType</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">This class does not represent the structures of a world well. Use
  <a href="org/bukkit/generator/structure/Structure.html" title="class in org.bukkit.generator.structure"><code>Structure</code></a> or
  <a href="org/bukkit/generator/structure/StructureType.html" title="class in org.bukkit.generator.structure"><code>StructureType</code></a> instead.</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/spigotmc/CustomTimingsHandler.html" title="class in org.spigotmc">org.spigotmc.CustomTimingsHandler</a></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-summary-item-name odd-row-color"><a href="org/spigotmc/CustomTimingsHandler.html" title="class in org.spigotmc">org.spigotmc.CustomTimingsHandler</a></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </div>
 </li>
@@ -3148,17 +3152,25 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="org/bukkit/scheduler/BukkitRunnable.html#runTaskTimer(org.bukkit.plugin.Plugin,long,long)"><code>BukkitRunnable.runTaskTimer(Plugin, long, long)</code></a></div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/bukkit/scoreboard/Objective.html#getDisplayName()">org.bukkit.scoreboard.Objective.getDisplayName()</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/bukkit/scoreboard/Objective.html#getCriteria()">org.bukkit.scoreboard.Objective.getCriteria()</a></div>
 <div class="col-last odd-row-color">
+<div class="deprecation-comment">use <a href="org/bukkit/scoreboard/Objective.html#getTrackedCriteria()"><code>Objective.getTrackedCriteria()</code></a></div>
+</div>
+<div class="col-summary-item-name even-row-color"><a href="org/bukkit/scoreboard/Objective.html#getDisplayName()">org.bukkit.scoreboard.Objective.getDisplayName()</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">in favour of <a href="org/bukkit/scoreboard/Objective.html#displayName()"><code>Objective.displayName()</code></a></div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/bukkit/scoreboard/Objective.html#setDisplayName(java.lang.String)">org.bukkit.scoreboard.Objective.setDisplayName<wbr>(String)</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/bukkit/scoreboard/Objective.html#setDisplayName(java.lang.String)">org.bukkit.scoreboard.Objective.setDisplayName<wbr>(String)</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">in favour of <a href="org/bukkit/scoreboard/Objective.html#displayName(net.kyori.adventure.text.Component)"><code>Objective.displayName(net.kyori.adventure.text.Component)</code></a></div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/bukkit/scoreboard/Score.html#getPlayer()">org.bukkit.scoreboard.Score.getPlayer()</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/bukkit/scoreboard/Score.html#getPlayer()">org.bukkit.scoreboard.Score.getPlayer()</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Scoreboards can contain entries that aren't players</div>
+</div>
+<div class="col-summary-item-name odd-row-color"><a href="org/bukkit/scoreboard/Scoreboard.html#getObjectivesByCriteria(java.lang.String)">org.bukkit.scoreboard.Scoreboard.getObjectivesByCriteria<wbr>(String)</a></div>
+<div class="col-last odd-row-color">
+<div class="deprecation-comment">use <a href="org/bukkit/scoreboard/Scoreboard.html#getObjectivesByCriteria(org.bukkit.scoreboard.Criteria)"><code>Scoreboard.getObjectivesByCriteria(Criteria)</code></a></div>
 </div>
 <div class="col-summary-item-name even-row-color"><a href="org/bukkit/scoreboard/Scoreboard.html#getPlayers()">org.bukkit.scoreboard.Scoreboard.getPlayers()</a></div>
 <div class="col-last even-row-color">
@@ -3170,11 +3182,27 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="col-summary-item-name even-row-color"><a href="org/bukkit/scoreboard/Scoreboard.html#registerNewObjective(java.lang.String,java.lang.String,java.lang.String)">org.bukkit.scoreboard.Scoreboard.registerNewObjective<wbr>(String, String, String)</a></div>
 <div class="col-last even-row-color">
-<div class="deprecation-comment">in favour of <a href="org/bukkit/scoreboard/Scoreboard.html#registerNewObjective(java.lang.String,java.lang.String,net.kyori.adventure.text.Component)"><code>Scoreboard.registerNewObjective(String, String, net.kyori.adventure.text.Component)</code></a></div>
+<div class="deprecation-comment">use <a href="org/bukkit/scoreboard/Scoreboard.html#registerNewObjective(java.lang.String,org.bukkit.scoreboard.Criteria,java.lang.String)"><code>Scoreboard.registerNewObjective(String, Criteria, String)</code></a></div>
 </div>
 <div class="col-summary-item-name odd-row-color"><a href="org/bukkit/scoreboard/Scoreboard.html#registerNewObjective(java.lang.String,java.lang.String,java.lang.String,org.bukkit.scoreboard.RenderType)">org.bukkit.scoreboard.Scoreboard.registerNewObjective<wbr>(String, String, String, RenderType)</a></div>
 <div class="col-last odd-row-color">
-<div class="deprecation-comment">in favour of <a href="org/bukkit/scoreboard/Scoreboard.html#registerNewObjective(java.lang.String,java.lang.String,net.kyori.adventure.text.Component,org.bukkit.scoreboard.RenderType)"><code>Scoreboard.registerNewObjective(String, String, net.kyori.adventure.text.Component, RenderType)</code></a></div>
+<div class="deprecation-comment">use <a href="org/bukkit/scoreboard/Scoreboard.html#registerNewObjective(java.lang.String,org.bukkit.scoreboard.Criteria,java.lang.String,org.bukkit.scoreboard.RenderType)"><code>Scoreboard.registerNewObjective(String, Criteria, String, RenderType)</code></a></div>
+</div>
+<div class="col-summary-item-name even-row-color"><a href="org/bukkit/scoreboard/Scoreboard.html#registerNewObjective(java.lang.String,java.lang.String,net.kyori.adventure.text.Component)">org.bukkit.scoreboard.Scoreboard.registerNewObjective<wbr>(String, String, Component)</a></div>
+<div class="col-last even-row-color">
+<div class="deprecation-comment">use <a href="org/bukkit/scoreboard/Scoreboard.html#registerNewObjective(java.lang.String,org.bukkit.scoreboard.Criteria,net.kyori.adventure.text.Component)"><code>Scoreboard.registerNewObjective(String, Criteria, net.kyori.adventure.text.Component)</code></a></div>
+</div>
+<div class="col-summary-item-name odd-row-color"><a href="org/bukkit/scoreboard/Scoreboard.html#registerNewObjective(java.lang.String,java.lang.String,net.kyori.adventure.text.Component,org.bukkit.scoreboard.RenderType)">org.bukkit.scoreboard.Scoreboard.registerNewObjective<wbr>(String, String, Component, RenderType)</a></div>
+<div class="col-last odd-row-color">
+<div class="deprecation-comment">use <a href="org/bukkit/scoreboard/Scoreboard.html#registerNewObjective(java.lang.String,org.bukkit.scoreboard.Criteria,net.kyori.adventure.text.Component,org.bukkit.scoreboard.RenderType)"><code>Scoreboard.registerNewObjective(String, Criteria, net.kyori.adventure.text.Component, RenderType)</code></a></div>
+</div>
+<div class="col-summary-item-name even-row-color"><a href="org/bukkit/scoreboard/Scoreboard.html#registerNewObjective(java.lang.String,org.bukkit.scoreboard.Criteria,java.lang.String)">org.bukkit.scoreboard.Scoreboard.registerNewObjective<wbr>(String, Criteria, String)</a></div>
+<div class="col-last even-row-color">
+<div class="deprecation-comment">in favour of <a href="org/bukkit/scoreboard/Scoreboard.html#registerNewObjective(java.lang.String,org.bukkit.scoreboard.Criteria,net.kyori.adventure.text.Component)"><code>Scoreboard.registerNewObjective(String, Criteria, net.kyori.adventure.text.Component)</code></a></div>
+</div>
+<div class="col-summary-item-name odd-row-color"><a href="org/bukkit/scoreboard/Scoreboard.html#registerNewObjective(java.lang.String,org.bukkit.scoreboard.Criteria,java.lang.String,org.bukkit.scoreboard.RenderType)">org.bukkit.scoreboard.Scoreboard.registerNewObjective<wbr>(String, Criteria, String, RenderType)</a></div>
+<div class="col-last odd-row-color">
+<div class="deprecation-comment">in favour of <a href="org/bukkit/scoreboard/Scoreboard.html#registerNewObjective(java.lang.String,org.bukkit.scoreboard.Criteria,net.kyori.adventure.text.Component,org.bukkit.scoreboard.RenderType)"><code>Scoreboard.registerNewObjective(String, Criteria, net.kyori.adventure.text.Component, RenderType)</code></a></div>
 </div>
 <div class="col-summary-item-name even-row-color"><a href="org/bukkit/scoreboard/Team.html#getColor()">org.bukkit.scoreboard.Team.getColor()</a></div>
 <div class="col-last even-row-color">
