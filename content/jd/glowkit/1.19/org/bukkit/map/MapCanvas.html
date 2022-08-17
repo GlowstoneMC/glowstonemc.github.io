@@ -139,7 +139,7 @@ loadScripts(document, 'script');</script>
 <div class="deprecation-comment">Magic value, use <a href="#getPixelColor(int,int)"><code>getPixelColor(int, int)</code></a></div>
 </div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.desktop/java/awt/Color.html" title="class or interface in java.awt" class="external-link">Color</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.desktop/java/awt/Color.html" title="class or interface in java.awt" class="external-link">Color</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getPixelColor(int,int)" class="member-name-link">getPixelColor</a><wbr>(int&nbsp;x,
  int&nbsp;y)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
@@ -162,7 +162,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setPixelColor(int,int,java.awt.Color)" class="member-name-link">setPixelColor</a><wbr>(int&nbsp;x,
  int&nbsp;y,
- <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.desktop/java/awt/Color.html" title="class or interface in java.awt" class="external-link">Color</a>&nbsp;color)</code></div>
+ <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.desktop/java/awt/Color.html" title="class or interface in java.awt" class="external-link">Color</a>&nbsp;color)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Draw a pixel to the canvas.</div>
 </div>
@@ -223,14 +223,17 @@ loadScripts(document, 'script');</script>
 <h3>setPixelColor</h3>
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">setPixelColor</span><wbr><span class="parameters">(int&nbsp;x,
  int&nbsp;y,
- <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a>
- <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.desktop/java/awt/Color.html" title="class or interface in java.awt" class="external-link">Color</a>&nbsp;color)</span></div>
+ <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a>
+ <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.desktop/java/awt/Color.html" title="class or interface in java.awt" class="external-link">Color</a>&nbsp;color)</span></div>
 <div class="block">Draw a pixel to the canvas.
  <p>
  The provided color might be converted to another color,
  which is in the map color range. This means, that
  <a href="#getPixelColor(int,int)"><code>getPixelColor(int, int)</code></a> might return another
- color than set.</div>
+ color than set.
+
+ If null is used as color, then the color returned by
+ <a href="#getBasePixelColor(int,int)"><code>getBasePixelColor(int, int)</code></a> is shown on the map.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>x</code> - The x coordinate, from 0 to 127.</dd>
@@ -242,16 +245,20 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="getPixelColor(int,int)">
 <h3>getPixelColor</h3>
-<div class="member-signature"><span class="annotations"><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a>
-</span><span class="return-type"><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.desktop/java/awt/Color.html" title="class or interface in java.awt" class="external-link">Color</a></span>&nbsp;<span class="element-name">getPixelColor</span><wbr><span class="parameters">(int&nbsp;x,
+<div class="member-signature"><span class="annotations"><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a>
+</span><span class="return-type"><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.desktop/java/awt/Color.html" title="class or interface in java.awt" class="external-link">Color</a></span>&nbsp;<span class="element-name">getPixelColor</span><wbr><span class="parameters">(int&nbsp;x,
  int&nbsp;y)</span></div>
-<div class="block">Get a pixel from the canvas.</div>
+<div class="block">Get a pixel from the canvas.
+
+ If no color is set at the given position for this canvas, then null is
+ returned and the color returned by <a href="#getBasePixelColor(int,int)"><code>getBasePixelColor(int, int)</code></a>
+ is shown on the map.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>x</code> - The x coordinate, from 0 to 127.</dd>
 <dd><code>y</code> - The y coordinate, from 0 to 127.</dd>
 <dt>Returns:</dt>
-<dd>The color.</dd>
+<dd>The color, or null if no color is set.</dd>
 </dl>
 </section>
 </li>

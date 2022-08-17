@@ -75,7 +75,7 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Superinterfaces:</dt>
-<dd><code><a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/audience/Audience.html" title="class or interface in net.kyori.adventure.audience" class="external-link">Audience</a></code>, <code><a href="../command/CommandSender.html" title="interface in org.bukkit.command">CommandSender</a></code>, <code><a href="Entity.html" title="interface in org.bukkit.entity">Entity</a></code>, <code><a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/text/event/HoverEventSource.html" title="class or interface in net.kyori.adventure.text.event" class="external-link">HoverEventSource</a>&lt;<a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/text/event/HoverEvent.ShowEntity.html" title="class or interface in net.kyori.adventure.text.event" class="external-link">HoverEvent.ShowEntity</a>&gt;</code>, <code><a href="../metadata/Metadatable.html" title="interface in org.bukkit.metadata">Metadatable</a></code>, <code><a href="../Nameable.html" title="interface in org.bukkit">Nameable</a></code>, <code><a href="../permissions/Permissible.html" title="interface in org.bukkit.permissions">Permissible</a></code>, <code><a href="../persistence/PersistentDataHolder.html" title="interface in org.bukkit.persistence">PersistentDataHolder</a></code>, <code><a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/pointer/Pointered.html" title="class or interface in net.kyori.adventure.pointer" class="external-link">Pointered</a></code>, <code><a href="Projectile.html" title="interface in org.bukkit.entity">Projectile</a></code>, <code><a href="../permissions/ServerOperator.html" title="interface in org.bukkit.permissions">ServerOperator</a></code>, <code><a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/sound/Sound.Emitter.html" title="class or interface in net.kyori.adventure.sound" class="external-link">Sound.Emitter</a></code></dd>
+<dd><code><a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/audience/Audience.html" title="class or interface in net.kyori.adventure.audience" class="external-link">Audience</a></code>, <code><a href="../command/CommandSender.html" title="interface in org.bukkit.command">CommandSender</a></code>, <code><a href="Entity.html" title="interface in org.bukkit.entity">Entity</a></code>, <code><a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/text/event/HoverEventSource.html" title="class or interface in net.kyori.adventure.text.event" class="external-link">HoverEventSource</a>&lt;<a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/text/event/HoverEvent.ShowEntity.html" title="class or interface in net.kyori.adventure.text.event" class="external-link">HoverEvent.ShowEntity</a>&gt;</code>, <code><a href="../metadata/Metadatable.html" title="interface in org.bukkit.metadata">Metadatable</a></code>, <code><a href="../Nameable.html" title="interface in org.bukkit">Nameable</a></code>, <code><a href="../permissions/Permissible.html" title="interface in org.bukkit.permissions">Permissible</a></code>, <code><a href="../persistence/PersistentDataHolder.html" title="interface in org.bukkit.persistence">PersistentDataHolder</a></code>, <code><a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/pointer/Pointered.html" title="class or interface in net.kyori.adventure.pointer" class="external-link">Pointered</a></code>, <code><a href="Projectile.html" title="interface in org.bukkit.entity">Projectile</a></code>, <code><a href="../permissions/ServerOperator.html" title="interface in org.bukkit.permissions">ServerOperator</a></code>, <code><a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/sound/Sound.Emitter.html" title="class or interface in net.kyori.adventure.sound" class="external-link">Sound.Emitter</a></code>, <code><a href="ThrowableProjectile.html" title="interface in org.bukkit.entity">ThrowableProjectile</a></code></dd>
 </dl>
 <dl class="notes">
 <dt>All Known Subinterfaces:</dt>
@@ -83,7 +83,7 @@ loadScripts(document, 'script');</script>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">ThrownPotion</span><span class="extends-implements">
-extends <a href="Projectile.html" title="interface in org.bukkit.entity">Projectile</a></span></div>
+extends <a href="ThrowableProjectile.html" title="interface in org.bukkit.entity">ThrowableProjectile</a></span></div>
 <div class="block">Represents a thrown potion bottle</div>
 </section>
 <section class="summary">
@@ -132,6 +132,11 @@ extends <a href="Projectile.html" title="interface in org.bukkit.entity">Project
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setPotionMeta(org.bukkit.inventory.meta.PotionMeta)" class="member-name-link">setPotionMeta</a><wbr>(<a href="../inventory/meta/PotionMeta.html" title="interface in org.bukkit.inventory.meta">PotionMeta</a>&nbsp;meta)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Sets the PotionMeta of this thrown potion.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#splash()" class="member-name-link">splash</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Splashes the potion at its current location.</div>
 </div>
 </div>
 </div>
@@ -202,6 +207,8 @@ extends <a href="Projectile.html" title="interface in org.bukkit.entity">Project
  Altering this copy will not alter the thrown potion directly. If you want
  to alter the thrown potion, you must use the <a href="#setItem(org.bukkit.inventory.ItemStack)"><code>setItemStack</code></a> method.</div>
 <dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="ThrowableProjectile.html#getItem()">getItem</a></code>&nbsp;in interface&nbsp;<code><a href="ThrowableProjectile.html" title="interface in org.bukkit.entity">ThrowableProjectile</a></code></dd>
 <dt>Returns:</dt>
 <dd>A copy of the ItemStack for this thrown potion.</dd>
 </dl>
@@ -214,6 +221,8 @@ extends <a href="Projectile.html" title="interface in org.bukkit.entity">Project
  <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../inventory/ItemStack.html" title="class in org.bukkit.inventory">ItemStack</a>&nbsp;item)</span></div>
 <div class="block">Set the ItemStack for this thrown potion.</div>
 <dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="ThrowableProjectile.html#setItem(org.bukkit.inventory.ItemStack)">setItem</a></code>&nbsp;in interface&nbsp;<code><a href="ThrowableProjectile.html" title="interface in org.bukkit.entity">ThrowableProjectile</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>item</code> - New ItemStack</dd>
 </dl>
@@ -245,6 +254,13 @@ extends <a href="Projectile.html" title="interface in org.bukkit.entity">Project
 <dt>Parameters:</dt>
 <dd><code>meta</code> - potion meta</dd>
 </dl>
+</section>
+</li>
+<li>
+<section class="detail" id="splash()">
+<h3>splash</h3>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">splash</span>()</div>
+<div class="block">Splashes the potion at its current location.</div>
 </section>
 </li>
 </ul>

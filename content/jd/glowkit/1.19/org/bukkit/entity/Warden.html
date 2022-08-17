@@ -109,16 +109,21 @@ extends <a href="Monster.html" title="interface in org.bukkit.entity">Monster</a
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Gets the anger level of this warden.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#increaseAnger(org.bukkit.entity.Entity,int)" class="member-name-link">increaseAnger</a><wbr>(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="Entity.html" title="interface in org.bukkit.entity">Entity</a>&nbsp;entity,
- int&nbsp;increase)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getHighestAnger()" class="member-name-link">getHighestAnger</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Increases the anger level of this warden.</div>
+<div class="block">Gets the highest anger level of this warden.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setAnger(org.bukkit.entity.Entity,int)" class="member-name-link">setAnger</a><wbr>(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="Entity.html" title="interface in org.bukkit.entity">Entity</a>&nbsp;entity,
- int&nbsp;anger)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#increaseAnger(org.bukkit.entity.Entity,int)" class="member-name-link">increaseAnger</a><wbr>(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="Entity.html" title="interface in org.bukkit.entity">Entity</a>&nbsp;entity,
+ int&nbsp;increase)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Increases the anger level of this warden.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setAnger(org.bukkit.entity.Entity,int)" class="member-name-link">setAnger</a><wbr>(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="Entity.html" title="interface in org.bukkit.entity">Entity</a>&nbsp;entity,
+ int&nbsp;anger)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Sets the anger level of this warden.</div>
 </div>
 </div>
@@ -197,6 +202,20 @@ extends <a href="Monster.html" title="interface in org.bukkit.entity">Monster</a
 <dd><code>entity</code> - target</dd>
 <dt>Returns:</dt>
 <dd>anger level</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getHighestAnger()">
+<h3>getHighestAnger</h3>
+<div class="member-signature"><span class="return-type">int</span>&nbsp;<span class="element-name">getHighestAnger</span>()</div>
+<div class="block">Gets the highest anger level of this warden.
+ <p>
+ Anger is an integer from 0 to 150. Once a Warden reaches 80 anger at a
+ target it will actively pursue it.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>highest anger level</dd>
 </dl>
 </section>
 </li>
