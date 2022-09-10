@@ -107,7 +107,6 @@ loadScripts(document, 'script');</script>
  <ul>
  <li><a href="#shouldGenerateNoise()"><code>shouldGenerateNoise()</code></a></li>
  <li><a href="#shouldGenerateSurface()"><code>shouldGenerateSurface()</code></a></li>
- <li><a href="#shouldGenerateBedrock()"><code>shouldGenerateBedrock()</code></a></li>
  <li><a href="#shouldGenerateCaves()"><code>shouldGenerateCaves()</code></a></li>
  <li><a href="#shouldGenerateDecorations()"><code>shouldGenerateDecorations()</code></a></li>
  <li><a href="#shouldGenerateMobs()"><code>shouldGenerateMobs()</code></a></li>
@@ -267,10 +266,12 @@ loadScripts(document, 'script');</script>
 <div class="deprecation-comment">the chunk generation code should be thread safe</div>
 </div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldGenerateBedrock()" class="member-name-link">shouldGenerateBedrock</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Gets if the server should generate Vanilla bedrock.</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#shouldGenerateBedrock()" class="member-name-link">shouldGenerateBedrock</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
+<div class="block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">has no effect, bedrock generation is part of the surface step, see <a href="#shouldGenerateSurface()"><code>shouldGenerateSurface()</code></a></div>
+</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldGenerateCaves()" class="member-name-link">shouldGenerateCaves</a>()</code></div>
@@ -434,9 +435,7 @@ loadScripts(document, 'script');</script>
  The Y-coordinate range should <b>never</b> be hardcoded, to get the
  Y-coordinate range use the methods <a href="ChunkGenerator.ChunkData.html#getMinHeight()"><code>ChunkGenerator.ChunkData.getMinHeight()</code></a> and
  <a href="ChunkGenerator.ChunkData.html#getMaxHeight()"><code>ChunkGenerator.ChunkData.getMaxHeight()</code></a>.
- <p>
- If <a href="#shouldGenerateBedrock()"><code>shouldGenerateBedrock()</code></a> is set to true, the given
- <a href="ChunkGenerator.ChunkData.html" title="interface in org.bukkit.generator"><code>ChunkGenerator.ChunkData</code></a> contains already the Vanilla bedrock generation.</div>
+ <p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>worldInfo</code> - The world info of the world this chunk will be used for</dd>
@@ -713,7 +712,11 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="shouldGenerateBedrock()">
 <h3>shouldGenerateBedrock</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">shouldGenerateBedrock</span>()</div>
+<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">shouldGenerateBedrock</span>()</div>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">has no effect, bedrock generation is part of the surface step, see <a href="#shouldGenerateSurface()"><code>shouldGenerateSurface()</code></a></div>
+</div>
 <div class="block">Gets if the server should generate Vanilla bedrock.
  <p>
  The Vanilla bedrock is generated <b>before</b>
