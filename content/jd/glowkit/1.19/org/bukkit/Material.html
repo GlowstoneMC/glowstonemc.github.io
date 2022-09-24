@@ -5892,7 +5892,7 @@ implements <a href="Keyed.html" title="interface in org.bukkit">Keyed</a>, <a hr
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isOccluding()" class="member-name-link">isOccluding</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Check if the material is a block and completely blocks vision</div>
+<div class="block">Check if the material is a block and occludes light in the lighting engine.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isRecord()" class="member-name-link">isRecord</a>()</code></div>
@@ -18433,10 +18433,23 @@ not permitted.)</div>
 <section class="detail" id="isOccluding()">
 <h3>isOccluding</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isOccluding</span>()</div>
-<div class="block">Check if the material is a block and completely blocks vision</div>
+<div class="block">Check if the material is a block and occludes light in the lighting engine.
+ <p>
+ Generally speaking, most full blocks will occlude light. Non-full blocks are
+ not occluding (e.g. anvils, chests, tall grass, stairs, etc.), nor are specific
+ full blocks such as barriers or spawners which block light despite their texture.
+ <p>
+ An occluding block will have the following effects:
+ <ul>
+   <li>Chests cannot be opened if an occluding block is above it.
+   <li>Mobs cannot spawn inside of occluding blocks.
+   <li>Only occluding blocks can be "powered" (<a href="block/Block.html#isBlockPowered()"><code>Block.isBlockPowered()</code></a>).
+ </ul>
+ This list may be inconclusive. For a full list of the side effects of an occluding
+ block, see the <a href="https://minecraft.fandom.com/wiki/Opacity">Minecraft Wiki</a>.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>True if this material is a block and completely blocks vision</dd>
+<dd>True if this material is a block and occludes light</dd>
 </dl>
 </section>
 </li>
