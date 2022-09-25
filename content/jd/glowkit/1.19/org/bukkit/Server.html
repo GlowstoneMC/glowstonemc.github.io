@@ -996,7 +996,7 @@ extends <a href="plugin/messaging/PluginMessageRecipient.html" title="interface 
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isTickingWorlds()" class="member-name-link">isTickingWorlds</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Gets whether the worlds are being ticked right not or not.</div>
+<div class="block">Gets whether the worlds are being ticked right now.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isWhitelistEnforced()" class="member-name-link">isWhitelistEnforced</a>()</code></div>
@@ -1986,7 +1986,7 @@ extends <a href="plugin/messaging/PluginMessageRecipient.html" title="interface 
 <section class="detail" id="isTickingWorlds()">
 <h3>isTickingWorlds</h3>
 <div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">isTickingWorlds</span>()</div>
-<div class="block">Gets whether the worlds are being ticked right not or not.</div>
+<div class="block">Gets whether the worlds are being ticked right now.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>true if the worlds are being ticked, false otherwise.</dd>
@@ -2006,7 +2006,7 @@ extends <a href="plugin/messaging/PluginMessageRecipient.html" title="interface 
  getWorld(creator.name()).
  <p>
  Do note that un/loading worlds mid-tick may have potential side effects, we strongly recommend
- ensuring that you're not loading worlds midtick by checking <a href="Bukkit.html#isTickingWorlds()"><code>Bukkit.isTickingWorlds()</code></a></div>
+ ensuring that you're not un/loading worlds midtick by checking <a href="Bukkit.html#isTickingWorlds()"><code>Bukkit.isTickingWorlds()</code></a></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>creator</code> - the options to use when creating the world</dd>
@@ -2026,7 +2026,7 @@ extends <a href="plugin/messaging/PluginMessageRecipient.html" title="interface 
 <div class="block">Unloads a world with the given name.
  <p>
  Do note that un/loading worlds mid-tick may have potential side effects, we strongly recommend
- ensuring that you're not loading worlds midtick by checking <a href="Bukkit.html#isTickingWorlds()"><code>Bukkit.isTickingWorlds()</code></a></div>
+ ensuring that you're not un/loading worlds midtick by checking <a href="Bukkit.html#isTickingWorlds()"><code>Bukkit.isTickingWorlds()</code></a></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>name</code> - Name of the world to unload</dd>
@@ -2047,7 +2047,7 @@ extends <a href="plugin/messaging/PluginMessageRecipient.html" title="interface 
 <div class="block">Unloads the given world.
  <p>
  Do note that un/loading worlds mid-tick may have potential side effects, we strongly recommend
- ensuring that you're not loading worlds midtick by checking <a href="Bukkit.html#isTickingWorlds()"><code>Bukkit.isTickingWorlds()</code></a></div>
+ ensuring that you're not un/loading worlds midtick by checking <a href="Bukkit.html#isTickingWorlds()"><code>Bukkit.isTickingWorlds()</code></a></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>world</code> - the world to unload</dd>
