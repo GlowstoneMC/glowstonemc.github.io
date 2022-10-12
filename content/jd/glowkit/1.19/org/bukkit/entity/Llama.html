@@ -119,6 +119,17 @@ extends <a href="ChestedHorse.html" title="interface in org.bukkit.entity">Chest
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="Llama.html" title="interface in org.bukkit.entity">Llama</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getCaravanHead()" class="member-name-link">getCaravanHead</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Get the llama that this llama is following.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="Llama.html" title="interface in org.bukkit.entity">Llama</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getCaravanTail()" class="member-name-link">getCaravanTail</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Gets the llama that is currently following behind
+ this llama.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="Llama.Color.html" title="enum class in org.bukkit.entity">Llama.Color</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getColor()" class="member-name-link">getColor</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
@@ -133,6 +144,28 @@ extends <a href="ChestedHorse.html" title="interface in org.bukkit.entity">Chest
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getStrength()" class="member-name-link">getStrength</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Gets the llama's strength.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#hasCaravanTail()" class="member-name-link">hasCaravanTail</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Checks if another llama is currently following behind
+ this llama.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#inCaravan()" class="member-name-link">inCaravan</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Checks if this llama is in a caravan.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#joinCaravan(org.bukkit.entity.Llama)" class="member-name-link">joinCaravan</a><wbr>(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="Llama.html" title="interface in org.bukkit.entity">Llama</a>&nbsp;llama)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Joins a caravan, with the provided llama being the leader
+ of the caravan.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#leaveCaravan()" class="member-name-link">leaveCaravan</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Leaves the current caravan that they are in.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setColor(org.bukkit.entity.Llama.Color)" class="member-name-link">setColor</a><wbr>(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="Llama.Color.html" title="enum class in org.bukkit.entity">Llama.Color</a>&nbsp;color)</code></div>
@@ -293,6 +326,79 @@ extends <a href="ChestedHorse.html" title="interface in org.bukkit.entity">Chest
 <dd><code><a href="../inventory/InventoryHolder.html#getInventory()">getInventory</a></code>&nbsp;in interface&nbsp;<code><a href="../inventory/InventoryHolder.html" title="interface in org.bukkit.inventory">InventoryHolder</a></code></dd>
 <dt>Returns:</dt>
 <dd>The inventory.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="inCaravan()">
+<h3>inCaravan</h3>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">inCaravan</span>()</div>
+<div class="block">Checks if this llama is in a caravan.
+ This means that this llama is currently following
+ another llama.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>is in caravan</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="joinCaravan(org.bukkit.entity.Llama)">
+<h3>joinCaravan</h3>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">joinCaravan</span><wbr><span class="parameters">(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a>
+ <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="Llama.html" title="interface in org.bukkit.entity">Llama</a>&nbsp;llama)</span></div>
+<div class="block">Joins a caravan, with the provided llama being the leader
+ of the caravan.
+ This llama will then follow the provided llama.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>llama</code> - head of caravan to join</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="leaveCaravan()">
+<h3>leaveCaravan</h3>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">leaveCaravan</span>()</div>
+<div class="block">Leaves the current caravan that they are in.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getCaravanHead()">
+<h3>getCaravanHead</h3>
+<div class="member-signature"><span class="annotations"><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a>
+</span><span class="return-type"><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="Llama.html" title="interface in org.bukkit.entity">Llama</a></span>&nbsp;<span class="element-name">getCaravanHead</span>()</div>
+<div class="block">Get the llama that this llama is following.
+ <p>
+ Does not necessarily mean the leader of the entire caravan.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the llama currently being followed</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="hasCaravanTail()">
+<h3>hasCaravanTail</h3>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">hasCaravanTail</span>()</div>
+<div class="block">Checks if another llama is currently following behind
+ this llama.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if being followed in the caravan</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getCaravanTail()">
+<h3>getCaravanTail</h3>
+<div class="member-signature"><span class="annotations"><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a>
+</span><span class="return-type"><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="Llama.html" title="interface in org.bukkit.entity">Llama</a></span>&nbsp;<span class="element-name">getCaravanTail</span>()</div>
+<div class="block">Gets the llama that is currently following behind
+ this llama.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the llama following this llama, or null if none is following them</dd>
 </dl>
 </section>
 </li>

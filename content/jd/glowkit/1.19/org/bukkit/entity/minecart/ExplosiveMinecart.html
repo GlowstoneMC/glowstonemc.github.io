@@ -15,7 +15,11 @@
 <script type="text/javascript" src="../../../../script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="class-declaration-page">
-<script type="text/javascript">var pathtoroot = "../../../../";
+<script type="text/javascript">var evenRowColor = "even-row-color";
+var oddRowColor = "odd-row-color";
+var tableTab = "table-tab";
+var activeTableTab = "active-table-tab";
+var pathtoroot = "../../../../";
 loadScripts(document, 'script');</script>
 <noscript>
 <div>JavaScript is disabled on your browser.</div>
@@ -50,7 +54,7 @@ loadScripts(document, 'script');</script>
 <li>Detail:&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
-<li>Method</li>
+<li><a href="#method-detail">Method</a></li>
 </ul>
 </div>
 <div class="nav-list-search"><label for="search-input">SEARCH:</label>
@@ -93,6 +97,26 @@ extends <a href="../Minecart.html" title="interface in org.bukkit.entity">Mineca
 <li>
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
+<div id="method-summary-table">
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button></div>
+<div id="method-summary-table.tabpanel" role="tabpanel">
+<div class="summary-table three-column-summary" aria-labelledby="method-summary-table-tab0">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getFuseTicks()" class="member-name-link">getFuseTicks</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Retrieve the number of ticks until the explosive minecart explodes</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setFuseTicks(int)" class="member-name-link">setFuseTicks</a><wbr>(int&nbsp;fuseTicks)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Set the number of ticks until the minecart explodes after being primed.</div>
+</div>
+</div>
+</div>
+</div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.kyori.adventure.audience.Audience">Methods inherited from interface&nbsp;net.kyori.adventure.audience.<a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/audience/Audience.html" title="class or interface in net.kyori.adventure.audience" class="external-link">Audience</a></h3>
 <code><a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/audience/Audience.html#clearTitle()" title="class or interface in net.kyori.adventure.audience" class="external-link">clearTitle</a>, <a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/audience/Audience.html#filterAudience(java.util.function.Predicate)" title="class or interface in net.kyori.adventure.audience" class="external-link">filterAudience</a>, <a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/audience/Audience.html#forEachAudience(java.util.function.Consumer)" title="class or interface in net.kyori.adventure.audience" class="external-link">forEachAudience</a>, <a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/audience/Audience.html#hideBossBar(net.kyori.adventure.bossbar.BossBar)" title="class or interface in net.kyori.adventure.audience" class="external-link">hideBossBar</a>, <a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/audience/Audience.html#openBook(net.kyori.adventure.inventory.Book)" title="class or interface in net.kyori.adventure.audience" class="external-link">openBook</a>, <a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/audience/Audience.html#openBook(net.kyori.adventure.inventory.Book.Builder)" title="class or interface in net.kyori.adventure.audience" class="external-link">openBook</a>, <a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/audience/Audience.html#playSound(net.kyori.adventure.sound.Sound)" title="class or interface in net.kyori.adventure.audience" class="external-link">playSound</a>, <a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/audience/Audience.html#playSound(net.kyori.adventure.sound.Sound,double,double,double)" title="class or interface in net.kyori.adventure.audience" class="external-link">playSound</a>, <a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/audience/Audience.html#playSound(net.kyori.adventure.sound.Sound,net.kyori.adventure.sound.Sound.Emitter)" title="class or interface in net.kyori.adventure.audience" class="external-link">playSound</a>, <a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/audience/Audience.html#resetTitle()" title="class or interface in net.kyori.adventure.audience" class="external-link">resetTitle</a>, <a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/audience/Audience.html#sendActionBar(net.kyori.adventure.text.Component)" title="class or interface in net.kyori.adventure.audience" class="external-link">sendActionBar</a>, <a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/audience/Audience.html#sendActionBar(net.kyori.adventure.text.ComponentLike)" title="class or interface in net.kyori.adventure.audience" class="external-link">sendActionBar</a>, <a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/audience/Audience.html#sendMessage(net.kyori.adventure.identity.Identified,net.kyori.adventure.text.Component)" title="class or interface in net.kyori.adventure.audience" class="external-link">sendMessage</a>, <a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/audience/Audience.html#sendMessage(net.kyori.adventure.identity.Identified,net.kyori.adventure.text.ComponentLike)" title="class or interface in net.kyori.adventure.audience" class="external-link">sendMessage</a>, <a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/audience/Audience.html#sendMessage(net.kyori.adventure.identity.Identified,net.kyori.adventure.text.ComponentLike,net.kyori.adventure.audience.MessageType)" title="class or interface in net.kyori.adventure.audience" class="external-link">sendMessage</a>, <a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/audience/Audience.html#sendMessage(net.kyori.adventure.identity.Identified,net.kyori.adventure.text.Component,net.kyori.adventure.audience.MessageType)" title="class or interface in net.kyori.adventure.audience" class="external-link">sendMessage</a>, <a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/audience/Audience.html#sendMessage(net.kyori.adventure.identity.Identity,net.kyori.adventure.text.Component)" title="class or interface in net.kyori.adventure.audience" class="external-link">sendMessage</a>, <a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/audience/Audience.html#sendMessage(net.kyori.adventure.identity.Identity,net.kyori.adventure.text.ComponentLike)" title="class or interface in net.kyori.adventure.audience" class="external-link">sendMessage</a>, <a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/audience/Audience.html#sendMessage(net.kyori.adventure.identity.Identity,net.kyori.adventure.text.ComponentLike,net.kyori.adventure.audience.MessageType)" title="class or interface in net.kyori.adventure.audience" class="external-link">sendMessage</a>, <a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/audience/Audience.html#sendMessage(net.kyori.adventure.text.Component)" title="class or interface in net.kyori.adventure.audience" class="external-link">sendMessage</a>, <a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/audience/Audience.html#sendMessage(net.kyori.adventure.text.ComponentLike)" title="class or interface in net.kyori.adventure.audience" class="external-link">sendMessage</a>, <a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/audience/Audience.html#sendMessage(net.kyori.adventure.text.ComponentLike,net.kyori.adventure.audience.MessageType)" title="class or interface in net.kyori.adventure.audience" class="external-link">sendMessage</a>, <a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/audience/Audience.html#sendMessage(net.kyori.adventure.text.Component,net.kyori.adventure.audience.MessageType)" title="class or interface in net.kyori.adventure.audience" class="external-link">sendMessage</a>, <a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/audience/Audience.html#sendPlayerListFooter(net.kyori.adventure.text.Component)" title="class or interface in net.kyori.adventure.audience" class="external-link">sendPlayerListFooter</a>, <a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/audience/Audience.html#sendPlayerListFooter(net.kyori.adventure.text.ComponentLike)" title="class or interface in net.kyori.adventure.audience" class="external-link">sendPlayerListFooter</a>, <a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/audience/Audience.html#sendPlayerListHeader(net.kyori.adventure.text.Component)" title="class or interface in net.kyori.adventure.audience" class="external-link">sendPlayerListHeader</a>, <a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/audience/Audience.html#sendPlayerListHeader(net.kyori.adventure.text.ComponentLike)" title="class or interface in net.kyori.adventure.audience" class="external-link">sendPlayerListHeader</a>, <a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/audience/Audience.html#sendPlayerListHeaderAndFooter(net.kyori.adventure.text.ComponentLike,net.kyori.adventure.text.ComponentLike)" title="class or interface in net.kyori.adventure.audience" class="external-link">sendPlayerListHeaderAndFooter</a>, <a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/audience/Audience.html#sendPlayerListHeaderAndFooter(net.kyori.adventure.text.Component,net.kyori.adventure.text.Component)" title="class or interface in net.kyori.adventure.audience" class="external-link">sendPlayerListHeaderAndFooter</a>, <a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/audience/Audience.html#sendTitlePart(net.kyori.adventure.title.TitlePart,T)" title="class or interface in net.kyori.adventure.audience" class="external-link">sendTitlePart</a>, <a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/audience/Audience.html#showBossBar(net.kyori.adventure.bossbar.BossBar)" title="class or interface in net.kyori.adventure.audience" class="external-link">showBossBar</a>, <a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/audience/Audience.html#showTitle(net.kyori.adventure.title.Title)" title="class or interface in net.kyori.adventure.audience" class="external-link">showTitle</a>, <a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/audience/Audience.html#stopSound(net.kyori.adventure.sound.Sound)" title="class or interface in net.kyori.adventure.audience" class="external-link">stopSound</a>, <a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/audience/Audience.html#stopSound(net.kyori.adventure.sound.SoundStop)" title="class or interface in net.kyori.adventure.audience" class="external-link">stopSound</a></code></div>
@@ -129,6 +153,40 @@ extends <a href="../Minecart.html" title="interface in org.bukkit.entity">Mineca
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-org.bukkit.entity.Vehicle">Methods inherited from interface&nbsp;org.bukkit.entity.<a href="../Vehicle.html" title="interface in org.bukkit.entity">Vehicle</a></h3>
 <code><a href="../Vehicle.html#getVelocity()">getVelocity</a>, <a href="../Vehicle.html#setVelocity(org.bukkit.util.Vector)">setVelocity</a></code></div>
+</section>
+</li>
+</ul>
+</section>
+<section class="details">
+<ul class="details-list">
+<!-- ============ METHOD DETAIL ========== -->
+<li>
+<section class="method-details" id="method-detail">
+<h2>Method Details</h2>
+<ul class="member-list">
+<li>
+<section class="detail" id="setFuseTicks(int)">
+<h3>setFuseTicks</h3>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">setFuseTicks</span><wbr><span class="parameters">(int&nbsp;fuseTicks)</span></div>
+<div class="block">Set the number of ticks until the minecart explodes after being primed.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>fuseTicks</code> - fuse ticks or -1 if the fuse isn't primed</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getFuseTicks()">
+<h3>getFuseTicks</h3>
+<div class="member-signature"><span class="return-type">int</span>&nbsp;<span class="element-name">getFuseTicks</span>()</div>
+<div class="block">Retrieve the number of ticks until the explosive minecart explodes</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>number of ticks or -1 if the fuse isn't primed</dd>
+</dl>
+</section>
+</li>
+</ul>
 </section>
 </li>
 </ul>

@@ -140,17 +140,17 @@ extends <a href="Vehicle.html" title="interface in org.bukkit.entity">Vehicle</a
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Gets if a horse is in their eating animation.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code><a href="#isEatingGrass()" class="member-name-link">isEatingGrass</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isEatingGrass()" class="member-name-link">isEatingGrass</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Gets if a horse is in their eating grass animation.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code><a href="#isEatingHaystack()" class="member-name-link">isEatingHaystack</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated.</span>
-<div class="deprecation-comment">use <a href="#isEatingHaystack()"><code>isEatingHaystack()</code></a></div>
+<div class="deprecation-comment">use <a href="#isEatingGrass()"><code>isEatingGrass()</code></a>, this name is incorrect</div>
 </div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isEatingHaystack()" class="member-name-link">isEatingHaystack</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Gets whether the horse is currently grazing hay.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isRearing()" class="member-name-link">isRearing</a>()</code></div>
@@ -174,10 +174,12 @@ extends <a href="Vehicle.html" title="interface in org.bukkit.entity">Vehicle</a
 <div class="deprecation-comment">use <a href="#setEatingHaystack(boolean)"><code>setEatingHaystack(boolean)</code></a></div>
 </div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setEatingHaystack(boolean)" class="member-name-link">setEatingHaystack</a><wbr>(boolean&nbsp;eatingHaystack)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Sets whether the horse is grazing hay.</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code><a href="#setEatingHaystack(boolean)" class="member-name-link">setEatingHaystack</a><wbr>(boolean&nbsp;eatingHaystack)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6">
+<div class="block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">use <a href="#setEatingGrass(boolean)"><code>setEatingGrass(boolean)</code></a>, this name is incorrect</div>
+</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setJumpStrength(double)" class="member-name-link">setJumpStrength</a><wbr>(double&nbsp;strength)</code></div>
@@ -410,7 +412,11 @@ extends <a href="Vehicle.html" title="interface in org.bukkit.entity">Vehicle</a
 <li>
 <section class="detail" id="isEatingHaystack()">
 <h3>isEatingHaystack</h3>
-<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">isEatingHaystack</span>()</div>
+<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>
+</span><span class="return-type">boolean</span>&nbsp;<span class="element-name">isEatingHaystack</span>()</div>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">use <a href="#isEatingGrass()"><code>isEatingGrass()</code></a>, this name is incorrect</div>
+</div>
 <div class="block">Gets whether the horse is currently grazing hay.</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -421,7 +427,11 @@ extends <a href="Vehicle.html" title="interface in org.bukkit.entity">Vehicle</a
 <li>
 <section class="detail" id="setEatingHaystack(boolean)">
 <h3>setEatingHaystack</h3>
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">setEatingHaystack</span><wbr><span class="parameters">(boolean&nbsp;eatingHaystack)</span></div>
+<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>
+</span><span class="return-type">void</span>&nbsp;<span class="element-name">setEatingHaystack</span><wbr><span class="parameters">(boolean&nbsp;eatingHaystack)</span></div>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">use <a href="#setEatingGrass(boolean)"><code>setEatingGrass(boolean)</code></a>, this name is incorrect</div>
+</div>
 <div class="block">Sets whether the horse is grazing hay.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -447,11 +457,7 @@ extends <a href="Vehicle.html" title="interface in org.bukkit.entity">Vehicle</a
 <li>
 <section class="detail" id="isEatingGrass()">
 <h3>isEatingGrass</h3>
-<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>
-</span><span class="return-type">boolean</span>&nbsp;<span class="element-name">isEatingGrass</span>()</div>
-<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
-<div class="deprecation-comment">use <a href="#isEatingHaystack()"><code>isEatingHaystack()</code></a></div>
-</div>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">isEatingGrass</span>()</div>
 <div class="block">Gets if a horse is in their eating grass animation.</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -462,8 +468,7 @@ extends <a href="Vehicle.html" title="interface in org.bukkit.entity">Vehicle</a
 <li>
 <section class="detail" id="setEatingGrass(boolean)">
 <h3>setEatingGrass</h3>
-<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>
-</span><span class="return-type">void</span>&nbsp;<span class="element-name">setEatingGrass</span><wbr><span class="parameters">(boolean&nbsp;eating)</span></div>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">setEatingGrass</span><wbr><span class="parameters">(boolean&nbsp;eating)</span></div>
 <div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
 <div class="deprecation-comment">use <a href="#setEatingHaystack(boolean)"><code>setEatingHaystack(boolean)</code></a></div>
 </div>

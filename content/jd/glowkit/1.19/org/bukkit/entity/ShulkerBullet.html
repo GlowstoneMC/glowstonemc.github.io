@@ -103,15 +103,49 @@ extends <a href="Projectile.html" title="interface in org.bukkit.entity">Project
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../block/BlockFace.html" title="enum class in org.bukkit.block">BlockFace</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getCurrentMovementDirection()" class="member-name-link">getCurrentMovementDirection</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Gets the current movement direction.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getFlightSteps()" class="member-name-link">getFlightSteps</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Gets how many ticks this shulker bullet
+ will attempt to move in its current direction.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="Entity.html" title="interface in org.bukkit.entity">Entity</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getTarget()" class="member-name-link">getTarget</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Retrieve the target of this bullet.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setTarget(org.bukkit.entity.Entity)" class="member-name-link">setTarget</a><wbr>(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="Entity.html" title="interface in org.bukkit.entity">Entity</a>&nbsp;target)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../util/Vector.html" title="class in org.bukkit.util">Vector</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getTargetDelta()" class="member-name-link">getTargetDelta</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Gets the relative offset that this shulker bullet should move towards,
+ note that this will change each tick as the skulker bullet approaches the target.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setCurrentMovementDirection(org.bukkit.block.BlockFace)" class="member-name-link">setCurrentMovementDirection</a><wbr>(<a href="../block/BlockFace.html" title="enum class in org.bukkit.block">BlockFace</a>&nbsp;movementDirection)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Set the current movement direction.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setFlightSteps(int)" class="member-name-link">setFlightSteps</a><wbr>(int&nbsp;steps)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Sets how many ticks this shulker bullet
+ will attempt to move in its current direction.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setTarget(org.bukkit.entity.Entity)" class="member-name-link">setTarget</a><wbr>(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="Entity.html" title="interface in org.bukkit.entity">Entity</a>&nbsp;target)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Sets the target of this bullet</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setTargetDelta(org.bukkit.util.Vector)" class="member-name-link">setTargetDelta</a><wbr>(<a href="../util/Vector.html" title="class in org.bukkit.util">Vector</a>&nbsp;vector)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Sets the relative offset that this shulker bullet should move towards,
+ note that this will change each tick as the skulker bullet approaches the target.</div>
 </div>
 </div>
 </div>
@@ -145,7 +179,7 @@ extends <a href="Projectile.html" title="interface in org.bukkit.entity">Project
 <code><a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/pointer/Pointered.html#get(net.kyori.adventure.pointer.Pointer)" title="class or interface in net.kyori.adventure.pointer" class="external-link">get</a>, <a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/pointer/Pointered.html#getOrDefault(net.kyori.adventure.pointer.Pointer,T)" title="class or interface in net.kyori.adventure.pointer" class="external-link">getOrDefault</a>, <a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/pointer/Pointered.html#getOrDefaultFrom(net.kyori.adventure.pointer.Pointer,java.util.function.Supplier)" title="class or interface in net.kyori.adventure.pointer" class="external-link">getOrDefaultFrom</a>, <a href="https://jd.adventure.kyori.net/api/4.11.0/net/kyori/adventure/pointer/Pointered.html#pointers()" title="class or interface in net.kyori.adventure.pointer" class="external-link">pointers</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-org.bukkit.entity.Projectile">Methods inherited from interface&nbsp;org.bukkit.entity.<a href="Projectile.html" title="interface in org.bukkit.entity">Projectile</a></h3>
-<code><a href="Projectile.html#doesBounce()">doesBounce</a>, <a href="Projectile.html#getShooter()">getShooter</a>, <a href="Projectile.html#setBounce(boolean)">setBounce</a>, <a href="Projectile.html#setShooter(org.bukkit.projectiles.ProjectileSource)">setShooter</a></code></div>
+<code><a href="Projectile.html#doesBounce()">doesBounce</a>, <a href="Projectile.html#getShooter()">getShooter</a>, <a href="Projectile.html#hasBeenShot()">hasBeenShot</a>, <a href="Projectile.html#hasLeftShooter()">hasLeftShooter</a>, <a href="Projectile.html#setBounce(boolean)">setBounce</a>, <a href="Projectile.html#setHasBeenShot(boolean)">setHasBeenShot</a>, <a href="Projectile.html#setHasLeftShooter(boolean)">setHasLeftShooter</a>, <a href="Projectile.html#setShooter(org.bukkit.projectiles.ProjectileSource)">setShooter</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-org.bukkit.permissions.ServerOperator">Methods inherited from interface&nbsp;org.bukkit.permissions.<a href="../permissions/ServerOperator.html" title="interface in org.bukkit.permissions">ServerOperator</a></h3>
 <code><a href="../permissions/ServerOperator.html#isOp()">isOp</a>, <a href="../permissions/ServerOperator.html#setOp(boolean)">setOp</a></code></div>
@@ -181,6 +215,87 @@ extends <a href="Projectile.html" title="interface in org.bukkit.entity">Project
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>target</code> - the entity to target</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getTargetDelta()">
+<h3>getTargetDelta</h3>
+<div class="member-signature"><span class="annotations"><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a>
+</span><span class="return-type"><a href="../util/Vector.html" title="class in org.bukkit.util">Vector</a></span>&nbsp;<span class="element-name">getTargetDelta</span>()</div>
+<div class="block">Gets the relative offset that this shulker bullet should move towards,
+ note that this will change each tick as the skulker bullet approaches the target.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>target delta offset</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setTargetDelta(org.bukkit.util.Vector)">
+<h3>setTargetDelta</h3>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">setTargetDelta</span><wbr><span class="parameters">(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a>
+ <a href="../util/Vector.html" title="class in org.bukkit.util">Vector</a>&nbsp;vector)</span></div>
+<div class="block">Sets the relative offset that this shulker bullet should move towards,
+ note that this will change each tick as the skulker bullet approaches the target.
+ This is usually relative towards their target.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>vector</code> - target</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getCurrentMovementDirection()">
+<h3>getCurrentMovementDirection</h3>
+<div class="member-signature"><span class="annotations"><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a>
+</span><span class="return-type"><a href="../block/BlockFace.html" title="enum class in org.bukkit.block">BlockFace</a></span>&nbsp;<span class="element-name">getCurrentMovementDirection</span>()</div>
+<div class="block">Gets the current movement direction.
+ This is used to determine the next movement direction to ensure
+ that the bullet does not move in the same direction.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>null or their current direction</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setCurrentMovementDirection(org.bukkit.block.BlockFace)">
+<h3>setCurrentMovementDirection</h3>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">setCurrentMovementDirection</span><wbr><span class="parameters">(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a>
+ <a href="../block/BlockFace.html" title="enum class in org.bukkit.block">BlockFace</a>&nbsp;movementDirection)</span></div>
+<div class="block">Set the current movement direction.
+ This is used to determine the next movement direction to ensure
+ that the bullet does not move in the same direction.
+
+ Set to null to simply pick a random direction.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>movementDirection</code> - null or a direction</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getFlightSteps()">
+<h3>getFlightSteps</h3>
+<div class="member-signature"><span class="return-type">int</span>&nbsp;<span class="element-name">getFlightSteps</span>()</div>
+<div class="block">Gets how many ticks this shulker bullet
+ will attempt to move in its current direction.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>number of steps</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setFlightSteps(int)">
+<h3>setFlightSteps</h3>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">setFlightSteps</span><wbr><span class="parameters">(int&nbsp;steps)</span></div>
+<div class="block">Sets how many ticks this shulker bullet
+ will attempt to move in its current direction.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>steps</code> - number of steps</dd>
 </dl>
 </section>
 </li>

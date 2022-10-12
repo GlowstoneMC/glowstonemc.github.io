@@ -103,12 +103,22 @@ extends <a href="Monster.html" title="interface in org.bukkit.entity">Monster</a
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code><a href="#isPlayerSpawned()" class="member-name-link">isPlayerSpawned</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getLifetimeTicks()" class="member-name-link">getLifetimeTicks</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Gets how long this endermite has been living for.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code><a href="#isPlayerSpawned()" class="member-name-link">isPlayerSpawned</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated.</span>
 <div class="deprecation-comment">this functionality no longer exists</div>
 </div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setLifetimeTicks(int)" class="member-name-link">setLifetimeTicks</a><wbr>(int&nbsp;ticks)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Sets how many ticks this endermite has been living for.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code><a href="#setPlayerSpawned(boolean)" class="member-name-link">setPlayerSpawned</a><wbr>(boolean&nbsp;playerSpawned)</code></div>
@@ -210,6 +220,31 @@ extends <a href="Monster.html" title="interface in org.bukkit.entity">Monster</a
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>playerSpawned</code> - player spawned status</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setLifetimeTicks(int)">
+<h3>setLifetimeTicks</h3>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">setLifetimeTicks</span><wbr><span class="parameters">(int&nbsp;ticks)</span></div>
+<div class="block">Sets how many ticks this endermite has been living for.
+ If this value is greater than 2400, this endermite will despawn.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>ticks</code> - lifetime ticks</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getLifetimeTicks()">
+<h3>getLifetimeTicks</h3>
+<div class="member-signature"><span class="return-type">int</span>&nbsp;<span class="element-name">getLifetimeTicks</span>()</div>
+<div class="block">Gets how long this endermite has been living for.
+ This value will tick up while <a href="LivingEntity.html#getRemoveWhenFarAway()"><code>LivingEntity.getRemoveWhenFarAway()</code></a> is false.
+ If this value is greater than 2400, this endermite will despawn.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>lifetime ticks</dd>
 </dl>
 </section>
 </li>

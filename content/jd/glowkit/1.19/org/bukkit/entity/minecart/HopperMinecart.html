@@ -104,16 +104,26 @@ extends <a href="../Minecart.html" title="interface in org.bukkit.entity">Mineca
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isEnabled()" class="member-name-link">isEnabled</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getPickupCooldown()" class="member-name-link">getPickupCooldown</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Gets the number of ticks that this hopper minecart cannot pickup items up for.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isEnabled()" class="member-name-link">isEnabled</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Checks whether or not this Minecart will pick up
  items into its inventory.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setEnabled(boolean)" class="member-name-link">setEnabled</a><wbr>(boolean&nbsp;enabled)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setEnabled(boolean)" class="member-name-link">setEnabled</a><wbr>(boolean&nbsp;enabled)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Sets whether this Minecart will pick up items.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setPickupCooldown(int)" class="member-name-link">setPickupCooldown</a><wbr>(int&nbsp;cooldown)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Sets the number of ticks that this hopper minecart cannot pickup items for.</div>
 </div>
 </div>
 </div>
@@ -197,6 +207,28 @@ extends <a href="../Minecart.html" title="interface in org.bukkit.entity">Mineca
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>enabled</code> - new enabled state</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getPickupCooldown()">
+<h3>getPickupCooldown</h3>
+<div class="member-signature"><span class="return-type">int</span>&nbsp;<span class="element-name">getPickupCooldown</span>()</div>
+<div class="block">Gets the number of ticks that this hopper minecart cannot pickup items up for.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>ticks left on cooldown</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setPickupCooldown(int)">
+<h3>setPickupCooldown</h3>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">setPickupCooldown</span><wbr><span class="parameters">(int&nbsp;cooldown)</span></div>
+<div class="block">Sets the number of ticks that this hopper minecart cannot pickup items for.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>cooldown</code> - cooldown length in ticks</dd>
 </dl>
 </section>
 </li>

@@ -120,21 +120,32 @@ extends <a href="AbstractVillager.html" title="interface in org.bukkit.entity">A
 <div class="block">Gets the despawn delay before this <a href="WanderingTrader.html" title="interface in org.bukkit.entity"><code>WanderingTrader</code></a> is forcibly
  despawned.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setCanDrinkMilk(boolean)" class="member-name-link">setCanDrinkMilk</a><wbr>(boolean&nbsp;bool)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../Location.html" title="class in org.bukkit">Location</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getWanderingTowards()" class="member-name-link">getWanderingTowards</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Set if the Wandering Trader can and will drink milk.</div>
+<div class="block">Gets the location that this wandering trader is currently
+ wandering towards.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setCanDrinkPotion(boolean)" class="member-name-link">setCanDrinkPotion</a><wbr>(boolean&nbsp;bool)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setCanDrinkMilk(boolean)" class="member-name-link">setCanDrinkMilk</a><wbr>(boolean&nbsp;bool)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Set if the Wandering Trader can and will drink an invisibility potion.</div>
+<div class="block">Set if the Wandering Trader can and will drink milk.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setDespawnDelay(int)" class="member-name-link">setDespawnDelay</a><wbr>(int&nbsp;despawnDelay)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setCanDrinkPotion(boolean)" class="member-name-link">setCanDrinkPotion</a><wbr>(boolean&nbsp;bool)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Set if the Wandering Trader can and will drink an invisibility potion.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setDespawnDelay(int)" class="member-name-link">setDespawnDelay</a><wbr>(int&nbsp;despawnDelay)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Sets the despawn delay before this <a href="WanderingTrader.html" title="interface in org.bukkit.entity"><code>WanderingTrader</code></a> is forcibly
  despawned.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setWanderingTowards(org.bukkit.Location)" class="member-name-link">setWanderingTowards</a><wbr>(<a href="../Location.html" title="class in org.bukkit">Location</a>&nbsp;location)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Sets the location that this wandering trader is currently wandering towards.</div>
 </div>
 </div>
 </div>
@@ -283,6 +294,36 @@ extends <a href="AbstractVillager.html" title="interface in org.bukkit.entity">A
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>whether the mob will drink</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getWanderingTowards()">
+<h3>getWanderingTowards</h3>
+<div class="member-signature"><span class="annotations"><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a>
+</span><span class="return-type"><a href="../Location.html" title="class in org.bukkit">Location</a></span>&nbsp;<span class="element-name">getWanderingTowards</span>()</div>
+<div class="block">Gets the location that this wandering trader is currently
+ wandering towards.
+ <p>
+ This will return null if the wandering trader has finished
+ wandering towards the given location.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the location currently wandering towards, or null if not wandering</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setWanderingTowards(org.bukkit.Location)">
+<h3>setWanderingTowards</h3>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">setWanderingTowards</span><wbr><span class="parameters">(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a>
+ <a href="../Location.html" title="class in org.bukkit">Location</a>&nbsp;location)</span></div>
+<div class="block">Sets the location that this wandering trader is currently wandering towards.
+ <p>
+ This can be set to null to prevent the wandering trader from wandering further.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>location</code> - location to wander towards (world is ignored, will always use the entity's world)</dd>
 </dl>
 </section>
 </li>

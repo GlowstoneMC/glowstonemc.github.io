@@ -387,21 +387,26 @@ the order they are declared.</div>
 <div class="col-last even-row-color">
 <div class="block">Gets the face to which the shulker is attached.</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../BlockFace.html" title="enum class in org.bukkit.block">BlockFace</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">Entity.</span><code><a href="../../entity/Entity.html#getFacing()" class="member-name-link">getFacing</a>()</code></div>
+<div class="col-first odd-row-color"><code><a href="../BlockFace.html" title="enum class in org.bukkit.block">BlockFace</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ShulkerBullet.</span><code><a href="../../entity/ShulkerBullet.html#getCurrentMovementDirection()" class="member-name-link">getCurrentMovementDirection</a>()</code></div>
 <div class="col-last odd-row-color">
+<div class="block">Gets the current movement direction.</div>
+</div>
+<div class="col-first even-row-color"><code><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../BlockFace.html" title="enum class in org.bukkit.block">BlockFace</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">Entity.</span><code><a href="../../entity/Entity.html#getFacing()" class="member-name-link">getFacing</a>()</code></div>
+<div class="col-last even-row-color">
 <div class="block">Get the closest cardinal <a href="../BlockFace.html" title="enum class in org.bukkit.block"><code>BlockFace</code></a> direction an entity is
  currently facing.</div>
 </div>
-<div class="col-first even-row-color"><code>default <a href="../BlockFace.html" title="enum class in org.bukkit.block">BlockFace</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">LivingEntity.</span><code><a href="../../entity/LivingEntity.html#getTargetBlockFace(int)" class="member-name-link">getTargetBlockFace</a><wbr>(int&nbsp;maxDistance)</code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>default <a href="../BlockFace.html" title="enum class in org.bukkit.block">BlockFace</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">LivingEntity.</span><code><a href="../../entity/LivingEntity.html#getTargetBlockFace(int)" class="member-name-link">getTargetBlockFace</a><wbr>(int&nbsp;maxDistance)</code></div>
+<div class="col-last odd-row-color">
 <div class="block">Gets the blockface of that block that the living entity has targeted, ignoring fluids</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="../BlockFace.html" title="enum class in org.bukkit.block">BlockFace</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">LivingEntity.</span><code><a href="../../entity/LivingEntity.html#getTargetBlockFace(int,com.destroystokyo.paper.block.TargetBlockInfo.FluidMode)" class="member-name-link">getTargetBlockFace</a><wbr>(int&nbsp;maxDistance,
+<div class="col-first even-row-color"><code><a href="../BlockFace.html" title="enum class in org.bukkit.block">BlockFace</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">LivingEntity.</span><code><a href="../../entity/LivingEntity.html#getTargetBlockFace(int,com.destroystokyo.paper.block.TargetBlockInfo.FluidMode)" class="member-name-link">getTargetBlockFace</a><wbr>(int&nbsp;maxDistance,
  <a href="../../../../com/destroystokyo/paper/block/TargetBlockInfo.FluidMode.html" title="enum class in com.destroystokyo.paper.block">TargetBlockInfo.FluidMode</a>&nbsp;fluidMode)</code></div>
-<div class="col-last odd-row-color">
+<div class="col-last even-row-color">
 <div class="block">Gets the blockface of that block that the living entity has targeted</div>
 </div>
 </div>
@@ -415,10 +420,15 @@ the order they are declared.</div>
 <div class="col-last even-row-color">
 <div class="block">Sets the face to which the shulker is attached.</div>
 </div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">Hanging.</span><code><a href="../../entity/Hanging.html#setFacingDirection(org.bukkit.block.BlockFace,boolean)" class="member-name-link">setFacingDirection</a><wbr>(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../BlockFace.html" title="enum class in org.bukkit.block">BlockFace</a>&nbsp;face,
- boolean&nbsp;force)</code></div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ShulkerBullet.</span><code><a href="../../entity/ShulkerBullet.html#setCurrentMovementDirection(org.bukkit.block.BlockFace)" class="member-name-link">setCurrentMovementDirection</a><wbr>(<a href="../BlockFace.html" title="enum class in org.bukkit.block">BlockFace</a>&nbsp;movementDirection)</code></div>
 <div class="col-last odd-row-color">
+<div class="block">Set the current movement direction.</div>
+</div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">Hanging.</span><code><a href="../../entity/Hanging.html#setFacingDirection(org.bukkit.block.BlockFace,boolean)" class="member-name-link">setFacingDirection</a><wbr>(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../BlockFace.html" title="enum class in org.bukkit.block">BlockFace</a>&nbsp;face,
+ boolean&nbsp;force)</code></div>
+<div class="col-last even-row-color">
 <div class="block">Sets the direction of the hanging entity, potentially overriding rules
  of placement.</div>
 </div>

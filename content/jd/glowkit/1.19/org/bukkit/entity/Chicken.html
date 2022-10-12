@@ -15,7 +15,11 @@
 <script type="text/javascript" src="../../../script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="class-declaration-page">
-<script type="text/javascript">var pathtoroot = "../../../";
+<script type="text/javascript">var evenRowColor = "even-row-color";
+var oddRowColor = "odd-row-color";
+var tableTab = "table-tab";
+var activeTableTab = "active-table-tab";
+var pathtoroot = "../../../";
 loadScripts(document, 'script');</script>
 <noscript>
 <div>JavaScript is disabled on your browser.</div>
@@ -50,7 +54,7 @@ loadScripts(document, 'script');</script>
 <li>Detail:&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
-<li>Method</li>
+<li><a href="#method-detail">Method</a></li>
 </ul>
 </div>
 <div class="nav-list-search"><label for="search-input">SEARCH:</label>
@@ -93,6 +97,36 @@ extends <a href="Animals.html" title="interface in org.bukkit.entity">Animals</a
 <li>
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
+<div id="method-summary-table">
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button></div>
+<div id="method-summary-table.tabpanel" role="tabpanel">
+<div class="summary-table three-column-summary" aria-labelledby="method-summary-table-tab0">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getEggLayTime()" class="member-name-link">getEggLayTime</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Gets the number of ticks till this chicken lays an egg.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isChickenJockey()" class="member-name-link">isChickenJockey</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Gets if this chicken was spawned as a chicken jockey.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setEggLayTime(int)" class="member-name-link">setEggLayTime</a><wbr>(int&nbsp;eggLayTime)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Sets the number of ticks till this chicken lays an egg.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setIsChickenJockey(boolean)" class="member-name-link">setIsChickenJockey</a><wbr>(boolean&nbsp;isChickenJockey)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Sets if this chicken was spawned as a chicken jockey.</div>
+</div>
+</div>
+</div>
+</div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-org.bukkit.entity.Ageable">Methods inherited from interface&nbsp;org.bukkit.entity.<a href="Ageable.html" title="interface in org.bukkit.entity">Ageable</a></h3>
 <code><a href="Ageable.html#getAge()">getAge</a>, <a href="Ageable.html#isAdult()">isAdult</a>, <a href="Ageable.html#setAdult()">setAdult</a>, <a href="Ageable.html#setAge(int)">setAge</a>, <a href="Ageable.html#setBaby()">setBaby</a></code></div>
@@ -150,6 +184,62 @@ extends <a href="Animals.html" title="interface in org.bukkit.entity">Animals</a
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-org.bukkit.permissions.ServerOperator">Methods inherited from interface&nbsp;org.bukkit.permissions.<a href="../permissions/ServerOperator.html" title="interface in org.bukkit.permissions">ServerOperator</a></h3>
 <code><a href="../permissions/ServerOperator.html#isOp()">isOp</a>, <a href="../permissions/ServerOperator.html#setOp(boolean)">setOp</a></code></div>
+</section>
+</li>
+</ul>
+</section>
+<section class="details">
+<ul class="details-list">
+<!-- ============ METHOD DETAIL ========== -->
+<li>
+<section class="method-details" id="method-detail">
+<h2>Method Details</h2>
+<ul class="member-list">
+<li>
+<section class="detail" id="isChickenJockey()">
+<h3>isChickenJockey</h3>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">isChickenJockey</span>()</div>
+<div class="block">Gets if this chicken was spawned as a chicken jockey.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>is chicken jockey</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setIsChickenJockey(boolean)">
+<h3>setIsChickenJockey</h3>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">setIsChickenJockey</span><wbr><span class="parameters">(boolean&nbsp;isChickenJockey)</span></div>
+<div class="block">Sets if this chicken was spawned as a chicken jockey.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>isChickenJockey</code> - is chicken jockey</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getEggLayTime()">
+<h3>getEggLayTime</h3>
+<div class="member-signature"><span class="return-type">int</span>&nbsp;<span class="element-name">getEggLayTime</span>()</div>
+<div class="block">Gets the number of ticks till this chicken lays an egg.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>ticks till the chicken lays an egg</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setEggLayTime(int)">
+<h3>setEggLayTime</h3>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">setEggLayTime</span><wbr><span class="parameters">(int&nbsp;eggLayTime)</span></div>
+<div class="block">Sets the number of ticks till this chicken lays an egg.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>eggLayTime</code> - ticks till the chicken lays an egg</dd>
+</dl>
+</section>
+</li>
+</ul>
 </section>
 </li>
 </ul>
