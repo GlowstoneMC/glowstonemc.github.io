@@ -633,14 +633,19 @@ extends <a href="../attribute/Attributable.html" title="interface in org.bukkit.
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Makes entity start or stop swimming.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#swingMainHand()" class="member-name-link">swingMainHand</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Makes this entity swing their main hand.</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#swingHand(org.bukkit.inventory.EquipmentSlot)" class="member-name-link">swingHand</a><wbr>(<a href="../inventory/EquipmentSlot.html" title="enum class in org.bukkit.inventory">EquipmentSlot</a>&nbsp;hand)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Makes this entity swing their hand.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#swingOffHand()" class="member-name-link">swingOffHand</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#swingMainHand()" class="member-name-link">swingMainHand</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Makes this entity swing their main hand.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#swingOffHand()" class="member-name-link">swingOffHand</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Makes this entity swing their off hand.</div>
 </div>
 </div>
@@ -2130,6 +2135,23 @@ extends <a href="../attribute/Attributable.html" title="interface in org.bukkit.
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>hurtDirection</code> - hurt direction</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="swingHand(org.bukkit.inventory.EquipmentSlot)">
+<h3>swingHand</h3>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">swingHand</span><wbr><span class="parameters">(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a>
+ <a href="../inventory/EquipmentSlot.html" title="enum class in org.bukkit.inventory">EquipmentSlot</a>&nbsp;hand)</span></div>
+<div class="block">Makes this entity swing their hand.
+
+ <p>This method does nothing if this entity does not
+ have an animation for swinging their hand.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>hand</code> - hand to be swung, either <a href="../inventory/EquipmentSlot.html#HAND"><code>EquipmentSlot.HAND</code></a> or <a href="../inventory/EquipmentSlot.html#OFF_HAND"><code>EquipmentSlot.OFF_HAND</code></a></dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - if invalid hand is passed</dd>
 </dl>
 </section>
 </li>

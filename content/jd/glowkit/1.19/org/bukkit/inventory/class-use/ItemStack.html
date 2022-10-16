@@ -316,20 +316,10 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">
 <div class="block">Gets the new item that's replacing the old</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../ItemStack.html" title="class in org.bukkit.inventory">ItemStack</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">PlayerInventorySlotChangeEvent.</span><code><a href="../../../../com/destroystokyo/paper/event/player/PlayerInventorySlotChangeEvent.html#getNewItemStack()" class="member-name-link">getNewItemStack</a>()</code></div>
+<div class="col-first odd-row-color"><code><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="../ItemStack.html" title="class in org.bukkit.inventory">ItemStack</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">PlayerArmorChangeEvent.</span><code><a href="../../../../com/destroystokyo/paper/event/player/PlayerArmorChangeEvent.html#getOldItem()" class="member-name-link">getOldItem</a>()</code></div>
 <div class="col-last odd-row-color">
-<div class="block">Clone of ItemStack that is in the slot after the change.</div>
-</div>
-<div class="col-first even-row-color"><code><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="../ItemStack.html" title="class in org.bukkit.inventory">ItemStack</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">PlayerArmorChangeEvent.</span><code><a href="../../../../com/destroystokyo/paper/event/player/PlayerArmorChangeEvent.html#getOldItem()" class="member-name-link">getOldItem</a>()</code></div>
-<div class="col-last even-row-color">
 <div class="block">Gets the existing item that's being replaced</div>
-</div>
-<div class="col-first odd-row-color"><code><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../ItemStack.html" title="class in org.bukkit.inventory">ItemStack</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">PlayerInventorySlotChangeEvent.</span><code><a href="../../../../com/destroystokyo/paper/event/player/PlayerInventorySlotChangeEvent.html#getOldItemStack()" class="member-name-link">getOldItemStack</a>()</code></div>
-<div class="col-last odd-row-color">
-<div class="block">Clone of ItemStack that was in the slot before the change.</div>
 </div>
 </div>
 <div class="caption"><span>Constructors in <a href="../../../../com/destroystokyo/paper/event/player/package-summary.html">com.destroystokyo.paper.event.player</a> with parameters of type <a href="../ItemStack.html" title="class in org.bukkit.inventory">ItemStack</a></span></div>
@@ -349,21 +339,15 @@ loadScripts(document, 'script');</script>
  <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../entity/Firework.html" title="interface in org.bukkit.entity">Firework</a>&nbsp;firework)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../../../../com/destroystokyo/paper/event/player/PlayerInventorySlotChangeEvent.html#%3Cinit%3E(org.bukkit.entity.Player,int,org.bukkit.inventory.ItemStack,org.bukkit.inventory.ItemStack)" class="member-name-link">PlayerInventorySlotChangeEvent</a><wbr>(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../entity/Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
- int&nbsp;slot,
- <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../ItemStack.html" title="class in org.bukkit.inventory">ItemStack</a>&nbsp;oldItemStack,
- <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../ItemStack.html" title="class in org.bukkit.inventory">ItemStack</a>&nbsp;newItemStack)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="../../../../com/destroystokyo/paper/event/player/PlayerLaunchProjectileEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.inventory.ItemStack,org.bukkit.entity.Projectile)" class="member-name-link">PlayerLaunchProjectileEvent</a><wbr>(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../entity/Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;shooter,
+<div class="col-second even-row-color"><code><a href="../../../../com/destroystokyo/paper/event/player/PlayerLaunchProjectileEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.inventory.ItemStack,org.bukkit.entity.Projectile)" class="member-name-link">PlayerLaunchProjectileEvent</a><wbr>(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../entity/Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;shooter,
  <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../ItemStack.html" title="class in org.bukkit.inventory">ItemStack</a>&nbsp;itemStack,
  <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../entity/Projectile.html" title="interface in org.bukkit.entity">Projectile</a>&nbsp;projectile)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../../../../com/destroystokyo/paper/event/player/PlayerReadyArrowEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.inventory.ItemStack,org.bukkit.inventory.ItemStack)" class="member-name-link">PlayerReadyArrowEvent</a><wbr>(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../entity/Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="../../../../com/destroystokyo/paper/event/player/PlayerReadyArrowEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.inventory.ItemStack,org.bukkit.inventory.ItemStack)" class="member-name-link">PlayerReadyArrowEvent</a><wbr>(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../entity/Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
  <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../ItemStack.html" title="class in org.bukkit.inventory">ItemStack</a>&nbsp;bow,
  <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../ItemStack.html" title="class in org.bukkit.inventory">ItemStack</a>&nbsp;arrow)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -597,6 +581,16 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color">
 <div class="block">Gets the <a href="../ItemStack.html" title="class in org.bukkit.inventory"><code>ItemStack</code></a> involved in this event.</div>
 </div>
+<div class="col-first even-row-color"><code><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../ItemStack.html" title="class in org.bukkit.inventory">ItemStack</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">PlayerInventorySlotChangeEvent.</span><code><a href="../../../../io/papermc/paper/event/player/PlayerInventorySlotChangeEvent.html#getNewItemStack()" class="member-name-link">getNewItemStack</a>()</code></div>
+<div class="col-last even-row-color">
+<div class="block">Clone of ItemStack that is in the slot after the change.</div>
+</div>
+<div class="col-first odd-row-color"><code><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../ItemStack.html" title="class in org.bukkit.inventory">ItemStack</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">PlayerInventorySlotChangeEvent.</span><code><a href="../../../../io/papermc/paper/event/player/PlayerInventorySlotChangeEvent.html#getOldItemStack()" class="member-name-link">getOldItemStack</a>()</code></div>
+<div class="col-last odd-row-color">
+<div class="block">Clone of ItemStack that was in the slot before the change.</div>
+</div>
 </div>
 <div class="caption"><span>Methods in <a href="../../../../io/papermc/paper/event/player/package-summary.html">io.papermc.paper.event.player</a> with parameters of type <a href="../ItemStack.html" title="class in org.bukkit.inventory">ItemStack</a></span></div>
 <div class="summary-table three-column-summary">
@@ -621,24 +615,30 @@ loadScripts(document, 'script');</script>
  boolean&nbsp;placing)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="../../../../io/papermc/paper/event/player/PlayerItemFrameChangeEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.entity.ItemFrame,org.bukkit.inventory.ItemStack,io.papermc.paper.event.player.PlayerItemFrameChangeEvent.ItemFrameChangeAction)" class="member-name-link">PlayerItemFrameChangeEvent</a><wbr>(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../entity/Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+<div class="col-second odd-row-color"><code><a href="../../../../io/papermc/paper/event/player/PlayerInventorySlotChangeEvent.html#%3Cinit%3E(org.bukkit.entity.Player,int,org.bukkit.inventory.ItemStack,org.bukkit.inventory.ItemStack)" class="member-name-link">PlayerInventorySlotChangeEvent</a><wbr>(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../entity/Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+ int&nbsp;slot,
+ <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../ItemStack.html" title="class in org.bukkit.inventory">ItemStack</a>&nbsp;oldItemStack,
+ <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../ItemStack.html" title="class in org.bukkit.inventory">ItemStack</a>&nbsp;newItemStack)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../../../../io/papermc/paper/event/player/PlayerItemFrameChangeEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.entity.ItemFrame,org.bukkit.inventory.ItemStack,io.papermc.paper.event.player.PlayerItemFrameChangeEvent.ItemFrameChangeAction)" class="member-name-link">PlayerItemFrameChangeEvent</a><wbr>(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../entity/Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
  <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../entity/ItemFrame.html" title="interface in org.bukkit.entity">ItemFrame</a>&nbsp;itemFrame,
  <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../ItemStack.html" title="class in org.bukkit.inventory">ItemStack</a>&nbsp;itemStack,
  <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../../../io/papermc/paper/event/player/PlayerItemFrameChangeEvent.ItemFrameChangeAction.html" title="enum class in io.papermc.paper.event.player">PlayerItemFrameChangeEvent.ItemFrameChangeAction</a>&nbsp;action)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../../../../io/papermc/paper/event/player/PlayerLecternPageChangeEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.block.Lectern,org.bukkit.inventory.ItemStack,io.papermc.paper.event.player.PlayerLecternPageChangeEvent.PageChangeDirection,int,int)" class="member-name-link">PlayerLecternPageChangeEvent</a><wbr>(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../entity/Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="../../../../io/papermc/paper/event/player/PlayerLecternPageChangeEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.block.Lectern,org.bukkit.inventory.ItemStack,io.papermc.paper.event.player.PlayerLecternPageChangeEvent.PageChangeDirection,int,int)" class="member-name-link">PlayerLecternPageChangeEvent</a><wbr>(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../entity/Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
  <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../block/Lectern.html" title="interface in org.bukkit.block">Lectern</a>&nbsp;lectern,
  <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../ItemStack.html" title="class in org.bukkit.inventory">ItemStack</a>&nbsp;book,
  <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../../../io/papermc/paper/event/player/PlayerLecternPageChangeEvent.PageChangeDirection.html" title="enum class in io.papermc.paper.event.player">PlayerLecternPageChangeEvent.PageChangeDirection</a>&nbsp;pageChangeDirection,
  int&nbsp;oldPage,
  int&nbsp;newPage)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="../../../../io/papermc/paper/event/player/PlayerStopUsingItemEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.inventory.ItemStack,int)" class="member-name-link">PlayerStopUsingItemEvent</a><wbr>(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../entity/Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../../../../io/papermc/paper/event/player/PlayerStopUsingItemEvent.html#%3Cinit%3E(org.bukkit.entity.Player,org.bukkit.inventory.ItemStack,int)" class="member-name-link">PlayerStopUsingItemEvent</a><wbr>(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../entity/Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
  <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../ItemStack.html" title="class in org.bukkit.inventory">ItemStack</a>&nbsp;item,
  int&nbsp;ticksHeldFor)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -2608,12 +2608,16 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color"><code><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../ItemStack.html" title="class in org.bukkit.inventory">ItemStack</a></code></div>
 <div class="col-second odd-row-color"><span class="type-name-label">CookingRecipe.</span><code><a href="../CookingRecipe.html#getInput()" class="member-name-link">getInput</a>()</code></div>
 <div class="col-last odd-row-color">
-<div class="block">Get the input material.</div>
+<div class="block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">Use <a href="../CookingRecipe.html#getInputChoice()"><code>CookingRecipe.getInputChoice()</code></a> instead for more complete data.</div>
+</div>
 </div>
 <div class="col-first even-row-color"><code><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../ItemStack.html" title="class in org.bukkit.inventory">ItemStack</a></code></div>
 <div class="col-second even-row-color"><span class="type-name-label">StonecuttingRecipe.</span><code><a href="../StonecuttingRecipe.html#getInput()" class="member-name-link">getInput</a>()</code></div>
 <div class="col-last even-row-color">
-<div class="block">Get the input material.</div>
+<div class="block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">Use <a href="../StonecuttingRecipe.html#getInputChoice()"><code>StonecuttingRecipe.getInputChoice()</code></a> instead for more complete data.</div>
+</div>
 </div>
 <div class="col-first odd-row-color"><code>default <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/Nullable.html" title="class or interface in org.jetbrains.annotations" class="external-link">@Nullable</a> <a href="../ItemStack.html" title="class in org.bukkit.inventory">ItemStack</a></code></div>
 <div class="col-second odd-row-color"><span class="type-name-label">SmithingInventory.</span><code><a href="../SmithingInventory.html#getInputEquipment()" class="member-name-link">getInputEquipment</a>()</code></div>
@@ -2869,12 +2873,16 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../ItemStack.html" title="class in org.bukkit.inventory">ItemStack</a>&gt;</code></div>
 <div class="col-second even-row-color"><span class="type-name-label">ShapelessRecipe.</span><code><a href="../ShapelessRecipe.html#getIngredientList()" class="member-name-link">getIngredientList</a>()</code></div>
 <div class="col-last even-row-color">
-<div class="block">Get the list of ingredients used for this recipe.</div>
+<div class="block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">Use <a href="../ShapelessRecipe.html#getChoiceList()"><code>ShapelessRecipe.getChoiceList()</code></a> instead for more complete data.</div>
+</div>
 </div>
 <div class="col-first odd-row-color"><code><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Character.html" title="class or interface in java.lang" class="external-link">Character</a>,<wbr><a href="../ItemStack.html" title="class in org.bukkit.inventory">ItemStack</a>&gt;</code></div>
 <div class="col-second odd-row-color"><span class="type-name-label">ShapedRecipe.</span><code><a href="../ShapedRecipe.html#getIngredientMap()" class="member-name-link">getIngredientMap</a>()</code></div>
 <div class="col-last odd-row-color">
-<div class="block">Get a copy of the ingredients map.</div>
+<div class="block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">Use <a href="../ShapedRecipe.html#getChoiceMap()"><code>ShapedRecipe.getChoiceMap()</code></a> instead for more complete data.</div>
+</div>
 </div>
 <div class="col-first even-row-color"><code><a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../ItemStack.html" title="class in org.bukkit.inventory">ItemStack</a>&gt;</code></div>
 <div class="col-second even-row-color"><span class="type-name-label">MerchantRecipe.</span><code><a href="../MerchantRecipe.html#getIngredients()" class="member-name-link">getIngredients</a>()</code></div>
