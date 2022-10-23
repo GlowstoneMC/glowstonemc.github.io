@@ -23,6 +23,7 @@ com.destroystokyo.paper.util
 com.destroystokyo.paper.utils
 io.papermc.paper.advancement
 io.papermc.paper.annotation
+io.papermc.paper.block
 io.papermc.paper.chat
 io.papermc.paper.command
 io.papermc.paper.datapack
