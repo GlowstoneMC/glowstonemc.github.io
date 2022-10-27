@@ -57,8 +57,10 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><a href="#com.destroystokyo.paper">com.destroystokyo.paper</a></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><a href="#org.bukkit.entity">org.bukkit.entity</a></div>
-<div class="col-last odd-row-color">
+<div class="col-first odd-row-color"><a href="#com.destroystokyo.paper.event.player">com.destroystokyo.paper.event.player</a></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><a href="#org.bukkit.entity">org.bukkit.entity</a></div>
+<div class="col-last even-row-color">
 <div class="block">Interfaces for non-voxel objects that can exist in a <a href="../../../../org/bukkit/World.html" title="interface in org.bukkit"><code>world</code></a>, including all players, monsters, projectiles, etc.</div>
 </div>
 </div>
@@ -73,23 +75,44 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static final <a href="../ClientOption.html" title="class in com.destroystokyo.paper">ClientOption</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ClientOption.</span><code><a href="../ClientOption.html#CHAT_COLORS_ENABLED" class="member-name-link">CHAT_COLORS_ENABLED</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ClientOption.</span><code><a href="../ClientOption.html#ALLOW_SERVER_LISTINGS" class="member-name-link">ALLOW_SERVER_LISTINGS</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final <a href="../ClientOption.html" title="class in com.destroystokyo.paper">ClientOption</a>&lt;<a href="../ClientOption.ChatVisibility.html" title="enum class in com.destroystokyo.paper">ClientOption.ChatVisibility</a>&gt;</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ClientOption.</span><code><a href="../ClientOption.html#CHAT_VISIBILITY" class="member-name-link">CHAT_VISIBILITY</a></code></div>
+<div class="col-first odd-row-color"><code>static final <a href="../ClientOption.html" title="class in com.destroystokyo.paper">ClientOption</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ClientOption.</span><code><a href="../ClientOption.html#CHAT_COLORS_ENABLED" class="member-name-link">CHAT_COLORS_ENABLED</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static final <a href="../ClientOption.html" title="class in com.destroystokyo.paper">ClientOption</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ClientOption.</span><code><a href="../ClientOption.html#LOCALE" class="member-name-link">LOCALE</a></code></div>
+<div class="col-first even-row-color"><code>static final <a href="../ClientOption.html" title="class in com.destroystokyo.paper">ClientOption</a>&lt;<a href="../ClientOption.ChatVisibility.html" title="enum class in com.destroystokyo.paper">ClientOption.ChatVisibility</a>&gt;</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ClientOption.</span><code><a href="../ClientOption.html#CHAT_VISIBILITY" class="member-name-link">CHAT_VISIBILITY</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final <a href="../ClientOption.html" title="class in com.destroystokyo.paper">ClientOption</a>&lt;<a href="../../../../org/bukkit/inventory/MainHand.html" title="enum class in org.bukkit.inventory">MainHand</a>&gt;</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ClientOption.</span><code><a href="../ClientOption.html#MAIN_HAND" class="member-name-link">MAIN_HAND</a></code></div>
+<div class="col-first odd-row-color"><code>static final <a href="../ClientOption.html" title="class in com.destroystokyo.paper">ClientOption</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ClientOption.</span><code><a href="../ClientOption.html#LOCALE" class="member-name-link">LOCALE</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static final <a href="../ClientOption.html" title="class in com.destroystokyo.paper">ClientOption</a>&lt;<a href="../SkinParts.html" title="interface in com.destroystokyo.paper">SkinParts</a>&gt;</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ClientOption.</span><code><a href="../ClientOption.html#SKIN_PARTS" class="member-name-link">SKIN_PARTS</a></code></div>
+<div class="col-first even-row-color"><code>static final <a href="../ClientOption.html" title="class in com.destroystokyo.paper">ClientOption</a>&lt;<a href="../../../../org/bukkit/inventory/MainHand.html" title="enum class in org.bukkit.inventory">MainHand</a>&gt;</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ClientOption.</span><code><a href="../ClientOption.html#MAIN_HAND" class="member-name-link">MAIN_HAND</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="../ClientOption.html" title="class in com.destroystokyo.paper">ClientOption</a>&lt;<a href="../SkinParts.html" title="interface in com.destroystokyo.paper">SkinParts</a>&gt;</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ClientOption.</span><code><a href="../ClientOption.html#SKIN_PARTS" class="member-name-link">SKIN_PARTS</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="../ClientOption.html" title="class in com.destroystokyo.paper">ClientOption</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ClientOption.</span><code><a href="../ClientOption.html#TEXT_FILTERING_ENABLED" class="member-name-link">TEXT_FILTERING_ENABLED</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="../ClientOption.html" title="class in com.destroystokyo.paper">ClientOption</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</code></div>
 <div class="col-second odd-row-color"><span class="type-name-label">ClientOption.</span><code><a href="../ClientOption.html#VIEW_DISTANCE" class="member-name-link">VIEW_DISTANCE</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="com.destroystokyo.paper.event.player">
+<h2>Uses of <a href="../ClientOption.html" title="class in com.destroystokyo.paper">ClientOption</a> in <a href="../event/player/package-summary.html">com.destroystokyo.paper.event.player</a></h2>
+<div class="caption"><span>Constructor parameters in <a href="../event/player/package-summary.html">com.destroystokyo.paper.event.player</a> with type arguments of type <a href="../ClientOption.html" title="class in com.destroystokyo.paper">ClientOption</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier</div>
+<div class="table-header col-second">Constructor</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../event/player/PlayerClientOptionsChangeEvent.html#%3Cinit%3E(org.bukkit.entity.Player,java.util.Map)" class="member-name-link">PlayerClientOptionsChangeEvent</a><wbr>(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="../../../../org/bukkit/entity/Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;player,
+ <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../ClientOption.html" title="class in com.destroystokyo.paper">ClientOption</a>&lt;?&gt;,<wbr>?&gt;&nbsp;options)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
