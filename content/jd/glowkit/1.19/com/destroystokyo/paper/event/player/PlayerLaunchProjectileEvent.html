@@ -88,7 +88,11 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">PlayerLaunchProjectileEvent</span>
 <span class="extends-implements">extends <a href="../../../../../org/bukkit/event/player/PlayerEvent.html" title="class in org.bukkit.event.player">PlayerEvent</a>
 implements <a href="../../../../../org/bukkit/event/Cancellable.html" title="interface in org.bukkit.event">Cancellable</a></span></div>
-<div class="block">Called when a player shoots a projectile</div>
+<div class="block">Called when a player shoots a projectile.
+ <p>
+ Notably this event is not called for arrows as the player does not launch them, rather shoots them with the help
+ of a bow or crossbow. A plugin may listen to <a href="../../../../../org/bukkit/event/entity/EntityShootBowEvent.html" title="class in org.bukkit.event.entity"><code>EntityShootBowEvent</code></a> for these actions
+ instead.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
