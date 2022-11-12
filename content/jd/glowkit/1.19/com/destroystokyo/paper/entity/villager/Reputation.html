@@ -114,10 +114,15 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Gets the reputation value for a specific <a href="ReputationType.html" title="enum class in com.destroystokyo.paper.entity.villager"><code>ReputationType</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setReputation(com.destroystokyo.paper.entity.villager.ReputationType,int)" class="member-name-link">setReputation</a><wbr>(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="ReputationType.html" title="enum class in com.destroystokyo.paper.entity.villager">ReputationType</a>&nbsp;type,
- int&nbsp;value)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasReputationSet(com.destroystokyo.paper.entity.villager.ReputationType)" class="member-name-link">hasReputationSet</a><wbr>(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="ReputationType.html" title="enum class in com.destroystokyo.paper.entity.villager">ReputationType</a>&nbsp;type)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Gets if a reputation value is currently set for a specific <a href="ReputationType.html" title="enum class in com.destroystokyo.paper.entity.villager"><code>ReputationType</code></a>.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setReputation(com.destroystokyo.paper.entity.villager.ReputationType,int)" class="member-name-link">setReputation</a><wbr>(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="ReputationType.html" title="enum class in com.destroystokyo.paper.entity.villager">ReputationType</a>&nbsp;type,
+ int&nbsp;value)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the reputation value for a specific <a href="ReputationType.html" title="enum class in com.destroystokyo.paper.entity.villager"><code>ReputationType</code></a>.</div>
 </div>
 </div>
@@ -183,6 +188,20 @@ loadScripts(document, 'script');</script>
 <dt>Parameters:</dt>
 <dd><code>type</code> - The <a href="ReputationType.html" title="enum class in com.destroystokyo.paper.entity.villager"><code>type</code></a> of reputation to set.</dd>
 <dd><code>value</code> - The value of the <a href="ReputationType.html" title="enum class in com.destroystokyo.paper.entity.villager"><code>type</code></a>.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="hasReputationSet(com.destroystokyo.paper.entity.villager.ReputationType)">
+<h3>hasReputationSet</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasReputationSet</span><wbr><span class="parameters">(<a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a>
+ <a href="https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/org/jetbrains/annotations/NotNull.html" title="class or interface in org.jetbrains.annotations" class="external-link">@NotNull</a> <a href="ReputationType.html" title="enum class in com.destroystokyo.paper.entity.villager">ReputationType</a>&nbsp;type)</span></div>
+<div class="block">Gets if a reputation value is currently set for a specific <a href="ReputationType.html" title="enum class in com.destroystokyo.paper.entity.villager"><code>ReputationType</code></a>.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>type</code> - The <a href="ReputationType.html" title="enum class in com.destroystokyo.paper.entity.villager"><code>type</code></a> to check</dd>
+<dt>Returns:</dt>
+<dd>If there is a value for this <a href="ReputationType.html" title="enum class in com.destroystokyo.paper.entity.villager"><code>type</code></a> set.</dd>
 </dl>
 </section>
 </li>
