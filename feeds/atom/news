@@ -1,0 +1,1358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Glowstone</title><link href="https://glowstone.net/" rel="alternate"></link><link href="https://glowstone.net/feeds/atom/news" rel="self"></link><id>https://glowstone.net/</id><updated>2021-09-01T12:00:00+00:00</updated><subtitle>Minecraft's future is bright</subtitle><entry><title>Glowstone 2021.8.0</title><link href="https://glowstone.net/news/glowstone-202180/" rel="alternate"></link><published>2021-09-01T12:00:00+00:00</published><updated>2021-09-01T12:00:00+00:00</updated><author><name>mastercoms</name></author><id>tag:glowstone.net,2021-09-01:/news/glowstone-202180/</id><summary type="html">&lt;p&gt;Hello everyone! We delayed this update by a month so we could resync to publishing new releases at the end of each month, rather than the start of them.
+Hopefully it was worth the wait! We've got a lot to go through, so let's get to it.&lt;/p&gt;
+&lt;h2&gt;Glowstone&lt;/h2&gt;
+&lt;p&gt;For this …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hello everyone! We delayed this update by a month so we could resync to publishing new releases at the end of each month, rather than the start of them.
+Hopefully it was worth the wait! We've got a lot to go through, so let's get to it.&lt;/p&gt;
+&lt;h2&gt;Glowstone&lt;/h2&gt;
+&lt;p&gt;For this release, we mark new work on 1.13+, performance improvements, a switch to Gradle, and more!&lt;/p&gt;
+&lt;p&gt;And just a note: we're currently doing a forked release strategy, where we release a 1.12 working server along with our progress to 1.13+. This is done through our protocol version, i.e, for this month, we're releasing 2021.8.0 for 1.12 (as we did release 2021.7.0 prior), while 1.13+ was on 2021.7.1 &amp;amp; 2021.8.1. We will be doing this release strategy until our dev branch is working with clients!&lt;/p&gt;
+&lt;h3&gt;Additions&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Added Gradle! (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1117"&gt;#1117&lt;/a&gt;)&lt;ul&gt;
+&lt;li&gt;Add Redstone Transformer to gradle build (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1120"&gt;#1120&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Mark gradlew as executable (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1121"&gt;#1121&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Use Gradle for GitHub PR checks (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1123"&gt;#1123&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Replaced Glowstone CraftingManager and WIP tags system with Redstone Transformer's RecipeManager and TagManager (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1116"&gt;#1116&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Added missing tags to ArrowStore and ProjectileStore (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1115"&gt;#1115&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Added support for new 1.13 air types (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1114"&gt;#1114&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Changes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Rebased checkstyle config onto latest Google Checkstyle&lt;ul&gt;
+&lt;li&gt;Fixes import order issues&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Restored support for BungeeCord connections&lt;/li&gt;
+&lt;li&gt;Removed support for LilyPad proxy&lt;/li&gt;
+&lt;li&gt;Optimized protocol memory usage by adding support for different codec allocation sizes for inbound and outband&lt;/li&gt;
+&lt;li&gt;Optimized ChunkDataMessage data allocation to pool and deallocate within the session&lt;/li&gt;
+&lt;li&gt;Optimized chunk query in entity pulse&lt;/li&gt;
+&lt;li&gt;Optimized bitfields in metadata map&lt;/li&gt;
+&lt;li&gt;Optimized player and entity pulse loops&lt;/li&gt;
+&lt;li&gt;Optimized per chunk block updates&lt;/li&gt;
+&lt;li&gt;Optimized empty ticks&lt;/li&gt;
+&lt;li&gt;Optimized chunk generation when it is disabled&lt;/li&gt;
+&lt;li&gt;Optimized chunk keying and access&lt;/li&gt;
+&lt;li&gt;Avoided boxing for chunks and block entities&lt;/li&gt;
+&lt;li&gt;Optimized network compression handler&lt;/li&gt;
+&lt;li&gt;State data is no longer recreated when it could be modified instead&lt;/li&gt;
+&lt;li&gt;Prevented allocations in EntityManager when an entity type is queried for which there are no instances of&lt;/li&gt;
+&lt;li&gt;Skipped physics updates in a few world generator objects&lt;/li&gt;
+&lt;li&gt;Removed block state create in world generator where it was not needed&lt;/li&gt;
+&lt;li&gt;Removed unused &lt;code&gt;stateBaseIds.yml&lt;/code&gt; file, which has been superseded by Redstone Transformer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Fixes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Fixed chat message and command coloring&lt;/li&gt;
+&lt;li&gt;Fixed Linkstone plugin not loading&lt;ul&gt;
+&lt;li&gt;Fixed Linkstone plugin errors on later version of Java&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Fixed blocks flickering upon dig&lt;/li&gt;
+&lt;li&gt;Fixed handshake version check&lt;/li&gt;
+&lt;li&gt;Fixed nullability and various other issues (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1118"&gt;#1118&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed NPE in GlowContainer isLocked (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1119"&gt;#1119&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed login username handling&lt;/li&gt;
+&lt;li&gt;Fixed some server panels not detecting Glowstone was started&lt;/li&gt;
+&lt;li&gt;Fixed line ending handling on Windows&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Outside of the repo, we also cleaned up our issues backlog, reducing our open issues (by 10) from 59 to 49, and updating the status of 11 open ones! We also closed out 7 issues on &lt;a href="https://github.com/GlowstoneMC/1.13-board/issues"&gt;our 1.13 board&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Site&lt;/h2&gt;
+&lt;p&gt;Since we launched our new site 2 months ago, it continues to get upgrades! We've now updated to the latest version of Bulma Sass
+and did some minor UI tweaks here and there based on feedback. For developers, we've improved the experience by adding screenshot diffing
+to PRs, improved live reload performance, added Sass live reloading, and changed to use relative links.&lt;/p&gt;
+&lt;h2&gt;Ongoing 1.13+ work&lt;/h2&gt;
+&lt;p&gt;A huge amount of 1.13 work has landed in Glowstone's dev branch, as seen above, adding support for recipes and tags.
+There is still a bit of ongoing work on tags to &lt;a href="https://github.com/smartboyathome/redstone-transformer/tree/replace-material-set-tags"&gt;replace material set tags&lt;/a&gt;, with the last pending work being converting TagManager to a singleton. There's still &lt;a href="https://github.com/GlowstoneMC/1.13-board/issues"&gt;a lot to go&lt;/a&gt;, though, and we'd appreciate your help! Right now, our most pressing needs are chunk and networking updates, so that we can begin testing with the client properly.&lt;/p&gt;</content><category term="news"></category><category term="updates"></category></entry><entry><title>Glowstone 2021.7.0</title><link href="https://glowstone.net/news/glowstone-202170/" rel="alternate"></link><published>2021-07-01T12:00:00+00:00</published><updated>2021-07-01T12:00:00+00:00</updated><author><name>mastercoms</name></author><id>tag:glowstone.net,2021-07-01:/news/glowstone-202170/</id><summary type="html">&lt;p&gt;Hi y'all! Long time no see! This is the first Glowstone release in almost 3 years!&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Glowstone Test Server" src="/images/test-server.png"&gt;&lt;/p&gt;
+&lt;p&gt;First of all, welcome to our new site! Despite the near identical look, we have switched over
+to a static site generator, &lt;a href="https://docs.getpelican.com/en/latest/"&gt;Pelican&lt;/a&gt;, served by GitHub Pages.
+We used the opportunity to fix and …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hi y'all! Long time no see! This is the first Glowstone release in almost 3 years!&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Glowstone Test Server" src="/images/test-server.png"&gt;&lt;/p&gt;
+&lt;p&gt;First of all, welcome to our new site! Despite the near identical look, we have switched over
+to a static site generator, &lt;a href="https://docs.getpelican.com/en/latest/"&gt;Pelican&lt;/a&gt;, served by GitHub Pages.
+We used the opportunity to fix and improve some things, but took care to preserve functionality and form.
+As a static site, one of the more notable improvements you will see is faster load times, but there's also been some
+touch ups to the layout, styling and perhaps most importantly, we finally have &lt;a href="https://glowstone.net/docs/#developers"&gt;our Javadocs&lt;/a&gt; back online!&lt;/p&gt;
+&lt;p&gt;As part of this infrastructure update, we have also taken the forums offline, due to low use, and possible security and maintenance issues.
+Worry not though! All our announcements from both the old site, and ones still stuck on the forums have been migrated to this one, and all content has been backed up in case anyone needs it.&lt;/p&gt;
+&lt;p&gt;We also have regenerated our test server's world (connect with 1.12.2 to &lt;code&gt;mc.glowstone.net&lt;/code&gt;), and decorated it with a new spawn, which you can see here.&lt;/p&gt;
+&lt;p&gt;Now let's get on to the release notes, and then we'll close off with some project news and updates. Since we did not have a changelog for our prior release, 2018.9.0, we will be including its changes in here.&lt;/p&gt;
+&lt;h3&gt;Additions&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Added A* pathfinding utils (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/924"&gt;#924&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Added &lt;a href="https://github.com/GlowstoneMC/Linkstone"&gt;Linkstone&lt;/a&gt;, a compatibility layer for NMS and CraftBukkit (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/952"&gt;#952&lt;/a&gt;)&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/GlowstoneMC/Linkstone/wiki/The-Magic-Behind"&gt;Learn more&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Added more i18n (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/964"&gt;#964&lt;/a&gt;, &lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/966"&gt;#966&lt;/a&gt;, &lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/967"&gt;#967&lt;/a&gt;, &lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/981"&gt;#981&lt;/a&gt;, &lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/987"&gt;#987&lt;/a&gt;, &lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/988"&gt;#988&lt;/a&gt;, &lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/989"&gt;#989&lt;/a&gt;, &lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/999"&gt;#999&lt;/a&gt;, &lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1000"&gt;#1000&lt;/a&gt;, &lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1001"&gt;#1001&lt;/a&gt;, &lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1003"&gt;#1003&lt;/a&gt;, &lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1004"&gt;#1004&lt;/a&gt;, &lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1005"&gt;#1005&lt;/a&gt;, &lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1026"&gt;#1026&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Implemented the substatistics system (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/985"&gt;#985&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Implemented statistics tracking for animal bred, jumps, fall distance, time since death, minecart distance, boat distance (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1021"&gt;#1021&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Added GitHub Actions CI&lt;/li&gt;
+&lt;li&gt;Added regional difficulty (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1019"&gt;#1019&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Improved animal feeding implementation (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1025"&gt;#1025&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Added Guardian/ElderGuardian API (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/970"&gt;#970&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Added block specific piston behavior (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1017"&gt;#1017&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Implemented getter and setters APIs for &lt;code&gt;PlayerProfile&lt;/code&gt; (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/980"&gt;#980&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Implemented PlayerLevelChangeEvent (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/983"&gt;#983&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Implemented PlayerStatisticIncrementEvent (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/984"&gt;#984&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Implemented BroadcastMessageEvent, BlockPhysicsEvent, ProjectileHitEvent, PlayerExpChangeEvent (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/986"&gt;#986&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Implemented BlockPistonExtendEvent (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1013"&gt;#1013&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Implemented BlockRedstoneEvent, PlayerItemDamageEvent, VehicleExitEvent (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1018"&gt;#1018&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Implemented PlayerChangedMainHandEvent (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1088"&gt;#1088&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Implemented PlayerInitialSpawnEvent (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1051"&gt;#1051&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Implemented EntityRessurrectEvent (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1050"&gt;#1050&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Implemented EntityAddToWorldEvent (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1063"&gt;#1063&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Added GlowAdvancementDisplay flags (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1105"&gt;#1105&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Added GlowAdvancementDisplay background (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1093"&gt;#1093&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Added vine physics (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1107"&gt;#1107&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Written books (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1099"&gt;#1099&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Cauldron interactions (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1097"&gt;#1097&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Potion effects (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1098"&gt;#1098&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Beacons (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1092"&gt;#1092&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Added gravity to animals (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1084"&gt;#1084&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Added a common messages cache for localization (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1043"&gt;#1043&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Added &lt;code&gt;getMetadata()&lt;/code&gt; to GlowHumanEntity&lt;/li&gt;
+&lt;li&gt;Implemented locale client setting (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1011"&gt;#1011&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Added support for building and running on Java 11&lt;/li&gt;
+&lt;li&gt;Implemented some broadcast server APIs (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1021"&gt;#1021&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Changes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Simplified &lt;code&gt;prettyPrint(Entity[])&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Improved UuidUtils usage (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/961"&gt;#961&lt;/a&gt;)&lt;ul&gt;
+&lt;li&gt;Fixed anti-virus false positive with UuidUtils by switching to FastUUID&lt;/li&gt;
+&lt;li&gt;Fixed a few missing uses of UuidUtils, improving performance&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Made checkstyle less strict, to reduce contribution friction&lt;/li&gt;
+&lt;li&gt;Changed &lt;code&gt;/banlist&lt;/code&gt; to use 1.13 i18n formatting (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/991"&gt;#991&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed some Javadoc warnings and errors&lt;/li&gt;
+&lt;li&gt;Optimized liquid strength comparisons&lt;/li&gt;
+&lt;li&gt;Event calls are now skipped if there are no handlers&lt;/li&gt;
+&lt;li&gt;Async task executor now uses a backing &lt;code&gt;LinkedBlockingDeque&lt;/code&gt;, so that tasks are not rejected when there are more tasks than threads&lt;/li&gt;
+&lt;li&gt;Physics updates are skipped while world is generated/initialized&lt;/li&gt;
+&lt;li&gt;Simplified horse growth amount computation&lt;/li&gt;
+&lt;li&gt;Refactored EnchantCommand&lt;/li&gt;
+&lt;li&gt;Some improvements to &lt;code&gt;/glowstone&lt;/code&gt; (&lt;a href="https://github.com/GlowstoneMC/Glowstone/commit/2fee1587de0979fea84fc2d67eaf78dd6d504142"&gt;commit&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Optimized output streams by flushing them each tick rather than automatically&lt;/li&gt;
+&lt;li&gt;Fixed items not consuming on block place&lt;/li&gt;
+&lt;li&gt;Use constants for gamerule names (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1029"&gt;#1029&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Refactored experience splitting logic with a consumer (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1027"&gt;#1027&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Refactored epoll and kqueue transport initialization (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1028"&gt;#1028&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Refactored Validator to use Java Predicate (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1034"&gt;#1034&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Clean up to avoid unnecessary boxing (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1102"&gt;#1102&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Added support to specify an equipment slot for an inventory slot&lt;/li&gt;
+&lt;li&gt;Only run delombok in CI builds (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1068"&gt;#1068&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Use enum collections where appropriate (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1066"&gt;#1066&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Removed raw generic types (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1057"&gt;#1057&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Renamed Glowstone organization projects to use main instead of master&lt;/li&gt;
+&lt;li&gt;Updated dependencies&lt;/li&gt;
+&lt;li&gt;Updated Netty to 4.1.65.Final&lt;/li&gt;
+&lt;li&gt;Updated Glowkit to 1.12.2-R6.0&lt;/li&gt;
+&lt;li&gt;Updated Kotlin to 1.5.20&lt;ul&gt;
+&lt;li&gt;Previously updated to 1.3.50 in #1061&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Updated checkstyle to 8.29&lt;ul&gt;
+&lt;li&gt;Fallout from this change is still being handled. We are open to help for getting parity to our prior 8.18 version.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Fixes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Bed fixes (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/963"&gt;#963&lt;/a&gt;)&lt;ul&gt;
+&lt;li&gt;Fixed not being able to sleep during a thunderstorm&lt;/li&gt;
+&lt;li&gt;Added i18n to bed messages&lt;/li&gt;
+&lt;li&gt;Optimized monster check by using EntityManager iterator&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Fixed invalid bed placement (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/973"&gt;#973&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed block and boat placement duping in some cases (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/976"&gt;#976&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed player profile not resolving UUID data (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/978"&gt;#978&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed player profile not using resolved UUID data (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/979"&gt;#979&lt;/a&gt;)&lt;ul&gt;
+&lt;li&gt;This fixes skull data being invalid&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Added configurable DNS servers, to avoid DNS resolution errors on some systems (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1044"&gt;#1044&lt;/a&gt;)&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/GlowstoneMC/Glowstone/pull/1010"&gt;More context&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Fixed potion effects displaying to self (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1090"&gt;#1090&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed source block creation running for lava&lt;/li&gt;
+&lt;li&gt;Fixed sugar cane decorator failing in cases where the target block&lt;/li&gt;
+&lt;li&gt;Default to server locale when player locale is null&lt;/li&gt;
+&lt;li&gt;Fixed empty drop related item lists using a redundant &lt;code&gt;ItemStack&lt;/code&gt; list&lt;/li&gt;
+&lt;li&gt;Fixed some links not using HTTPS (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1039"&gt;#1039&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed server port print using comma separation (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1043"&gt;#1043&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed non-solid blocks supporting falling blocks (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1106"&gt;#1106&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed wrong coordinates passed to isSnowy (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1075"&gt;#1075&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed import spacing violations (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1086"&gt;#1086&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed double chest erroring on open (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1072"&gt;#1072&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed entity IDs (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1050"&gt;#1050&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed error when removing more than 1 potion effect (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1050"&gt;#1050&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Cleaned up IO i18n (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/962"&gt;#962&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed multi-sector region file writing (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/965"&gt;#965&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Implemented added fallbacks for &lt;code&gt;getStorageContents()&lt;/code&gt; and &lt;code&gt;setStorageContents()&lt;/code&gt; for generic inventories&lt;/li&gt;
+&lt;li&gt;Fixed possible &lt;code&gt;NullPointerException&lt;/code&gt; for &lt;code&gt;Inventory#setContents()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Updated compatibility libraries&lt;/li&gt;
+&lt;li&gt;Removed redundant &lt;code&gt;CommandUtils#isNumeric&lt;/code&gt;, which used &lt;code&gt;NumberUtils#isNumber&lt;/code&gt; directly&lt;/li&gt;
+&lt;li&gt;Fixed links to wiki instead of docs (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/1083"&gt;#1083&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Sorry for the long wait for a new release! We've certainly had enough changes -- thanks to many contributors, including some &lt;strong&gt;first-timers&lt;/strong&gt;:
+SHADOWDANCH, Kyureki (who has joined the admin team), tsao-chi, PayDevD, Arthasasyan, hazae41, clabe45, kashike (from Paper!), heisluft,
+creatorfromhell, cedwe, j1o1h1n, crashdemons, x4e, KisaragiEffective, Muqsit and emreozcan!
+We also saw a few &lt;strong&gt;familiar faces return&lt;/strong&gt;: VaiTon, aki-ks, socram8888, Postremus, FlorentClarret, plexus and astei!
+We even saw deathcap, founder of Glowstone++, poke in with &lt;a href="https://medium.com/@deathcap1/6-years-after-6-months-of-voxel-js-a-retrospective-1e8a2eadeb0"&gt;a retrospective&lt;/a&gt; of their work. plexus also &lt;a href="https://twitter.com/plexus/status/1224064779083448326"&gt;created&lt;/a&gt; &lt;a href="https://github.com/plexus/witchcraft"&gt;witchcraft&lt;/a&gt;, which is a Clojure repl that can be used for &lt;a href="https://twitter.com/plexus/status/1320324586815311872"&gt;some programmatic fun&lt;/a&gt;. PRs are &lt;a href="https://twitter.com/plexus/status/1320778992232943617"&gt;welcome&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Despite the steady progress, a combination of 1.13 work, and lack of availability prevented us from making a new release for a while.
+Things are definitely looking up for Glowstone project maintenance now, though, and modern Minecraft support is closer than ever.
+Since we began our 1.13+ efforts 3 years ago, a lot has happened. To focus our efforts and improve organization,
+a &lt;a href="https://github.com/GlowstoneMC/1.13-board"&gt;separate 1.13 board&lt;/a&gt; was created and &lt;a href="https://aternos.org/"&gt;Aternos&lt;/a&gt; has graciously
+provided a total of $1000 in bounties for these tasks.&lt;/p&gt;
+&lt;p&gt;To resolve the new block data tasks, we have created
+&lt;a href="https://github.com/GlowstoneMC/redstone-transformer"&gt;Redstone Transformer&lt;/a&gt;, led by Kyureki. This is a library which reads
+in generated data (like block data, recipes, tags and more!) from Minecraft server reports, and provides dependencies we can use in Glowstone.
+With this valuable work from Kyureki, we can start to provide implementations for Bukkit's new data interfaces, handle flattened materials,
+and get rid of a lot of hand-made data resources.&lt;/p&gt;
+&lt;p&gt;Thanks to changes based on &lt;a href="https://github.com/GlowstoneMC/Glowstone/pull/1073"&gt;Birbe's work&lt;/a&gt;, we have recently also gotten the server starting by updating material references and versions.
+Getting to this point means that we can finally debug IO and networking integration issues properly, and make a lot faster progress on protocol and
+chunk format.&lt;/p&gt;
+&lt;p&gt;With all of this progress, we have finally merged back into the main &lt;code&gt;dev&lt;/code&gt; branch, so we can do more active work and handle contributions better.
+The 1.12 server continues to live on the &lt;code&gt;1.12&lt;/code&gt; branch.&lt;/p&gt;
+&lt;p&gt;Our path is clear, and we are starting to get velocity again on our work. We are currently targeting 1.16.5 and would love &lt;a href="https://github.com/GlowstoneMC/Glowstone/wiki/How-to-Help"&gt;your contributions&lt;/a&gt; in this area,
+in any way you can help! Join &lt;a href="https://discord.gg/TFJqhsC"&gt;our Discord&lt;/a&gt; to chat with the team for more info.&lt;/p&gt;
+&lt;p&gt;And finally, we'd like to announce that we are investigating ways to service lobby users better with a more minimal, low overhead version of Glowstone specifically designed for this purpose.
+We will have more updates in the future, but we are excited about this new opportunity to deliver Glowstone as a usable and valuable product to many users. Our hope is that it will spark further activity
+and interest in the whole Glowstone project, and accelerate our efforts to provide a complete reimplementation of the vanilla Minecraft server.&lt;/p&gt;</content><category term="news"></category><category term="updates"></category></entry><entry><title>Glowstone 2018.7.0</title><link href="https://glowstone.net/news/glowstone-201870/" rel="alternate"></link><published>2018-08-05T12:00:00+00:00</published><updated>2018-08-05T12:00:00+00:00</updated><author><name>aramperes</name></author><id>tag:glowstone.net,2018-08-05:/news/glowstone-201870/</id><summary type="html">&lt;p&gt;Hello everyone, today we are releasing Glowstone's July release, &lt;a href="https://github.com/GlowstoneMC/Glowstone/releases/tag/2018.7.0"&gt;2018.7.0&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This update is very small, as updating to 1.13 is our priority. You can follow 1.13 development on Pull Requests &lt;a href="https://github.com/GlowstoneMC/Glowstone/pull/957"&gt;#957&lt;/a&gt; and &lt;a href="https://github.com/GlowstoneMC/Glowstone/pull/958"&gt;#958&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We recently moved our Maven repository to Sonatype Nexus. Old artifact versions are …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hello everyone, today we are releasing Glowstone's July release, &lt;a href="https://github.com/GlowstoneMC/Glowstone/releases/tag/2018.7.0"&gt;2018.7.0&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This update is very small, as updating to 1.13 is our priority. You can follow 1.13 development on Pull Requests &lt;a href="https://github.com/GlowstoneMC/Glowstone/pull/957"&gt;#957&lt;/a&gt; and &lt;a href="https://github.com/GlowstoneMC/Glowstone/pull/958"&gt;#958&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We recently moved our Maven repository to Sonatype Nexus. Old artifact versions are currently unavailable, but we are working on re-deploying them to the new repository.&lt;/p&gt;
+&lt;h2&gt;Additions and Changes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Attribute management overhaul (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/955"&gt;#955&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Migrated to Bukkit's Attribute API&lt;/li&gt;
+&lt;li&gt;Implemented modifiers&lt;/li&gt;
+&lt;li&gt;Improvements to Mojangson boolean parsing&lt;/li&gt;
+&lt;li&gt;Updated dependencies&lt;/li&gt;
+&lt;li&gt;Updated Glowkit to &lt;code&gt;1.12.2-R5.0-SNAPSHOT&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Updated kotlin to &lt;code&gt;1.12.51&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Updated JUnit and surefire plugins&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Fixes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Fixed inconsistency with bow charging animation&lt;/li&gt;
+&lt;li&gt;Fixed some i18n formatting errors&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;That's all for now! You can download the update from the &lt;a href="https://github.com/GlowstoneMC/Glowstone/releases/tag/2018.7.0"&gt;GitHub release&lt;/a&gt;.&lt;/p&gt;</content><category term="news"></category><category term="updates"></category></entry><entry><title>Glowstone 2018.6.0</title><link href="https://glowstone.net/news/glowstone-201860/" rel="alternate"></link><published>2018-07-03T12:00:00+00:00</published><updated>2018-07-03T12:00:00+00:00</updated><author><name>mastercoms</name></author><id>tag:glowstone.net,2018-07-03:/news/glowstone-201860/</id><summary type="html">&lt;p&gt;Hello everyone! Today we're releasing Glowstone's June release, &lt;a href="https://github.com/GlowstoneMC/Glowstone/releases/tag/2018.6.0"&gt;Glowstone 2018.6.0&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It's one of our smaller releases, but there are some good fixes in here, along with support for more Bukkit events.&lt;/p&gt;
+&lt;h2&gt;Additions and Changes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Slime splitting on death (with the SlimeSplitEvent)&lt;/li&gt;
+&lt;li&gt;Implemented some API events (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/922"&gt;#922&lt;/a&gt;)&lt;ul&gt;
+&lt;li&gt;EntityRemoveFromWorldEvent (Jacob …&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;Hello everyone! Today we're releasing Glowstone's June release, &lt;a href="https://github.com/GlowstoneMC/Glowstone/releases/tag/2018.6.0"&gt;Glowstone 2018.6.0&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It's one of our smaller releases, but there are some good fixes in here, along with support for more Bukkit events.&lt;/p&gt;
+&lt;h2&gt;Additions and Changes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Slime splitting on death (with the SlimeSplitEvent)&lt;/li&gt;
+&lt;li&gt;Implemented some API events (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/922"&gt;#922&lt;/a&gt;)&lt;ul&gt;
+&lt;li&gt;EntityRemoveFromWorldEvent (Jacob)&lt;/li&gt;
+&lt;li&gt;PotionSplashEvent&lt;/li&gt;
+&lt;li&gt;EntityShootBowEvent (Mystiflow)&lt;/li&gt;
+&lt;li&gt;EntityTeleportEvent (Jacob)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Fixes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Fixed a possible case of entities remaining in vehicles after world removal (Jacob)&lt;/li&gt;
+&lt;li&gt;Fixed some commands reporting a failure on permission denial when the Bukkit convention is to report a success&lt;/li&gt;
+&lt;li&gt;Fixed block breaking and mining speed inconsistencies&lt;/li&gt;
+&lt;li&gt;Fixed beds not breaking completely (VaiTon)&lt;/li&gt;
+&lt;li&gt;Fixed beds not having the correct color when dropped (aki-ks)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Upcoming&lt;/h2&gt;
+&lt;p&gt;Work has been continuing on our new console system powered by jline 3. We've ported some console only commands to use Bukkit's command system, and removed the Java source code evaluation for now until we address some security concerns. The current blocker is an issue with the console prompt not appearing all, which seems to be a bug in jline 3.&lt;/p&gt;
+&lt;p&gt;We are also anticipating Minecraft 1.13 to be released in July, along with Bukkit/Spigot/PaperSpigot updates for it. Once those are available, we'll begin work on supporting 1.13.&lt;/p&gt;
+&lt;p&gt;That's it for this month! You can &lt;a href="https://github.com/GlowstoneMC/Glowstone/releases/tag/2018.6.0"&gt;download 2018.6.0&lt;/a&gt; on GitHub and hopefully we'll have a larger 1.13 update for July's release.&lt;/p&gt;</content><category term="news"></category><category term="updates"></category></entry><entry><title>Glowstone 2018.5.0</title><link href="https://glowstone.net/news/glowstone-201850/" rel="alternate"></link><published>2018-06-03T12:00:00+00:00</published><updated>2018-06-03T12:00:00+00:00</updated><author><name>aramperes</name></author><id>tag:glowstone.net,2018-06-03:/news/glowstone-201850/</id><summary type="html">&lt;p&gt;Hi all,&lt;/p&gt;
+&lt;p&gt;We are releasing Glowstone &lt;a href="https://github.com/GlowstoneMC/Glowstone/releases/tag/2018.5.0"&gt;2018.5.0&lt;/a&gt; today,
+which is the monthly release for May 2018.&lt;/p&gt;
+&lt;p&gt;Since the previous release, we have received contributions from 9 contributors,
+including 3 first-time contributors: Mystiflow, Jacob (jhg023), and aki-ks.&lt;/p&gt;
+&lt;p&gt;This brings the total of GitHub contributors to a whopping &lt;a href="https://github.com/GlowstoneMC/Glowstone/graphs/contributors"&gt;100&lt;/a&gt;! We'd …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hi all,&lt;/p&gt;
+&lt;p&gt;We are releasing Glowstone &lt;a href="https://github.com/GlowstoneMC/Glowstone/releases/tag/2018.5.0"&gt;2018.5.0&lt;/a&gt; today,
+which is the monthly release for May 2018.&lt;/p&gt;
+&lt;p&gt;Since the previous release, we have received contributions from 9 contributors,
+including 3 first-time contributors: Mystiflow, Jacob (jhg023), and aki-ks.&lt;/p&gt;
+&lt;p&gt;This brings the total of GitHub contributors to a whopping &lt;a href="https://github.com/GlowstoneMC/Glowstone/graphs/contributors"&gt;100&lt;/a&gt;! We'd like to thank every person who has taken time to
+help this project throughout the years, and we're looking forward to a hundred more!&lt;/p&gt;
+&lt;h2&gt;Additions and Changes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Implemented mining speed depending on tools, based on work by satoshinm (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/506"&gt;#506&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Implemented a few API events (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/922"&gt;#922&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;CauldronLevelChangeEvent&lt;/li&gt;
+&lt;li&gt;EntityAirChangeEvent&lt;/li&gt;
+&lt;li&gt;PlayerShearEntityEvent&lt;/li&gt;
+&lt;li&gt;EntityTameEvent&lt;/li&gt;
+&lt;li&gt;ItemMergeEvent (VaiTon)&lt;/li&gt;
+&lt;li&gt;ExpBottleEvent (VaiTon)&lt;/li&gt;
+&lt;li&gt;CreeperPowerEvent (VaiTon)&lt;/li&gt;
+&lt;li&gt;PlayerToggleFlightEvent (Jacob)&lt;/li&gt;
+&lt;li&gt;PlayerEggThrowEvent (Mystiflow)&lt;/li&gt;
+&lt;li&gt;ProjectileLaunchEvent (Mystiflow)&lt;/li&gt;
+&lt;li&gt;BlockExplodeEvent (Mystiflow)&lt;/li&gt;
+&lt;li&gt;PlayerSwapHandItemsEvent (Jacob)&lt;/li&gt;
+&lt;li&gt;InventoryOpenEvent (Jacob)&lt;/li&gt;
+&lt;li&gt;VehicleEnterEvent (Jacob)&lt;/li&gt;
+&lt;li&gt;ProfileWhitelistVerifyEvent&lt;/li&gt;
+&lt;li&gt;More internationalization&lt;/li&gt;
+&lt;li&gt;Added utility to clean up game tick conversion (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/917"&gt;#917&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Refactored NBT deserializaton using a functional syntax (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/905"&gt;#905&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Updated lombok to support Java 10&lt;/li&gt;
+&lt;li&gt;Updated Glowkit&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Fixes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Fixed shooting bow with off-hand damaging the player's main hand (fionera)&lt;/li&gt;
+&lt;li&gt;Fixed breaking blocks instantly not registering (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/852"&gt;#852&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed a client-side desync when canceling SheepDyeWoolEvent (Mystiflow)&lt;/li&gt;
+&lt;li&gt;Fixed the inlining of certain constants when compiling (aki-ks)&lt;/li&gt;
+&lt;li&gt;Fixed some issues with unit tests&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Upcoming&lt;/h2&gt;
+&lt;p&gt;mastercoms has been working on updating JLine to version 3, revamping our console system, and bringing new exciting features such as interactive tab-completion, customization, and Java source code evaluation. The &lt;a href="https://github.com/GlowstoneMC/Glowstone/pull/935"&gt;JLine3 PR&lt;/a&gt; is currently in review/bug fix state and should be ready for the next release.&lt;/p&gt;
+&lt;p&gt;creatorfromhell has also been working on an A* pathfinding implementation, and we are looking forward to merging it for the next release as well.&lt;/p&gt;
+&lt;p&gt;That's all for now, you can &lt;a href="https://github.com/GlowstoneMC/Glowstone/releases/tag/2018.5.0"&gt;download this release on GitHub&lt;/a&gt;. Thanks!&lt;/p&gt;</content><category term="news"></category><category term="updates"></category></entry><entry><title>Glowstone 2018.4.0</title><link href="https://glowstone.net/news/glowstone-201840/" rel="alternate"></link><published>2018-05-03T12:00:00+00:00</published><updated>2018-05-03T12:00:00+00:00</updated><author><name>aramperes</name></author><id>tag:glowstone.net,2018-05-03:/news/glowstone-201840/</id><summary type="html">&lt;p&gt;Hi all,&lt;/p&gt;
+&lt;p&gt;Today we're releasing Glowstone version &lt;a href="https://github.com/GlowstoneMC/Glowstone/releases/tag/2018.4.0"&gt;2018.4.0&lt;/a&gt;. The previous release, 2018.3.0, was a bit late into April, so this one
+is a little shorter than usual. Nevertheless, here is the changelog.&lt;/p&gt;
+&lt;p&gt;We received contributions from 6 community members, including 2 first-time contributors (jordanmurray and Muqsit …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hi all,&lt;/p&gt;
+&lt;p&gt;Today we're releasing Glowstone version &lt;a href="https://github.com/GlowstoneMC/Glowstone/releases/tag/2018.4.0"&gt;2018.4.0&lt;/a&gt;. The previous release, 2018.3.0, was a bit late into April, so this one
+is a little shorter than usual. Nevertheless, here is the changelog.&lt;/p&gt;
+&lt;p&gt;We received contributions from 6 community members, including 2 first-time contributors (jordanmurray and Muqsit).
+As usual, we thank you for your effort!&lt;/p&gt;
+&lt;h2&gt;Additions and Changes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Enhanced entity physics calculations, fixing some inconsitencies (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/897"&gt;#897&lt;/a&gt;) (XuZhen86)&lt;/li&gt;
+&lt;li&gt;Enhanced player throw physics (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/901"&gt;#901&lt;/a&gt;) (jordanmurray)&lt;/li&gt;
+&lt;li&gt;Implemented animal feeding and baby growth acceleration (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/900"&gt;#900&lt;/a&gt;) (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/907"&gt;#907&lt;/a&gt;) (FlorentClarret)&lt;/li&gt;
+&lt;li&gt;Configuration file changes (&lt;code&gt;glowstone.yml&lt;/code&gt;)&lt;ul&gt;
+&lt;li&gt;Reorganized library configuration options&lt;/li&gt;
+&lt;li&gt;Removed unused database configuration&lt;/li&gt;
+&lt;li&gt;Implemented &lt;code&gt;creatures.enable.monsters&lt;/code&gt; and &lt;code&gt;creatures.enable.animals&lt;/code&gt; settings&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Added ability to download dependencies for libraries defined in the config (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/889"&gt;#889&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Added support for Paper's new &lt;code&gt;PaperServerListPingEvent&lt;/code&gt; (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/880"&gt;#880&lt;/a&gt;) (Minecrell)&lt;/li&gt;
+&lt;li&gt;Tweaked and refactored internal i18n usage (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/895"&gt;#895&lt;/a&gt;) (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/908"&gt;#908&lt;/a&gt;) (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/909"&gt;#909&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Converted more strings to i18n (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/904"&gt;#904&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Various code cleanup and enhanced Javadocs&lt;ul&gt;
+&lt;li&gt;Added an internal utility for tick conversion (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/911"&gt;#911&lt;/a&gt;) (FlorentClarret)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Updated netty to &lt;code&gt;4.1.24&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Moved trove4j from Glowstone to Glowkit&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Fixes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Players can now place blocks when clicking on signs (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/902"&gt;#902&lt;/a&gt;) (smcconke)&lt;/li&gt;
+&lt;li&gt;Fixed bug in ore vein generation (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/912"&gt;#912&lt;/a&gt;) (Muqsit)&lt;/li&gt;
+&lt;li&gt;Removed duplicate slf4j binding&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;New Project Members&lt;/h2&gt;
+&lt;p&gt;We have 2 new developers / project members in the team: &lt;strong&gt;FlorentClarret&lt;/strong&gt; and &lt;strong&gt;smcconke&lt;/strong&gt;. Thank you for your valuable contributions!&lt;/p&gt;
+&lt;h2&gt;New Glowstone Documentation&lt;/h2&gt;
+&lt;p&gt;We have begun transferring our Github wiki to a website called ReadTheDocs. It uses a more advanced markup language, RST, and allows for more styling options. It also allows versioning, which will make it possible to separate documentation between Glowstone releases.&lt;/p&gt;
+&lt;p&gt;As we are gradually migrating information to the new website, we are planning to enhance documentation to make it easier for new users to take advantage of Glowstone. It is available at &lt;a href="https://docs.glowstone.net/"&gt;&lt;strong&gt;docs.glowstone.net&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;That is all for now, see you next month!&lt;/p&gt;</content><category term="news"></category><category term="updates"></category></entry><entry><title>Glowstone 2018.3.0</title><link href="https://glowstone.net/news/glowstone-201830/" rel="alternate"></link><published>2018-04-12T12:00:00+00:00</published><updated>2018-04-12T12:00:00+00:00</updated><author><name>aramperes</name></author><id>tag:glowstone.net,2018-04-12:/news/glowstone-201830/</id><summary type="html">&lt;p&gt;Hi all,&lt;/p&gt;
+&lt;p&gt;We are releasing &lt;a href="https://github.com/GlowstoneMC/Glowstone/releases/tag/2018.3.0"&gt;Glowstone 2018.3.0&lt;/a&gt; today, which is about two weeks behind our monthly schedule. Our team has been quite busy with other
+projects and work for most of April. Without further ado, this is the changelog since the beginning of March.&lt;/p&gt;
+&lt;p&gt;We've had contributions from …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hi all,&lt;/p&gt;
+&lt;p&gt;We are releasing &lt;a href="https://github.com/GlowstoneMC/Glowstone/releases/tag/2018.3.0"&gt;Glowstone 2018.3.0&lt;/a&gt; today, which is about two weeks behind our monthly schedule. Our team has been quite busy with other
+projects and work for most of April. Without further ado, this is the changelog since the beginning of March.&lt;/p&gt;
+&lt;p&gt;We've had contributions from two first-time contributors, fionera and smcconke. Thank you for your time and effort!&lt;/p&gt;
+&lt;h2&gt;Additions and Changes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Updated to Glowkit &lt;a href="https://github.com/GlowstoneMC/Glowkit/commit/024fbc21140b9533cb84e323162bff02f0f379fb"&gt;1.12.2-R2.1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Added configuration validation for value types (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/870"&gt;#870&lt;/a&gt;) (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/869"&gt;#869&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Implemented fire-damage for all entities, and proper bounding-box checks (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/888"&gt;#888&lt;/a&gt;) (smcconke)&lt;/li&gt;
+&lt;li&gt;Implemented donkey, mule, and llama inventories (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/872"&gt;#872&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Started work on i18n translations (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/874"&gt;#874&lt;/a&gt;) (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/883"&gt;#883&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Refactored dependency management to use "compatibility bundles" (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/879"&gt;#879&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Added shutdown message to &lt;code&gt;/stop [message...]&lt;/code&gt; command (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/844"&gt;#844&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Implemented slime-chunk formula (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/894"&gt;#894&lt;/a&gt;) (fionera)&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;generic.flyingspeed&lt;/code&gt; attribute (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/878"&gt;#878&lt;/a&gt;) (FlorentCarret)&lt;/li&gt;
+&lt;li&gt;Replaced a lot of reflective calls with Java 8 references, for optimization (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/860"&gt;#860&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Added more unit tests for entities (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/863"&gt;#863&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Added unit tests for boss bars&lt;/li&gt;
+&lt;li&gt;A lot of refactoring to unit tests&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Fixes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Fixed an exception when spawning area-effect-clouds&lt;/li&gt;
+&lt;li&gt;Fixed an exception when spawning an entity using the implementation classes (&lt;code&gt;GlowXYZ&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed inconsistency with UUID lookups in player profiles (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/881"&gt;#881&lt;/a&gt;) (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/882"&gt;#882&lt;/a&gt;) (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/886"&gt;#886&lt;/a&gt;) (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/891"&gt;#891&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Coming Soon&lt;/h2&gt;
+&lt;p&gt;We have a few more pull-requests in queue for review and merge. You may expect these to be ready for the next monthly release.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Support for PaperServerListPingEvent and Glowkit upstream merge (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/880"&gt;#880&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Adapt changes to dependency manager to allow for external libraries and conflict resolving (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/889"&gt;#889&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Support for off-hand bow usage (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/893"&gt;#893&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;More refactoring and implementation for i18n support (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/895"&gt;#895&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Enhanced entity physics (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/897"&gt;#897&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;mastercoms is also currently working on updating Glowstone to jline 3.&lt;/p&gt;
+&lt;h2&gt;Other News&lt;/h2&gt;
+&lt;p&gt;As previously mentioned, we've all been quite busy with other endeavors in the past few weeks. However, we've been looking into a few
+para-development subjects such as registering as a not-for-profit organization (&lt;em&gt;501(c)(3)&lt;/em&gt;) and other licensing issues.&lt;/p&gt;
+&lt;p&gt;I've personally developed &lt;a href="https://github.com/momothereal/gsredis"&gt;a plugin&lt;/a&gt; for Glowstone to replace file-system world storage with a Redis solution, using our recent world-storage API created by Kyureki.&lt;/p&gt;</content><category term="news"></category><category term="updates"></category></entry><entry><title>Glowstone 2018.2.0</title><link href="https://glowstone.net/news/glowstone-201820/" rel="alternate"></link><published>2018-03-06T12:00:00+00:00</published><updated>2018-03-06T12:00:00+00:00</updated><author><name>mastercoms</name></author><id>tag:glowstone.net,2018-03-06:/news/glowstone-201820/</id><summary type="html">&lt;p&gt;Hello everyone, we've released a new monthly update for Glowstone. We are a few days late, but technically if February was just a normal month instead of having 28 days, we wouldn't be &lt;em&gt;that&lt;/em&gt; late.&lt;/p&gt;
+&lt;p&gt;For this release, we had mostly bug fixes with some fine tuning here and there …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hello everyone, we've released a new monthly update for Glowstone. We are a few days late, but technically if February was just a normal month instead of having 28 days, we wouldn't be &lt;em&gt;that&lt;/em&gt; late.&lt;/p&gt;
+&lt;p&gt;For this release, we had mostly bug fixes with some fine tuning here and there, including some by a few new contributors: Kiulras, jtomlin12 and smcconke!&lt;/p&gt;
+&lt;p&gt;You can see all the commits and changes &lt;a href="https://github.com/GlowstoneMC/Glowstone/compare/2018.1.0...2018.2.0"&gt;on GitHub&lt;/a&gt;, but here's a summary:&lt;/p&gt;
+&lt;h1&gt;Additions and changes&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Attributes now support a minimum value (needed for luck)&lt;/li&gt;
+&lt;li&gt;GlowSession is now thread safe&lt;/li&gt;
+&lt;li&gt;Updated to Netty 4.1.21.Final&lt;/li&gt;
+&lt;li&gt;KQueue support added for macOS and BSD native transport&lt;/li&gt;
+&lt;li&gt;Improved network buffer management&lt;/li&gt;
+&lt;li&gt;Fine tuned ender pearl behavior&lt;/li&gt;
+&lt;li&gt;Migrated most unit tests to JUnit Jupiter&lt;/li&gt;
+&lt;li&gt;Started fishing implementation&lt;/li&gt;
+&lt;li&gt;Improved egg and snowball behavior&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Bug fixes&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Client is now properly updated when an InventoryClickEvent is cancelled&lt;/li&gt;
+&lt;li&gt;Fixed a case of jline disabling not working&lt;/li&gt;
+&lt;li&gt;Fixed entities being able to pass through blocks that did not fully block light (by first time contributor Kuilras!)&lt;/li&gt;
+&lt;li&gt;Fixed a memory leak with the chunk deflater stream&lt;/li&gt;
+&lt;li&gt;Fixed some issues with CircleCI builds&lt;/li&gt;
+&lt;li&gt;Fixed snow stacking placement (by first time contributor jtomlin!)&lt;/li&gt;
+&lt;li&gt;Fire ticks are now reset after death (by first time contributor smcconke!)&lt;/li&gt;
+&lt;li&gt;Fixed Glowstone crashing on startup for ARM devices&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A download for this release can be found on &lt;a href="/#downloads"&gt;our website&lt;/a&gt;. For those of you interested, the LTS release will be coming soon.&lt;/p&gt;
+&lt;p&gt;Thanks and we hope you enjoy all the changes that went into this release!&lt;/p&gt;</content><category term="news"></category><category term="updates"></category></entry><entry><title>Glowstone 2018.1.0 and LTS 2018.0.1</title><link href="https://glowstone.net/news/glowstone-201810-and-lts-201801/" rel="alternate"></link><published>2018-02-05T12:00:00+00:00</published><updated>2018-02-05T12:00:00+00:00</updated><author><name>aramperes</name></author><id>tag:glowstone.net,2018-02-05:/news/glowstone-201810-and-lts-201801/</id><summary type="html">&lt;p&gt;Hi everyone. We are a few days behind schedule, but today we are releasing Glowstone 2018.1 and the complementary LTS update, 2018.0.1.&lt;/p&gt;
+&lt;p&gt;This month, we worked on a few major features and fixed a lot of bugs.
+As explained in the &lt;a href="/news/glowstone-201800-year-in-review/"&gt;Year in Review&lt;/a&gt; news post, we …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hi everyone. We are a few days behind schedule, but today we are releasing Glowstone 2018.1 and the complementary LTS update, 2018.0.1.&lt;/p&gt;
+&lt;p&gt;This month, we worked on a few major features and fixed a lot of bugs.
+As explained in the &lt;a href="/news/glowstone-201800-year-in-review/"&gt;Year in Review&lt;/a&gt; news post, we will release two updates every month: an official monthly release containing all of the bleeding-edge features from the last month, and a complementary LTS (long-term-support) release which backports bugfixes to the stable branch.&lt;/p&gt;
+&lt;p&gt;We also want to thank new contributors XuZhen86, Minecrell and HugoDaBoss for their valuable contributions this month!&lt;/p&gt;
+&lt;h2&gt;Changelog&lt;/h2&gt;
+&lt;p&gt;This is the list of changes for &lt;strong&gt;both the release and LTS&lt;/strong&gt; (2018.0.1 and 2018.1.0):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;UUID lookups in commands are now asynchronous (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/111"&gt;#111&lt;/a&gt;) (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/814"&gt;#814&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Implemented &lt;code&gt;advanced.suggest-player-name-when-null-tab-completions&lt;/code&gt; configuration option&lt;/li&gt;
+&lt;li&gt;The server icon file will now be imported automatically from a Vanilla server&lt;/li&gt;
+&lt;li&gt;Implemented correct conditions for mob experience drops (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/823"&gt;#823&lt;/a&gt;) (XuZhen86)&lt;/li&gt;
+&lt;li&gt;Implemented grass path block (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/841"&gt;#841&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Implemented Zombie Villager NBT storage&lt;/li&gt;
+&lt;li&gt;Cleaned-up the &lt;code&gt;ItemType.Context&lt;/code&gt; enum&lt;/li&gt;
+&lt;li&gt;Fixed an error when loading Vanilla worlds containg Minecart-with-Chests&lt;/li&gt;
+&lt;li&gt;Fixed an error when using command selectors with entities&lt;/li&gt;
+&lt;li&gt;Fixed a concurrency error in chunk streaming&lt;/li&gt;
+&lt;li&gt;Fixed incorrect fall damage when switching gamemodes (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/820"&gt;#820&lt;/a&gt;) (XuZhen86)&lt;/li&gt;
+&lt;li&gt;Properly implemented &lt;code&gt;Player#getVirtualHost()&lt;/code&gt; and &lt;code&gt;Player#getProtocolVersion()&lt;/code&gt; APIs (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/824"&gt;#824&lt;/a&gt;) (Minecrell)&lt;/li&gt;
+&lt;li&gt;Fixed SLF4J logging for plugins (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/825"&gt;#825&lt;/a&gt;) (Minecrell)&lt;/li&gt;
+&lt;li&gt;Fixed item drops for cactus and dead bush (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/832"&gt;#832&lt;/a&gt;) (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/833"&gt;#833&lt;/a&gt;) (XuZhen86)&lt;/li&gt;
+&lt;li&gt;Fixed an error when spawning wolves from spawn eggs&lt;/li&gt;
+&lt;li&gt;Fixed NBT storage for Strays, Wither Skeletons and Husks not being bound&lt;/li&gt;
+&lt;li&gt;Fixed incorrect anvil sounds when landing on several blocks (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/827"&gt;#827&lt;/a&gt;) (HugoDaBosss)&lt;/li&gt;
+&lt;li&gt;Code style cleanup and lombokification&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This is the list of changes for &lt;strong&gt;the monthly release only&lt;/strong&gt; (2018.1.0):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Implemented projectiles (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/614"&gt;#614&lt;/a&gt;)&lt;ul&gt;
+&lt;li&gt;Thanks to Pr0methean for his continuous work on this PR for over a month&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Implemented &lt;code&gt;/testforblocks&lt;/code&gt; command&lt;/li&gt;
+&lt;li&gt;Added checksum validation for library manager (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/802"&gt;#802&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Revamped library manager to allow for customization by server owners (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/808"&gt;#808&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Added configuration file validation (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/809"&gt;#809&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Updated API to &lt;code&gt;1.12.2-R1.0&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;Implemented Paper's Profile API&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Implemented droppers (previously behaved like regular dispensers)&lt;/li&gt;
+&lt;li&gt;Initial implementation for villager trading UI&lt;/li&gt;
+&lt;li&gt;Implemented starvation damage modifier for different difficulties (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/835"&gt;#835&lt;/a&gt;) (XuZhen86)&lt;/li&gt;
+&lt;li&gt;Added &lt;code&gt;--generate-config&lt;/code&gt; command-line option to generate config files without starting the server&lt;/li&gt;
+&lt;li&gt;Fixed incorrect ender pearl behaviour (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/822"&gt;#822&lt;/a&gt;) (XuZhen86)&lt;/li&gt;
+&lt;li&gt;Moved building scripts to a separate directory&lt;/li&gt;
+&lt;li&gt;Updated lombok and kotlin dependencies&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Downloads&lt;/h2&gt;
+&lt;p&gt;Download links for both the release and the LTS update can be found on &lt;a href="/#downloads"&gt;our website&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Thanks!&lt;/p&gt;</content><category term="news"></category><category term="updates"></category></entry><entry><title>Glowstone's Cheating and Illegal Behavior Policy</title><link href="https://glowstone.net/news/glowstones-cheating-and-illegal-behavior-policy/" rel="alternate"></link><published>2018-01-09T02:14:00+00:00</published><updated>2018-01-09T02:14:00+00:00</updated><author><name>aramperes</name></author><id>tag:glowstone.net,2018-01-09:/news/glowstones-cheating-and-illegal-behavior-policy/</id><summary type="html">&lt;p&gt;Today, we are putting in place Glowstone's new &lt;a href="https://github.com/GlowstoneMC/Glowstone/blob/dev/docs/CHEATING_AND_ILLEGAL_BEHAVIOR_POLICY.md"&gt;Cheating and Illegal Behavior Policy&lt;/a&gt;. This is an effort to engage ourselves in our position against illegal piracy and behavior in the context of our project.&lt;/p&gt;
+&lt;p&gt;Although Glowstone will always keep the &lt;code&gt;online-mode: false&lt;/code&gt; option functional in the server configuration for testing …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Today, we are putting in place Glowstone's new &lt;a href="https://github.com/GlowstoneMC/Glowstone/blob/dev/docs/CHEATING_AND_ILLEGAL_BEHAVIOR_POLICY.md"&gt;Cheating and Illegal Behavior Policy&lt;/a&gt;. This is an effort to engage ourselves in our position against illegal piracy and behavior in the context of our project.&lt;/p&gt;
+&lt;p&gt;Although Glowstone will always keep the &lt;code&gt;online-mode: false&lt;/code&gt; option functional in the server configuration for testing and development reasons, we will not put extended effort into keeping our software compatible with pirated software (such as &lt;em&gt;cracked clients&lt;/em&gt;). Our mission, on that front, is to stay at the same level of compatibility as Mojang's server software.&lt;/p&gt;
+&lt;p&gt;In addition, this new policy extends to the usage of illegally distributed or obtained products used with Glowstone (including plugins and libraries). In other words, we will not assist users if their support request implies the usage of cracked premium plugins or similar products. This also applies to the usage of cheating/hack clients in the context of a support request.&lt;/p&gt;
+&lt;p&gt;The &lt;a href="https://github.com/GlowstoneMC/Glowstone/blob/dev/docs/CHEATING_AND_ILLEGAL_BEHAVIOR_POLICY.md"&gt;policy document&lt;/a&gt; can be found in our GitHub repository.&lt;/p&gt;
+&lt;p&gt;Thank you for your comprehension. As always, feel free to communicate to us any concerns about this new policy.&lt;/p&gt;
+&lt;p&gt;The Glowstone Project.&lt;/p&gt;</content><category term="news"></category><category term="blog"></category></entry><entry><title>Glowstone 2018.0.0 &amp; Year in Review</title><link href="https://glowstone.net/news/glowstone-201800-year-in-review/" rel="alternate"></link><published>2018-01-01T12:00:00+00:00</published><updated>2018-01-01T12:00:00+00:00</updated><author><name>aramperes</name></author><id>tag:glowstone.net,2018-01-01:/news/glowstone-201800-year-in-review/</id><summary type="html">&lt;p&gt;As fireworks are let off for the end of 2017, we are releasing this year's final version: &lt;a href="https://github.com/GlowstoneMC/Glowstone/releases/tag/2018.0.0"&gt;2018.0.0&lt;/a&gt;. In the last month, we've been working hard on polishing Glowstone as much as we could, and this has resulted in one of our most productive months in terms of …&lt;/p&gt;</summary><content type="html">&lt;p&gt;As fireworks are let off for the end of 2017, we are releasing this year's final version: &lt;a href="https://github.com/GlowstoneMC/Glowstone/releases/tag/2018.0.0"&gt;2018.0.0&lt;/a&gt;. In the last month, we've been working hard on polishing Glowstone as much as we could, and this has resulted in one of our most productive months in terms of commits, merges, bugs resolved and code written.&lt;/p&gt;
+&lt;p&gt;We'll start with a quick changelog of what has been done since the last release, 2017.11, then follow with a recap of the year!&lt;/p&gt;
+&lt;h2&gt;Glowstone 2018.0.0&lt;/h2&gt;
+&lt;p&gt;This month, we've pushed 138 commits consisting of 17,993 additions and 11,491 deletions in 938 files.
+There are a lot more changes than what I can list here, so you check check out the &lt;a href="https://github.com/GlowstoneMC/Glowstone/compare/8c41069fb9098cede2daf7849df61df2d25c6536...2018.0.0"&gt;git diff&lt;/a&gt; if you want more details.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Implemented &lt;code&gt;/clone&lt;/code&gt; command (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/590"&gt;#590&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Implemented Ender Pearls (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/602"&gt;#602&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Added support for Java 9 (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/649"&gt;#649&lt;/a&gt;) (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/652"&gt;#652&lt;/a&gt;)&lt;ul&gt;
+&lt;li&gt;Note that while Glowstone can run on Java 9, it can only be built on Java 8.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Fixed a number of bugs with player interactions (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/644"&gt;#644&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed issues when shift-clicking in the crafting inventory&lt;/li&gt;
+&lt;li&gt;Fixed an exception when joining a Glowstone server run from an IDE&lt;/li&gt;
+&lt;li&gt;Fixed gravity not updating the location of items (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/591"&gt;#591&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed a number of bugs with fall damage&lt;/li&gt;
+&lt;li&gt;Fixed the minimum food level to regenerate health from 19 to 18&lt;/li&gt;
+&lt;li&gt;Fixed, rewrote and optimized chunk indices (Chunk.Key)&lt;/li&gt;
+&lt;li&gt;Improved region file I/O, fixing some issues (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/199"&gt;#199&lt;/a&gt;) (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/510"&gt;#510&lt;/a&gt;)&lt;ul&gt;
+&lt;li&gt;More details can be found in commits &lt;code&gt;98aeb19&lt;/code&gt;, &lt;code&gt;34ce26b&lt;/code&gt;, &lt;code&gt;3179cef&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Optimized chunk streaming to players&lt;/li&gt;
+&lt;li&gt;Improved hanging entities (paintings, item frames) (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/597"&gt;#597&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed a number of bugs with Sign editor (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/596"&gt;#596&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed an exception when pinging the server behind a proxy (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/599"&gt;#599&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Updated Netty from &lt;code&gt;4.1.0.CR7&lt;/code&gt; to &lt;code&gt;4.1.17.Final&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Improvements to network library, updated to Java 8&lt;/li&gt;
+&lt;li&gt;Fixed inventory slots in HumanEntity spawn packet&lt;/li&gt;
+&lt;li&gt;Rewrote ItemTable to use &lt;code&gt;Material&lt;/code&gt; instead of item IDs&lt;/li&gt;
+&lt;li&gt;Fixed inconsistencies with PlayerInteractEvent (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/595"&gt;#595&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed open inventory not being closed when player is teleported (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/594"&gt;#594&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Partially implemented MapView/map rendering API (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/572"&gt;#572&lt;/a&gt;) (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/605"&gt;#605&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Added slf4j back-end dependency (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/612"&gt;#612&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Abstracted WorldStorageProvider to allow plugins to change how world data is saved and loaded&lt;/li&gt;
+&lt;li&gt;Added log4j configuration&lt;/li&gt;
+&lt;li&gt;Cleaned up chunk locks (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/623"&gt;#623&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Implemented Fire Resistance potion&lt;/li&gt;
+&lt;li&gt;Refactored EntityManager and BossBar management (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/636"&gt;#636&lt;/a&gt;) (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/641"&gt;#641&lt;/a&gt;) (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/642"&gt;#642&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed a concurrency exception when players switch worlds (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/628"&gt;#628&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Implemented ItemSpawnEvent and ItemDespawnEvent (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/643"&gt;#643&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Updated checkstyle&lt;/li&gt;
+&lt;li&gt;Removed metrics&lt;/li&gt;
+&lt;li&gt;Removed GlowClient and related dependencies&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A lot&lt;/strong&gt; of code and documentation cleanup&lt;/li&gt;
+&lt;li&gt;Updated Kotlin runtime to 1.2.0&lt;/li&gt;
+&lt;li&gt;Updated CI to use CircleCI 2.0 on all branches, builds are now much faster&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Whew, that was a lot of polishing. In addition of all these changes, we are also pleased to welcome 2 new developers as part of the team: Pr0methean and keanganxt.&lt;/p&gt;
+&lt;p&gt;Note that we now use the &lt;code&gt;dev&lt;/code&gt; branch for ongoing work, while the &lt;code&gt;master&lt;/code&gt; branch will be deleted. We have decided to try a new release format for 2018. We have updated our &lt;a href="/#downloads"&gt;download section&lt;/a&gt; to reflect these changes.&lt;/p&gt;
+&lt;p&gt;We created a long-term support branch (LTS), &lt;code&gt;2018.0.x&lt;/code&gt;. While we will be continuing ongoing development on the dev branch, we will backport fixes into the &lt;code&gt;2018.0.x&lt;/code&gt; branch continuously. At the end of each month, there will be 2 releases, one tagged on each branch. For example, in one month, we will release both &lt;code&gt;2018.1.0&lt;/code&gt; (like before) and &lt;code&gt;2018.0.1&lt;/code&gt;, the latter containing all the bug fixes from January, without the unstable/ongoing features. &lt;/p&gt;
+&lt;p&gt;As for protocol updates (1.13+), we will be backporting them to the long-term support branch one month after they are released on the dev branch.&lt;/p&gt;
+&lt;h2&gt;2017 in Review&lt;/h2&gt;
+&lt;p&gt;Let's take a step back and look at what we have accomplished in 2017.
+&lt;a href="https://github.com/GlowstoneMC/Glowstone/compare/5d4561c0727b3af5f362f187a239930f22292096...2018.0.0"&gt;590 commits&lt;/a&gt; have been pushed to the master/dev branch, consisting of 35,242 additions and 12,287 deletions.
+We have released a total of 13 releases (including today's), which can be summed up to these key points:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;We are sponsored by &lt;a href="https://aternos.org/"&gt;Aternos&lt;/a&gt; &amp;lt;3&lt;/li&gt;
+&lt;li&gt;We have a brand new website, with goodies like news posts and users&lt;/li&gt;
+&lt;li&gt;Our team grew by 5 developers! Welcome, PickNChew, Postremus, Kyureki, Pr0methean, and kaenganxt&lt;ul&gt;
+&lt;li&gt;In total, we received code contributions from 24 users&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/ProtocolSupport/ProtocolSupport"&gt;ProtocolSupport&lt;/a&gt; natively supports Glowstone&lt;/li&gt;
+&lt;li&gt;We now have a CLA and a new Code of Conduct&lt;/li&gt;
+&lt;li&gt;Glowstone is much more stable, polished and optimized&lt;/li&gt;
+&lt;li&gt;A lot more features have been implemented&lt;/li&gt;
+&lt;li&gt;Entities are much, much better and complete&lt;ul&gt;
+&lt;li&gt;Implemented Boats, Ender Crystals, Paintings, Parrots, XP Orbs, Leashes, Ender Pearls, complex entities (Ender Dragon)&lt;/li&gt;
+&lt;li&gt;Entity physics&lt;/li&gt;
+&lt;li&gt;Ambient and hurt sounds&lt;/li&gt;
+&lt;li&gt;Basic entity AI tasking&lt;/li&gt;
+&lt;li&gt;Custom entities for plugins&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Basic piston implementation&lt;/li&gt;
+&lt;li&gt;Rewrote most commands, including multiple tools to parse and implement new commands&lt;/li&gt;
+&lt;li&gt;And a lot, lot more.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So thank you, everyone, for such a wonderful year. Here's to another solid, productive and joyful new year for all of you.&lt;/p&gt;
+&lt;p&gt;See you next time, and thanks for all the (498) stars this year,&lt;/p&gt;
+&lt;p&gt;The Glowstone Project.&lt;/p&gt;</content><category term="news"></category><category term="updates"></category></entry><entry><title>Maven Repository Issues</title><link href="https://glowstone.net/news/maven-repository-issues/" rel="alternate"></link><published>2017-12-05T05:25:00+00:00</published><updated>2017-12-05T05:25:00+00:00</updated><author><name>aramperes</name></author><id>tag:glowstone.net,2017-12-05:/news/maven-repository-issues/</id><summary type="html">&lt;p&gt;On Sunday, we updated Archiva (our Maven repository) to a more recent version. During the upgrade, we unfortunately lost all our artifacts stored on the server. There was a major downtime in which we attempted to fix storage and deployment, but the artifacts could not be recovered.&lt;/p&gt;
+&lt;p&gt;Because we did …&lt;/p&gt;</summary><content type="html">&lt;p&gt;On Sunday, we updated Archiva (our Maven repository) to a more recent version. During the upgrade, we unfortunately lost all our artifacts stored on the server. There was a major downtime in which we attempted to fix storage and deployment, but the artifacts could not be recovered.&lt;/p&gt;
+&lt;p&gt;Because we did not have backups for the Maven repository, (that would take a lot of space, considering each snapshot is ~19MB) we had to re-deploy the latest snapshots manually.
+Deployment now works and further builds will be added to the repository. Note that any artifact older than &lt;code&gt;2018.0.0-SNAPSHOT&lt;/code&gt; (including the latest release, 2017.11) will cause 404 errors in your builds.
+Furthermore, only the latest Glowkit version (&lt;code&gt;1.12.2-R0.1-SNAPSHOT&lt;/code&gt;) is on the repository, and older artifacts will also 404.&lt;/p&gt;
+&lt;p&gt;Due to an issue with how Archiva indexes the Browse tool, you will still see metadata version about all previous artifacts that were on the repository prior to the upgrade. We have contacted Archiva for a fix to reset the search indexing to what we have now.&lt;/p&gt;
+&lt;p&gt;We are very sorry for the inconvenience the downtime and artifact loss may have caused. If there are more issues, please contact us on &lt;a href="https://discord.gg/TFJqhsC"&gt;Discord&lt;/a&gt;.&lt;/p&gt;</content><category term="news"></category><category term="blog"></category></entry><entry><title>Glowstone 2017.11</title><link href="https://glowstone.net/news/glowstone-201711/" rel="alternate"></link><published>2017-11-30T12:00:00+00:00</published><updated>2017-11-30T12:00:00+00:00</updated><author><name>aramperes</name></author><id>tag:glowstone.net,2017-11-30:/news/glowstone-201711/</id><summary type="html">&lt;p&gt;It is the monthly blog post for Glowstone &lt;a href="https://github.com/GlowstoneMC/Glowstone/releases/tag/2017.11.0"&gt;2017.11&lt;/a&gt;, my Glowstoners. For December, we will be working on purging bugs from the server to provide a stable final version for this year. More details will follow soon!&lt;/p&gt;
+&lt;p&gt;Come say hi and ask questions on the &lt;a href="https://discord.gg/TFJqhsC"&gt;Discord server&lt;/a&gt; &amp;lt;3&lt;/p&gt;
+&lt;p&gt;This …&lt;/p&gt;</summary><content type="html">&lt;p&gt;It is the monthly blog post for Glowstone &lt;a href="https://github.com/GlowstoneMC/Glowstone/releases/tag/2017.11.0"&gt;2017.11&lt;/a&gt;, my Glowstoners. For December, we will be working on purging bugs from the server to provide a stable final version for this year. More details will follow soon!&lt;/p&gt;
+&lt;p&gt;Come say hi and ask questions on the &lt;a href="https://discord.gg/TFJqhsC"&gt;Discord server&lt;/a&gt; &amp;lt;3&lt;/p&gt;
+&lt;p&gt;This month, we did things:&lt;/p&gt;
+&lt;h3&gt;Additions&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Added &lt;code&gt;/setblock&lt;/code&gt; command.&lt;/li&gt;
+&lt;li&gt;... yeah so that's it.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;...&lt;/p&gt;
+&lt;p&gt;Just kidding!&lt;/p&gt;
+&lt;h3&gt;Changes and Fixes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Repealed and Replaced chunk key optimization to a system that isn't broken (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/586"&gt;#586&lt;/a&gt;) (Kyureki)&lt;/li&gt;
+&lt;li&gt;Fixed a concurrency crash with the Entity AI task manager (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/584"&gt;#584&lt;/a&gt;) (Microsamp)&lt;/li&gt;
+&lt;li&gt;Fixed fire not being updated on tick (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/435"&gt;#435&lt;/a&gt;) (kumpelblase2)&lt;/li&gt;
+&lt;li&gt;Fixed tools not being damaged when using them&lt;/li&gt;
+&lt;li&gt;Cleaned-up and fixed bugs with world borders&lt;/li&gt;
+&lt;li&gt;Various code cleanup-ing&lt;/li&gt;
+&lt;li&gt;Updated Kotlin to version &lt;code&gt;1.1.51&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Other Updates&lt;/h3&gt;
+&lt;p&gt;mastercoms has been working on a new "block/item functions" for a few weeks. It removes the ItemType/BlockType hierarchy which led to multiple issues, and will be replaced by a new system. It will be extendable by plugins to add their new items/blocks with custom functionality. More info can be found in the &lt;a href="https://github.com/GlowstoneMC/Glowstone/pull/587"&gt;PR&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I was testing &lt;a href="http://protocolsupport.true-games.org/"&gt;ProtocolSupport&lt;/a&gt; with the latest version of Glowstone and it was broken. So I &lt;a href="https://github.com/ProtocolSupport/ProtocolSupport/pull/748"&gt;fixed&lt;/a&gt; things. So now you can seamlessly use 1.4.7-to-1.12 clients on Glowstone using the plugin, with build 182 and above!&lt;/p&gt;
+&lt;p&gt;Also, we are welcoming Kyureki (a.k.a. smartboyathome on GitHub) on our developer team! He recently implemented the &lt;code&gt;/clone&lt;/code&gt; command, which is currently under review.&lt;/p&gt;
+&lt;p&gt;Finally, I just wanted to point out that we had a high increase in &lt;a href="https://i.imgur.com/1Me1dZf.png"&gt;traffic&lt;/a&gt; on the website and GitHub because we got voted up to the top on Hacker News and the front-page of /r/Minecraft. That's very cool! It wasn't us who posted them, I promise. Thanks for all the stars and love &amp;lt;3&lt;/p&gt;
+&lt;p&gt;I think I have used all possible variations of "thanks for reading" in the previous posts, so I'm just going to say:&lt;/p&gt;
+&lt;p&gt;Thanks for reading! :)&lt;/p&gt;</content><category term="news"></category><category term="updates"></category></entry><entry><title>Glowstone 2017.10</title><link href="https://glowstone.net/news/glowstone-201710/" rel="alternate"></link><published>2017-10-31T12:00:00+00:00</published><updated>2017-10-31T12:00:00+00:00</updated><author><name>aramperes</name></author><id>tag:glowstone.net,2017-10-31:/news/glowstone-201710/</id><summary type="html">&lt;p&gt;For this monthly release of the Glowstone server, &lt;a href="https://github.com/GlowstoneMC/Glowstone/releases/tag/2017.10.0"&gt;2017.10&lt;/a&gt;, we now officially support 1.12.2. We also added some new features, optimized magic stuff in the background and worked on some new technical features.&lt;/p&gt;
+&lt;p&gt;As always, we remind you that the easiest way to chat with us to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;For this monthly release of the Glowstone server, &lt;a href="https://github.com/GlowstoneMC/Glowstone/releases/tag/2017.10.0"&gt;2017.10&lt;/a&gt;, we now officially support 1.12.2. We also added some new features, optimized magic stuff in the background and worked on some new technical features.&lt;/p&gt;
+&lt;p&gt;As always, we remind you that the easiest way to chat with us to ask questions or support is on our &lt;a href="https://discord.gg/TFJqhsC"&gt;Discord server&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Additions&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Added support for 1.12.2 (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/566"&gt;#566&lt;/a&gt;)&lt;ul&gt;
+&lt;li&gt;Dropped 1.12.1 support&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Added pistons (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/577"&gt;#577&lt;/a&gt;) (PickNChew)&lt;/li&gt;
+&lt;li&gt;Added &lt;code&gt;/testfor&lt;/code&gt; command (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/573"&gt;#573&lt;/a&gt;) (Kyureki)&lt;/li&gt;
+&lt;li&gt;Added &lt;code&gt;/testforblock&lt;/code&gt; command (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/579"&gt;#579&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Added technical API for block state parsing in commands (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/579"&gt;#579&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Added some missing entity NBT tags&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Tags&lt;/code&gt; and &lt;code&gt;PortalCooldown&lt;/code&gt; for all entities&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Color&lt;/code&gt; for shulkers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Added despawning of out-of-range hostile mobs&lt;/li&gt;
+&lt;li&gt;Added chorus flower, plant and fruit (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/582"&gt;#582&lt;/a&gt;) (kaenganxt)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Changes and Fixes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Ameliorated entity knockback considerably&lt;/li&gt;
+&lt;li&gt;Optimized memory usage of chunk keys (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/569"&gt;#569&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed an exception when running Glowstone in an IDE (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/568"&gt;#568&lt;/a&gt;) (Z750)&lt;/li&gt;
+&lt;li&gt;Fixed &lt;code&gt;@r&lt;/code&gt; random selector (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/575"&gt;#575&lt;/a&gt;) (kaenganxt)&lt;/li&gt;
+&lt;li&gt;Fixed some food features and updated food saturation values (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/578"&gt;#578&lt;/a&gt;) (kaenganxt)&lt;/li&gt;
+&lt;li&gt;Replaced &lt;code&gt;Random&lt;/code&gt; instances by &lt;code&gt;ThreadLocalRandom&lt;/code&gt; (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/581"&gt;#581&lt;/a&gt;) (PickNChew)&lt;/li&gt;
+&lt;li&gt;Changed &lt;code&gt;GlowServer.getVersion()&lt;/code&gt; to match the format in other Vanilla wrappers&lt;/li&gt;
+&lt;li&gt;Replaced duplicates of &lt;code&gt;BlockFace&lt;/code&gt; arrays in block types into one array (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/583"&gt;#583&lt;/a&gt;) (kaenganxt)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Other Updates&lt;/h3&gt;
+&lt;p&gt;We also fixed an &lt;a href="https://github.com/ProtocolSupport/ProtocolSupport/pull/717"&gt;issue&lt;/a&gt; with ProtocolSupport which prevented it from loading on Glowstone 2017.10 snapshots. Make sure you use the latest version of ProtocolSupport with Glowstone!&lt;/p&gt;
+&lt;p&gt;We are also welcoming PickNChew in our developer team. He previously implemented particles, revamped the entity registry system, and implemented rails and pistons.&lt;/p&gt;
+&lt;p&gt;We have also been working on some more technical features this month. mastercoms has been working on a new "&lt;a href="https://github.com/GlowstoneMC/Glowstone/tree/block-functions"&gt;block function&lt;/a&gt;" system for a little while now, and we hope to see this completed and merged for the next release. I have also worked on a little side project with &lt;a href="https://github.com/GlowstoneMC/Glowstone/tree/annotated-nbt"&gt;annotated NBT&lt;/a&gt;, so we will see where that goes as well.&lt;/p&gt;
+&lt;p&gt;That's it for now, we'll see you in the next release.&lt;/p&gt;</content><category term="news"></category><category term="updates"></category></entry><entry><title>Glowstone 2017.9</title><link href="https://glowstone.net/news/glowstone-20179/" rel="alternate"></link><published>2017-10-01T12:00:00+00:00</published><updated>2017-10-01T12:00:00+00:00</updated><author><name>aramperes</name></author><id>tag:glowstone.net,2017-10-01:/news/glowstone-20179/</id><summary type="html">&lt;p&gt;Hello everyone, we are releasing Glowstone &lt;a href="https://github.com/GlowstoneMC/Glowstone/releases/tag/2017.9.0"&gt;2017.9&lt;/a&gt;. This is the last release to support 1.12.1, as 2017.10 will support 1.12.2.&lt;/p&gt;
+&lt;h3&gt;Additions&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Implemented &lt;code&gt;/enchant&lt;/code&gt; command (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/560"&gt;#560&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Implement Enderman carried block (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/561"&gt;#561&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Added a new API for Villager Careers (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/563"&gt;#563&lt;/a&gt; and &lt;a href="https://github.com/GlowstoneMC/Glowkit/pull/13"&gt;Glowkit #13&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Added a new …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;Hello everyone, we are releasing Glowstone &lt;a href="https://github.com/GlowstoneMC/Glowstone/releases/tag/2017.9.0"&gt;2017.9&lt;/a&gt;. This is the last release to support 1.12.1, as 2017.10 will support 1.12.2.&lt;/p&gt;
+&lt;h3&gt;Additions&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Implemented &lt;code&gt;/enchant&lt;/code&gt; command (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/560"&gt;#560&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Implement Enderman carried block (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/561"&gt;#561&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Added a new API for Villager Careers (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/563"&gt;#563&lt;/a&gt; and &lt;a href="https://github.com/GlowstoneMC/Glowkit/pull/13"&gt;Glowkit #13&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Added a new API for Entity Animations (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/564"&gt;#564&lt;/a&gt; and &lt;a href="https://github.com/GlowstoneMC/Glowkit/pull/14"&gt;Glowkit #14&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Implemented critical hits and damage enchantments (#564)&lt;/li&gt;
+&lt;li&gt;Implemented &lt;code&gt;/effect&lt;/code&gt; command (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/555"&gt;#555&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Implemented the &lt;code&gt;pvp&lt;/code&gt; setting in the server configuration&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Changes and Fixes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Fixed the &lt;code&gt;/effect&lt;/code&gt; command not accepting Vanilla IDs (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/558"&gt;#558&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed certain entities which couldn’t be spawned using &lt;code&gt;/summon&lt;/code&gt; (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/541"&gt;#541&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed incorrect Enderman ‘carried block’ metadata&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Other Updates&lt;/h3&gt;
+&lt;p&gt;After a few months of work, we have merged the beta site into production. We have dropped our &lt;a href="https://github.com/GlowstoneMC/glowstonemc.github.io-legacy2"&gt;Github Pages&lt;/a&gt; site in favor of the &lt;a href="https://github.com/GlowstoneMC/Site"&gt;Site software&lt;/a&gt; written in Python by gdude. Please let us know of any problems with the site on &lt;a href="https://discord.gg/TFJqhsC"&gt;Discord&lt;/a&gt; or in the repository’s issues.&lt;/p&gt;
+&lt;p&gt;That’s it for now, see you all again in the next release!&lt;/p&gt;</content><category term="news"></category><category term="updates"></category></entry><entry><title>Glowstone 2017.8.1</title><link href="https://glowstone.net/news/glowstone-201781/" rel="alternate"></link><published>2017-09-01T12:00:00+00:00</published><updated>2017-09-01T12:00:00+00:00</updated><author><name>aramperes</name></author><id>tag:glowstone.net,2017-09-01:/news/glowstone-201781/</id><summary type="html">&lt;p&gt;Hi everyone, we are releasing Glowstone &lt;a href="https://github.com/GlowstoneMC/Glowstone/releases/tag/2017.8.1"&gt;2017.8.1&lt;/a&gt;, which is the first official release to support 1.12.1. Not much has happened since 2017.8.0, but here's the changelog nonetheless:&lt;/p&gt;
+&lt;h3&gt;Additions&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Added support for 1.12.1&lt;/li&gt;
+&lt;li&gt;Implemented Experience Orbs&lt;/li&gt;
+&lt;li&gt;Implemented Leashes (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/538"&gt;#538&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Implemented &lt;code&gt;/effect&lt;/code&gt; command (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/555"&gt;#555 …&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;Hi everyone, we are releasing Glowstone &lt;a href="https://github.com/GlowstoneMC/Glowstone/releases/tag/2017.8.1"&gt;2017.8.1&lt;/a&gt;, which is the first official release to support 1.12.1. Not much has happened since 2017.8.0, but here's the changelog nonetheless:&lt;/p&gt;
+&lt;h3&gt;Additions&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Added support for 1.12.1&lt;/li&gt;
+&lt;li&gt;Implemented Experience Orbs&lt;/li&gt;
+&lt;li&gt;Implemented Leashes (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/538"&gt;#538&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Implemented &lt;code&gt;/effect&lt;/code&gt; command (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/555"&gt;#555&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Added ambient and death sounds for Ender Dragon&lt;/li&gt;
+&lt;li&gt;Added network code for Craft Recipe Response and Crafting Book Data packets&lt;/li&gt;
+&lt;li&gt;Started implementation of the Recipe Book, including I/O and network code&lt;/li&gt;
+&lt;li&gt;Implemented API methods related to Lightning (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/546"&gt;#546&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Added burn-time for all burnable items&lt;/li&gt;
+&lt;li&gt;Added option to verify and validate incoming connections (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/553"&gt;#553&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Changes and Fixes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Fixed animals not spawning at all due to a mistake&lt;/li&gt;
+&lt;li&gt;Optimized function storage using Map instead of List (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/537"&gt;#537&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed some issues with library management, and updated some libraries (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/540"&gt;#540&lt;/a&gt; and &lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/544"&gt;#544&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed an issue with player head-rotation not being sent (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/551"&gt;#551&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed an issue with &lt;code&gt;/tp player toplayer&lt;/code&gt; not doing anything (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/554"&gt;#554&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed shift-clicking in containers, again (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/557"&gt;#557&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Other Updates&lt;/h3&gt;
+&lt;p&gt;We've had a slow schedule this month, mostly due to everyone being busier than usual.&lt;/p&gt;
+&lt;p&gt;I have personally stepped down as project lead and have given this responsibility back to mastercoms because I will have much less time to give to this project due to college and other stuff.&lt;/p&gt;
+&lt;p&gt;Also, I'd like to welcome Postremus to our development team. He has been working a lot on this project recently and has implemented a lot of major features, including leashes this month.&lt;/p&gt;
+&lt;p&gt;That's it for now, we'll see you guys later! :^)&lt;/p&gt;</content><category term="news"></category><category term="updates"></category></entry><entry><title>Glowstone 2017.8.0</title><link href="https://glowstone.net/news/glowstone-201780/" rel="alternate"></link><published>2017-08-04T12:00:00+00:00</published><updated>2017-08-04T12:00:00+00:00</updated><author><name>aramperes</name></author><id>tag:glowstone.net,2017-08-04:/news/glowstone-201780/</id><summary type="html">&lt;p&gt;Hello again. Today we are releasing Glowstone &lt;a href="https://github.com/GlowstoneMC/Glowstone/releases/tag/2017.8.0"&gt;2017.8.0&lt;/a&gt;, which is the last release to support Minecraft 1.12. Since 1.12.1 was released, we will now bump our version to &lt;code&gt;2017.8.1&lt;/code&gt; which will be released at the end of August (unless Mojang pushes another protocol …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hello again. Today we are releasing Glowstone &lt;a href="https://github.com/GlowstoneMC/Glowstone/releases/tag/2017.8.0"&gt;2017.8.0&lt;/a&gt;, which is the last release to support Minecraft 1.12. Since 1.12.1 was released, we will now bump our version to &lt;code&gt;2017.8.1&lt;/code&gt; which will be released at the end of August (unless Mojang pushes another protocol update).&lt;/p&gt;
+&lt;p&gt;Since we released &lt;a href="/news/glowstone-201770/"&gt;2017.7.0&lt;/a&gt; less than a week ago, not much has changed. Here is the changelog since that release:&lt;/p&gt;
+&lt;h3&gt;New Features&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Added Ender Crystals to the end-pillar generation in The End&lt;/li&gt;
+&lt;li&gt;Added support for 17w31a clients&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Fixes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Properly handle generators with null spawns (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/536"&gt;#536&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We are now working on updating Glowstone to 1.12.1, which will be officially supported in the next monthly release (2017.8.1).&lt;/p&gt;</content><category term="news"></category><category term="updates"></category></entry><entry><title>Glowstone 2017.7.0</title><link href="https://glowstone.net/news/glowstone-201770/" rel="alternate"></link><published>2017-07-30T12:00:00+00:00</published><updated>2017-07-30T12:00:00+00:00</updated><author><name>aramperes</name></author><id>tag:glowstone.net,2017-07-30:/news/glowstone-201770/</id><summary type="html">&lt;p&gt;Hello again! The time has come for us to publish this month's release for Glowstone, &lt;a href="https://github.com/GlowstoneMC/Glowstone/releases/tag/2017.7.0"&gt;2017.7.0&lt;/a&gt;. We have plenty of new features this time around, including boats and paintings, as well as many bug fixes since 2017.6.1.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Some of the new features" src="http://i.imgur.com/kt4QjMA.png"&gt;&lt;/p&gt;
+&lt;p&gt;There has been a &lt;a href="https://github.com/GlowstoneMC/Glowstone/compare/3847c748e290d7033e7f823cbf8153d32c3aa5f9...cd86771dc3555790ba456122ba9280bf843c8f66"&gt;total&lt;/a&gt; of 40 commits by …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hello again! The time has come for us to publish this month's release for Glowstone, &lt;a href="https://github.com/GlowstoneMC/Glowstone/releases/tag/2017.7.0"&gt;2017.7.0&lt;/a&gt;. We have plenty of new features this time around, including boats and paintings, as well as many bug fixes since 2017.6.1.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Some of the new features" src="http://i.imgur.com/kt4QjMA.png"&gt;&lt;/p&gt;
+&lt;p&gt;There has been a &lt;a href="https://github.com/GlowstoneMC/Glowstone/compare/3847c748e290d7033e7f823cbf8153d32c3aa5f9...cd86771dc3555790ba456122ba9280bf843c8f66"&gt;total&lt;/a&gt; of 40 commits by 8 contributors in July, with 4,491 additions and 730 deletions in 122 files.&lt;/p&gt;
+&lt;h3&gt;New Features&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Implemented some more vanilla commands (FlorrentClarret)&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;/banlist&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/defaultgamemode&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/me&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/playsound&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/seed&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/setidletimeout&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/setworldspawn&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/spawnpoint&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/toggledownfall&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/xp&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Began work on caves (surface caves specifically)&lt;/li&gt;
+&lt;li&gt;Added support for multiple passengers (Postremus)&lt;/li&gt;
+&lt;li&gt;Better support for off-hand item usage&lt;/li&gt;
+&lt;li&gt;Added optional GPGPU surface noise generation (mastercoms)&lt;ul&gt;
+&lt;li&gt;Allows for surface noise generation to be executed by a GPU instead of the CPU&lt;/li&gt;
+&lt;li&gt;See &lt;a href="https://github.com/GlowstoneMC/Glowstone/pull/528"&gt;pull-request&lt;/a&gt; for more details&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Implemented boats, ender crystals and paintings (Postremus)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Bug Fixes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Fixed furnaces not showing as 'burning' when smelting items (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/474"&gt;#474&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed incorrect argument-length check for &lt;code&gt;/tell&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Fixed players spawning above the map when respawning (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/460"&gt;#460&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed player's internal last damage cause not being updated (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/456"&gt;#456&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Check for cancelled events in some missing cases (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/516"&gt;#516&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed explosions wrongly destroying certain blocks (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/515"&gt;#515&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed armor/shield slots not being excluded when sending container contents, causing client errors (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/481"&gt;#481&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed &lt;code&gt;/tellraw&lt;/code&gt; command parsing&lt;/li&gt;
+&lt;li&gt;Fixed errors when loading horses from NBT, including spawn eggs&lt;/li&gt;
+&lt;li&gt;Fixed horse babies not being the same color as their parent&lt;/li&gt;
+&lt;li&gt;Fixed player entity-interaction being wrongly duplicated in some cases&lt;/li&gt;
+&lt;li&gt;Fixed exception when getting tameable entity's owner internally&lt;/li&gt;
+&lt;li&gt;Fixed 1.12 parrots-on-shoulders functionality&lt;/li&gt;
+&lt;li&gt;Fixed shift-clicking for crafting slots (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/525"&gt;#525&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed crafting result slot not being updated in certain cases (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/526"&gt;#526&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Other Updates&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Javadocs are now automatically deployed every build&lt;ul&gt;
+&lt;li&gt;You can view the Glowstone Javadocs &lt;a href="/jd/glowstone/"&gt;here&lt;/a&gt;, and Glowkit's &lt;a href="/jd/glowkit/"&gt;here&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;We have continued updating the new &lt;a href="https://glowstone.net/"&gt;Beta site&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;The Beta site is a completely &lt;a href="https://github.com/GlowstoneMC/Site"&gt;open-source&lt;/a&gt; initiative.&lt;/li&gt;
+&lt;li&gt;More information can be found in the &lt;a href="/news/new-site-beta/"&gt;official announcement&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Important:&lt;/strong&gt; Due to a possible intrusion of our forums database, we recommend you reset your account password on the forums&lt;ul&gt;
+&lt;li&gt;Multiple issues with our Redis database and Proxmox virtualization system have lead to a complete external exposure of its contents (including email addresses and bcrypt-hashed passwords).&lt;/li&gt;
+&lt;li&gt;All data between June 18 and July 25 has been lost due to a technical failure.&lt;/li&gt;
+&lt;li&gt;Please read our &lt;a href="/news/intrusion-report-forums/"&gt;report&lt;/a&gt; on the intrusion. Feel free to contact us if you have any questions or concerns about this.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Coming Soon&lt;/h3&gt;
+&lt;p&gt;I have personally been working on implementing pathfinding for Entity AI. After several months of on-and-off work on this issue, I have found an efficient solution to implement it, and I am aiming to have it all functional for the next release (2017.8).&lt;/p&gt;
+&lt;p&gt;We are continuously updating our Beta site with new features, and we are looking forward to your feedback. We are planning to have a complete 'Download Center' for Glowstone on there in the near future!&lt;/p&gt;</content><category term="news"></category><category term="updates"></category></entry><entry><title>Intrusion Report (Forums)</title><link href="https://glowstone.net/news/intrusion-report-forums/" rel="alternate"></link><published>2017-07-28T09:03:00+00:00</published><updated>2017-07-28T09:03:00+00:00</updated><author><name>gdude2002</name></author><id>tag:glowstone.net,2017-07-28:/news/intrusion-report-forums/</id><summary type="html">&lt;p&gt;This is a post to notify everyone of a possible intrusion relating to the forum. I have provided a full report in an effort to be as transparent as possible.&lt;/p&gt;
+&lt;h2&gt;Report&lt;/h2&gt;
+&lt;h3&gt;Tuesday, 25th July 2017&lt;/h3&gt;
+&lt;p&gt;Momo noticed that the forums were down. I was asleep at the time, and did …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a post to notify everyone of a possible intrusion relating to the forum. I have provided a full report in an effort to be as transparent as possible.&lt;/p&gt;
+&lt;h2&gt;Report&lt;/h2&gt;
+&lt;h3&gt;Tuesday, 25th July 2017&lt;/h3&gt;
+&lt;p&gt;Momo noticed that the forums were down. I was asleep at the time, and did not get the message until the morning - it was late at night.&lt;/p&gt;
+&lt;h3&gt;Wednesday, 26th July 2017&lt;/h3&gt;
+&lt;p&gt;I got Momo's message, and investigated the problem. I assumed that Redis was down, so I restarted it and updated and restarted the forums, and everything appeared to be working just fine. I noticed that the plugins we had installed were removed, and so I reinstalled them. No configuration data was lost. I also noticed that a couple of posts I had made a day or two before that were missing.&lt;/p&gt;
+&lt;h3&gt;Thursday, 27th July 2017&lt;/h3&gt;
+&lt;p&gt;I noticed that a Nextcloud install on a different VM (my personal install) was using the same database server as a memory cache, despite being configured not to. I reconfigured Nextcloud and removed all of its cached data from the database. Nextcloud did not touch any actual NodeBB data, so that wasn't the cause of the issue.&lt;/p&gt;
+&lt;p&gt;At this point, we realised that data going back around a month and a half had been lost. Fearing further data loss, I set up some cron tasks to force Redis to save its data and save a backup every hour. I checked the Redis logs and there was nothing abnormal in them, so I assumed the problem was with NodeBB and continued investigating with Momo.&lt;/p&gt;
+&lt;p&gt;After reading over NodeBB logs, events and errors, we found nothing of interest.&lt;/p&gt;
+&lt;h3&gt;Friday, 28th July 2017&lt;/h3&gt;
+&lt;p&gt;At around 4AM BST, Momo became available again and continued his investigation. He discovered two things:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Redis was accessible (without a password) from outside of the network&lt;/li&gt;
+&lt;li&gt;Redis was failing to save any data due to an error, thus disabling the forums&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;At around 8:30AM BST, I came online and restarted my investigation.&lt;/p&gt;
+&lt;p&gt;Due to an issue with Proxmox (the hypervisor I use to manage containers and VMs and keep things compartmentalised), it turned out that the firewall I had configured was not doing its job - instead of dropping all disallowed traffic as it was meant to, it was simply allowing everything. I fixed this problem by setting up a firewall directly on the storage container and this secured it from the outside.&lt;/p&gt;
+&lt;p&gt;I noticed that Redis was attempting to save data to &lt;code&gt;/var/spool/cron&lt;/code&gt;, which is not its usual location. It did not have permission to write there - which is why it was failing to save data. Upon further investigation, I noticed that it was able to overwrite the crontab I had set up earlier - and had done so with the entire contents of the database. At this point, I took down both Redis and NodeBB so that I could fix things up.&lt;/p&gt;
+&lt;p&gt;I wiped all of the cron storage directories and reinstalled cron. I double-checked the Redis configuration and found nothing unusual, so I restarted that as well. It started up correctly and did not attempt to write to &lt;code&gt;/var/spool/cron&lt;/code&gt; again.&lt;/p&gt;
+&lt;p&gt;I used a GUI tool to inspect the Redis data, and I noticed that the data I had removed previously (from Nextcloud) was still present. I removed it again, and I noticed an extra key that I hadn't seen earlier: It was a randomized key, containing a crontab entry. This crontab was configured to download a shell script from an IP address and execute it.&lt;/p&gt;
+&lt;p&gt;I grabbed a copy of the script myself and took a look at it, and it simply downloaded a cryptocurrency miner and ran it. Upon investigation, it was clear that this crontab had never been run, and that the attack was supposed to play out as follows:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Search for compromisable Redis servers&lt;/li&gt;
+&lt;li&gt;Add a key with a crontab entry to run the script&lt;/li&gt;
+&lt;li&gt;Use the &lt;code&gt;CONFIG SET&lt;/code&gt; command to overwrite the crontab with the database&lt;/li&gt;
+&lt;li&gt;Wait for the cryptocurrency miner to start&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The cron daemon I'm using performs very strict syntax checks and did not run the crontab - as soon as it realised there were invalid "entries" in the file, it errored out.&lt;/p&gt;
+&lt;p&gt;I removed the key from the database and made sure the forum was running correctly.&lt;/p&gt;
+&lt;h3&gt;Exposure&lt;/h3&gt;
+&lt;p&gt;While there was absolutely no evidence that this attack targetted NodeBB or even Glowstone specifically, precautions should always be taken. As NodeBB stores its entire database in Redis, all of the data therein was exposed. It's impossible to say what the attackers may have taken - if anything - but as always, users should take all of the necessary precautions.&lt;/p&gt;
+&lt;p&gt;NodeBB stores passwords using &lt;code&gt;bcrypt&lt;/code&gt;. This is an industry standard and currently considered very secure, but we still advise users to change their passwords - both on the forums, and on any accounts they own elsewhere that may be using the same password as their forum account. Note that any other data provided during registration and profile modification will have been accessible as well - for example, email addresses.&lt;/p&gt;
+&lt;p&gt;I have revoked all the user tokens from GitHub OAuth, and reset the client secret, to protect users' GitHub accounts.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;I'd like to apologise for this intrusion personally - it definitely shouldn't have happened, and while I'm amazed that it did, it is my responsibility. Please don't attack or bug any of the other staff members - they don't have direct access to any of this stuff.&lt;/p&gt;
+&lt;p&gt;As far as I am aware, everything is now secure and in working order, but I'm going to continue monitoring and testing throughout the day. Feel free to contact me if you have any questions.&lt;/p&gt;</content><category term="news"></category><category term="blog"></category></entry><entry><title>Glowstone 2017.6.1</title><link href="https://glowstone.net/news/glowstone-201761/" rel="alternate"></link><published>2017-06-30T12:00:00+00:00</published><updated>2017-06-30T12:00:00+00:00</updated><author><name>aramperes</name></author><id>tag:glowstone.net,2017-06-30:/news/glowstone-201761/</id><summary type="html">&lt;p&gt;Hello! We are releasing Glowstone &lt;a href="https://github.com/GlowstoneMC/Glowstone/releases/tag/2017.6.1"&gt;2017.6.1&lt;/a&gt; today, the first release which officially supports Minecraft 1.12. This release consists mostly of the update to 1.12, some extra fixes to the server software and some community updates.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Parrot on Terracotta Block" src="http://i.imgur.com/CqptH85.png"&gt;&lt;/p&gt;
+&lt;h3&gt;1.12&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;API and networking updates&lt;/li&gt;
+&lt;li&gt;Implementation of some new features …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;Hello! We are releasing Glowstone &lt;a href="https://github.com/GlowstoneMC/Glowstone/releases/tag/2017.6.1"&gt;2017.6.1&lt;/a&gt; today, the first release which officially supports Minecraft 1.12. This release consists mostly of the update to 1.12, some extra fixes to the server software and some community updates.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Parrot on Terracotta Block" src="http://i.imgur.com/CqptH85.png"&gt;&lt;/p&gt;
+&lt;h3&gt;1.12&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;API and networking updates&lt;/li&gt;
+&lt;li&gt;Implementation of some new features&lt;ul&gt;
+&lt;li&gt;Knowledge book (NBT — Basic)&lt;/li&gt;
+&lt;li&gt;New note block sounds&lt;/li&gt;
+&lt;li&gt;Advancements / Advancement manager&lt;/li&gt;
+&lt;li&gt;Command functions (&lt;code&gt;/function&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;@s&lt;/code&gt; command target selector&lt;/li&gt;
+&lt;li&gt;Concrete block&lt;/li&gt;
+&lt;li&gt;Updated beds&lt;/li&gt;
+&lt;li&gt;Basic implementation for parrots&lt;/li&gt;
+&lt;li&gt;Re-implementation of major commands which were removed by the Spigot team (&lt;a href="https://github.com/GlowstoneMC/Glowstone/issues/499"&gt;details&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Fixes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Fixed bug with storage of server UUID (metrics)&lt;/li&gt;
+&lt;li&gt;Fixed RCON server startup&lt;/li&gt;
+&lt;li&gt;Fixed RCON packet decoding&lt;/li&gt;
+&lt;li&gt;Fixed bug with explosion packet only being sent to players that get damaged by the explosion&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Changes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Add "blast resistance" block property for all materials&lt;/li&gt;
+&lt;li&gt;TNT explosions are more consistent with Vanilla&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Other News&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;We are working on a new &lt;a href="https://glowstone.net"&gt;website&lt;/a&gt;! (&lt;a href="/news/new-site-beta/"&gt;details&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Moved CI (building and deployment) to &lt;a href="https://circleci.com/gh/GlowstoneMC/Glowstone"&gt;CircleCI&lt;/a&gt;, dropping Bamboo&lt;/li&gt;
+&lt;li&gt;Glowstone (server software) now has a Contributor License Agreement (&lt;a href="/news/we-now-have-a-cla/"&gt;details&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Project Lead&lt;/h3&gt;
+&lt;p&gt;Due to recent personal life events, &lt;strong&gt;Jessica&lt;/strong&gt; (otherwise known as mastercoms) has decided to step down as project lead of Glowstone, after 3 years of continuous devotion for this awesome project. I would like to personally thank her for her immense help and love for this community over the past months and years.&lt;/p&gt;
+&lt;p&gt;The "core" Glowstone project team consists of &lt;strong&gt;Jessica, myself and Gareth&lt;/strong&gt; (a.k.a. gdude2002). This will remain, as Jessica will continue to contribute to Glowstone, but she has decided to let go of her lead responsibilities to focus on other projects and ventures. Since the project still needs a leading entity, I will be taking this responsibility starting this month, and Gareth will continue helping as the project's community lead — he is far more active with the community than I can be.&lt;/p&gt;
+&lt;p&gt;If you have questions or concerns considering this transition, please feel free to let us know on the forums, Discord, IRC, or privately at your own wish.&lt;/p&gt;
+&lt;h3&gt;Community Updates&lt;/h3&gt;
+&lt;p&gt;In April, &lt;strong&gt;satoshinm&lt;/strong&gt; posted a rather interesting project named &lt;a href="https://forums.glowstone.net/topic/56/websandboxmc-web-based-client-providing-an-interactive-glimpse-of-a-part-of-your-server-using-webgl-html5"&gt;WebSandboxMC&lt;/a&gt;, which is a WebGL-based in-browser client powered by a Glowstone-compatible Bukkit plugin — essentially allowing you to browse and interact with a Minecraft server directly in the browser.&lt;/p&gt;
+&lt;p&gt;Over the past month, satoshi has been running a test server to find bugs and missing features in WebSandboxMC and since he's accomplished his goal, the server has been closed. If you're interested in the statistics, you can read all about it in &lt;a href="https://forums.glowstone.net/post/256"&gt;his recent post&lt;/a&gt; on the subject.&lt;/p&gt;
+&lt;p&gt;WebSandboxMC is certainly a very interesting project, and is definitely worth a look by any server admin interested in this kind of interaction!&lt;/p&gt;</content><category term="news"></category><category term="updates"></category></entry><entry><title>We now have a CLA</title><link href="https://glowstone.net/news/we-now-have-a-cla/" rel="alternate"></link><published>2017-06-24T17:37:00+00:00</published><updated>2017-06-24T17:37:00+00:00</updated><author><name>gdude2002</name></author><id>tag:glowstone.net,2017-06-24:/news/we-now-have-a-cla/</id><summary type="html">&lt;p&gt;This is an announcement to let everyone know that we have come up with a CLA, otherwise known as a Contributor License Agreement. It's something we've been thinking about doing for a while, but decided that it deserved extra attention in light of &lt;a href="https://www.bountysource.com/issues/40545454-185-completing-entities-in-glowstone"&gt;the swift movement on Bountysource&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;CLAs can …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is an announcement to let everyone know that we have come up with a CLA, otherwise known as a Contributor License Agreement. It's something we've been thinking about doing for a while, but decided that it deserved extra attention in light of &lt;a href="https://www.bountysource.com/issues/40545454-185-completing-entities-in-glowstone"&gt;the swift movement on Bountysource&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;CLAs can look a bit scary, but every contributor submitting a pull request to Glowstone will be required to sign it. We've attempted to make that process as easy as possible - going forward, any new pull requests will automatically get a comment from the CLA helper. To sign the CLA, simply click the button in that comment and sign in with GitHub on the CLA helper site.&lt;/p&gt;
+&lt;p&gt;In short, by signing the Glowstone CLA, you confirm that:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Anyone can use your contributions anywhere, for free, forever&lt;/li&gt;
+&lt;li&gt;Your contributions do not infringe on anyone else's rights, including Mojang's&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you'd like to read the CLA yourself, it's available &lt;a href="/cla"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Note that we are not requiring previous contributors to sign the CLA, but if you do sign it, it applies retroactively.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;If you would like to sign off your own bat before you make any further contributions or do any more work on your forks, feel free to do so &lt;a href="https://cla-assistant.io/GlowstoneMC/Glowstone"&gt;here&lt;/a&gt;.&lt;/p&gt;</content><category term="news"></category><category term="blog"></category></entry><entry><title>New Site (Beta)</title><link href="https://glowstone.net/news/new-site-beta/" rel="alternate"></link><published>2017-06-20T12:57:00+00:00</published><updated>2017-06-20T12:57:00+00:00</updated><author><name>gdude2002</name></author><id>tag:glowstone.net,2017-06-20:/news/new-site-beta/</id><summary type="html">&lt;p&gt;Hello, fellow Glowstone... ers...?&lt;/p&gt;
+&lt;p&gt;Welcome to the beta version of the new site! We've decided that the site could use a small facelift and the addition of some much-needed functionality, and this is a preview of what's to come. Some of the things you can look forward to include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Better …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;Hello, fellow Glowstone... ers...?&lt;/p&gt;
+&lt;p&gt;Welcome to the beta version of the new site! We've decided that the site could use a small facelift and the addition of some much-needed functionality, and this is a preview of what's to come. Some of the things you can look forward to include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Better syndication for news&lt;/li&gt;
+&lt;li&gt;Currently, news posts are notified on the forum and across Twitter and Discord, and more can be added easily as required&lt;/li&gt;
+&lt;li&gt;We also have RSS and ATOM feeds available &lt;a href="/feeds"&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;A proper downloads center for everything Glowstone&lt;/li&gt;
+&lt;li&gt;We haven't done tons of work on this yet, but it'll be coming over the following couple of weeks&lt;/li&gt;
+&lt;li&gt;A central location to learn about our community and how you can help with the project, as well as better sourcing for documentation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Currently the beta site is in a relatively early stage, and not everything works. We would appreciate if you are able to give us feedback on this - you can do so on &lt;a href="https://github.com/GlowstoneMC/Site"&gt;GitHub&lt;/a&gt;, on &lt;a href="https://forums.glowstone.net"&gt;the forums&lt;/a&gt;, or on &lt;a href="https://discord.gg/TFJqhsC"&gt;Discord&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We want to make sure this site will work well for everyone, so don't be afraid to speak up if there's something you don't like!&lt;/p&gt;</content><category term="news"></category><category term="blog"></category></entry><entry><title>Glowstone 2017.6.0 and 1.12</title><link href="https://glowstone.net/news/glowstone-201760-and-112/" rel="alternate"></link><published>2017-06-09T05:32:00+00:00</published><updated>2017-06-09T05:32:00+00:00</updated><author><name>aramperes</name></author><id>tag:glowstone.net,2017-06-09:/news/glowstone-201760-and-112/</id><summary type="html">&lt;p&gt;Hello again! We released Glowstone &lt;a href="https://github.com/GlowstoneMC/Glowstone/releases/tag/2017.6.0"&gt;2017.6.0&lt;/a&gt; today, which is the final release to support Minecraft 1.11.2. This release is pretty light compared to the previous one, 2017.5, which we published only a week ago.&lt;/p&gt;
+&lt;h3&gt;Changes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Updated default start script&lt;/li&gt;
+&lt;li&gt;Optimizations to world loading and saving …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;Hello again! We released Glowstone &lt;a href="https://github.com/GlowstoneMC/Glowstone/releases/tag/2017.6.0"&gt;2017.6.0&lt;/a&gt; today, which is the final release to support Minecraft 1.11.2. This release is pretty light compared to the previous one, 2017.5, which we published only a week ago.&lt;/p&gt;
+&lt;h3&gt;Changes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Updated default start script&lt;/li&gt;
+&lt;li&gt;Optimizations to world loading and saving&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Fixes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Fixed containers dropping empty items when broken&lt;/li&gt;
+&lt;li&gt;Fixed bug where default spawn point would be underground&lt;/li&gt;
+&lt;li&gt;Fixed bug with lake generation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;1.12&lt;/h3&gt;
+&lt;p&gt;Now for the bigger news, we have updated Glowstone and Glowkit to Minecraft 1.12. Starting from today, our scheduled release for the end of this month is 2017.6.1. While this update has been &lt;a href="https://github.com/GlowstoneMC/Glowstone/pull/477"&gt;in the works&lt;/a&gt; for about 2 weeks, we will continue to implement more features from 1.12 this month. You may notice that some vanilla commands are now missing from Glowstone; they were removed from Bukkit by the Spigot team and we will have to implement them ourselves in the coming days.&lt;/p&gt;
+&lt;p&gt;Thank you for your continuous support as always. We look forward to releasing 2017.6.1 in 3 weeks from now.&lt;/p&gt;</content><category term="news"></category><category term="updates"></category></entry><entry><title>Glowstone 2017.5</title><link href="https://glowstone.net/news/glowstone-20175/" rel="alternate"></link><published>2017-06-01T02:35:00+00:00</published><updated>2017-06-01T02:35:00+00:00</updated><author><name>mastercoms</name></author><id>tag:glowstone.net,2017-06-01:/news/glowstone-20175/</id><summary type="html">&lt;p&gt;&lt;img alt="Glowstone 2017.5 feature overview picture" src="http://i.imgur.com/d6FTTuj.png"&gt;&lt;/p&gt;
+&lt;p&gt;Yay, another Glowstone release, 2017.5! This month was dedicated to squashing bugs and implementing a few missing features. However, even with that being our focus, this is one of our biggest releases yet. In &lt;a href="https://github.com/GlowstoneMC/Glowstone/compare/e09773a3efa75bfb04517061197009072e8f9edd...2d5dca319cb2568859bb9ca7f4f6630fdda36b5b"&gt;73 commits&lt;/a&gt;, we changed 125 files with 2,040 additions and 1,138 deletions.&lt;/p&gt;
+&lt;p&gt;Unfortunately …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Glowstone 2017.5 feature overview picture" src="http://i.imgur.com/d6FTTuj.png"&gt;&lt;/p&gt;
+&lt;p&gt;Yay, another Glowstone release, 2017.5! This month was dedicated to squashing bugs and implementing a few missing features. However, even with that being our focus, this is one of our biggest releases yet. In &lt;a href="https://github.com/GlowstoneMC/Glowstone/compare/e09773a3efa75bfb04517061197009072e8f9edd...2d5dca319cb2568859bb9ca7f4f6630fdda36b5b"&gt;73 commits&lt;/a&gt;, we changed 125 files with 2,040 additions and 1,138 deletions.&lt;/p&gt;
+&lt;p&gt;Unfortunately, if you were expecting huge advancements on AI this month, as promised by our 2017.4 announcement, we weren't able to get that done this month :(.  I would expect as our dev team has more free time in the coming months that we will get it done very soon :).&lt;/p&gt;
+&lt;p&gt;Anyway, without further ado, let's see what we've been up to this month.&lt;/p&gt;
+&lt;h3&gt;Changes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Pistons emit smoke on use &lt;strong&gt;(Momo)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Glowstone command for debug info and single line Java REPL &lt;strong&gt;(Momo)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Inventory utility for random inventory slot &lt;strong&gt;(Momo)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Dispense armor to entity behavior &lt;strong&gt;(Christian7573)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Some progress on nether portal creation &lt;strong&gt;(mastercoms)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Initial block breaking animation implementation &lt;strong&gt;(satoshinm)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Use bStats instead of MCStats &lt;strong&gt;(mastercoms)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Use IdleStateHandler for read and write timeouts &lt;strong&gt;(louxiu)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Use assertThat for all tests &lt;strong&gt;(mastercoms)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Generify entity storage better &lt;strong&gt;(mastercoms)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Spawn witches in huts &lt;strong&gt;(mastercoms)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Implemented ender dragon and spawns in the end &lt;strong&gt;(mastercoms)&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Fixes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Respect Entity#setGravity &lt;strong&gt;(satoshinm)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Update bounding boxes on entity movement &lt;strong&gt;(mastercoms)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Dispenser now uses updated utility for getting a random item &lt;strong&gt;(Christian7573)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Signs now behave like a proper attachable block &lt;strong&gt;(Momo)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Use null values where applicable in book meta &lt;strong&gt;(Momo)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Don't combine items with different metas &lt;strong&gt;(Momo)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Jack O'Lantern correctly faces based on placement &lt;strong&gt;(satoshinm)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Treat Bukkit plugins with Sponge API support as Bukkit plugins &lt;strong&gt;(satoshinm)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Use correct Bukkit2Sponge link when Sponge plugins are detected &lt;strong&gt;(mastercoms)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Place timeout handler at the top of the pipeline &lt;strong&gt;(louxiu)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Fix Javadocs issues &lt;strong&gt;(mastercoms)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Cleanup test code &lt;strong&gt;(mastercoms)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Optimize and fix inner class usage &lt;strong&gt;(mastercoms)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Fix memory leak in HTTP handler &lt;strong&gt;(mastercoms)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Store one instance for zero length arrays in various places &lt;strong&gt;(mastercoms)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Better use and clean up usage of latest Java constructs &lt;strong&gt;(mastercoms)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Simplify various if statements and other boolean logic &lt;strong&gt;(mastercoms)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Optimize String checks in commands &lt;strong&gt;(mastercoms)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Use bitshift where possible &lt;strong&gt;(mastercoms)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Transfer JSON loops and help map to use entry sets &lt;strong&gt;(mastercoms)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Fix physics bounding box check logic &lt;strong&gt;(mastercoms)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Don't change durability on empty items &lt;strong&gt;(mastercoms)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Fix ice being removed in lakes &lt;strong&gt;(mastercoms)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Resolve infinite recursion in structure builder &lt;strong&gt;(mastercoms)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Fix Sign interaction with hoppers &lt;strong&gt;(mastercoms)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Remove invalid Lombok generated equals, toString and hash code from GlowOfflinePlayer &lt;strong&gt;(mastercoms)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Short circuit powered check for dispensers &lt;strong&gt;(mastercoms)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Properly spawn armor stands and item frames &lt;strong&gt;(mastercoms)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Hook up unused structure populator for superflat generator &lt;strong&gt;(mastercoms)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Fix Score#isScoreSet &lt;strong&gt;(mastercoms)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Clean up repo files &lt;strong&gt;(mastercoms)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Fix attachable null pointer exception &lt;strong&gt;(satoshinm)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Remove non-empty items from crafting manager &lt;strong&gt;(satoshinm)&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Coming soon&lt;/h3&gt;
+&lt;p&gt;In addition to a big update to the master branch, we've also been working on things on different branches. Here are a few features that are coming to a master branch near you soon!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;JLine 3&lt;/strong&gt;
+Some work has been done to update Glowstone's console input library JLine to version 3, from 2. The branch includes an advanced console Java code interpreter, improved tab completion and better performance, with more to come. Here's &lt;a href="https://asciinema.org/a/0p8rtk7x13s65yhs4ffzjcn14"&gt;a preview&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;1.12&lt;/strong&gt;
+The next version of Minecraft, 1.12, releases on Friday, but we've been busy &lt;a href="https://github.com/GlowstoneMC/Glowstone/pull/477"&gt;keeping up&lt;/a&gt; with snapshots and preview releases so that we can be ready to make 1.12 available on Glowstone as soon as possible.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Documentation updates&lt;/strong&gt;
+Although not on a branch yet, we've been drafting changes to the repository documentation files like our README and contributing file. At the same time, we have also been working on a ReadTheDocs style documentation to replace our current GitHub Wiki, which has proven to be ineffective at sharing information with new and long time users alike.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;New code style and checkstyle rules&lt;/strong&gt;
+We've informally changed to Google code style (with a few differences) for about a year now. However, this has not been properly enforced. So, we've created &lt;a href="https://github.com/GlowstoneMC/Glowstone/tree/new-checkstyle"&gt;a new branch&lt;/a&gt; to migrate to this new code style.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;New code of conduct&lt;/strong&gt;
+As &lt;a href="/news/new-code-of-conduct/"&gt;announced in May&lt;/a&gt;, we are &lt;a href="https://github.com/GlowstoneMC/Glowstone/pull/488"&gt;changing our code of conduct&lt;/a&gt; so that we may better support a productive and welcoming community, as well as be clear on enforcement of rules across all of our projects and communication channels.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Other projects&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Shine&lt;/strong&gt;
+&lt;a href="https://github.com/GlowstoneMC/Shine"&gt;Shine&lt;/a&gt; is Glowstone's plugin database for recording plugin compatibility, voting on plugins you'd like to see be made compatible with Glowstone and submitting Glowstone plugins. We've started the project with a Node.js backend and have added authentication and templating support.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Bukkit2Sponge&lt;/strong&gt;
+After more than two years of no code updates, our Bukkit plugin for adding SpongeAPI support to Bukkit servers has been updated for Sponge 6.0.0. We also updated a few project details to bring it more inline with our organization and project updates. However, there is much work to be done to implement API support and as we've &lt;a href="/news/about-sponge/"&gt;mentioned before&lt;/a&gt;, people in our dev team aren't interested at this time to allocate time and resources to Sponge support. If you're interested in bringing Sponge support to Glowstone, feel free to contribute to &lt;a href="https://github.com/GlowstoneMC/Bukkit2Sponge"&gt;Bukkit2Sponge&lt;/a&gt;!&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Glowkit&lt;/strong&gt;
+In the master branch, we've fixed a bug in Sign#getFacing(), thanks to satoshinm. However, most of work has been on &lt;a href="https://github.com/GlowstoneMC/Glowkit/pull/11"&gt;1.12&lt;/a&gt;, where we have simplified patches and done a lot of work to get ready for 1.12.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Graal&lt;/strong&gt;
+In order to provide useful and accessible realtime GPU code translation and offload support to Glowstone without the need to create OpenCL C code, we have started planning modifications to Graal, a Java compiler written in Java, to add GPU compilation support. However, don't get too excited. We don't plan to get any substantial work on this done until a few months from now.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I hope you're as excited as we are about this release! You can find the release downloads &lt;a href="https://github.com/GlowstoneMC/Glowstone/releases/tag/2017.5"&gt;on GitHub&lt;/a&gt;, but please note that we only support the latest version of Glowstone.&lt;/p&gt;</content><category term="news"></category><category term="updates"></category></entry><entry><title>The Road to 1.12</title><link href="https://glowstone.net/news/the-road-to-112/" rel="alternate"></link><published>2017-05-17T13:34:00+00:00</published><updated>2017-05-17T13:34:00+00:00</updated><author><name>mastercoms</name></author><id>tag:glowstone.net,2017-05-17:/news/the-road-to-112/</id><summary type="html">&lt;p&gt;Hello everyone! After Mojang released Minecraft 1.12-pre2 on May 11, 2017, we updated our &lt;code&gt;1.12-snapshots&lt;/code&gt; branch to add protocol support for this latest version. Then on May 13, Spigot announced their 1.12-pre2 Bukkit version, the first in history a pre-release version has been released for Bukkit. There …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hello everyone! After Mojang released Minecraft 1.12-pre2 on May 11, 2017, we updated our &lt;code&gt;1.12-snapshots&lt;/code&gt; branch to add protocol support for this latest version. Then on May 13, Spigot announced their 1.12-pre2 Bukkit version, the first in history a pre-release version has been released for Bukkit. There were a lot of breaking changes in this release, with changes to dependencies, including Java, and the removal of many deprecated APIs. Even with this in mind, Paper was able to have a quick update to the Paper-API (thank you zbob750!), released on May 14.&lt;/p&gt;
+&lt;p&gt;We now have Glowkit updated to 1.12-pre2, with a few caveats. Many of the enhanced APIs have been removed in favor of including them in Glowstone. This is because it will be easier for plugin developers to use Glowstone-specific APIs all within the Glowstone server package, without relying on modifications to the Bukkit API, as well as due to the fact that some APIs that we enhanced have been removed entirely in favor of Vanilla server constructs, like Bukkit commands.&lt;/p&gt;
+&lt;p&gt;Due to these massive changes to our APIs (not only to Glowkit, but the base Bukkit API it is built on), Glowstone will have to be modified more significantly than other releases and it will take more time to update. We anticipate and hope that this update will be done before 1.12 is released, but please understand the work that must go behind this release and forgive us if we are late.&lt;/p&gt;
+&lt;p&gt;And because of these modifications to both Glowkit and Glowstone, this initial Glowkit 1.12-pre2 release is certainly not final. APIs may be changed or added again in order to implement some Glowstone required features to Glowkit.&lt;/p&gt;
+&lt;p&gt;If you want to see the current work, view the &lt;code&gt;1.12-staging&lt;/code&gt; branches for both &lt;a href="https://github.com/GlowstoneMC/Glowstone/tree/1.12-staging"&gt;Glowstone&lt;/a&gt; and &lt;a href="https://github.com/GlowstoneMC/Glowkit/tree/1.12-staging"&gt;Glowkit&lt;/a&gt;.&lt;/p&gt;</content><category term="news"></category><category term="blog"></category></entry><entry><title>Documentation Updates Coming Soon</title><link href="https://glowstone.net/news/documentation-updates-coming-soon/" rel="alternate"></link><published>2017-05-08T10:08:00+00:00</published><updated>2017-05-08T10:08:00+00:00</updated><author><name>mastercoms</name></author><id>tag:glowstone.net,2017-05-08:/news/documentation-updates-coming-soon/</id><summary type="html">&lt;p&gt;Hello everyone! After releasing our new code of conduct, we've gone on to improve our entire documentation, including our README, contributing docs, plugin dev docs and usage docs! This is a huge undertaking so I hope everyone is ok with this update coming out a bit later. But when these …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hello everyone! After releasing our new code of conduct, we've gone on to improve our entire documentation, including our README, contributing docs, plugin dev docs and usage docs! This is a huge undertaking so I hope everyone is ok with this update coming out a bit later. But when these updates do come out, I'd love to see your feedback after you &lt;strong&gt;read the docs&lt;/strong&gt;.&lt;/p&gt;</content><category term="news"></category><category term="blog"></category></entry><entry><title>New Code of Conduct</title><link href="https://glowstone.net/news/new-code-of-conduct/" rel="alternate"></link><published>2017-05-02T21:17:00+00:00</published><updated>2017-05-02T21:17:00+00:00</updated><author><name>mastercoms</name></author><id>tag:glowstone.net,2017-05-02:/news/new-code-of-conduct/</id><summary type="html">&lt;p&gt;Hello, as part of &lt;a href="/news/the-glowstone-project/"&gt;our initiative&lt;/a&gt; to improve the Glowstone Project, we've released &lt;a href="https://github.com/GlowstoneMC/Glowstone/blob/9ff0716cce4f30f5c174d319f19681c49dbfecb5/CODE_OF_CONDUCT.md"&gt;our first draft&lt;/a&gt; of our new Code of Conduct. I personally feel that we have outgrown our previous code of conduct, and I'm happy for it. Hopefully this new code of conduct will help grow our community …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hello, as part of &lt;a href="/news/the-glowstone-project/"&gt;our initiative&lt;/a&gt; to improve the Glowstone Project, we've released &lt;a href="https://github.com/GlowstoneMC/Glowstone/blob/9ff0716cce4f30f5c174d319f19681c49dbfecb5/CODE_OF_CONDUCT.md"&gt;our first draft&lt;/a&gt; of our new Code of Conduct. I personally feel that we have outgrown our previous code of conduct, and I'm happy for it. Hopefully this new code of conduct will help grow our community even further and will help foster better and more productive discussion here at Glowstone.&lt;/p&gt;
+&lt;p&gt;I'd love to hear your thoughts on it. Feel free to even PR changes if you'd like, reply here with suggestions, or just contact me through a medium of your choice.&lt;/p&gt;
+&lt;p&gt;The final version of the new Code of Conduct will take effect when we release Glowstone 2017.5 on May 31st.&lt;/p&gt;
+&lt;p&gt;Thanks, and I hope to read your thoughts on this soon!&lt;/p&gt;</content><category term="news"></category><category term="blog"></category></entry><entry><title>Glowstone 2017.4</title><link href="https://glowstone.net/news/glowstone-20174/" rel="alternate"></link><published>2017-04-30T09:35:00+00:00</published><updated>2017-04-30T09:35:00+00:00</updated><author><name>mastercoms</name></author><id>tag:glowstone.net,2017-04-30:/news/glowstone-20174/</id><summary type="html">&lt;p&gt;And so we come to April's release, Glowstone 2017.4, the Intelligence Update. Our goal for this month was to get AI implemented. We didn't exactly get to our goal, but since May's release was already planned to be a light one, we've decided to shift some of the AI …&lt;/p&gt;</summary><content type="html">&lt;p&gt;And so we come to April's release, Glowstone 2017.4, the Intelligence Update. Our goal for this month was to get AI implemented. We didn't exactly get to our goal, but since May's release was already planned to be a light one, we've decided to shift some of the AI work to May so we can finish it up. &lt;/p&gt;
+&lt;p&gt;&lt;img alt="intelligence update header" src="http://i.imgur.com/twQw58b.png"&gt;&lt;/p&gt;
+&lt;p&gt;Right now we have a great framework for AI we can work with, with a task/state system that determines mob behavior and actions, as well as improved physics that will help support advanced mob movement. So, a deadline of May should be much more manageable, especially since some of our contributors will become more available this month. &lt;/p&gt;
+&lt;p&gt;Anyway, let's get into the details:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/GlowstoneMC/Glowstone/compare/f63ab1e05e4c011edcf89d38790ae9421af8017f...e09773a3efa75bfb04517061197009072e8f9edd"&gt;50 commits&lt;/a&gt;, containing 2,090 additions and 298 deletions, went into this release.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Additions:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Added a custom classloader for compatibility with Java 9, while still working with Java 8&lt;/li&gt;
+&lt;li&gt;Mob state system to dictate general mob behavior&lt;/li&gt;
+&lt;li&gt;OpenCL support/API&lt;/li&gt;
+&lt;li&gt;Shield pattern support&lt;/li&gt;
+&lt;li&gt;World borders&lt;/li&gt;
+&lt;li&gt;Movement helper to navigate entities to a certain location&lt;/li&gt;
+&lt;li&gt;Add purpur pillar, purpur block, end rod and purpur stairs&lt;/li&gt;
+&lt;li&gt;Basic GlowClient support&lt;/li&gt;
+&lt;li&gt;Basic zombie AI (incomplete)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Changes:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Some improvements to entity look and look at player tasks&lt;/li&gt;
+&lt;li&gt;Base color support for banners&lt;/li&gt;
+&lt;li&gt;Rewrote physics logic, along with some (incomplete) changes to velocity application to match new physics&lt;/li&gt;
+&lt;li&gt;Update Glowkit to latest upstream (with unimplemented item cooldown API)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Fixes:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Respect doMobSpawning gamerule properly&lt;/li&gt;
+&lt;li&gt;Store name tag visibility NBT tag properly&lt;/li&gt;
+&lt;li&gt;Destroy removed entities from client view&lt;/li&gt;
+&lt;li&gt;Don't do physics on item frames&lt;/li&gt;
+&lt;li&gt;Slight redundancy cleanup in some network systems&lt;/li&gt;
+&lt;li&gt;Update repo's start.sh to latest recommended start script&lt;/li&gt;
+&lt;li&gt;Block entity creation fast pathed failure to improve performance&lt;/li&gt;
+&lt;li&gt;Don't search for block entities on newly created chunks&lt;/li&gt;
+&lt;li&gt;Link to correct website for JLine 2 in README&lt;/li&gt;
+&lt;li&gt;Fix rabbit hitbox, spawn egg and metadata&lt;/li&gt;
+&lt;li&gt;Fixes to attached blocks, especially torches&lt;/li&gt;
+&lt;li&gt;Have a default generation for books&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We've also been working on 1.12 snapshots, on &lt;a href="https://github.com/GlowstoneMC/Glowstone/tree/1.12-snapshots"&gt;another branch&lt;/a&gt;. Right now features are on freeze and only necessary compatibility/protocol updates are being applied while we wait for the Spigot project to release their 1.12 update to the Bukkit API. Depending on the size of changes to the Bukkit API upon 1.12's release, we may have to wait for new patches for Spigot and PaperSpigot before we update Glowkit and subsequently Glowstone.&lt;/p&gt;
+&lt;p&gt;The release is available &lt;a href="https://github.com/GlowstoneMC/Glowstone/releases/tag/2017.4"&gt;here&lt;/a&gt;. Please keep in mind that just because it is a release, doesn't mean it is stable or supported. Only the latest Glowstone build will get support, as we continue to improve and develop Glowstone.&lt;/p&gt;
+&lt;p&gt;Here's to AI for this coming May. I hope you're excited as we are!&lt;/p&gt;</content><category term="news"></category><category term="updates"></category></entry><entry><title>The Glowstone Project</title><link href="https://glowstone.net/news/the-glowstone-project/" rel="alternate"></link><published>2017-04-26T15:32:00+00:00</published><updated>2017-04-26T15:32:00+00:00</updated><author><name>mastercoms</name></author><id>tag:glowstone.net,2017-04-26:/news/the-glowstone-project/</id><summary type="html">&lt;p&gt;Hi. You've probably seen countless announcements about all the projects under the Glowstone family, like the Glowstone server, Glowkit and more, but we've never really talked about the project as a whole. This is mostly because we've been focusing on polishing and advancing Glowstone in terms of code, and not …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hi. You've probably seen countless announcements about all the projects under the Glowstone family, like the Glowstone server, Glowkit and more, but we've never really talked about the project as a whole. This is mostly because we've been focusing on polishing and advancing Glowstone in terms of code, and not in terms of community.&lt;/p&gt;
+&lt;p&gt;For a few weeks after we get the next Glowstone release out, I'll be focusing on improving the experience our community has with the Glowstone project itself. These changes will hopefully increase engagement and reduce the barrier to entry to our project.&lt;/p&gt;
+&lt;p&gt;I hope to see your feedback in the coming weeks on these changes and please always remember that your feedback is incredibly valuable and will always be used by us to improve the project, and will be especially in these next few weeks.&lt;/p&gt;
+&lt;p&gt;Thank you for your continued support and interest in Glowstone! I look forward to seeing your feedback as I detail changes to the project in further announcements as they come along.&lt;/p&gt;</content><category term="news"></category><category term="blog"></category></entry><entry><title>Why reinvent the wheel? (April Fools)</title><link href="https://glowstone.net/news/why-reinvent-the-wheel-april-fools/" rel="alternate"></link><published>2017-04-01T21:42:00+00:00</published><updated>2017-04-01T21:42:00+00:00</updated><author><name>aramperes</name></author><id>tag:glowstone.net,2017-04-01:/news/why-reinvent-the-wheel-april-fools/</id><summary type="html">&lt;p&gt;Hello everyone! So we've heard your critism and concerns about no longer planning to support Sponge on our server platform. Well, turn that frown upside down, because we are now dumping Bukkit plugins in favor of Sponge plugins!&lt;/p&gt;
+&lt;p&gt;That's right, starting from today, Glowstone will permanently consist of patches to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hello everyone! So we've heard your critism and concerns about no longer planning to support Sponge on our server platform. Well, turn that frown upside down, because we are now dumping Bukkit plugins in favor of Sponge plugins!&lt;/p&gt;
+&lt;p&gt;That's right, starting from today, Glowstone will permanently consist of patches to the SpongeVanilla server software. Why reinvent the wheel when we can base our work on a much more capable server and API? You can view the source for &lt;em&gt;GlowSpone&lt;/em&gt; &lt;a href="https://github.com/GlowstoneMC/GlowSpone"&gt;here&lt;/a&gt;! (&lt;em&gt;dead link&lt;/em&gt;)&lt;/p&gt;
+&lt;p&gt;Bukkit? Gross! Use GlowSpone now and never go back to Spigot or any of its nasty derivatives.&lt;/p&gt;
+&lt;p&gt;Thank you for your continuous support,
+The GlowSpone team.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edit: this was our April Fools post for 2017, we are not planning to support Sponge or to drop Bukkit anytime soon. Read more &lt;a href="/news/about-sponge/"&gt;here&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;</content><category term="news"></category><category term="blog"></category></entry><entry><title>Glowstone 2017.3</title><link href="https://glowstone.net/news/glowstone-20173/" rel="alternate"></link><published>2017-04-01T06:53:00+00:00</published><updated>2017-04-01T06:53:00+00:00</updated><author><name>mastercoms</name></author><id>tag:glowstone.net,2017-04-01:/news/glowstone-20173/</id><summary type="html">&lt;p&gt;Hello everyone! Today we present to you Glowstone 2017.3, after a month of hard work by our contributors. To everyone who makes Glowstone awesome, whether it is through bug reports, code contributions or admining, I'd like to say thank you for making this release possible. I'd also like to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hello everyone! Today we present to you Glowstone 2017.3, after a month of hard work by our contributors. To everyone who makes Glowstone awesome, whether it is through bug reports, code contributions or admining, I'd like to say thank you for making this release possible. I'd also like to thank our sponsor, &lt;a href="https://aternos.org"&gt;Aternos&lt;/a&gt;, provider of free Minecraft servers, for helping us and getting Glowstone on their platform.&lt;/p&gt;
+&lt;p&gt;77 commits went into this release, changing 134 files with 2,397 additions and 1,032 deletions.&lt;/p&gt;
+&lt;p&gt;Fixes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Change Forge reported server type to vanilla&lt;/li&gt;
+&lt;li&gt;Fall damage, physics and movement fixes&lt;/li&gt;
+&lt;li&gt;Fix inverted block placement for trap doors, slabs, stairs&lt;/li&gt;
+&lt;li&gt;Clean up item usage code&lt;/li&gt;
+&lt;li&gt;Fix double usage of water, lava bucket in survival&lt;/li&gt;
+&lt;li&gt;Rename tile entities to block entities&lt;/li&gt;
+&lt;li&gt;Correct block entity IDs&lt;/li&gt;
+&lt;li&gt;Correct player inventory implementation (offhand, armor, main hand fixes)&lt;/li&gt;
+&lt;li&gt;Fix furnaces not ticking&lt;/li&gt;
+&lt;li&gt;Improve world spawn finder&lt;/li&gt;
+&lt;li&gt;Fix noteblock pitch&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Changes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Allow for extension of entity classes&lt;/li&gt;
+&lt;li&gt;Lava damage and burn&lt;/li&gt;
+&lt;li&gt;Chunk pallettes&lt;/li&gt;
+&lt;li&gt;Mob punch knockback&lt;/li&gt;
+&lt;li&gt;Add anvil book enchanting and renaming&lt;/li&gt;
+&lt;li&gt;World generation settings in worlds.yml&lt;/li&gt;
+&lt;li&gt;Support for skin customization, allows for main hand switching, and 1.8 skins&lt;/li&gt;
+&lt;li&gt;Conversation API support&lt;/li&gt;
+&lt;li&gt;Better spectator mode support&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I hope you enjoy this release! You can download the 2017.3 artifact &lt;a href="https://github.com/GlowstoneMC/Glowstone/releases/tag/2017.3"&gt;here&lt;/a&gt;. Please note that only the latest snapshot is supported (2017.4 onward).&lt;/p&gt;
+&lt;p&gt;In other news, we have been working on 1.12 and we support the latest snapshot in a new branch, &lt;code&gt;1.12-snapshots&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;For our next release for April onwards, I have created a schedule for points of focus in order to better suit the community. This schedule is not final and I encourage you to discuss it below if you have anything you'd like to say.&lt;/p&gt;
+&lt;p&gt;April - Intelligence Update: Mob AI with a global mob administrator
+May - Spring cleaning Update: bug fixes and todo completions
+June - Blocks Update: finish new blocks system and block API
+July - Mining Update: add new generation features,  especially caves and other survival features, pistons
+August - Text Update: add chat components and other message features found in the latest Minecraft version
+September - Net Update: remove flow dependency, use native netty
+October - Ender Update: implement the end
+November - Hearth Update: implement villages
+December - maintenance update for stable release, no new features&lt;/p&gt;
+&lt;p&gt;I hope you like this schedule but remember I will be glad to see your thoughts on it! These updates are not set in stone so whether you are a contributor or user and want to see something else, please leave your suggestions below.&lt;/p&gt;</content><category term="news"></category><category term="updates"></category></entry><entry><title>Glowstone 2017.2</title><link href="https://glowstone.net/news/glowstone-20172/" rel="alternate"></link><published>2017-03-01T09:03:00+00:00</published><updated>2017-03-01T09:03:00+00:00</updated><author><name>mastercoms</name></author><id>tag:glowstone.net,2017-03-01:/news/glowstone-20172/</id><summary type="html">&lt;p&gt;Glowstone 2017.2's commit window has ended and has subsequently been released. Here are the changes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Implemented new Bukkit API count methods in World &lt;/li&gt;
+&lt;li&gt;The server bootstrap channel is now accessible, for plugins&lt;/li&gt;
+&lt;li&gt;Add getter for sessions in message handlers, for plugins&lt;/li&gt;
+&lt;li&gt;Separate logic for player login and profile handling …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;Glowstone 2017.2's commit window has ended and has subsequently been released. Here are the changes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Implemented new Bukkit API count methods in World &lt;/li&gt;
+&lt;li&gt;The server bootstrap channel is now accessible, for plugins&lt;/li&gt;
+&lt;li&gt;Add getter for sessions in message handlers, for plugins&lt;/li&gt;
+&lt;li&gt;Separate logic for player login and profile handling&lt;/li&gt;
+&lt;li&gt;Adjust look around task frequency for AI&lt;/li&gt;
+&lt;li&gt;Use a parallel stream for sending entities to players&lt;/li&gt;
+&lt;li&gt;Add new constructor for proxy data to allow for use with plugins&lt;/li&gt;
+&lt;li&gt;Update Maven build settings&lt;/li&gt;
+&lt;li&gt;Force-gamemode config option support&lt;/li&gt;
+&lt;li&gt;Add tests for inventory utilities&lt;/li&gt;
+&lt;li&gt;Better support for signed and unsigned player properties&lt;/li&gt;
+&lt;li&gt;Add proper rail placement/connection&lt;/li&gt;
+&lt;li&gt;Add subtitle and times subcommands to title&lt;/li&gt;
+&lt;li&gt;Use Gson for title command&lt;/li&gt;
+&lt;li&gt;Entity physics&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And the bug fixes:
+* Default drop data to 0 instead of 1
+* Skip pulsing entities if they aren't in a loaded chunk
+* Do not shade powermock in the JAR
+* Use equals instead of == for UUID checks in the Boss Bar manager
+* Do not try to shutdown the network server if it is not running
+* Use concurrent hash map for entities
+* Do not decorate oceans with animals
+* Prevent animals from being spawned in the air from decoration
+* Unload heightmap and entities from unloaded chunks
+* Remove unused legacy packets
+* Fix structure generation and properly rollback blocks on failed structure generation
+* Fix chunk compression issues
+* Fix fall damage logic somewhat
+* Use ConcurrentHashSet for chunk entities
+* Implement use item packet, fix item usage logic
+* Fix entity animations and player swinging
+* Fix title command
+* Do not allow movement or regeneration while dead
+* Do not check the scoreboard when getting display name if the scoreboard does not exist
+* Fix TextMessage#flatten()
+* Fix a null pointer exception in ip and port due to late bind
+* Various fixes for explosions&lt;/p&gt;
+&lt;p&gt;Also some other interesting news is that ProtocolSupport supports Glowstone natively. Go check it out! https://github.com/ProtocolSupport/ProtocolSupport&lt;/p&gt;
+&lt;p&gt;You can view the code changes for this release here: https://github.com/GlowstoneMC/Glowstone/compare/50d6f16b85fb1e523bfaf1a8402d7421b3f2bab2...d5e4e54029e1bd0ccd2102578c95a9827a5632cd&lt;/p&gt;
+&lt;p&gt;And the git release can be found here: https://github.com/GlowstoneMC/Glowstone/releases/tag/2017.2&lt;/p&gt;
+&lt;p&gt;Please note that this is a release to track our progress, not one that will be supported for a longer time. Only the latest version of Glowstone will receive support.&lt;/p&gt;</content><category term="news"></category><category term="updates"></category></entry><entry><title>About Sponge...</title><link href="https://glowstone.net/news/about-sponge/" rel="alternate"></link><published>2017-01-31T21:06:00+00:00</published><updated>2017-01-31T21:06:00+00:00</updated><author><name>mastercoms</name></author><id>tag:glowstone.net,2017-01-31:/news/about-sponge/</id><summary type="html">&lt;p&gt;EDIT: A lot has changed since this blog post, both in the goals of Glowstone, and Sponge's API in version 8. We aren't completely ruling out the possibility of using Sponge, and this post's strong language does not reflect the sentiment of the team.&lt;/p&gt;
+&lt;p&gt;So over time, we've found a …&lt;/p&gt;</summary><content type="html">&lt;p&gt;EDIT: A lot has changed since this blog post, both in the goals of Glowstone, and Sponge's API in version 8. We aren't completely ruling out the possibility of using Sponge, and this post's strong language does not reflect the sentiment of the team.&lt;/p&gt;
+&lt;p&gt;So over time, we've found a lot of people asking us about Sponge. Now that its hype has died down quite a bit, I think it's time to clarify a few things about Glowstone and Sponge, including a few misconceptions:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cool, it's Glowstone, that Sponge server I've been hearing about!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;https://twitter.com/SpongePowered/status/537748767286784002&lt;/p&gt;
+&lt;p&gt;Glowstone does not use Sponge at all in its code. We do not support Sponge natively, and the plugin we made, Bukkit2Sponge, currently targets Sponge 2.0 (they're on 6.0 now), and it barely even implements anything from 2.0 anyway. We aren't interested in developing it further at this time.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Well, I'm at least glad Glowstone teamed up with Sponge!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;https://www.reddit.com/r/admincraft/comments/2foll6/weve_gotten_together_developers_from_spout_forge/&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;*Edit (May 28, 2017)&lt;/strong&gt;: This reddit post has been deleted by its original poster. Here is an archived &lt;a href="https://web.archive.org/web/20161210172443/https://www.reddit.com/r/admincraft/comments/2foll6/weve_gotten_together_developers_from_spout_forge/"&gt;snapshot&lt;/a&gt; of this post from December 2016. -Momo*&lt;/p&gt;
+&lt;p&gt;I'm not aware of any Glowstone partnership with Sponge. If there is/was one, Sponge has done a poor job maintaining it, as we haven't been contacted by them at all.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Hm, but you're working on Sponge support?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Nope. And with our current plans, we will never work on Sponge support for Glowstone. It's just too much work for us for little to no benefit.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Well alright then, Sponge is still the future... right?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Well no. Now that the hype has died down, its plugin dev community is quite small.&lt;/p&gt;
+&lt;p&gt;Also, personally, I think Sponge isn't very well designed. &lt;a href="https://github.com/SpongePowered/SpongeAPI/blob/stable-7/src/main/java/org/spongepowered/api/data/value/mutable/CompositeValueStore.java#L49"&gt;This line&lt;/a&gt; explains it best. Of course, there are numerous other design flaws, like other problems in the data API, confusing naming patterns, and avoidance of simpler Java constructs, but all of that is out of the scope of this post.&lt;/p&gt;
+&lt;p&gt;Well, thanks for reading this post. I hope it clarified some things about Sponge and how it relates to Glowstone. If you want to learn more, I would be happy to expand on anything, if asked.&lt;/p&gt;</content><category term="news"></category><category term="blog"></category></entry><entry><title>Glowstone Update - 11</title><link href="https://glowstone.net/news/glowstone-update-11/" rel="alternate"></link><published>2017-01-31T12:00:00+00:00</published><updated>2017-01-31T12:00:00+00:00</updated><author><name>mastercoms</name></author><id>tag:glowstone.net,2017-01-31:/news/glowstone-update-11/</id><summary type="html">&lt;p&gt;Hello, welcome back to one of these updates on what we've been up to with the Glowstone project!&lt;/p&gt;
+&lt;p&gt;One of our developers, @momothereal, is giving the update this time around:&lt;/p&gt;
+&lt;p&gt;We haven't done one of these in the past weeks so I thought I would share what has been completed …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hello, welcome back to one of these updates on what we've been up to with the Glowstone project!&lt;/p&gt;
+&lt;p&gt;One of our developers, @momothereal, is giving the update this time around:&lt;/p&gt;
+&lt;p&gt;We haven't done one of these in the past weeks so I thought I would share what has been completed and what we are hoping to achieve in the future.
+Since the last monthly update in October, we have pushed 64 &lt;a href="https://github.com/GlowstoneMC/Glowstone/compare/3f1bb341372cc19dad01f3e16c5eb921476f55f1...master"&gt;commits&lt;/a&gt; onto master, counting 7,309 additions and 1,764 deletions from 8 contributors. Fifteen pull requests were merged and 4 more have been opened.&lt;/p&gt;
+&lt;p&gt;These changes mainly consisted of:
+ - Updating to 1.11 and 1.11.2
+ - Various adjustments and improvements to the network server
+ - Official support for registering custom entities
+ - RegionFile performance improvements
+ - Implementation of the Fortune enchantment
+ - Animal world decoration (spawning);
+ - Entity loot and loot tables;
+ - Observer block implementation;
+ - Armor bar and attribute manager overhaul;
+ - Basic async AI tasking for animals;
+ - BossBar API implementation;
+ - Various optimizations and fixes.&lt;/p&gt;
+&lt;p&gt;In other news, we have also changed our Maven repository manager to Apache Archiva (say goodbye to Nexus!). &lt;/p&gt;
+&lt;p&gt;We have also changed Glowstone's version scheme to a Minecraft-independent system. As such, our versions will no longer be tagged with the latest supported Minecraft version. Our current version as of writing this post is 2017.0.1.2, as described with the following format: {year}.{major}.{minor}.{trivial}. We might expand on this format later on.&lt;/p&gt;
+&lt;p&gt;In the future, we hope to achieve more customizability to our server platform. We have started this goal by supporting custom entities and the beginning of AI tasking. As always, we will pursue our objective to keep up with Minecraft updates (1.12 coming in the future) as well as implementing more features from the vanilla server software and the Bukkit API.&lt;/p&gt;
+&lt;p&gt;Also note that development might slow down in the upcoming weeks, some of us are quite busy with other projects and/or personal endeavors.&lt;/p&gt;
+&lt;p&gt;Thanks momo for the update! And now, I would like to give an update on these updates. :)&lt;/p&gt;
+&lt;p&gt;We hope to release these posts more frequently and more on time, but we can't really commit to a set time schedule like we've tried in the past (hint: it doesn't work). However, we are really sorry for not keeping up these past few months.&lt;/p&gt;
+&lt;p&gt;Thanks for stopping by and we hope to see you soon in the next update, which hopefully won't be released too far away!&lt;/p&gt;</content><category term="news"></category><category term="updates"></category></entry><entry><title>This Month in Glowstone - 10</title><link href="https://glowstone.net/news/this-month-in-glowstone-10/" rel="alternate"></link><published>2016-10-16T12:00:00+00:00</published><updated>2016-10-16T12:00:00+00:00</updated><author><name>mastercoms</name></author><id>tag:glowstone.net,2016-10-16:/news/this-month-in-glowstone-10/</id><summary type="html">&lt;p&gt;Wow, already month 10. I can't believe it! &lt;em&gt;Wait&lt;/em&gt;, what's that? We were a weekly blog before? No, that can't be true, we only have monthly blog posts on record. You must have gone crazy.&lt;/p&gt;
+&lt;p&gt;Speaking of crazy, we've been crazy busy on Glowstone. 16 commits and 1,137 additions …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Wow, already month 10. I can't believe it! &lt;em&gt;Wait&lt;/em&gt;, what's that? We were a weekly blog before? No, that can't be true, we only have monthly blog posts on record. You must have gone crazy.&lt;/p&gt;
+&lt;p&gt;Speaking of crazy, we've been crazy busy on Glowstone. 16 commits and 1,137 additions, along with 176 deletions. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Notable changes&lt;/strong&gt; &lt;/p&gt;
+&lt;p&gt;The shulkers branch was merged, and it brings...&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Iron golem, wither, and snowmen statue spawning&lt;/li&gt;
+&lt;li&gt;Wither functionality&lt;/li&gt;
+&lt;li&gt;1.9 metadata support&lt;/li&gt;
+&lt;li&gt;Elder guardian data storage&lt;/li&gt;
+&lt;li&gt;Tweaks to NBT and Metadata handling&lt;/li&gt;
+&lt;li&gt;General improvements to the summon command&lt;/li&gt;
+&lt;li&gt;Start of our Minecart implementation&lt;/li&gt;
+&lt;li&gt;Spawn messages and events actually fire now&lt;/li&gt;
+&lt;li&gt;Support POSITION and OPTPOSITION with a new BlockVector class&lt;/li&gt;
+&lt;li&gt;oh, and shulker functionality&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And here are some other things that weren't cool enough to be in a totally correctly named PR branch:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Various performance improvements&lt;/li&gt;
+&lt;li&gt;Fixes and improvements to player login and quit&lt;/li&gt;
+&lt;li&gt;Improvements to UUID lookup&lt;/li&gt;
+&lt;li&gt;A new website&lt;/li&gt;
+&lt;li&gt;Documentation tweaks, including a test server mention&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Fixes&lt;/strong&gt;
+* Ensure players can only use useable items
+* Download commons-io because plugins expect it to be available
+* Clean up some useless git branches&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Coming soon&lt;/strong&gt;
+* We did some more work on 1.11, with more coming, as it depended on the shulkers branch
+* Projectiles
+* Everything else mentioned before as coming soon that is still coming "soon"&lt;/p&gt;
+&lt;p&gt;Well, that's it for our 10th monthly blog post, that we've done 9 other ones of. You know, 9 other monthly blog posts.&lt;/p&gt;</content><category term="news"></category><category term="updates"></category></entry><entry><title>This Week in Glowstone - 9</title><link href="https://glowstone.net/news/this-week-in-glowstone-9/" rel="alternate"></link><published>2016-10-05T12:00:00+00:00</published><updated>2016-10-05T12:00:00+00:00</updated><author><name>mastercoms</name></author><id>tag:glowstone.net,2016-10-05:/news/this-week-in-glowstone-9/</id><content type="html">&lt;p&gt;Almost ＬＩＴＥＲＡＬＬＹ ＮＯＴＨＩＮＧ. That's why we're moving permanently to a monthly progress blog. We just don't have enough developers to pump out a lot of interesting stuff every week. See you guys in 11 days.&lt;/p&gt;</content><category term="news"></category><category term="updates"></category></entry><entry><title>This Week in Glowstone - 8: ME (Monthly Edition)</title><link href="https://glowstone.net/news/this-week-in-glowstone-8-me-monthly-edition/" rel="alternate"></link><published>2016-09-18T12:00:00+00:00</published><updated>2016-09-18T12:00:00+00:00</updated><author><name>mastercoms</name></author><id>tag:glowstone.net,2016-09-18:/news/this-week-in-glowstone-8-me-monthly-edition/</id><summary type="html">&lt;p&gt;What comes after 2? 8, because we're bad at counting, except when it comes to commits. In this month (which is roughly a week), we've had &lt;a href="https://github.com/GlowstoneMC/Glowstone/compare/14569fae2a5122af730c90985adb3e1c171c02c7...master"&gt;86 commits&lt;/a&gt; on master. Those commits added 1,901 lines and removed 794. You can read through all of those lines, or you can …&lt;/p&gt;</summary><content type="html">&lt;p&gt;What comes after 2? 8, because we're bad at counting, except when it comes to commits. In this month (which is roughly a week), we've had &lt;a href="https://github.com/GlowstoneMC/Glowstone/compare/14569fae2a5122af730c90985adb3e1c171c02c7...master"&gt;86 commits&lt;/a&gt; on master. Those commits added 1,901 lines and removed 794. You can read through all of those lines, or you can read these lines:&lt;/p&gt;
+&lt;p&gt;Discussion
+* Shine, our plugin downloads website and compatibility database
+* GitHub is awful
+* Where is the weekly blog post???&lt;/p&gt;
+&lt;p&gt;Notable changes
+* Lots of documentation changes/additions, a version independent JAR download and maven adjustments
+* Native transport (epoll)
+* Support for particle spawning
+* Shovel path block creation
+* Sound effects for buttons, levers, entity death, and entity hurt
+* Hoppers
+* More complete scoreboard support
+* Sound category support
+* Some work on the anvil inventory and custom item names
+* Support for statistics with type array (i.e. Adventuring Time)
+* Tile tick support
+* Item frames (rewritten to work again)&lt;/p&gt;
+&lt;p&gt;Fixes
+* Optimizations and fixes to entity detection for explosions
+* Fix player data trying to save data on an unloaded world during shutdown
+* No more weird things happening when y &amp;gt; 256
+* Fixed and cleaned up entity spawn code
+* Cleaned up effect playing
+* Optimizations and refactoring of block tick system
+* Slab fixes (and purpur slab support)
+* Block placement sound only plays once now
+* Fixes to replacing a double plant with a block placement
+* Removed debug output from fence gate
+* Enchantment table now uses tile entity
+* Optimizations and fixes to redstone
+* Chunk errors related to ticking blocks that were not loaded
+* Better rail placement that takes into account facing direction
+* You can no longer place blocks where an entity is (plus definitions for entity bounding boxes)
+* Place the block an item represents rather than the item (ex. cauldron)
+* Don't try to check if a block can absorb a placement if it doesn't exist
+* Optimizations/fixes to furnaces
+* Durability now works with right click tools
+* Fixed stop sound command and moved to Glowkit
+* Fixed changed blocks desync
+* Food level now resets on death
+* Players do not become "ghosts" on deaths anymore
+* Fixed null in UUID json lists (ops.json, etc)
+* Some optimization work to player UUID fetching
+* Fix NullPointerException if a tameable doesn't have an owner
+* SignChangeEvent is now called
+* Checks for unknown interacted blocks
+* Elytra now properly uses durability
+* Optimized HttpClient&lt;/p&gt;
+&lt;p&gt;Coming up
+*  1.11 support
+* Entity AI
+* Packet API
+* LivingEntity drops
+* net.glowstone.block refactor
+* Better world customization
+* Internationalization support
+* New website (&lt;a href="https://momothereal.github.io/glowstone-website/index.html"&gt;preview&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;Phew, that's a lot of stuff. I wish every week could take 42 days.&lt;/p&gt;</content><category term="news"></category><category term="updates"></category></entry><entry><title>This Week In Glowstone - 2</title><link href="https://glowstone.net/news/this-week-in-glowstone-2/" rel="alternate"></link><published>2016-08-08T12:00:00+00:00</published><updated>2016-08-08T12:00:00+00:00</updated><author><name>mastercoms</name></author><id>tag:glowstone.net,2016-08-08:/news/this-week-in-glowstone-2/</id><summary type="html">&lt;p&gt;So this week was &lt;a href="https://www.youtube.com/watch?v=6rH55V_hp1Q"&gt;quiet, too quiet&lt;/a&gt;, with only 127 additions and 4 deletions and 8 changed files. But that doesn't mean we weren't busy, nor does it mean that there's a trap. There have been some nice fixes here and there and legacy ping support, with more features and …&lt;/p&gt;</summary><content type="html">&lt;p&gt;So this week was &lt;a href="https://www.youtube.com/watch?v=6rH55V_hp1Q"&gt;quiet, too quiet&lt;/a&gt;, with only 127 additions and 4 deletions and 8 changed files. But that doesn't mean we weren't busy, nor does it mean that there's a trap. There have been some nice fixes here and there and legacy ping support, with more features and bug fixes being worked on that unfortunately did not make it into master this week.&lt;/p&gt;
+&lt;p&gt;Discussion&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Decided on how to organize the protocol API for Glowstone/Linkstone&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Notable changes&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Added support for legacy pings/queries&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Fixes&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fixed containers not dropping their contents when broken by a player in creative mode&lt;/li&gt;
+&lt;li&gt;Changed the fast-util repo to the correct URL, which fixes dependency errors&lt;/li&gt;
+&lt;li&gt;Fix ghost players on death&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Coming up&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Hoppers and tile tick format&lt;/li&gt;
+&lt;li&gt;Readding block cache with less bugs&lt;/li&gt;
+&lt;li&gt;Fix items that can be placed as blocks placing the wrong block&lt;/li&gt;
+&lt;li&gt;Internationalization support&lt;/li&gt;
+&lt;/ul&gt;</content><category term="news"></category><category term="updates"></category></entry><entry><title>This Week in Glowstone - 1</title><link href="https://glowstone.net/news/this-week-in-glowstone-1/" rel="alternate"></link><published>2016-07-31T12:00:00+00:00</published><updated>2016-07-31T12:00:00+00:00</updated><author><name>mastercoms</name></author><id>tag:glowstone.net,2016-07-31:/news/this-week-in-glowstone-1/</id><summary type="html">&lt;p&gt;Yep. We are now going to have one of those weekly blog posts where we spew a bunch of numbers at you: 33 commits. 809 additions. 304 deletions. But we have one special number to throw at you this week: 1.10.2. That's the latest version of Minecraft and …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Yep. We are now going to have one of those weekly blog posts where we spew a bunch of numbers at you: 33 commits. 809 additions. 304 deletions. But we have one special number to throw at you this week: 1.10.2. That's the latest version of Minecraft and now it's also the latest version of Minecraft we support, thanks to the hard work and patience of momo. This PR was actually practically ready a month ago but due to good reasons it was delayed until 2 days ago.
+And here's another milestone/meaningless number: with all the commit spam we've done over the years, Glowstone has reached 1,999 commits. Finally!
+You might be wondering why 1999 is such a huge milestone. And that's because this is our last commit. We're too scared of Y2K to go any further.
+But seriously, I, mastercoms, have been working on a very special feature that will be revealed to you next week in the next "This Week in Glowstone" post, or ~~tomorrow, in the commit log~~ &lt;em&gt;it's going to take a bit longer&lt;/em&gt;. But that's no fun.
+Anyway, please pardon the rather long introduction/rambling, and let's get into week one of This Week in Glowstone:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Discussion&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Addition of the "Story" label to distinguish tasks from bug reports, along with a general revamp of all of our labels&lt;/li&gt;
+&lt;li&gt;Planning done to expose nms and obc features (and more) in Glowkit, and to provide these features with Linkstone, a clean room rewrite of these packages&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Notable changes&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1.10.2&lt;/li&gt;
+&lt;li&gt;New dev tools for rapid iteration and testing&lt;/li&gt;
+&lt;li&gt;Removed error logs from shutdown thread, as they were not actually errors and just served to confuse people&lt;/li&gt;
+&lt;li&gt;Summon command&lt;/li&gt;
+&lt;li&gt;Documentation changes and additions&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Fixes&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fixes to CircleCI related to Glowkit changes&lt;/li&gt;
+&lt;li&gt;A fix to invalid chunk lengths caused by flowing water&lt;/li&gt;
+&lt;li&gt;A fix to block types when being modified from one type to another by the client&lt;/li&gt;
+&lt;li&gt;Remove unnecessary check in shutdown thread&lt;/li&gt;
+&lt;/ul&gt;</content><category term="news"></category><category term="updates"></category></entry><entry><title>About 1.11...</title><link href="https://glowstone.net/news/about-111/" rel="alternate"></link><published>2016-07-31T02:55:00+00:00</published><updated>2016-07-31T02:55:00+00:00</updated><author><name>mastercoms</name></author><id>tag:glowstone.net,2016-07-31:/news/about-111/</id><summary type="html">&lt;p&gt;It's been almost two weeks since Mojang released 1.11, and just over a week since Spigot released their 1.11 API. So, what's happening at Glowstone and what's taking us so long?&lt;/p&gt;
+&lt;p&gt;Before I go into why it's been taking a relatively long time, let's talk about what we …&lt;/p&gt;</summary><content type="html">&lt;p&gt;It's been almost two weeks since Mojang released 1.11, and just over a week since Spigot released their 1.11 API. So, what's happening at Glowstone and what's taking us so long?&lt;/p&gt;
+&lt;p&gt;Before I go into why it's been taking a relatively long time, let's talk about what we have so far. First, we have a protocol-compatible &lt;a href="https://bamboo.gserv.me/browse/GSPP-SRV44/latest/artifact/shared/Versioned-Server-JAR/glowstone-1.1X-SNAPSHOT.jar"&gt;build&lt;/a&gt; for 1.10 and 1.11. It will allow for people with the latest 1.11 client to connect to Glowstone servers running the 1.10 server. Although we had &lt;a href="https://github.com/GlowstoneMC/Glowstone/commits/1.11-compatible"&gt;some effort&lt;/a&gt; put into making it compatible with 1.11 clients, we have no guarantee that it will work completely and we can't ensure that it is stable. So please, it's important, more than ever, to make backups.&lt;/p&gt;
+&lt;p&gt;Next, we have a new Glowkit branch for 1.11 support. That's our version of the Bukkit API. It's ready to be used for the Glowstone implementation, but there are a few things pending before it can be merged into master: moving the version command to Glowstone, changing some timing code to be better suited for the Bukkit API, converting methods to lang3 or even possibly guava, and completing/fixing the Javadocs. Feel free to make suggestions and contribute at the &lt;a href="https://github.com/GlowstoneMC/Glowkit/pull/9"&gt;Glowkit 1.11 PR&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Meanwhile, &lt;a href="https://github.com/GlowstoneMC/Glowstone/pull/385"&gt;work&lt;/a&gt; is being done by momo to implement the new Glowkit 1.11 API and provide non-hacky support for 1.11 clients. There have been a lot of changes to the underlying Bukkit code, especially with entities, so it's been a lot of work.&lt;/p&gt;
+&lt;p&gt;Everything is coming along nicely and we'll have a pretty solid build for 1.11 sometime next week.&lt;/p&gt;
+&lt;p&gt;Now, we didn't get started on this until seemingly much later than Spigot, but keep in mind that Glowkit is a fork of Paper, and Paper is a fork of Spigot, which is a fork of Bukkit. It takes a long time for updates to move up the chain. The Paper update to 1.11 was 2 days after Spigot finalized their API and Server. Once the Paper repo stabilized on Thanksgiving, we released Glowkit 1.11 a day later, with massive improvements to development tools, patch order and the patches themselves. After that, it took us a day to do substantial work on the 1.11 implementation, thanks to momo.&lt;/p&gt;
+&lt;p&gt;We understand your frustration with our seemingly late release times, but please understand that we're working as fast as we can.&lt;/p&gt;
+&lt;p&gt;(also about the monthly blog, I'm waiting until after we get 1.11 out :) )&lt;/p&gt;</content><category term="news"></category><category term="blog"></category></entry><entry><title>My Little Glowkit: Patching Is Magic</title><link href="https://glowstone.net/news/my-little-glowkit-patching-is-magic/" rel="alternate"></link><published>2016-06-30T14:07:00+00:00</published><updated>2016-06-30T14:07:00+00:00</updated><author><name>gdude2002</name></author><id>tag:glowstone.net,2016-06-30:/news/my-little-glowkit-patching-is-magic/</id><summary type="html">&lt;p&gt;As some of you may know, recently, &lt;a href="https://github.com/GlowstoneMC/Glowkit"&gt;Glowkit&lt;/a&gt; has moved to a patch-based system. We feel that it's going to be far easier to work with Glowkit on a development and compilation basis by adopting this method, and it also allows us to base upon much more recent Bukkit forks …&lt;/p&gt;</summary><content type="html">&lt;p&gt;As some of you may know, recently, &lt;a href="https://github.com/GlowstoneMC/Glowkit"&gt;Glowkit&lt;/a&gt; has moved to a patch-based system. We feel that it's going to be far easier to work with Glowkit on a development and compilation basis by adopting this method, and it also allows us to base upon much more recent Bukkit forks - such as the one maintained as part of PaperSpigot.&lt;/p&gt;
+&lt;p&gt;If you're just a Glowstone user, this has no immediate effect on your experience. Contributors and maintainers, though, should bear the following steps in mind:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Clone the repository recursively, to include the submodules (&lt;code&gt;git clone --recursive&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;applyPatches.sh&lt;/code&gt; (Windows users can use Git Bash, or Bash for Windows 10)&lt;/li&gt;
+&lt;li&gt;Make your changes in the &lt;code&gt;Glowkit-Patched&lt;/code&gt; directory&lt;/li&gt;
+&lt;li&gt;Compile, test, and so on&lt;/li&gt;
+&lt;li&gt;Commit your changes&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;rebuildPatches.sh&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Commit your changes and push them&lt;/li&gt;
+&lt;/ul&gt;</content><category term="news"></category><category term="blog"></category></entry><entry><title>New forum</title><link href="https://glowstone.net/news/new-forum/" rel="alternate"></link><published>2016-06-05T16:05:00+00:00</published><updated>2016-06-05T16:05:00+00:00</updated><author><name>gdude2002</name></author><id>tag:glowstone.net,2016-06-05:/news/new-forum/</id><summary type="html">&lt;p&gt;Yep, that's right. We've moved from Flarum.&lt;/p&gt;
+&lt;p&gt;From a personal perspective, Flarum doesn't appear to be going anywhere fast. In its current early-beta state, it doesn't have many options, has questionable levels of security and is impossible to upgrade. As a result, we quickly outgrew it. It was time to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Yep, that's right. We've moved from Flarum.&lt;/p&gt;
+&lt;p&gt;From a personal perspective, Flarum doesn't appear to be going anywhere fast. In its current early-beta state, it doesn't have many options, has questionable levels of security and is impossible to upgrade. As a result, we quickly outgrew it. It was time to move on - At least until Flarum becomes viable.&lt;/p&gt;
+&lt;p&gt;So, we're now on NodeBB. The previous posts haven't been moved over, but a backup has been made and the contents of the previous posts are available. For reference, they were:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;+---------------------------------------------+----------------+----+
+| title                                       | comments_count | id |
++---------------------------------------------+----------------+----+
+| API Support                                 |             14 |  1 |
+| Forum Rules                                 |              3 |  2 |
+| Remove Glowkit                              |             12 |  3 |
+| Plugins Tester                              |              6 |  4 |
+| NMS alternative?                            |              4 |  5 |
+| From NMS Entities to Glowstone              |              2 |  7 |
+| Concurrency?                                |              3 |  8 |
+| Plugin compatibility of most common plugins |              6 |  9 |
+| Updating to 1.10                            |              2 | 10 |
++---------------------------------------------+----------------+----+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Feel free to ask for your posts back; a gist will be provided to you. If you like, you can do so by responding to this announcement. We recommend that you repost your topics (once you've gotten their content back) if you wish to continue their discussion, however.&lt;/p&gt;
+&lt;p&gt;Thanks for flying with us!&lt;/p&gt;</content><category term="news"></category><category term="blog"></category></entry></feed>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <title>Glowstone 2017.4 &middot; Glowstone</title>
+    <meta charset="utf-8"/>
+    <meta name="theme-color" content="#e8970b">
+    <meta name="generator" content="Pelican"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:site_name" content="Glowstone">
+    <meta property="og:title" content="Glowstone 2017.4">
+    <meta property="og:description" content="And so we come to April&#39;s release, Glowstone 2017.4, the Intelligence Update. Our goal for this month was to get AI implemented. We didn&#39;t exactly get to our goal, but since May&#39;s release was already planned to be a light one, we&#39;ve decided to shift some of the AI work to May so we can finish it up.">
+    <meta name="twitter:description" content="And so we come to April&#39;s release, Glowstone 2017.4, the Intelligence Update. Our goal for this month was to get AI implemented. We didn&#39;t exactly get to our goal, but since May&#39;s release was already planned to be a light one, we&#39;ve decided to shift some of the AI work to May so we can finish it up.">
+    <meta name="description" content="And so we come to April&#39;s release, Glowstone 2017.4, the Intelligence Update. Our goal for this month was to get AI implemented. We didn&#39;t exactly get to our goal, but since May&#39;s release was already planned to be a light one, we&#39;ve decided to shift some of the AI work to May so we can finish it up.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@GlowstoneMC">
+    <meta name="twitter:creator" content="@GlowstoneMC">
+    <meta property="og:image" content="https://glowstone.net/theme/images/glowstone-logo-colour.png">
+    <meta itemprop="image" content="https://glowstone.net/theme/images/glowstone-logo-colour.png">
+    <meta name="twitter:image" content="https://glowstone.net/theme/images/glowstone-logo-colour.png">
+    <link href="https://glowstone.net/feeds/atom/news"
+          type="application/atom+xml" rel="alternate" title="Glowstone Full Atom Feed"/>
+    <link href="https://glowstone.net/feeds/rss/news"
+          type="application/rss+xml" rel="alternate" title="Glowstone RSS Feed"/>
+
+
+
+    <meta name="tags" content="updates" />
+
+    <link rel="stylesheet" href="/theme/css/bulma.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+    <link rel="stylesheet" href="/theme/css/custom.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/baguettebox.js@1.11.1/dist/baguetteBox.min.css" integrity="sha256-cLMYWYYutHkt+KpNqjg7NVkYSQ+E2VbrXsEvOqU7mL0=" crossorigin="anonymous">
+<link rel="stylesheet" href="/theme/css/news_view.css">
+</head>
+
+<body>
+
+<header id="banner" class="hero is-primary">
+        <div class="hero-head">
+        <div class="container">
+            <nav class="navbar is-transparent" role="navigation" aria-label="brand bar">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="/" title="Home">
+                        <img src="/theme/images/glowstone-text.png" alt="glowstone" width="112" height="28">
+                    </a>
+                </div>
+
+                <div class="navbar-end">
+                    <span class="navbar-item">
+                        <a class="button is-light is-outlined" href="/feeds" title="Feeds">
+                            <span class="icon">
+                                <i class="fa fa-feed"></i>
+                            </span>
+                        </a>
+                    </span>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="hero-foot">
+    <div class="container">
+        <nav class="tabs is-boxed">
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li class="is-active">
+                    <a href="/news">News</a>
+                </li>
+                <li>
+                    <a href="/community">Community</a>
+                </li>
+            </ul>
+
+            <ul class="is-right">
+                <li>
+                    <a href="/docs">Docs</a>
+                </li>
+                <li>
+                    <a href="/#downloads">Downloads</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    </div>
+</header>
+<nav class="nav has-shadow" style="padding-left: 1%">
+  <div class="container">
+    <div class="nav-left">
+      <span class="nav-item has-text-weight-bold">Latest news</span>
+      <a class="nav-item is-tab" href="/news/glowstone-202180/">Glowstone 2021.8.0</a>
+      <a class="nav-item is-tab" href="/news/glowstone-202170/">Glowstone 2021.7.0</a>
+      <a class="nav-item is-tab" href="/news/glowstone-201870/">Glowstone 2018.7.0</a>
+    </div>
+  </div>
+</nav>
+<section class="section">
+  <div class="container">
+    <p class="field">
+      <a class="button is-outlined is-primary" href="/news">
+        <span class="icon">
+          <i class="fa fa-chevron-left"></i>
+        </span>
+        <span>Back to news</span>
+      </a>
+    </p>
+    <br>
+    <div class="box news-view content gallery">
+      <div class="news-title-section">
+        <div class="is-pulled-right" style="display: block;">
+          <img src="http://cdn.libravatar.org/avatar/ca05100ebdac5004684a8b7a81e2d7ad" class="box image is-32x32" title="Posted by mastercoms" />
+        </div>
+        <a href="/news/glowstone-20174/" rel="bookmark" title="Permalink to Glowstone 2017.4">
+          <h1 class="news-title" style="display: inline">
+            Glowstone 2017.4
+          </h1>
+        </a>
+        <br>
+        <span class="news-subtitle" style="display: inline" class="title is-3">
+          <time datetime="2017-04-30T09:35:00+00:00"> Sun 30 April 2017 </time>
+        </span>
+      </div>
+      <hr>
+      <p>And so we come to April's release, Glowstone 2017.4, the Intelligence Update. Our goal for this month was to get AI implemented. We didn't exactly get to our goal, but since May's release was already planned to be a light one, we've decided to shift some of the AI work to May so we can finish it up. </p>
+<p><img alt="intelligence update header" src="http://i.imgur.com/twQw58b.png"></p>
+<p>Right now we have a great framework for AI we can work with, with a task/state system that determines mob behavior and actions, as well as improved physics that will help support advanced mob movement. So, a deadline of May should be much more manageable, especially since some of our contributors will become more available this month. </p>
+<p>Anyway, let's get into the details:</p>
+<p><a href="https://github.com/GlowstoneMC/Glowstone/compare/f63ab1e05e4c011edcf89d38790ae9421af8017f...e09773a3efa75bfb04517061197009072e8f9edd">50 commits</a>, containing 2,090 additions and 298 deletions, went into this release.</p>
+<p><strong>Additions:</strong></p>
+<ul>
+<li>Added a custom classloader for compatibility with Java 9, while still working with Java 8</li>
+<li>Mob state system to dictate general mob behavior</li>
+<li>OpenCL support/API</li>
+<li>Shield pattern support</li>
+<li>World borders</li>
+<li>Movement helper to navigate entities to a certain location</li>
+<li>Add purpur pillar, purpur block, end rod and purpur stairs</li>
+<li>Basic GlowClient support</li>
+<li>Basic zombie AI (incomplete)</li>
+</ul>
+<p><strong>Changes:</strong></p>
+<ul>
+<li>Some improvements to entity look and look at player tasks</li>
+<li>Base color support for banners</li>
+<li>Rewrote physics logic, along with some (incomplete) changes to velocity application to match new physics</li>
+<li>Update Glowkit to latest upstream (with unimplemented item cooldown API)</li>
+</ul>
+<p><strong>Fixes:</strong></p>
+<ul>
+<li>Respect doMobSpawning gamerule properly</li>
+<li>Store name tag visibility NBT tag properly</li>
+<li>Destroy removed entities from client view</li>
+<li>Don't do physics on item frames</li>
+<li>Slight redundancy cleanup in some network systems</li>
+<li>Update repo's start.sh to latest recommended start script</li>
+<li>Block entity creation fast pathed failure to improve performance</li>
+<li>Don't search for block entities on newly created chunks</li>
+<li>Link to correct website for JLine 2 in README</li>
+<li>Fix rabbit hitbox, spawn egg and metadata</li>
+<li>Fixes to attached blocks, especially torches</li>
+<li>Have a default generation for books</li>
+</ul>
+<p>We've also been working on 1.12 snapshots, on <a href="https://github.com/GlowstoneMC/Glowstone/tree/1.12-snapshots">another branch</a>. Right now features are on freeze and only necessary compatibility/protocol updates are being applied while we wait for the Spigot project to release their 1.12 update to the Bukkit API. Depending on the size of changes to the Bukkit API upon 1.12's release, we may have to wait for new patches for Spigot and PaperSpigot before we update Glowkit and subsequently Glowstone.</p>
+<p>The release is available <a href="https://github.com/GlowstoneMC/Glowstone/releases/tag/2017.4">here</a>. Please keep in mind that just because it is a release, doesn't mean it is stable or supported. Only the latest Glowstone build will get support, as we continue to improve and develop Glowstone.</p>
+<p>Here's to AI for this coming May. I hope you're excited as we are!</p>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-info" id="sponsors" style="background-color: #2b87d3;">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column is-4">
+                    <a href="https://aternos.org/" title="Aternos - Minecraft servers. Free. Forever.">
+                        <img src="/theme/images/sponsors/aternos.png" />
+                    </a>
+                </div>
+                <div class="column is-8">
+                    <p class="title has-text-weight-light">We are proudly sponsored by <strong class="has-text-weight-bold">Aternos</strong></p>
+                    <p class="subtitle">Minecraft Servers. Free. Forever.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="footer">
+    <div class="container">
+        <div class="content has-text-centered">
+            <p>
+                Made with <span class="has-text-danger">&hearts;</span> by the <a href="https://github.com/GlowstoneMC/" rel="noopener">Glowstone project</a>.
+            </p>
+            <p>
+                Glowstone is licensed under the <a href="https://github.com/GlowstoneMC/Glowstone/blob/dev/LICENSE" rel="noopener">MIT license</a>,
+                while this site is licensed under the <a href="https://github.com/GlowstoneMC/glowstonemc.github.io/blob/main/LICENSE" rel="noopener">Artistic License 2.0</a>.
+                If you're thinking of contributing, please read <a href="/cla">our CLA</a>.
+            </p>
+            <p>
+                Glowstone would not be possible without <a target="_blank"
+                                                           href="https://github.com/GlowstoneMC/Glowstone#credits" rel="noopener">these folks</a> &mdash; thanks for your time and passion!
+            </p>
+        </div>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/baguettebox.js@1.11.1/dist/baguetteBox.min.js" integrity="sha256-ULQV01VS9LCI2ePpLsmka+W0mawFpEA0rtxnezUj4A4=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+    baguetteBox.run(".gallery", {
+        animation: "fadeIn",
+        noScrollbars: true
+    })
+</script>
+</body>
+</html>

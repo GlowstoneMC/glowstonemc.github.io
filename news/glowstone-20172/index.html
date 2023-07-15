@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <title>Glowstone 2017.2 &middot; Glowstone</title>
+    <meta charset="utf-8"/>
+    <meta name="theme-color" content="#e8970b">
+    <meta name="generator" content="Pelican"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:site_name" content="Glowstone">
+    <meta property="og:title" content="Glowstone 2017.2">
+    <meta property="og:description" content="Glowstone 2017.2&#39;s commit window has ended and has subsequently been released. Here are the changes:">
+    <meta name="twitter:description" content="Glowstone 2017.2&#39;s commit window has ended and has subsequently been released. Here are the changes:">
+    <meta name="description" content="Glowstone 2017.2&#39;s commit window has ended and has subsequently been released. Here are the changes:">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@GlowstoneMC">
+    <meta name="twitter:creator" content="@GlowstoneMC">
+    <meta property="og:image" content="https://glowstone.net/theme/images/glowstone-logo-colour.png">
+    <meta itemprop="image" content="https://glowstone.net/theme/images/glowstone-logo-colour.png">
+    <meta name="twitter:image" content="https://glowstone.net/theme/images/glowstone-logo-colour.png">
+    <link href="https://glowstone.net/feeds/atom/news"
+          type="application/atom+xml" rel="alternate" title="Glowstone Full Atom Feed"/>
+    <link href="https://glowstone.net/feeds/rss/news"
+          type="application/rss+xml" rel="alternate" title="Glowstone RSS Feed"/>
+
+
+
+    <meta name="tags" content="updates" />
+
+    <link rel="stylesheet" href="/theme/css/bulma.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+    <link rel="stylesheet" href="/theme/css/custom.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/baguettebox.js@1.11.1/dist/baguetteBox.min.css" integrity="sha256-cLMYWYYutHkt+KpNqjg7NVkYSQ+E2VbrXsEvOqU7mL0=" crossorigin="anonymous">
+<link rel="stylesheet" href="/theme/css/news_view.css">
+</head>
+
+<body>
+
+<header id="banner" class="hero is-primary">
+        <div class="hero-head">
+        <div class="container">
+            <nav class="navbar is-transparent" role="navigation" aria-label="brand bar">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="/" title="Home">
+                        <img src="/theme/images/glowstone-text.png" alt="glowstone" width="112" height="28">
+                    </a>
+                </div>
+
+                <div class="navbar-end">
+                    <span class="navbar-item">
+                        <a class="button is-light is-outlined" href="/feeds" title="Feeds">
+                            <span class="icon">
+                                <i class="fa fa-feed"></i>
+                            </span>
+                        </a>
+                    </span>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="hero-foot">
+    <div class="container">
+        <nav class="tabs is-boxed">
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li class="is-active">
+                    <a href="/news">News</a>
+                </li>
+                <li>
+                    <a href="/community">Community</a>
+                </li>
+            </ul>
+
+            <ul class="is-right">
+                <li>
+                    <a href="/docs">Docs</a>
+                </li>
+                <li>
+                    <a href="/#downloads">Downloads</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    </div>
+</header>
+<nav class="nav has-shadow" style="padding-left: 1%">
+  <div class="container">
+    <div class="nav-left">
+      <span class="nav-item has-text-weight-bold">Latest news</span>
+      <a class="nav-item is-tab" href="/news/glowstone-202180/">Glowstone 2021.8.0</a>
+      <a class="nav-item is-tab" href="/news/glowstone-202170/">Glowstone 2021.7.0</a>
+      <a class="nav-item is-tab" href="/news/glowstone-201870/">Glowstone 2018.7.0</a>
+    </div>
+  </div>
+</nav>
+<section class="section">
+  <div class="container">
+    <p class="field">
+      <a class="button is-outlined is-primary" href="/news">
+        <span class="icon">
+          <i class="fa fa-chevron-left"></i>
+        </span>
+        <span>Back to news</span>
+      </a>
+    </p>
+    <br>
+    <div class="box news-view content gallery">
+      <div class="news-title-section">
+        <div class="is-pulled-right" style="display: block;">
+          <img src="http://cdn.libravatar.org/avatar/ca05100ebdac5004684a8b7a81e2d7ad" class="box image is-32x32" title="Posted by mastercoms" />
+        </div>
+        <a href="/news/glowstone-20172/" rel="bookmark" title="Permalink to Glowstone 2017.2">
+          <h1 class="news-title" style="display: inline">
+            Glowstone 2017.2
+          </h1>
+        </a>
+        <br>
+        <span class="news-subtitle" style="display: inline" class="title is-3">
+          <time datetime="2017-03-01T09:03:00+00:00"> Wed 01 March 2017 </time>
+        </span>
+      </div>
+      <hr>
+      <p>Glowstone 2017.2's commit window has ended and has subsequently been released. Here are the changes:</p>
+<ul>
+<li>Implemented new Bukkit API count methods in World </li>
+<li>The server bootstrap channel is now accessible, for plugins</li>
+<li>Add getter for sessions in message handlers, for plugins</li>
+<li>Separate logic for player login and profile handling</li>
+<li>Adjust look around task frequency for AI</li>
+<li>Use a parallel stream for sending entities to players</li>
+<li>Add new constructor for proxy data to allow for use with plugins</li>
+<li>Update Maven build settings</li>
+<li>Force-gamemode config option support</li>
+<li>Add tests for inventory utilities</li>
+<li>Better support for signed and unsigned player properties</li>
+<li>Add proper rail placement/connection</li>
+<li>Add subtitle and times subcommands to title</li>
+<li>Use Gson for title command</li>
+<li>Entity physics</li>
+</ul>
+<p>And the bug fixes:
+* Default drop data to 0 instead of 1
+* Skip pulsing entities if they aren't in a loaded chunk
+* Do not shade powermock in the JAR
+* Use equals instead of == for UUID checks in the Boss Bar manager
+* Do not try to shutdown the network server if it is not running
+* Use concurrent hash map for entities
+* Do not decorate oceans with animals
+* Prevent animals from being spawned in the air from decoration
+* Unload heightmap and entities from unloaded chunks
+* Remove unused legacy packets
+* Fix structure generation and properly rollback blocks on failed structure generation
+* Fix chunk compression issues
+* Fix fall damage logic somewhat
+* Use ConcurrentHashSet for chunk entities
+* Implement use item packet, fix item usage logic
+* Fix entity animations and player swinging
+* Fix title command
+* Do not allow movement or regeneration while dead
+* Do not check the scoreboard when getting display name if the scoreboard does not exist
+* Fix TextMessage#flatten()
+* Fix a null pointer exception in ip and port due to late bind
+* Various fixes for explosions</p>
+<p>Also some other interesting news is that ProtocolSupport supports Glowstone natively. Go check it out! https://github.com/ProtocolSupport/ProtocolSupport</p>
+<p>You can view the code changes for this release here: https://github.com/GlowstoneMC/Glowstone/compare/50d6f16b85fb1e523bfaf1a8402d7421b3f2bab2...d5e4e54029e1bd0ccd2102578c95a9827a5632cd</p>
+<p>And the git release can be found here: https://github.com/GlowstoneMC/Glowstone/releases/tag/2017.2</p>
+<p>Please note that this is a release to track our progress, not one that will be supported for a longer time. Only the latest version of Glowstone will receive support.</p>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-info" id="sponsors" style="background-color: #2b87d3;">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column is-4">
+                    <a href="https://aternos.org/" title="Aternos - Minecraft servers. Free. Forever.">
+                        <img src="/theme/images/sponsors/aternos.png" />
+                    </a>
+                </div>
+                <div class="column is-8">
+                    <p class="title has-text-weight-light">We are proudly sponsored by <strong class="has-text-weight-bold">Aternos</strong></p>
+                    <p class="subtitle">Minecraft Servers. Free. Forever.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="footer">
+    <div class="container">
+        <div class="content has-text-centered">
+            <p>
+                Made with <span class="has-text-danger">&hearts;</span> by the <a href="https://github.com/GlowstoneMC/" rel="noopener">Glowstone project</a>.
+            </p>
+            <p>
+                Glowstone is licensed under the <a href="https://github.com/GlowstoneMC/Glowstone/blob/dev/LICENSE" rel="noopener">MIT license</a>,
+                while this site is licensed under the <a href="https://github.com/GlowstoneMC/glowstonemc.github.io/blob/main/LICENSE" rel="noopener">Artistic License 2.0</a>.
+                If you're thinking of contributing, please read <a href="/cla">our CLA</a>.
+            </p>
+            <p>
+                Glowstone would not be possible without <a target="_blank"
+                                                           href="https://github.com/GlowstoneMC/Glowstone#credits" rel="noopener">these folks</a> &mdash; thanks for your time and passion!
+            </p>
+        </div>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/baguettebox.js@1.11.1/dist/baguetteBox.min.js" integrity="sha256-ULQV01VS9LCI2ePpLsmka+W0mawFpEA0rtxnezUj4A4=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+    baguetteBox.run(".gallery", {
+        animation: "fadeIn",
+        noScrollbars: true
+    })
+</script>
+</body>
+</html>
