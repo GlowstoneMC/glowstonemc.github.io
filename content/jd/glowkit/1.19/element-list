@@ -37,6 +37,7 @@ io.papermc.paper.event.server
 io.papermc.paper.event.world
 io.papermc.paper.event.world.border
 io.papermc.paper.inventory
+io.papermc.paper.math
 io.papermc.paper.potion
 io.papermc.paper.registry
 io.papermc.paper.tag
@@ -82,6 +83,7 @@ org.bukkit.help
 org.bukkit.inventory
 org.bukkit.inventory.meta
 org.bukkit.inventory.meta.tags
+org.bukkit.inventory.recipe
 org.bukkit.loot
 org.bukkit.map
 org.bukkit.material
