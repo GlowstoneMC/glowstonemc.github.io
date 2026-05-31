@@ -1,0 +1,111 @@
+* {
+  scrollbar-color: #e8970b #363636;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar-track {
+  background: #363636;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e8970b;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+::selection {
+  background: rgba(232, 151, 1, 0.5);
+  color: #000;
+}
+
+.is-blurple .message-header {
+    background-color: #7289DA !important;
+    color: white !important;
+}
+
+.is-blurple .message {
+    background-color: #7289DA !important;
+}
+
+.link-hover:hover {
+    color: #ddd !important;
+}
+
+.news-view .is-preview img {
+    float: none;
+}
+
+.icon.is-danger {
+    color: #ff3860;
+}
+
+.icon.is-success {
+    color: #23d160;
+}
+
+.icon.is-info {
+    color: #3273dc;
+}
+
+.icon.is-warning {
+    color: #ffdd57;
+}
+
+.icon.is-dark {
+    color: #363636;
+}
+
+.message-body ul {
+    list-style: disc outside;
+    margin-left: 2rem;
+}
+
+.message-body ul ul {
+    list-style: circle;
+    margin-left: 2rem;
+}
+
+.message-body ul ul ul {
+    list-style: square;
+    margin-left: 2rem;
+}
+
+.message-body ol {
+    list-style: decimal outside;
+    margin-left: 1rem;
+}
+
+.feeds-row .button {
+    margin-left: 1rem;
+}
+
+.feeds-row {
+    margin-bottom: 2rem;
+}
+
+.announcements-front a {
+    text-decoration: none !important;
+}
+
+.announcements-front a:hover {
+    color: blue !important;
+}
+
+.latest-downloads-group {
+    display: inline-block;
+    line-height: 1rem;
+}
+
+.latest-downloads-group-sub {
+    font-size: 0.8rem;
+}
+
+.downloads-button {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    margin-right: 0.5rem;
+}
