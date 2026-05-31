@@ -10,14 +10,14 @@ jobs:
 
     steps:
     # Checkout and build files of a base ref.
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v6
       with:
         ref: ${{ github.event.pull_request.base.sha }}
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v6
       with:
-        python-version: '3.x'
-    - uses: actions/cache@v2
+        python-version: '3.10'
+    - uses: actions/cache@v5
       id: cache-pipenv-base
       name: pipenv cache (base)
       with:
@@ -42,11 +42,11 @@ jobs:
         PELICAN_OUTPUT_PATH: 'output_base'
 
     # Checkout and build files of a head ref.
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v6
       with:
         ref: ${{ github.event.pull_request.head.sha }}
         clean: false # Prevent removing files in 'output_base' folder.
-    - uses: actions/cache@v2
+    - uses: actions/cache@v5
       id: cache-pipenv-head
       name: pipenv cache head
       with:
@@ -81,7 +81,7 @@ jobs:
 
     - name: Upload Pages Diff
       continue-on-error: true
-      uses: edunad/actions-image@v1.0.1
+      uses: edunad/actions-image@v2.0.3
       with:
           path: './${{ steps.diffpages.outputs.path }}/**/*.jpg'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
